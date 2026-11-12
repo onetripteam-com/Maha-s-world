@@ -822,3 +822,99 @@
 @media(prefers-reduced-motion:reduce){
  #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-layer{transition:none!important}
 }
+
+
+/* Cluster genuine nearby geographic markers instead of laying eight targets
+   on top of one another. The full original coordinates remain in places.json. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin-clustered{
+ visibility:hidden!important;pointer-events:none!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster{
+ position:absolute!important;z-index:5!important;
+ left:71.4%;top:46.5%;
+ display:flex!important;flex-direction:column;align-items:center;justify-content:center;
+ gap:2px;transform:translate(-50%,-50%);
+ width:62px!important;height:62px!important;min-width:62px!important;min-height:62px!important;
+ padding:4px!important;border:3px solid #fff4d7!important;border-radius:50%!important;
+ background:linear-gradient(150deg,#3b6a63,#24534d)!important;color:#fff8e9!important;
+ box-shadow:0 5px 13px #203b3599,0 0 0 5px #ecdfa6aa!important;
+ cursor:pointer;transition:box-shadow .2s ease,scale .2s ease!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster strong{
+ font:700 23px/1.05 Georgia,serif!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster span{
+ font:800 8px/1.2 system-ui,sans-serif!important;letter-spacing:.12em!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster:hover,
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster[aria-expanded="true"]{
+ box-shadow:0 6px 20px #0f3830ba,0 0 0 8px #f0d8aa99!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster:focus-visible{
+ outline:3px solid #e8a75b!important;outline-offset:7px!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-choices{
+ margin:13px 0 0;border:1px solid #b49a78;border-radius:8px;
+ padding:clamp(12px,1.8vw,21px);background:linear-gradient(140deg,#fff9ed,#f2dfc6);
+ box-shadow:0 6px 22px #48352a25;color:#493b33;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-choices[hidden]{display:none!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-heading{
+ display:flex;gap:12px;align-items:center;justify-content:space-between;
+ margin-bottom:14px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-heading div{
+ display:flex;flex-direction:column;gap:4px;min-width:0;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-heading span{
+ font:750 10px system-ui,sans-serif;letter-spacing:.14em;color:#846b55;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-heading strong{
+ font:normal 25px Georgia,serif;color:#534435;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-heading button{
+ padding:8px 12px!important;min-height:40px!important;
+ background:#fff6e5!important;border:1px solid #cfb28f!important;
+ border-radius:30px!important;font:700 12px system-ui,sans-serif!important;color:#554434!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid button{
+ display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:8px;
+ row-gap:3px;text-align:left;min-width:0;min-height:69px!important;
+ border-radius:9px!important;border:1px solid #d7bd9d!important;
+ background:#fffdfa!important;padding:10px!important;color:#4e3d32!important;
+ box-shadow:0 2px 5px #49362112;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid button:hover{
+ background:#f4e7d7!important;border-color:#b58a6d!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid button:focus-visible{
+ outline:3px solid #ce9173;outline-offset:2px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid button>span{
+ grid-row:span 2;color:#ae795e;font-size:22px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid button>strong{
+ overflow-wrap:anywhere;font:700 14px/1.3 Georgia,serif;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid button>small{
+ font:600 10px/1.3 system-ui,sans-serif;color:#94755f;
+}
+@media(max-width:759px){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster{
+  width:54px!important;height:54px!important;min-width:54px!important;min-height:54px!important;
+  box-shadow:0 2px 12px #203b3577,0 0 0 3px #ecdfa6aa!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-heading strong{font-size:21px}
+}
+@media(max-width:385px){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-region-cluster{transition:none!important}
+}
