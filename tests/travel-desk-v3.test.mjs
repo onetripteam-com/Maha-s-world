@@ -36,7 +36,7 @@ test('original local progress, clip handling and geographic atlas are preserved'
  for(const name of ['dreamPins','passportStamps','visitedPlaces','lastPostcard','postcardPinned'])
   assert.ok(travel.includes(name),name);
  assert.match(travel,/takeMedia/);assert.match(travel,/releaseMedia/);
- assert.match(travel,/maha:mutechange/);assert.match(travel,/atlas-region\.svg/);assert.match(travel,/data-zoom/);
+ assert.match(travel,/maha:mutechange/);assert.match(travel,/world-atlas\.svg/);assert.match(travel,/data-zoom/);
  const p=data('content/places.json').places;
  assert.equal(p.length,10);
  for(const place of p){assert.ok(place.x>0&&place.x<100&&place.y>0&&place.y<100);assert.ok(place.geo&&typeof place.geo.longitude==='number');}
