@@ -37,7 +37,7 @@ export function makePortalSystem({room,frame,visits,lastVisit,onReturn}){
   portal.dataset.place=place.id;portal.style.cssText=placeCSSVars(place);
   portal.setAttribute('aria-label',place.name);
   unmountPlace();unmountPlace=()=>{};
-  surface.innerHTML=`<button class="portal-back" type="button" aria-label="Back to Maha’s room"><span aria-hidden="true">←</span> Room</button><div class="portal-place" data-metaphor="${place.metaphor}" data-sound="${place.sound}" data-texture="${place.theme.texture}"><div class="portal-content">${placeMarkup(place.id,{locked})}</div></div>`;
+  surface.innerHTML=`<button class="portal-back" type="button" aria-label="Back to Maha’s room"><span class="portal-back-arrow" aria-hidden="true">←</span><span class="portal-back-copy"><strong>${place.id==='letters'?'Back to room':'Room'}</strong>${place.id==='letters'?'<small>MAHA’S LITTLE ESCAPE</small>':''}</span></button><div class="portal-place" data-metaphor="${place.metaphor}" data-sound="${place.sound}" data-texture="${place.theme.texture}"><div class="portal-content">${placeMarkup(place.id,{locked})}</div></div>`;
   portal.querySelector('.portal-back').addEventListener('click',close);
   let module=null;
   if(MODULE_LOADERS[place.id]){
