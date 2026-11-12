@@ -43,6 +43,8 @@ jobs:
         run: node qa/four-phase-smoke.mjs
       - name: Check the private localhost preview in both engines
         run: node qa/private-preview-smoke.mjs
+      - name: Verify new travel map, destination cards, dream diary and letter UI
+        run: node qa/maha-redesign-smoke.mjs
       - name: Full responsive visual sweep (manual workflow only)
         if: github.event_name == 'workflow_dispatch'
         run: node qa/responsive.mjs
