@@ -23,7 +23,10 @@ async function init(){
   transition('room',()=>{unmount=mountRoom(root,{flowers:{today:todayLines},chosen,lastVisit:previousVisit,visits,onReplay:()=>sceneHug(true),onNewBouquet:sceneFlowers});});
   store.set('lastVisit',Date.now());
  }
- const flowers=store.get('flowers',[]);
+ // Keep existing local bouquets intact after the removed mislabelled bloom.
+ const storedFlowers=store.get('flowers',[]);
+ const flowers=Array.isArray(storedFlowers)?storedFlowers.map(id=>id==='marigold'?'frangipani':id):storedFlowers;
+ if(Array.isArray(storedFlowers)&&flowers.some((id,i)=>id!==storedFlowers[i]))store.set('flowers',flowers);
  const valid=Array.isArray(flowers)&&flowers.length===7&&flowers.every(id=>flowerList.some(f=>f.id===id));
  if(store.get('completed')&&valid){sceneRoom(flowers);}else{sceneHug();}
  // User gesture only: never start audio from page load, visibility or SW.
