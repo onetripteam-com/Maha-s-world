@@ -468,12 +468,12 @@ async function run(engine,launcher,w,h){
        assert.ok(await page.locator('.travel-dreams [data-add-pin]').isVisible(),'Private dream pins remain usable');
        await page.locator('[data-tab="map"]').click();
 
-       assert.equal(await page.locator('.atlas-board .atlas-watercolor').count(),1,'Travel should display the accurate regional atlas');
+       assert.equal(await page.locator('.atlas-board .atlas-watercolor').count(),1,'Travel should display the real world atlas');
        const img=await page.locator('.atlas-board .atlas-watercolor').getAttribute('src');
-       assert.ok(img?.includes('atlas-region.svg'),'Travel board must not show the old abstract polygon map');
-       assert.equal((await page.request.get(new URL('./assets/atlas-region.svg',BASE).href)).status(),200);
+       assert.ok(img?.includes('world-atlas.svg'),'Travel board must not show the old abstract polygon map');
+       assert.equal((await page.request.get(new URL('./assets/travel/world-atlas.svg',BASE).href)).status(),200);
        const coords=await page.locator('.atlas-pin[data-place="kuwait"]').evaluate(el=>({x:parseFloat(el.style.left),y:parseFloat(el.style.top)}));
-       assert.ok(coords.x>18&&coords.x<24&&coords.y>29&&coords.y<38,'Kuwait pin must match approximate real regional geography');
+       assert.ok(coords.x>62&&coords.x<65&&coords.y>40&&coords.y<43,'Kuwait pin must match real world geography');
        await page.locator('[data-zoom]').click();
        assert.ok(await page.locator('.atlas-board.is-zoomed').isVisible(),'India close-up should zoom map and actual pin layer together');
        await page.locator('[data-zoom]').click();
