@@ -34,7 +34,7 @@ export function editableGroups(kind,doc){
   const top=field(doc,['caption'],'Travel introduction');
   if(top)result.push(group('Travel desk introduction','Collection copy',[top]));
   doc.places.forEach((place,i)=>result.push(group(place.name||'Travel stop '+(i+1),'Postcard · '+(place.id||i+1),
-   picks(doc,['places',i],[['name','Place name'],['intro','Postcard message'],['phrase','Local phrase'],['translation','Translation'],['prompt','Vlog prompt']]))));
+   picks(doc,['places',i],[['name','Place name'],['intro','Postcard intro'],['postcardBack','Postcard back message'],['phrase','Local phrase'],['translation','Translation'],['prompt','Vlog prompt']]))));
  }else if(kind==='radio'&&Array.isArray(doc?.stations)){
   const notice=field(doc,['notice'],'Radio notice');
   if(notice)result.push(group('Station desk','General copy',[notice]));
