@@ -16,3 +16,7 @@ Original image source: `https://images.unsplash.com/<photo-id>`.
 See the [Unsplash License](https://unsplash.com/license) for the applicable photo terms.
 
 MAHA's interactive room controls, transitions, illustrations, and site code are separate from the original photographs. The six images should not be redistributed as a standalone stock-photo collection.
+
+## World atlas
+
+`assets/travel/world-atlas.svg` uses Natural Earth country geometry (public-domain source) from [Menelabs VectorAtlas](https://github.com/melenaos/Menelabs.VectorAtlas), released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Credit: Menelabs / VectorAtlas. The ocean, land colors, typography, paper texture, borders and compass artwork were customized for MAHA. This is an illustrated reference map, not a navigation product.
