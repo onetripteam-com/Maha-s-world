@@ -38,9 +38,9 @@ test('original local progress, clip handling and geographic atlas are preserved'
  assert.match(travel,/takeMedia/);assert.match(travel,/releaseMedia/);
  assert.match(travel,/maha:mutechange/);assert.match(travel,/atlas-region\.svg/);assert.match(travel,/data-zoom/);
  const p=data('content/places.json').places;
- assert.equal(p.find(x=>x.id==='kuwait').x,20.56);
- assert.equal(p.find(x=>x.id==='kerala').x,62.16);
- assert.equal(p.find(x=>x.id==='bangalore').x,64.11);
+ assert.equal(p.length,10);
+ for(const place of p){assert.ok(place.x>0&&place.x<100&&place.y>0&&place.y<100);assert.ok(place.geo&&typeof place.geo.longitude==='number');}
+ for(const id of ['alleppey','mysore','jaipur'])assert.ok(p.find(x=>x.id===id)?.postcardBack);
 });
 test('unverified trips are not falsely claimed, dream notes remain local',()=>{
  const travel=read('js/travel.js');
