@@ -1,12 +1,12 @@
 {
-  "version": 1,
-  "caption": "Original paper atlas uses public-domain Natural Earth country outlines. Map pins use approximate geographical coordinates; not for navigation.",
+  "version": 2,
+  "caption": "A real world atlas based on Natural Earth geography. Destination markers are approximate; close-together stops are easier to find in the place index. Personal chapters are distinguished from imagined journeys.",
   "places": [
     {
       "id": "kerala",
       "name": "Kerala",
-      "x": 62.16,
-      "y": 74.61,
+      "x": 71.19,
+      "y": 51.94,
       "gate": "wood",
       "intro": "The air smells like rain and something frying. Probably a good sign.",
       "phrase": "നമുക്ക് പോകാം",
@@ -21,13 +21,14 @@
       "geo": {
         "longitude": 76.2711,
         "latitude": 9.9312
-      }
+      },
+      "postcardBack": "Dear Maha, Kerala has a suspicious talent for turning a rainy afternoon into a core memory. The coconut trees are doing their best impression of a welcoming committee, and nobody has asked you to check your emails."
     },
     {
       "id": "kuwait",
       "name": "Kuwait",
-      "x": 20.56,
-      "y": 33.24,
+      "x": 63.33,
+      "y": 41.15,
       "gate": "stone",
       "intro": "For an ordinary Kuwait evening that deserves to be remembered.",
       "phrase": "സുഖമാണോ?",
@@ -42,13 +43,14 @@
       "geo": {
         "longitude": 47.9783,
         "latitude": 29.3759
-      }
+      },
+      "postcardBack": "Dear Maha, the Kuwait Towers are standing very tall for a city that already has enough confidence. If the skyline could send a voice note, it would probably say: 'The sunsets here are surprisingly good. Bring snacks.'"
     },
     {
       "id": "bangalore",
       "name": "Bengaluru",
-      "x": 64.11,
-      "y": 68.15,
+      "x": 71.55,
+      "y": 50.25,
       "gate": "wood",
       "intro": "The familiar chaos, with a very good snack somewhere nearby.",
       "phrase": "പതുക്കെ പോകാം",
@@ -63,13 +65,14 @@
       "geo": {
         "longitude": 77.5946,
         "latitude": 12.9716
-      }
+      },
+      "postcardBack": "Dear Maha, Bengaluru has a parliament building fit for royalty and traffic that insists everyone deserves a longer podcast. Keep the Vidhana Soudha photo; blur the part where you negotiated with an auto driver."
     },
     {
       "id": "munnar",
       "name": "Munnar",
-      "x": 63.32,
-      "y": 74.28,
+      "x": 71.41,
+      "y": 51.85,
       "gate": "wood",
       "intro": "Clouds that behave like they own the tea estates.",
       "phrase": "എന്തൊരു ഭംഗി!",
@@ -84,13 +87,14 @@
       "geo": {
         "longitude": 77.0597,
         "latitude": 10.0889
-      }
+      },
+      "postcardBack": "Dear Maha, the tea hills have arranged themselves in perfect lines, apparently without a single calendar invite. The clouds are refusing to leave the meeting, and for once that feels completely fine."
     },
     {
       "id": "manali",
       "name": "Manali",
-      "x": 63.51,
-      "y": 27.14,
+      "x": 71.44,
+      "y": 39.56,
       "gate": "stone",
       "intro": "A winding road. An excuse for another playlist.",
       "phrase": "നല്ല തണുപ്പ്",
@@ -105,13 +109,14 @@
       "geo": {
         "longitude": 77.1892,
         "latitude": 32.2432
-      }
+      },
+      "postcardBack": "Dear Maha, Manali ordered extra mountains and forgot to mention the cold. Your sweater gets the starring role, the hot chai wins Best Supporting Actor, and the snow refuses to follow the itinerary."
     },
     {
       "id": "ladakh",
       "name": "Ladakh",
-      "x": 64.08,
-      "y": 23.08,
+      "x": 71.55,
+      "y": 38.5,
       "gate": "stone",
       "intro": "An enormous sky. A very small list of worries.",
       "phrase": "പോകാം",
@@ -126,13 +131,14 @@
       "geo": {
         "longitude": 77.5771,
         "latitude": 34.1526
-      }
+      },
+      "postcardBack": "Dear Maha, the mountains here look as though someone crumpled the planet and forgot to smooth it out. Even your thoughts would need an extra layer and a little more breathing room."
     },
     {
       "id": "nepal",
       "name": "Nepal",
-      "x": 75.48,
-      "y": 36.77,
+      "x": 73.7,
+      "y": 42.07,
       "gate": "stone",
       "intro": "A road bends around the mountain and makes you look up again. One day, perhaps, with a camera in your hand.",
       "phrase": "നമുക്ക് മലകളിലേക്ക് പോകാം",
@@ -147,7 +153,74 @@
       "geo": {
         "longitude": 85.32396,
         "latitude": 27.7172
-      }
+      },
+      "postcardBack": "Dear Maha, Nepal has mountains so tall they make everyday drama seem delightfully pocket-sized. Take one look at the Himalayas, then explain to your camera why it cannot possibly fit all of this into one frame."
+    },
+    {
+      "id": "alleppey",
+      "name": "Alleppey",
+      "gate": "wood",
+      "intro": "Where a houseboat is the most convincing argument for doing nothing at all.",
+      "phrase": "ഇവിടെ നിൽക്കാം",
+      "translation": "Let's stay here a little longer.",
+      "prompt": "Film the water moving past a houseboat while everybody else argues over the best snack.",
+      "postcardBack": "Dear Maha, Alleppey has a genius business model: put a roof on a boat and call doing absolutely nothing an itinerary. The backwaters do the sightseeing; you are officially appointed Chief Snack Inspector.",
+      "colors": [
+        "#477f72",
+        "#e5c394"
+      ],
+      "clip": null,
+      "still": null,
+      "geo": {
+        "longitude": 76.326,
+        "latitude": 9.4981
+      },
+      "x": 71.2,
+      "y": 52.18
+    },
+    {
+      "id": "mysore",
+      "name": "Mysore",
+      "gate": "wood",
+      "intro": "A palace with more fairy lights than a wedding planner's wildest spreadsheet.",
+      "phrase": "ಎಷ್ಟು ಸುಂದರ!",
+      "translation": "How beautiful!",
+      "prompt": "Film the palace at twilight and count how long it takes to say 'wow' without saying 'wow'.",
+      "postcardBack": "Dear Maha, Mysore Palace lights up like it has an extremely ambitious electricity bill. Somewhere inside, even the chandeliers are probably saying, 'We do clean up rather nicely.'",
+      "colors": [
+        "#b17868",
+        "#f0cf94"
+      ],
+      "clip": null,
+      "still": null,
+      "geo": {
+        "longitude": 76.6394,
+        "latitude": 12.2958
+      },
+      "x": 71.29,
+      "y": 50.63
+    },
+    {
+      "id": "jaipur",
+      "name": "Jaipur",
+      "gate": "stone",
+      "intro": "A pink city that makes an ordinary building feel underdressed.",
+      "phrase": "चलो घूमने चलें",
+      "translation": "Let's go exploring.",
+      "prompt": "Find a perfectly framed window, then narrate why pink is a perfectly sensible citywide decision.",
+      "postcardBack": "Dear Maha, Jaipur decided that one pink wall was simply not enough and turned the whole city into a mood board. Please ask the Hawa Mahal how it keeps 953 windows clean; this is urgent research.",
+      "colors": [
+        "#b56f72",
+        "#f3c6ab"
+      ],
+      "clip": null,
+      "still": null,
+      "geo": {
+        "longitude": 75.7873,
+        "latitude": 26.9124
+      },
+      "x": 71.05,
+      "y": 42.51
     }
   ],
   "futureSlots": [
