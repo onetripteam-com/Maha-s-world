@@ -711,3 +711,114 @@
 #portal-screen[data-place="travel"] .portal-back:hover{
  background:#fdf0d8!important;color:#34291f!important;
 }
+
+
+/* MAHA's new accurately grounded world atlas and original landmark cards. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board{
+ aspect-ratio:2000 / 1001!important;min-height:180px!important;
+ background:#8cb5bd!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-watercolor{
+ object-fit:fill!important;filter:none!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-layer{
+ transform-origin:69% 47%!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-map-layer{
+ transform:scale(2.35)!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board:not(.is-zoomed) .atlas-pin{
+ opacity:.92;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board:not(.is-zoomed) .atlas-pin.possible{
+ opacity:.74;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board .atlas-pin-name{
+ display:none!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-pin:hover .atlas-pin-name,
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board .atlas-pin:focus-visible .atlas-pin-name{
+ display:block!important;position:absolute;top:33px;z-index:8;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-pin[data-place="kerala"]{margin-left:-9px}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-pin[data-place="alleppey"]{margin-left:11px;margin-top:10px}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-pin[data-place="mysore"]{margin-left:-12px;margin-top:-7px}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-pin[data-place="bangalore"]{margin-left:13px;margin-top:-9px}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-pin[data-place="munnar"]{margin-left:4px;margin-top:7px}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-controls span{max-width:68%;line-height:1.6}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-card-picture img,
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-small img,
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-flip-front img{
+ width:100%!important;height:100%!important;object-fit:cover!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-board{
+ grid-template-columns:minmax(0,.74fr) minmax(0,1.1fr)!important;
+ gap:clamp(14px,2vw,26px)!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-page{
+ grid-column:2;grid-row:1;position:relative;
+ display:flex;flex-direction:column;gap:11px;
+ padding:clamp(21px,3vw,40px);
+ border:1px solid #d1b692;border-radius:4px;
+ background:radial-gradient(circle at 93% 12%,#f2c7c48e,transparent 28%),
+ linear-gradient(145deg,#fff9ed,#f4e1cf);
+ box-shadow:7px 11px 0 #8a6b5133,0 14px 25px #20161031;
+ color:#583f37;min-width:0;
+}
+#portal-screen[data-place="travel"] .travel-dream-page::before{
+ content:"";position:absolute;inset:8px;pointer-events:none;
+ border:1px dashed #b9967f7c;border-radius:2px;
+}
+#portal-screen[data-place="travel"] .travel-dream-page-kicker{
+ font:750 10px/1.4 system-ui,sans-serif;letter-spacing:.14em;color:#986a67;
+}
+#portal-screen[data-place="travel"] .travel-dream-page h3{
+ margin:0;color:#573b46;font:italic 400 clamp(25px,3vw,38px)/1.15 Georgia,serif;
+}
+#portal-screen[data-place="travel"] .travel-dream-page h3 em{color:#9a5667}
+#portal-screen[data-place="travel"] .travel-dream-page p{
+ margin:0 0 9px;color:#80675a;font:italic 14px/1.5 Georgia,serif;
+}
+#portal-screen[data-place="travel"] .travel-dream-page label{
+ display:flex;flex-direction:column;gap:6px;color:#604d46;
+ font:650 12px/1.45 system-ui,sans-serif;
+}
+#portal-screen[data-place="travel"] .travel-dream-page input,
+#portal-screen[data-place="travel"] .travel-dream-page textarea{
+ width:100%;box-sizing:border-box;background:#fffdf8ed;color:#40362f!important;
+ border:1px solid #d8bea4;border-radius:8px;padding:12px 13px;
+ font:normal 15px/1.5 system-ui,sans-serif;min-width:0;
+}
+#portal-screen[data-place="travel"] .travel-dream-page input:focus-visible,
+#portal-screen[data-place="travel"] .travel-dream-page textarea:focus-visible{
+ outline:3px solid #ce9b83;outline-offset:2px;
+}
+#portal-screen[data-place="travel"] .travel-dream-page button{
+ align-self:flex-start;border:1px solid #703f50!important;
+ border-radius:999px!important;background:#763f56!important;color:#fff7e9!important;
+ padding:12px 19px!important;min-height:46px!important;
+ font:750 13px system-ui,sans-serif!important;cursor:pointer;
+}
+#portal-screen[data-place="travel"] .travel-dream-page small{
+ color:#8a7266;font:11px/1.5 system-ui,sans-serif;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-list{
+ grid-column:1 / -1;grid-row:2;
+ grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-flip-back p{
+ line-height:1.55!important;font-size:clamp(13px,1.4vw,16px)!important;
+}
+@media(max-width:759px){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board{min-height:210px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board.is-zoomed .atlas-map-layer{transform:scale(2.65)!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-board{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-page,
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-list{grid-column:1!important;grid-row:auto!important}
+ #portal-screen[data-place="travel"] .travel-dream-page{padding:21px!important}
+ #portal-screen[data-place="travel"] .travel-dream-page button{width:100%;text-align:center}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-layer{transition:none!important}
+}
