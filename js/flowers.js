@@ -4,7 +4,7 @@ import {soundEffect} from './audio.js';
 import {move,delay} from './animation.js';
 const esc=x=>String(x).replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
 const floristWords={
- rose:'The classic. Yes, it earned that reputation.',peony:'A little dramatic. In the nicest possible way.',sunflower:'Bringing its own sunshine. Very efficient.',tulip:'All neat lines and quiet confidence.',lily:'The elegant one who never needs to announce it.',orchid:'A bit fancy. Completely allowed.',hibiscus:'A little Kerala sunshine has arrived.',lotus:'Taking its own time. Good idea.',jasmine:'Small flower. Entire room changed.',marigold:'The unofficial festival committee is here.',daisy:'The easy-going one. No big introduction.',lavender:'That is a very good excuse to slow down.',iris:'A little colour with opinions.'
+ rose:'The classic. Yes, it earned that reputation.',peony:'A little dramatic. In the nicest possible way.',sunflower:'Bringing its own sunshine. Very efficient.',tulip:'All neat lines and quiet confidence.',lily:'The elegant one who never needs to announce it.',orchid:'A bit fancy. Completely allowed.',hibiscus:'A little Kerala sunshine has arrived.',lotus:'Taking its own time. Good idea.',jasmine:'Small flower. Entire room changed.',frangipani:'A Kerala afternoon in five little petals.',daisy:'The easy-going one. No big introduction.',lavender:'That is a very good excuse to slow down.',iris:'A little colour with opinions.'
 };
 // The seven live SVG flowers remain selectable; this glass silhouette is
 // foreground occlusion for the preview, not a baked-in image or another bouquet.
@@ -41,7 +41,7 @@ export function mountFlowers(root,flowers,onDone,onCancel=null){
     <span class="f2-caption" aria-hidden="true"><i>✳</i> CHOSEN BY YOU · MADE TO KEEP</span>
    </div>
    <div class="f2-editor" id="flower-bottom">
-    <div class="f2-editor-head"><span><small>THE FLOWER BAR</small> Find your seven.</span><span class="f2-editor-hint">13 BLOOMS · REPEATS WELCOME</span></div>
+    <div class="f2-editor-head"><span><small>THE FLOWER BAR</small> Find your seven.</span><span class="f2-editor-hint">${flowers.length} BLOOMS · REPEATS WELCOME</span></div>
     <div class="f2-browser f2-browser-v2"><div id="flower-rail" class="f2-rail" role="group" aria-label="Thirteen different flowers. Tap more than once to add repeats."></div></div>
     <div class="f2-footer">
      <div class="f2-note" id="meaning-line" aria-live="polite">Pick the ones you like. We'll worry about arranging them.</div>
