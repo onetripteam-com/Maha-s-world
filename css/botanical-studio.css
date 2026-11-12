@@ -1,0 +1,574 @@
+/* MAHA / FLORAL STUDIO 2026
+   Contemporary, thumb-first botanical editor. Preserves all 13 SVG species,
+   repeated selections, seven-live-stem preview and local saved bouquet.
+   The current room photograph is the atmosphere, never a picture of fake buttons. */
+.app-frame[data-scene="flowers"]{background:#112d2d;color:#f9f8f1}
+.app-frame[data-scene="flowers"] .app-header{
+ color:#f8f6e8!important;background:#112d2d!important;
+ border-bottom:1px solid #f4f4e119;
+}
+#app .flowers-scene.flower-studio{
+ --studio-photo:url('../assets/rooms/maha-kuwait.webp');
+ --studio-lime:#c2e987;--studio-ink:#11322e;--studio-muted:#5b706a;
+ position:relative;display:block!important;isolation:isolate;
+ color:#17332e;background:#173832!important;
+ overflow:hidden!important;
+}
+#app .flowers-scene.flower-studio[data-source-scene="kerala"]{
+ --studio-photo:url('../assets/rooms/maha-kerala.webp');--studio-lime:#d6e69e;
+}
+#app .flowers-scene.flower-studio[data-source-scene="bengaluru"]{
+ --studio-photo:url('../assets/rooms/maha-bengaluru.webp');--studio-lime:#f1cf9a;
+}
+#app .flowers-scene.flower-studio:before,
+#app .flowers-scene.flower-studio:after{display:none!important}
+#app .flowers-scene.flower-studio .flower-studio-background{
+ position:absolute;inset:-18px;z-index:0;pointer-events:none;
+ background-image:linear-gradient(128deg,#122e2dc2,#b1baa169),var(--studio-photo);
+ background-position:center;background-size:cover;
+ filter:blur(16px) saturate(.83);transform:scale(1.055);
+}
+#app .flowers-scene.flower-studio .flower-studio-layout{
+ position:relative;z-index:2;width:100%;height:100%;
+ display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);
+ gap:clamp(12px,1.4vw,22px);padding:clamp(12px,1.75vw,28px);
+}
+#app .flowers-scene.flower-studio .flower-studio-preview{
+ min-width:0;min-height:0;position:relative;overflow:hidden;
+ display:flex;flex-direction:column;
+ background:linear-gradient(156deg,#092b2ce9,#164039d9 65%,#15312eea);
+ border-radius:clamp(17px,2vw,25px);
+ box-shadow:0 18px 60px #0b211e62,inset 0 1px #f6f4ec27;
+ border:1px solid #ebefce32;
+ padding:clamp(20px,2.5vw,35px);
+ color:#f4f3e8;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview:before{
+ content:'';position:absolute;inset:29% -20% -32%;z-index:0;pointer-events:none;
+ background:radial-gradient(ellipse at 51% 52%,#c9edab28,transparent 56%);
+}
+#app .flowers-scene.flower-studio .flower-studio-preview:after{
+ content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+ border-radius:inherit;box-shadow:inset 0 0 0 1px #ffffff15;
+}
+#app .flowers-scene.flower-studio .flowers-top{
+ position:relative!important;inset:auto!important;top:auto!important;right:auto!important;
+ left:auto!important;bottom:auto!important;z-index:3!important;
+ display:flex!important;flex-direction:column;gap:clamp(14px,1.6vw,20px)!important;
+}
+#app .flowers-scene.flower-studio .flower-intro{opacity:1}
+#app .flowers-scene.flower-studio .flower-intro>.eyebrow{
+ font:730 9px/1.4 'Avenir Next',system-ui,sans-serif;
+ letter-spacing:.18em;color:var(--studio-lime)!important;
+ display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:5px;
+}
+#app .flowers-scene.flower-studio .studio-edition{
+ font-weight:500;font-size:8px;letter-spacing:.1em;color:#d4e0d6ac;
+}
+#app .flowers-scene.flower-studio .flower-intro h1{
+ margin:12px 0 9px!important;max-width:680px;
+ font:400 clamp(33px,4.1vw,66px)/.99 Georgia,'Iowan Old Style',serif!important;
+ letter-spacing:-.045em;color:#fafaf1!important;text-wrap:balance;
+}
+#app .flowers-scene.flower-studio .flower-intro h1 em{
+ color:var(--studio-lime)!important;font-style:italic;
+}
+#app .flowers-scene.flower-studio .flower-intro p{
+ color:#d7e6dfcc!important;font:400 clamp(12px,1.25vw,15px)/1.5 system-ui,sans-serif!important;
+ max-width:400px!important;letter-spacing:.005em;
+}
+#app .flowers-scene.flower-studio .flower-status-row{
+ display:flex!important;align-items:center;gap:17px!important;
+ grid-template-columns:none!important;
+}
+#app .flowers-scene.flower-studio .flower-counter{
+ flex:0 0 auto;min-width:0!important;padding:0!important;
+ background:none!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;gap:2px!important;
+}
+#app .flowers-scene.flower-studio .flower-counter strong{
+ color:#fffef1!important;font:500 clamp(36px,4vw,58px)/1 Georgia,serif!important;
+ letter-spacing:-.04em;font-variant-numeric:tabular-nums;
+}
+#app .flowers-scene.flower-studio .flower-counter strong span{
+ color:#bed3ca!important;font:400 clamp(18px,2vw,24px)/1 Georgia,serif;
+ letter-spacing:-.01em;
+}
+#app .flowers-scene.flower-studio .counter-caption{
+ color:#b4d6c4!important;font:700 9px/1.5 system-ui,sans-serif;letter-spacing:.17em;
+}
+#app .flowers-scene.flower-studio .flower-status-note{
+ flex:1;align-self:center;padding:0 0 0 16px!important;
+ border-left:1px solid #c2e9875c;min-width:0;
+}
+#app .flowers-scene.flower-studio .flower-status-note span{
+ color:#f3f6e9!important;font:650 clamp(11px,1.1vw,13px)/1.35 system-ui,sans-serif;
+}
+#app .flowers-scene.flower-studio .flower-status-note small{
+ color:#b1c8bc!important;font:400 11px/1.4 system-ui,sans-serif;
+}
+#app .flowers-scene.flower-studio .flower-steps{
+ margin:0!important;width:min(100%,470px)!important;display:grid!important;
+ grid-template-columns:repeat(7,minmax(0,1fr));gap:7px!important;height:auto!important;
+}
+#app .flowers-scene.flower-studio .flower-step{
+ height:clamp(29px,3vw,39px)!important;min-width:0;border:1px solid #d8f4d63f!important;
+ background:#f2fff510!important;border-radius:9px!important;
+ display:grid;place-items:center;color:#acc2b7!important;
+ transition:background .18s,transform .2s,border-color .18s;
+}
+#app .flowers-scene.flower-studio .flower-step i{
+ color:inherit;font:650 10px/1 system-ui,sans-serif!important;
+ font-style:normal;letter-spacing:.02em;
+}
+#app .flowers-scene.flower-studio .flower-step.is-picked{
+ background:var(--studio-lime)!important;color:#174035!important;
+ border-color:var(--studio-lime)!important;cursor:pointer;
+}
+#app .flowers-scene.flower-studio .flower-step.is-picked:active{transform:scale(.88)}
+#app .flowers-scene.flower-studio .flower-step.is-picked i{font:600 20px/1 Georgia,serif!important}
+#app .flowers-scene.flower-studio .flower-step:focus-visible{outline:2px solid #f5f7ec;outline-offset:2px}
+#app .flowers-scene.flower-studio .bouquet-display{
+ position:relative!important;inset:auto!important;top:auto!important;right:auto!important;
+ bottom:auto!important;left:auto!important;width:100%!important;height:auto!important;
+ flex:1 1 auto;min-height:90px!important;
+ display:grid;place-items:center;overflow:hidden!important;z-index:2!important;
+ margin:8px 0 0!important;
+}
+#app .flowers-scene.flower-studio .bouquet-display:before{
+ width:65%;height:70%;inset:auto!important;top:14%;left:18%;
+ background:radial-gradient(ellipse,#d5f6c31f,transparent 73%)!important;
+ filter:blur(20px)!important;border-radius:50%;
+}
+#app .flowers-scene.flower-studio .bouquet-growing{
+ position:absolute!important;inset:0!important;display:grid;place-items:center;
+ transform-origin:center 76%;
+}
+#app .flowers-scene.flower-studio .bouquet-growing .bouquet-svg{
+ width:100%;height:100%;max-width:min(100%,570px);max-height:100%;
+ filter:drop-shadow(0 16px 18px #020c0b49)!important;object-fit:contain;
+}
+#app .flowers-scene.flower-studio .bouquet-hint{
+ display:flex;flex-direction:column;align-items:center;gap:12px;
+ max-width:260px!important;color:#d5e8d9cb!important;text-align:center;
+ font:italic clamp(15px,2vw,21px)/1.35 Georgia,serif!important;
+ transform:none!important;z-index:1;
+}
+#app .flowers-scene.flower-studio .bouquet-hint span{
+ display:grid;place-items:center;font:30px/1 Georgia,serif;color:var(--studio-lime);
+}
+#app .flowers-scene.flower-studio .flower-studio-caption{
+ position:relative;z-index:3;display:flex;gap:7px;align-items:center;
+ margin-top:8px;color:#d4e7d7aa;font:650 9px/1.4 system-ui,sans-serif;
+ letter-spacing:.15em;
+}
+#app .flowers-scene.flower-studio .flower-studio-caption i{font-style:normal;font-size:15px;color:var(--studio-lime)}
+#app .flowers-scene.flower-studio .flower-bottom{
+ position:relative!important;inset:auto!important;top:auto!important;left:auto!important;
+ right:auto!important;bottom:auto!important;
+ height:auto!important;min-height:0!important;width:100%!important;
+ background:#f8faf5f4!important;
+ border:1px solid #f8fffb8a!important;border-radius:clamp(17px,2vw,25px)!important;
+ box-shadow:0 20px 60px #0b211e50!important;
+ padding:clamp(15px,1.8vw,26px)!important;
+ display:flex;flex-direction:column;overflow:hidden!important;
+ z-index:3!important;transform:none;
+ gap:0;
+ -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+}
+#app .flowers-scene.flower-studio .shelf-heading{
+ display:flex;justify-content:space-between;align-items:flex-end;
+ gap:6px;margin:0 0 12px!important;padding:0 0 14px!important;
+ border-bottom:1px solid #294b401b!important;
+ text-transform:none;letter-spacing:-.035em;
+ font:600 clamp(19px,2vw,27px)/1.1 system-ui,sans-serif!important;
+ color:var(--studio-ink)!important;
+}
+#app .flowers-scene.flower-studio .shelf-heading>span:first-child{display:flex;flex-direction:column;gap:6px}
+#app .flowers-scene.flower-studio .shelf-heading small{
+ display:block;color:#548472;font:700 9px/1.3 system-ui,sans-serif;letter-spacing:.16em;
+}
+#app .flowers-scene.flower-studio .shelf-hint{
+ font:730 9px/1.35 system-ui,sans-serif!important;letter-spacing:.08em;
+ color:#748d80!important;max-width:120px;text-align:right;
+}
+#app .flowers-scene.flower-studio .flower-browser-v2{
+ min-height:0!important;flex:1 1 auto!important;
+ overflow:hidden!important;display:flex!important;max-height:none!important;
+}
+#app .flowers-scene.flower-studio .flower-rail{
+ width:100%;height:100%!important;max-height:none!important;
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-auto-rows:max-content;align-content:start!important;
+ gap:clamp(8px,1vw,12px)!important;
+ flex:1 1 auto!important;min-height:0!important;
+ padding:4px 5px 14px!important;
+ overflow-x:hidden!important;overflow-y:auto!important;
+ scroll-snap-type:none!important;scrollbar-width:thin;
+ scrollbar-color:#9bac9d transparent;
+ touch-action:pan-y!important;overscroll-behavior:contain;
+ -webkit-overflow-scrolling:touch;
+}
+#app .flowers-scene.flower-studio .flower-option{
+ position:relative!important;display:flex!important;flex-direction:column!important;
+ justify-content:flex-end!important;align-items:stretch!important;
+ width:100%!important;min-width:0!important;max-width:none!important;
+ height:clamp(138px,18vh,172px)!important;min-height:0!important;flex:0 0 auto!important;
+ padding:7px!important;border-radius:16px!important;
+ color:#1e3d32!important;background:#fff!important;
+ border:1px solid #dce4d8!important;
+ box-shadow:0 4px 12px #28483f0d!important;
+ scroll-snap-align:none!important;
+ transition:transform .17s cubic-bezier(.2,.8,.2,1),border-color .17s,background .17s,box-shadow .17s!important;
+ -webkit-tap-highlight-color:transparent;
+}
+#app .flowers-scene.flower-studio .flower-option:hover{
+ transform:translateY(-2px)!important;
+ border-color:#7faf92!important;
+ box-shadow:0 6px 19px #28483f1e!important;
+}
+#app .flowers-scene.flower-studio .flower-option:active{
+ transform:scale(.965)!important;box-shadow:0 2px 5px #28483f16!important;
+}
+#app .flowers-scene.flower-studio .flower-option[aria-pressed="true"]{
+ background:#f0f8eb!important;border:1.5px solid #4f9b70!important;
+ box-shadow:inset 0 0 0 1px #55a67833,0 5px 15px #28483f14!important;
+ opacity:1!important;
+}
+#app .flowers-scene.flower-studio .flower-option:focus-visible{
+ outline:3px solid #2c9a72!important;outline-offset:2px!important;
+}
+#app .flowers-scene.flower-studio .flower-option-index{
+ position:absolute;top:10px;left:11px;z-index:2;
+ color:#81948a;font:650 9px/1 system-ui,sans-serif;letter-spacing:.12em;
+}
+#app .flowers-scene.flower-studio .flower-option .option-art{
+ position:absolute!important;left:5px!important;right:5px!important;
+ top:5px!important;bottom:auto!important;height:calc(100% - 49px)!important;
+ width:auto!important;display:grid;place-items:center;
+ overflow:hidden!important;pointer-events:none;
+}
+#app .flowers-scene.flower-studio .flower-option .option-art svg,
+#app .flowers-scene.flower-studio .flower-option .option-art .botanical{
+ width:min(100%,110px)!important;height:100%!important;max-height:none!important;
+ transform:translateY(-3px) scale(.93)!important;
+ animation:flower-sway var(--sway,5.5s) ease-in-out infinite;
+}
+#app .flowers-scene.flower-studio .flower-option-meta{
+ position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;
+ width:100%;min-height:31px;gap:5px;padding:7px 3px 0;
+ border-top:1px solid #e3eae1;
+}
+#app .flowers-scene.flower-studio .option-label{
+ color:#263e35!important;font:650 clamp(11px,1.1vw,13px)/1.2 system-ui,sans-serif!important;
+ text-align:left!important;white-space:normal;max-height:none;letter-spacing:-.01em;
+}
+#app .flowers-scene.flower-studio .flower-add{
+ margin:0!important;color:#3c8062!important;opacity:1!important;white-space:nowrap;
+ font:750 9px/1 system-ui,sans-serif!important;letter-spacing:.07em;
+}
+#app .flowers-scene.flower-studio .picked-check:not(:empty){
+ position:absolute;right:7px;top:7px;display:block!important;
+ color:#f8fff5;background:#235a44!important;
+ font:750 8px/1.2 system-ui,sans-serif!important;letter-spacing:.04em;
+ padding:5px 6px!important;border-radius:20px!important;box-shadow:none!important;
+ z-index:4;min-width:0;width:auto;height:auto;
+}
+#app .flowers-scene.flower-studio .flower-editor-footer{
+ flex:0 0 auto;min-width:0;padding-top:11px;
+}
+#app .flowers-scene.flower-studio .meaning-line{
+ display:flex;align-items:center;justify-content:flex-start!important;
+ margin:0!important;padding:9px 11px!important;
+ height:auto!important;min-height:40px!important;
+ border:0!important;border-radius:10px;background:#e7f0e6!important;
+ color:#315442!important;font:500 clamp(11px,1.08vw,13px)/1.4 system-ui,sans-serif!important;
+ text-align:left!important;
+}
+#app .flowers-scene.flower-studio .flower-controls{
+ display:flex!important;align-items:center;justify-content:space-between;
+ margin:10px 0 0!important;padding:0 2px!important;gap:4px;
+}
+#app .flowers-scene.flower-studio .flower-controls button{
+ min-height:39px!important;
+ color:#315d4d!important;
+ font:650 11px/1.2 system-ui,sans-serif;
+ text-decoration:none;border:1px solid #b7cebf;border-radius:10px;
+ background:#fff;white-space:nowrap;
+ padding:7px 11px!important;
+}
+#app .flowers-scene.flower-studio .flower-controls button:disabled{opacity:.32}
+#app .flowers-scene.flower-studio .flower-controls .studio-exit{
+ margin-left:auto;background:transparent;border-color:transparent;
+}
+#app .flowers-scene.flower-studio .bouquet-final{
+ width:min(500px,calc(100% - 36px));left:0!important;right:0!important;
+ margin:auto;bottom:clamp(20px,5vh,45px)!important;
+ background:#fbfff5f5!important;color:#1b4335;
+ border:1px solid #c1d9c2!important;
+ border-radius:21px!important;
+ padding:22px 20px!important;box-shadow:0 19px 65px #0b201d72!important;
+ -webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+}
+#app .flowers-scene.flower-studio .bouquet-final h2{
+ color:#16392f;font:400 clamp(27px,4vw,46px)/1.1 Georgia,serif!important;
+}
+#app .flowers-scene.flower-studio .bouquet-final p{
+ font:400 13px/1.4 system-ui,sans-serif;color:#527465!important;
+}
+#app .flowers-scene.flower-studio .bouquet-final .button-primary{
+ color:#fff;background:#1b5b45;border:0;box-shadow:none;
+}
+#app .flowers-scene.flower-studio .bouquet-final .button-outline{
+ color:#1b5b45;background:#fff;border:1px solid #b8d7bc;box-shadow:none;
+}
+#app .flowers-scene.flower-studio .flower-intro-fade{opacity:.65!important}
+#app .flowers-scene.flower-studio.is-complete .flower-studio-layout{
+ grid-template-columns:minmax(0,1fr);max-width:970px;margin:auto;
+}
+#app .flowers-scene.flower-studio.is-complete .flower-studio-preview{width:100%}
+#app .flowers-scene.flower-studio.is-complete .bouquet-display{
+ margin-top:16px!important;
+}
+@media(max-width:899px){
+ #app .flowers-scene.flower-studio .flower-studio-layout{
+   grid-template-columns:minmax(0,1fr)!important;
+   grid-template-rows:minmax(0,42%) minmax(0,58%);
+   gap:0!important;padding:0!important;
+ }
+ #app .flowers-scene.flower-studio .flower-studio-preview{
+   border-radius:0!important;border:0!important;
+   box-shadow:none!important;padding:clamp(10px,2.6vw,16px) clamp(14px,4vw,22px)!important;
+ }
+ #app .flowers-scene.flower-studio .flowers-top{gap:7px!important}
+ #app .flowers-scene.flower-studio .flower-intro>.eyebrow{
+   font-size:8px;letter-spacing:.11em;
+ }
+ #app .flowers-scene.flower-studio .studio-edition{font-size:7px;letter-spacing:.07em}
+ #app .flowers-scene.flower-studio .flower-intro h1{
+   font-size:clamp(27px,7vw,36px)!important;
+   letter-spacing:-.05em;margin:5px 0!important;
+ }
+ #app .flowers-scene.flower-studio .flower-intro p{
+   font-size:11px!important;line-height:1.28!important;max-width:340px!important;
+ }
+ #app .flowers-scene.flower-studio .flower-status-row{gap:10px!important}
+ #app .flowers-scene.flower-studio .flower-counter strong{font-size:30px!important}
+ #app .flowers-scene.flower-studio .flower-counter strong span{font-size:17px!important}
+ #app .flowers-scene.flower-studio .counter-caption{font-size:8px}
+ #app .flowers-scene.flower-studio .flower-status-note{padding-left:11px!important}
+ #app .flowers-scene.flower-studio .flower-status-note span{font-size:10px}
+ #app .flowers-scene.flower-studio .flower-status-note small{font-size:9px}
+ #app .flowers-scene.flower-studio .flower-steps{gap:5px!important;margin-top:1px!important}
+ #app .flowers-scene.flower-studio .flower-step{height:26px!important;border-radius:7px!important}
+ #app .flowers-scene.flower-studio .bouquet-display{
+   height:auto!important;min-height:78px!important;flex:1 1 auto;
+   margin:0!important;overflow:hidden;
+ }
+ #app .flowers-scene.flower-studio .bouquet-hint{font-size:14px!important;gap:1px}
+ #app .flowers-scene.flower-studio .bouquet-hint span{font-size:21px}
+ #app .flowers-scene.flower-studio .flower-studio-caption{
+   font-size:7px;letter-spacing:.08em;margin:0;
+ }
+ #app .flowers-scene.flower-studio .flower-bottom{
+   border-radius:22px 22px 0 0!important;border:0!important;
+   padding:clamp(13px,3.1vw,18px) clamp(13px,3.6vw,20px)
+    max(12px,env(safe-area-inset-bottom,0px))!important;
+   box-shadow:0 -11px 28px #071c1940!important;
+   min-height:0!important;height:100%!important;max-height:100%!important;
+ }
+ #app .flowers-scene.flower-studio .shelf-heading{
+   margin:0 0 9px!important;padding-bottom:10px!important;
+   font-size:20px!important;
+ }
+ #app .flowers-scene.flower-studio .shelf-heading small{font-size:8px}
+ #app .flowers-scene.flower-studio .shelf-hint{font-size:8px;max-width:120px}
+ #app .flowers-scene.flower-studio .flower-rail{
+   grid-template-columns:repeat(2,minmax(0,1fr))!important;
+   gap:9px!important;
+ }
+ #app .flowers-scene.flower-studio .flower-option{
+   height:132px!important;padding:6px!important;
+ }
+ #app .flowers-scene.flower-studio .flower-option .option-art{height:calc(100% - 48px)!important}
+ #app .flowers-scene.flower-studio .flower-option-meta{min-height:31px!important}
+ #app .flowers-scene.flower-studio .meaning-line{
+   font-size:11px!important;min-height:37px!important;padding:8px 10px!important;
+ }
+ #app .flowers-scene.flower-studio .flower-editor-footer{padding-top:7px}
+ #app .flowers-scene.flower-studio .flower-controls{margin:7px 0 0!important}
+ #app .flowers-scene.flower-studio .flower-controls button{
+   min-height:36px!important;padding:6px 8px!important;font-size:10px!important;
+ }
+ #app .flowers-scene.flower-studio .bouquet-final{
+   bottom:calc(14px + env(safe-area-inset-bottom,0px))!important;
+ }
+ #app .flowers-scene.flower-studio.is-complete .flower-studio-layout{
+   grid-template-rows:1fr!important;
+ }
+}
+@media(max-width:899px) and (max-height:690px){
+ #app .flowers-scene.flower-studio .flower-studio-layout{
+   grid-template-rows:minmax(0,38%) minmax(0,62%)!important;
+ }
+ #app .flowers-scene.flower-studio .flower-intro p{display:none!important}
+ #app .flowers-scene.flower-studio .flower-status-note small{display:none}
+ #app .flowers-scene.flower-studio .flower-option{height:108px!important}
+ #app .flowers-scene.flower-studio .flower-option .option-art{height:calc(100% - 42px)!important}
+}
+@media(min-width:900px) and (max-height:780px){
+ #app .flowers-scene.flower-studio .flower-option{height:122px!important}
+ #app .flowers-scene.flower-studio .flower-option .option-art{height:calc(100% - 40px)!important}
+ #app .flowers-scene.flower-studio .flower-studio-layout{padding:12px}
+ #app .flowers-scene.flower-studio .flower-studio-preview{padding:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ #app .flowers-scene.flower-studio .flower-option,
+ #app .flowers-scene.flower-studio .flower-step,
+ #app .flowers-scene.flower-studio .flower-studio-background{
+   animation:none!important;transition:none!important;
+ }
+ #app .flowers-scene.flower-studio .flower-option .option-art .botanical{animation:none!important}
+}
+
+/* Reuse the APPROVED Kuwait photo in the scene chooser too, even while
+   Kerala or Bengaluru is active. The same photo is used in the live room. */
+.theme-preview-art[data-theme="story"]{
+ background-image:url('../assets/rooms/maha-kuwait.webp')!important;
+ background-position:center center!important;
+}
+#app .cinematic-room[data-theme="story"][data-kuwait-photo="ready"] .living-photo-image{
+ filter:brightness(var(--scene-exposure,1)) saturate(var(--scene-saturation,1)) contrast(1.065)!important;
+}
+
+/* 2026-11-03: bouquet preview must LOOK planted, not like loose floating stems.
+   Exact 500×580 SVG coordinates shared by bouquet and its glass-vase foreground. */
+#app .flowers-scene.flower-studio .bouquet-growing .studio-vase{
+ position:absolute!important;inset-block:0!important;left:50%!important;right:auto!important;z-index:2;
+ display:block!important;width:100%!important;height:100%!important;
+ max-width:min(100%,570px)!important;max-height:100%!important;
+ transform:translateX(-50%)!important;
+ overflow:visible;pointer-events:none!important;
+ filter:drop-shadow(0 9px 11px #061d204c);
+}
+#app .flowers-scene.flower-studio .bouquet-growing .bouquet-svg{
+ position:relative!important;z-index:1;min-width:0;min-height:0;
+}
+#app .flowers-scene.flower-studio .bouquet-display{
+ isolation:isolate;
+}
+@media(max-width:899px){
+ /* The former 42% preview left scarcely any room for seven full-size blooms.
+    Give bouquet and picker equal importance; scroll only inside the flower palette. */
+ #app .flowers-scene.flower-studio:not(.is-complete) .flower-studio-layout{
+  grid-template-rows:minmax(0,52%) minmax(0,48%)!important;
+ }
+ #app .flowers-scene.flower-studio .flower-studio-preview{
+  min-height:0!important;overflow:hidden!important;
+ }
+ #app .flowers-scene.flower-studio .flower-studio-editor{
+  min-height:0!important;overflow:hidden!important;
+ }
+ #app .flowers-scene.flower-studio .bouquet-display{
+  flex:1 1 auto!important;min-height:0!important;
+ }
+ #app .flowers-scene.flower-studio .flower-browser-v2{
+  min-height:0!important;overflow:hidden!important;
+ }
+ #app .flowers-scene.flower-studio .flower-rail{
+  min-height:0!important;overscroll-behavior:contain!important;
+ }
+}
+@media(max-width:899px) and (max-height:690px){
+ #app .flowers-scene.flower-studio:not(.is-complete) .flower-studio-layout{
+  grid-template-rows:minmax(0,49%) minmax(0,51%)!important;
+ }
+ #app .flowers-scene.flower-studio .flowers-top{gap:4px!important}
+ #app .flowers-scene.flower-studio .studio-edition{display:none!important}
+ #app .flowers-scene.flower-studio .flower-studio-caption{display:none!important}
+ #app .flowers-scene.flower-studio .flower-intro h1{font-size:26px!important}
+ #app .flowers-scene.flower-studio .flower-step{height:23px!important}
+}
+
+/* 2026-11-03 browser QA: legacy flex sizing collapsed the bouquet stage to
+   51px on phones and 90px on PC. Fix the actual layout, not the assertion. */
+#app .flowers-scene.flower-studio .flower-studio-preview{
+ display:grid!important;
+ grid-template-rows:max-content minmax(0,1fr) max-content!important;
+ height:100%!important;min-height:0!important;
+ align-content:stretch!important;overflow:hidden!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview>.flowers-top{
+ grid-row:1!important;min-height:0!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview>.bouquet-display{
+ grid-row:2!important;align-self:stretch!important;
+ height:100%!important;min-height:0!important;
+ flex:none!important;margin:0!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview>.flower-studio-caption{
+ grid-row:3!important;align-self:end!important;
+}
+@media(max-width:899px){
+ #app .flowers-scene.flower-studio:not(.is-complete) .flower-studio-layout{
+  grid-template-rows:minmax(0,55%) minmax(0,45%)!important;
+ }
+ #app .flowers-scene.flower-studio .flower-intro p{
+  display:none!important;
+ }
+ #app .flowers-scene.flower-studio .flowers-top{gap:5px!important}
+ #app .flowers-scene.flower-studio .flower-studio-caption{display:none!important}
+ #app .flowers-scene.flower-studio .flower-studio-preview{
+  grid-template-rows:max-content minmax(0,1fr)!important;
+ }
+}
+@media(max-width:899px) and (max-height:690px){
+ #app .flowers-scene.flower-studio:not(.is-complete) .flower-studio-layout{
+  grid-template-rows:minmax(0,51%) minmax(0,49%)!important;
+ }
+}
+
+/* Desktop+mobile regression: legacy .app-frame .flower-bottom assigned grid-row:2
+   and .bouquet-display assigned grid-column:2. In the new nested studio these
+   rules created *implicit* tracks (1100px editor / zero-height bouquet).
+   Explicitly place each NEW grid child, never inherit old scene coordinates. */
+#app .flowers-scene.flower-studio .flower-studio-layout{
+ grid-template-rows:minmax(0,1fr)!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-layout>.flower-studio-preview{
+ grid-column:1!important;grid-row:1!important;
+ align-self:stretch!important;height:100%!important;min-height:0!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-layout>.flower-studio-editor{
+ grid-column:2!important;grid-row:1!important;
+ align-self:stretch!important;height:100%!important;min-height:0!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview>.flowers-top{
+ grid-column:1!important;grid-row:1!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview>.bouquet-display{
+ grid-column:1!important;grid-row:2!important;
+}
+#app .flowers-scene.flower-studio .flower-studio-preview>.flower-studio-caption{
+ grid-column:1!important;grid-row:3!important;
+}
+@media(max-width:899px){
+ #app .flowers-scene.flower-studio:not(.is-complete) .flower-studio-layout{
+  grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,55%) minmax(0,45%)!important;
+ }
+ #app .flowers-scene.flower-studio .flower-studio-layout>.flower-studio-preview{
+  grid-column:1!important;grid-row:1!important;
+ }
+ #app .flowers-scene.flower-studio .flower-studio-layout>.flower-studio-editor{
+  grid-column:1!important;grid-row:2!important;
+ }
+ #app .flowers-scene.flower-studio.is-complete .flower-studio-layout{
+  grid-template-rows:minmax(0,1fr)!important;
+ }
+}
+@media(max-width:899px) and (max-height:690px){
+ #app .flowers-scene.flower-studio:not(.is-complete) .flower-studio-layout{
+  grid-template-rows:minmax(0,51%) minmax(0,49%)!important;
+ }
+}

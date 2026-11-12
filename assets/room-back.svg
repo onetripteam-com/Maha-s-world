@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" preserveAspectRatio="none">
+ <defs>
+  <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#efe2ce"/><stop offset="1" stop-color="#e2caab"/></linearGradient>
+  <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#c89e80"/><stop offset="1" stop-color="#b97b64"/></linearGradient>
+  <linearGradient id="bed" x2="0" y2="1"><stop stop-color="#efcbb4"/><stop offset="1" stop-color="#ca7e6d"/></linearGradient>
+  <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#b78461"/><stop offset="1" stop-color="#8e5c49"/></linearGradient>
+  <pattern id="wallflower" width="80" height="78" patternUnits="userSpaceOnUse"><path d="M34 25q6-13 12 0q-6 13-12 0m6-7v15m-8-9h17" stroke="#a7a77c" stroke-opacity=".19" stroke-width="1.6" fill="none"/><circle cx="40" cy="25" r="2" fill="#a88b77" opacity=".24"/><circle cx="5" cy="65" r="1.5" fill="#d4ad8c"/></pattern>
+  <pattern id="floorline" width="65" height="65" patternUnits="userSpaceOnUse"><path d="M0 64H65M32 0V64" stroke="#8d5f4d" stroke-opacity=".17" stroke-width="1.2" fill="none"/></pattern>
+ </defs>
+ <rect width="400" height="780" fill="url(#wall)"/><rect width="400" height="516" fill="url(#wallflower)" opacity=".7"/>
+ <path d="M0 500q200-20 400 2v278H0Z" fill="url(#floor)"/><path d="M0 500q200-20 400 2" stroke="#a77d64" stroke-width="8" fill="none"/><path d="M0 508H400" stroke="#f7e3cc" stroke-opacity=".52" stroke-width="3"/>
+ <path d="M0 500h400v280H0Z" fill="url(#floorline)" opacity=".56"/>
+ <!-- faded rug -->
+ <ellipse cx="180" cy="691" rx="154" ry="65" fill="#b76d60" opacity=".5"/><ellipse cx="180" cy="691" rx="137" ry="55" fill="#f3caad" opacity=".65"/><ellipse cx="180" cy="691" rx="124" ry="46" fill="none" stroke="#ba8571" stroke-dasharray="3 6" stroke-width="2.5"/>
+ <!-- framing behind window: the CSS animated sky sits on top of this opening -->
+ <path d="M202 91Q202 50 286 49Q371 52 372 91V339H202Z" fill="#7c9a91" stroke="#ae856a" stroke-width="9"/>
+ <!-- hanging framed vintage travel print, upper left -->
+ <rect x="25" y="177" width="107" height="105" rx="3" fill="#b78a64" stroke="#8f694e" stroke-width="5" transform="rotate(-4 77 225)"/><rect x="32" y="183" width="92" height="89" fill="#f3e5cd" transform="rotate(-4 77 225)"/>
+ <g transform="rotate(-4 77 225)"><path d="M37 245q28-49 43-21 17-37 40-5v47H37Z" fill="#79937b"/><circle cx="102" cy="202" r="10" fill="#e2b775"/><path d="M39 258q36-18 78 0" stroke="#d3be97" fill="none" stroke-width="6"/><text x="78" y="195" font-size="7" font-family="serif" fill="#8b6351" text-anchor="middle" letter-spacing="2">WANDER</text></g>
+ <!-- left narrow storage, books -->
+ <path d="M12 290h145v14H12Z" fill="#92664c"/><path d="M17 303h10v-49h-10zm14 0h12v-42H31zm16 0h9v-55h-9zm13 0h15v-39H60zm19 0h11v-47H79z" fill="#8b9c7a" stroke="#7d7054" stroke-width="1"/><path d="M23 256v47M38 262v41M53 250v53M68 265v38M84 254v50" stroke="#ded2a9" stroke-width="2"/>
+ <rect x="16" y="304" width="145" height="5" fill="#e8bd8f" opacity=".8"/>
+ <!-- shelf clock & trinkets behind tappable radio -->
+ <ellipse cx="135" cy="295" rx="12" ry="3" fill="#856e55" opacity=".4"/><path d="M126 278q7-28 14 0" stroke="#799677" stroke-width="3" fill="none"/><path d="M132 285q-22-8-12-24q18-1 12 24m5-2q25-5 13-22q-18 2-13 22" fill="#799e76"/>
+ <!-- writing desk -->
+ <path d="M21 404q75-10 160 0v20H21Z" fill="url(#wood)" stroke="#865743" stroke-width="3"/><path d="M35 423h13v92H35zm121 0h12v94h-12z" fill="#8f5a46"/><path d="M54 422h96v43H54Z" fill="#ad7455"/><rect x="76" y="440" width="40" height="5" rx="2.5" fill="#dabb91"/><path d="M104 398l22-25 36 23" fill="none" stroke="#917763" stroke-width="2"/>
+ <!-- bedside wainscoting -->
+ <path d="M0 486h400" stroke="#f7d8b6" stroke-width="4" opacity=".6"/>
+ <!-- bed body / pastel fabric -->
+ <path d="M12 569q4-43 37-44h179q33 1 43 39v116q-126 28-255-2Z" fill="#906457"/><path d="M23 565q3-27 30-27h168q30 0 36 29v88q-108 29-236 4Z" fill="url(#bed)"/>
+ <path d="M31 562q48-31 100-14v42H29Z" fill="#f9ead8" stroke="#d7b9a2" stroke-width="3"/><path d="M136 548q50-22 98 5v42h-98Z" fill="#f9e3c7" stroke="#d7b9a2" stroke-width="3"/>
+ <path d="M20 609q124-24 245-2v60q-123 32-244-1Z" fill="#ad725d"/><path d="M20 616q120-17 244-1" fill="none" stroke="#e5a58a" stroke-width="6"/><path d="M20 649q120 16 244-1" fill="none" stroke="#dba48d" stroke-width="2" stroke-dasharray="3 8"/>
+ <path d="M18 667v21m242-20v18" stroke="#785544" stroke-width="10" stroke-linecap="round"/>
+ <!-- right little suitcase -->
+ <rect x="296" y="608" width="78" height="99" rx="10" fill="#a97754" stroke="#78553e" stroke-width="5"/><path d="M318 606v-14q18-13 34 0v14" fill="none" stroke="#86654e" stroke-width="7"/><path d="M311 616v83M355 616v83" stroke="#d6a477" stroke-width="5"/><path d="M296 642h78M296 680h78" stroke="#805b46" stroke-width="2"/><rect x="321" y="648" width="33" height="23" rx="4" fill="#eed7a7" transform="rotate(9 335 656)"/><text x="338" y="663" font-size="8" font-family="serif" text-anchor="middle" fill="#8a6952">GO!</text>
+ <!-- lower corner potted plant -->
+ <path d="M363 754q7-20 8-49M367 737q-12-18-22-21M371 731q24-18 21-31" stroke="#517754" stroke-width="5" fill="none"/><path d="M345 715q-5 20 22 21 0-20-22-21m46-17q-21-3-24 22 22 2 24-22" fill="#7e986d"/><path d="M344 744h50l-8 34h-34Z" fill="#d8a982" stroke="#956d54" stroke-width="3"/>
+</svg>

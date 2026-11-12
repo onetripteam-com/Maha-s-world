@@ -1,0 +1,745 @@
+/* MAHA · LETTERS / THE LITTLE POSTBOX
+   A dedicated ink-and-paper world, not a miniature email application.
+   Intentionally scoped after legacy letter styles so other portal rooms keep
+   their own visuals. Physical envelopes, readable letter sheets, iPhone first. */
+#portal-screen[data-place="letters"]{
+ --post-forest:#18382f;
+ --post-deep:#142b26;
+ --post-ink:#30473b;
+ --post-paper:#fffaf0;
+ --post-ivory:#f5eee0;
+ --post-ochre:#b78356;
+ --post-coral:#b56f59;
+ --post-muted:#7b8e7d;
+}
+#portal-screen[data-place="letters"] .portal-place{
+ background:radial-gradient(ellipse at 9% 14%,#d4c4a035,transparent 39%),
+ radial-gradient(ellipse at 92% 88%,#e1bb8069,transparent 54%),
+ linear-gradient(132deg,#283f33 0%,#525241 44%,#a28364 100%)!important;
+}
+#portal-screen[data-place="letters"] .portal-place:before{
+ background:repeating-linear-gradient(115deg,transparent 0 5px,#f9f1d50b 5px 6px,transparent 6px 23px)!important;
+ opacity:.46!important;pointer-events:none!important;
+}
+#portal-screen[data-place="letters"] .portal-place:after{opacity:.04!important;pointer-events:none}
+#portal-screen[data-place="letters"] .portal-content{
+ overflow:hidden!important;
+}
+#portal-screen[data-place="letters"] .letterbox-app.postroom,
+#portal-screen[data-place="letters"] .letter-reader.postroom-reader{
+ position:relative!important;box-sizing:border-box!important;
+ height:100%!important;min-height:0!important;min-width:0!important;
+ width:100%!important;max-width:1380px!important;margin:0 auto!important;
+ overflow:hidden!important;border:1px solid #fff2d44d!important;border-radius:18px!important;
+ box-shadow:0 22px 72px #0c1d1c69,0 3px 8px #1a201537!important;
+ font-family:Georgia,'Iowan Old Style',serif;color:var(--post-ink);
+}
+#portal-screen[data-place="letters"] .letterbox-app.postroom{
+ display:grid!important;grid-template-columns:minmax(230px,.72fr) minmax(0,1.36fr)!important;
+ grid-template-rows:minmax(0,1fr)!important;background:#f5f0e4!important;
+}
+/* Desk still-life. Drawn with CSS shapes so it stays sharp, lightweight and
+   interactive content remains real HTML rather than text baked in an image. */
+#portal-screen[data-place="letters"] .postroom-side{
+ position:relative;display:flex;flex-direction:column;justify-content:space-between;
+ min-width:0;min-height:0;overflow:hidden;
+ padding:clamp(21px,2.8vw,42px);
+ background:radial-gradient(ellipse at 17% 21%,#61816a36,transparent 48%),
+ radial-gradient(ellipse at 80% 80%,#95886345,transparent 52%),
+ linear-gradient(142deg,#20453b 0%,#17342e 57%,#102b29);
+ color:#f8f0de;
+}
+#portal-screen[data-place="letters"] .postroom-side:before{
+ content:"";pointer-events:none;position:absolute;inset:0;
+ background:repeating-linear-gradient(93deg,#eee4c20a 0 1px,transparent 1px 19px),
+ repeating-linear-gradient(0deg,transparent 0 16px,#112c2523 16px 17px);
+ opacity:.33;
+}
+#portal-screen[data-place="letters"] .postroom-side-top,
+#portal-screen[data-place="letters"] .postroom-side-bottom{
+ position:relative;z-index:2;
+}
+#portal-screen[data-place="letters"] .postroom-side-top{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+#portal-screen[data-place="letters"] .postroom-side-num,
+#portal-screen[data-place="letters"] .postroom-side-foot{
+ font:720 10px/1.4 system-ui,sans-serif;letter-spacing:.18em;color:#d6d8b7;
+}
+#portal-screen[data-place="letters"] .postroom-side-spark{font:28px/1 Georgia,serif;color:#d1ba8c}
+#portal-screen[data-place="letters"] .postroom-side-art{
+ position:relative;display:grid;place-items:center;
+ flex:1 1 auto;min-height:180px;max-height:440px;
+ margin:10px 0;isolation:isolate;
+}
+#portal-screen[data-place="letters"] .postroom-side-halo{
+ position:absolute;width:min(89%,370px);aspect-ratio:1;border-radius:50%;
+ background:radial-gradient(circle,#efdaa145 0 18%,#efdaa10e 55%,transparent 72%);
+ border:1px solid #f7d8ab11;
+ filter:blur(2px);
+}
+#portal-screen[data-place="letters"] .postroom-desk-letter{
+ position:absolute;z-index:1;
+ width:clamp(170px,20vw,295px);height:clamp(195px,24vw,340px);
+ max-width:75%;max-height:80%;
+ transform:translate(8%,-8%) rotate(8deg);
+ background:repeating-linear-gradient(0deg,#f4eada 0 29px,#d1ccc147 30px 31px),
+ linear-gradient(#fffaf0,#f0e3d0);
+ background-blend-mode:multiply;
+ border:1px solid #d4bda2;
+ box-shadow:0 17px 23px #0a1e1b60,1px 1px 1px #fffaef;
+}
+#portal-screen[data-place="letters"] .postroom-desk-letter:after{
+ content:"";position:absolute;left:15%;right:14%;top:20%;height:30%;
+ background:repeating-linear-gradient(0deg,#5367535b 0 1px,transparent 1px 17px);
+ opacity:.55;transform:rotate(-.5deg);
+}
+#portal-screen[data-place="letters"] .postroom-desk-envelope{
+ position:absolute;z-index:3;display:block;
+ width:clamp(158px,18vw,270px);max-width:73%;aspect-ratio:1.52;
+ transform:translate(-17%,27%) rotate(-13deg);
+ background:linear-gradient(140deg,#f8e5c5,#dbb992);
+ border:1px solid #b98e69;
+ box-shadow:0 18px 24px #091b1a84,inset 0 0 0 2px #fff3df55;
+}
+#portal-screen[data-place="letters"] .postroom-desk-envelope:before,
+#portal-screen[data-place="letters"] .postroom-desk-envelope:after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+}
+#portal-screen[data-place="letters"] .postroom-desk-envelope:before{
+ background:#f0d1ab;clip-path:polygon(0 0,100% 0,50% 54%);
+ filter:drop-shadow(0 1px 1px #907159);
+}
+#portal-screen[data-place="letters"] .postroom-desk-envelope:after{
+ background:linear-gradient(130deg,#e5c6a4,#f8e6c6);
+ clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%);
+ opacity:.87;
+}
+#portal-screen[data-place="letters"] .postroom-desk-seal{
+ position:absolute;z-index:5;left:50%;top:58%;
+ width:clamp(33px,4.2vw,53px);height:clamp(33px,4.2vw,53px);
+ display:grid;place-items:center;transform:translate(-55%,18%) rotate(-12deg);
+ border-radius:47% 53% 49% 51%;border:2px solid #dba68a;
+ box-shadow:inset 0 0 0 3px #843c3b,inset -4px -4px 10px #6e3037,0 5px 9px #1422186b;
+ background:#a3524a;color:#f5dec0;font:italic 22px Georgia,serif;
+}
+#portal-screen[data-place="letters"] .postroom-desk-flower{
+ position:absolute;z-index:5;right:2%;top:10%;
+ font:clamp(40px,6vw,90px)/1 Georgia,serif;color:#dfc6a0;
+ opacity:.8;text-shadow:0 7px 12px #081b1255;
+ animation:postroom-slow-sway 7s ease-in-out infinite alternate;
+}
+#portal-screen[data-place="letters"] .postroom-side-title{
+ display:block;font:400 clamp(27px,3.2vw,45px)/1.08 Georgia,serif;
+ letter-spacing:-.055em;color:#fef8e7;text-wrap:balance;
+}
+#portal-screen[data-place="letters"] .postroom-side-title i{font-weight:400;color:#d9c7a2}
+#portal-screen[data-place="letters"] .postroom-side-bottom p{
+ max-width:28ch;margin:14px 0 24px;color:#d6e3d4;
+ font:400 13px/1.65 system-ui,sans-serif;
+}
+#portal-screen[data-place="letters"] .postroom-side-rule{
+ display:block;height:1px;background:#e7d5b85a;margin:0 0 16px;
+}
+/* The actual shelves: flat readable surfaces with a sewn-paper warmth. */
+#portal-screen[data-place="letters"] .postroom-library{
+ min-width:0;min-height:0;display:flex;flex-direction:column;overflow:hidden;
+ background:linear-gradient(110deg,#fdf9f0 0%,#f1ecdf 100%);
+}
+#portal-screen[data-place="letters"] .postroom .mail-heading{
+ padding:clamp(20px,2.8vw,37px) clamp(20px,3.1vw,45px) 17px!important;
+ background:linear-gradient(112deg,#fdf9ef,#f5efe2 80%)!important;
+ flex:0 0 auto;min-width:0;
+}
+#portal-screen[data-place="letters"] .postroom .mail-postmark{
+ display:flex;align-items:center;gap:7px;
+ font:750 9px/1.45 system-ui,sans-serif!important;
+ letter-spacing:.17em!important;color:#777b61!important;
+ white-space:normal;min-width:0;
+}
+#portal-screen[data-place="letters"] .postroom-mark{font:19px/1 Georgia,serif;color:#a36f50}
+#portal-screen[data-place="letters"] .postroom-edition{margin-left:auto;font-size:9px;color:#a08e76}
+#portal-screen[data-place="letters"] .postroom .mail-header-row{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;
+}
+#portal-screen[data-place="letters"] .postroom .mail-header-row h1{
+ font:400 clamp(36px,3.6vw,58px)/.99 Georgia,serif!important;
+ letter-spacing:-.064em!important;color:#203f34!important;margin:0 0 9px!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-header-row h1 em{
+ color:#a9705a!important;font-weight:400;
+}
+#portal-screen[data-place="letters"] .postroom .mail-heading p{
+ color:#68786d!important;
+ font:italic clamp(13px,1vw,16px)/1.4 Georgia,serif!important;margin:0!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-mini-stamp{
+ position:relative;display:flex;flex-direction:column;gap:0;align-items:center;justify-content:center;
+ width:71px;height:77px;flex:0 0 71px;background:#fbf7e9!important;
+ border:1px dashed #b47a61!important;outline:2px solid #b47a6159!important;
+ outline-offset:4px!important;transform:rotate(9deg);
+ box-shadow:1px 3px 9px #4e3a3019!important;color:#a66c57;
+}
+#portal-screen[data-place="letters"] .postroom .mail-mini-stamp span,
+#portal-screen[data-place="letters"] .postroom .mail-mini-stamp small{
+ font:780 8px/1.2 system-ui,sans-serif;letter-spacing:.16em;color:#91604d;
+}
+#portal-screen[data-place="letters"] .postroom .mail-mini-stamp svg{width:33px;height:34px;flex:0 0 34px}
+#portal-screen[data-place="letters"] .postroom .mail-tabs{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ flex:0 0 auto!important;margin:0!important;
+ min-height:66px!important;padding:0 clamp(14px,2.5vw,38px)!important;
+ border:0!important;border-top:1px solid #bcaf9a42!important;
+ border-bottom:1px solid #b2ac9773!important;
+ background:#eae5d9!important;gap:5px;
+}
+#portal-screen[data-place="letters"] .postroom .mail-tabs button{
+ display:flex!important;gap:8px;align-items:center;justify-content:center;
+ position:relative;min-width:0;min-height:58px!important;
+ padding:10px 6px!important;background:transparent!important;border:0!important;
+ border-radius:0!important;box-shadow:none!important;
+ color:#647469!important;font:700 clamp(11px,1vw,13px)/1.2 system-ui,sans-serif!important;
+ letter-spacing:0!important;white-space:nowrap;cursor:pointer;
+}
+#portal-screen[data-place="letters"] .postroom .mail-tabs button[aria-current="page"]{
+ color:#214735!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-tabs button[aria-current="page"]:after{
+ content:"";position:absolute;left:18%;right:18%;bottom:-1px;
+ height:3px;border-radius:5px 5px 0 0;background:#a97159;
+}
+#portal-screen[data-place="letters"] .postroom .mail-tabs button:focus-visible,
+#portal-screen[data-place="letters"] .postroom .mail-row:focus-visible{
+ outline:2px solid #b77859!important;outline-offset:-3px!important;
+}
+#portal-screen[data-place="letters"] .postroom-nav-icon{
+ width:19px;height:19px;flex:0 0 19px;
+}
+#portal-screen[data-place="letters"] .postroom-tab-count{
+ display:inline-grid;place-items:center;flex:0 0 auto;
+ min-width:21px;height:21px;padding:0 4px;
+ border:1px solid #b9bcaa;border-radius:99px;
+ color:#66776a;font:750 10px/1 system-ui,sans-serif;
+}
+#portal-screen[data-place="letters"] .postroom .mail-tabs button[aria-current="page"] .postroom-tab-count{
+ background:#d5e0d1;color:#244f39;border-color:#d5e0d1;
+}
+#portal-screen[data-place="letters"] .postroom .mail-scroll{
+ flex:1 1 auto;min-height:0;min-width:0;
+ overflow-y:auto!important;overflow-x:hidden!important;
+ padding:clamp(18px,2.4vw,32px) clamp(17px,3vw,41px) 36px!important;
+ background:linear-gradient(130deg,#fffdf7bb,#f2ebdd85);
+ overscroll-behavior:contain;scrollbar-color:#bac2b2 transparent;
+ -webkit-overflow-scrolling:touch;
+}
+#portal-screen[data-place="letters"] .postroom .mail-inbox-list,
+#portal-screen[data-place="letters"] .postroom .when-collection,
+#portal-screen[data-place="letters"] .postroom .mail-keepsakes{
+ display:block!important;min-height:0!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-section-caption{
+ display:flex!important;grid-column:auto!important;
+ justify-content:space-between;align-items:flex-end;gap:16px;
+ margin:0 0 22px!important;padding:0!important;
+ color:#294b3f!important;
+}
+#portal-screen[data-place="letters"] .postroom-section-kicker{
+ display:block;font:750 9px/1.5 system-ui,sans-serif!important;
+ letter-spacing:.19em;color:#a57156!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-section-caption h2{
+ margin:6px 0 7px;color:#224537;
+ font:400 clamp(29px,2.5vw,40px)/1.05 Georgia,serif;letter-spacing:-.055em;
+}
+#portal-screen[data-place="letters"] .postroom .mail-section-caption h2 em{color:#a36b54;font-weight:400}
+#portal-screen[data-place="letters"] .postroom .mail-section-caption p{
+ font:400 12px/1.5 system-ui,sans-serif;color:#7a8175;margin:0;
+}
+#portal-screen[data-place="letters"] .postroom-section-count{
+ white-space:nowrap;border:1px solid #c6c0ac;border-radius:99px;padding:7px 11px;
+ color:#738174!important;font:650 10px system-ui,sans-serif!important;
+ letter-spacing:0!important;
+}
+#portal-screen[data-place="letters"] .postroom-letter-grid,
+#portal-screen[data-place="letters"] .postroom .when-bundle{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:12px!important;min-height:0;padding:2px 0 12px!important;
+}
+#portal-screen[data-place="letters"] .postroom .when-clip{margin:0!important;padding:0!important;position:relative;min-width:0}
+#portal-screen[data-place="letters"] .postroom .when-symbol{
+ display:none!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-row.postroom-letter{
+ display:flex!important;position:relative;isolation:isolate;
+ align-items:center;gap:13px;
+ box-sizing:border-box;width:100%;min-height:151px!important;height:auto;
+ padding:24px 14px 17px!important;margin:0!important;
+ border:1px solid #d8d0bb!important;border-radius:11px!important;
+ background:linear-gradient(135deg,#fffdf8 5%,#f5eddd 100%)!important;
+ box-shadow:0 6px 15px #5a534118,0 1px 0 #ffffff inset!important;
+ color:#263e33!important;transform:none!important;
+ cursor:pointer;
+ transition:transform .24s cubic-bezier(.2,.77,.24,1),box-shadow .24s ease,border-color .24s ease!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-row.postroom-letter:hover{
+ border-color:#b99d7d!important;transform:translateY(-3px)!important;
+ box-shadow:0 12px 25px #51463228!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-row.postroom-letter:active{
+ transform:translateY(1px) scale(.99)!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-row.is-sealed{
+ background:linear-gradient(135deg,#f1eadd,#e9e0d1)!important;
+}
+#portal-screen[data-place="letters"] .postroom-letter-index{
+ position:absolute;left:13px;top:10px;
+ color:#b7a78f;font:720 9px/1 system-ui,sans-serif;letter-spacing:.13em;
+}
+#portal-screen[data-place="letters"] .postroom .mail-envelope{
+ flex:0 0 89px!important;width:89px!important;height:65px!important;
+ transform:none!important;margin:6px 0 0;
+ perspective:300px;
+}
+#portal-screen[data-place="letters"] .postroom .mail-envelope .mail-flap{
+ background:#e6c8a5!important;top:2px;height:38px;
+}
+#portal-screen[data-place="letters"] .postroom .mail-envelope .mail-front{
+ background:linear-gradient(138deg,#ead2b3,#fff0d4)!important;
+ inset:15px 0 0;border:1px solid #d1b08f;
+}
+#portal-screen[data-place="letters"] .postroom .mail-envelope .mail-insert{
+ background:#fffdf6!important;left:9px;right:9px;border-color:#dcc1a1;
+}
+#portal-screen[data-place="letters"] .postroom .mail-envelope .mail-wax{
+ left:36px;top:33px;width:20px;height:20px;
+ color:#f6e6cb;background:#a65d53;border:1px solid #d49c81;
+}
+#portal-screen[data-place="letters"] .postroom .mail-row-words{
+ display:flex;flex:1 1 auto;min-width:0;flex-direction:column;gap:6px;
+}
+#portal-screen[data-place="letters"] .postroom .mail-sender{
+ color:#9b805f;font:750 9px/1.35 system-ui,sans-serif!important;
+ letter-spacing:.12em!important;text-transform:uppercase;white-space:normal;
+}
+#portal-screen[data-place="letters"] .postroom .mail-subject{
+ color:#284638;font:650 clamp(16px,1.2vw,19px)/1.2 system-ui,sans-serif!important;
+ letter-spacing:-.034em;overflow-wrap:anywhere;
+}
+#portal-screen[data-place="letters"] .postroom .mail-preview{
+ color:#7a806f;font:400 11px/1.5 system-ui,sans-serif!important;
+ display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+#portal-screen[data-place="letters"] .postroom .mail-status{
+ gap:7px;color:#647e66;
+ font:700 10px/1.4 system-ui,sans-serif!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-status.status-locked{color:#a16c5c}
+#portal-screen[data-place="letters"] .postroom .mail-status .marigold-dot{
+ width:6px;height:6px;box-shadow:0 0 0 3px #e7d1a85b;
+}
+#portal-screen[data-place="letters"] .postroom .mail-row-edge{
+ position:absolute;right:12px;top:11px;font:720 10px/1 system-ui,sans-serif;
+ color:#b17f5f!important;letter-spacing:.1em;
+}
+#portal-screen[data-place="letters"] .postroom .mail-opening{
+ animation:postroom-pickup .58s cubic-bezier(.2,.7,.23,1) both!important;
+ z-index:5;
+}
+#portal-screen[data-place="letters"] .postroom .mail-opening .mail-flap{
+ animation:mail-flap-open .43s cubic-bezier(.3,.65,.27,1) both!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-opening .mail-insert{
+ animation:mail-slip-open .48s .1s cubic-bezier(.19,.76,.18,1) both!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-inbox-list .away-shelf{
+ grid-column:1/-1;margin:0 0 15px;border-radius:8px;
+ background:#eae5d2;border:1px solid #d8ccaf;
+}
+#portal-screen[data-place="letters"] .postroom .mail-bottom-invite{
+ padding:15px 0 6px!important;margin:12px 0 0!important;
+ background:transparent!important;gap:7px;
+}
+#portal-screen[data-place="letters"] .postroom .mail-bottom-invite span{
+ color:#87917d;font:italic 14px Georgia,serif;
+}
+#portal-screen[data-place="letters"] .postroom .mail-play-button{
+ border:1px solid #b8c4b1;background:#eff2e8!important;color:#436b4f!important;
+ border-radius:99px!important;min-height:44px!important;padding:10px 17px!important;
+ font:700 11px system-ui,sans-serif!important;
+}
+#portal-screen[data-place="letters"] .postroom .mail-draft-note{
+ margin:6px 0 15px;padding:5px 0;color:#818879;font:italic 14px/1.5 Georgia,serif;
+}
+#portal-screen[data-place="letters"] .postroom .mail-keepsake-empty{
+ grid-column:1/-1;display:grid;justify-items:center;text-align:center;
+ padding:28px 18px;background:#f9f4e8;border:1px dashed #c9b9a0;border-radius:12px;
+ color:#647564;font:italic 16px Georgia,serif;
+}
+#portal-screen[data-place="letters"] .postroom .mail-keepsake-empty span{font:34px Georgia,serif;color:#bd937a}
+#portal-screen[data-place="letters"] .postroom .mail-keepsake-empty h3{
+ color:#344f3c;font:400 24px/1.2 Georgia,serif;margin:6px 0;
+}
+#portal-screen[data-place="letters"] .postroom .mail-keepsake-empty p{
+ color:#7a8073;font:400 13px/1.5 system-ui,sans-serif;margin:0;
+}
+#portal-screen[data-place="letters"] .postroom .future-note{
+ margin:26px 2px 20px;min-height:210px;
+ padding:25px clamp(17px,2vw,30px)!important;
+ border:1px solid #d6c7ac!important;border-radius:10px!important;
+ box-shadow:0 7px 22px #6d604b22!important;transform:none!important;
+ background:linear-gradient(90deg,transparent 0 33px,#d6a99c73 33px 34px,transparent 34px),
+ repeating-linear-gradient(0deg,#fff9eb 0 33px,#e3dcd0 34px 35px)!important;
+}
+#portal-screen[data-place="letters"] .postroom .future-note-pin{right:20px;top:14px;color:#a27b5a}
+#portal-screen[data-place="letters"] .postroom .future-note h2{
+ color:#375241;font:400 30px/1.1 Georgia,serif;margin:7px 0 9px;
+}
+#portal-screen[data-place="letters"] .postroom .future-note p{
+ font:400 12px/1.55 system-ui,sans-serif;color:#7a806f;
+}
+#portal-screen[data-place="letters"] .postroom .future-note textarea{
+ min-height:118px;resize:vertical;width:100%;background:transparent;
+ padding:8px 3px;line-height:1.7;font:16px/1.7 Georgia,serif;color:#435144;
+ border:0;outline:0;
+}
+#portal-screen[data-place="letters"] .postroom .future-save-indicator{
+ color:#60816a;font:650 10px system-ui,sans-serif;
+}
+#portal-screen[data-place="letters"] .postroom .mail-footer{
+ background:#e9e6db;border-top:1px solid #d7ccb7;min-height:47px;
+}
+/* Reading room — single paper sheet, stationary controls, good typography. */
+#portal-screen[data-place="letters"] .letter-reader.postroom-reader{
+ display:flex!important;flex-direction:column!important;
+ max-width:1020px!important;overflow:hidden!important;
+ background:radial-gradient(ellipse at 50% 25%,#57746936,transparent 60%),#1b3931!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-navigation{
+ display:flex;flex:0 0 60px!important;min-height:60px;align-items:center;
+ justify-content:space-between;gap:13px;padding:8px clamp(16px,3vw,30px)!important;
+ border-bottom:1px solid #e2e0c527!important;
+ color:#f0ecd9;background:#15322d;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-navigation button{
+ min-height:44px;padding:9px 13px!important;
+ background:#f5eadc19;border:1px solid #fff5de38;border-radius:10px;
+ color:#f9ecd9!important;font:700 12px system-ui,sans-serif!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-privacy{
+ font:700 9px/1.3 system-ui,sans-serif;letter-spacing:.16em;color:#d3d8c4;
+}
+#portal-screen[data-place="letters"] .postroom-reader-stage{
+ position:relative;display:flex;flex:1;min-height:0;
+ justify-content:center;overflow:hidden;padding:clamp(13px,2vh,23px) clamp(11px,3vw,45px);
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-paper{
+ position:relative;z-index:2;flex:0 1 800px!important;
+ width:100%!important;min-width:0!important;min-height:0!important;
+ overflow-y:auto!important;overflow-x:hidden!important;
+ padding:clamp(30px,4vw,62px) clamp(24px,5vw,68px)!important;
+ color:#4f5447;
+ background:linear-gradient(90deg,#dbc9a93b 0 1%,transparent 5% 95%,#dfc7a32f 99%),
+ linear-gradient(142deg,#fffef6 0%,#faf4e9 87%,#eee0cb 100%)!important;
+ border:1px solid #d4c6a8;border-radius:3px;
+ box-shadow:0 10px 24px #092a275a,0 2px 3px #04221b2e!important;
+ -webkit-overflow-scrolling:touch;user-select:text;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-tape{
+ position:absolute;top:0;left:calc(50% - 35px);width:70px;height:18px;
+ transform:rotate(-2deg);background:#bea677a3;opacity:.45;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-intro h1{
+ font:400 clamp(30px,3.2vw,48px)/1.08 Georgia,serif!important;
+ letter-spacing:-.05em;color:#2d5040!important;
+ margin:13px 0 26px!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-dateline{
+ color:#a17e66;font:750 10px/1.4 system-ui,sans-serif;letter-spacing:.13em;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-page{
+ margin:0 0 26px;min-height:0!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .letter-verse{
+ color:#4b574c!important;
+ font:400 clamp(17px,1.7vw,20px)/1.82 Georgia,'Iowan Old Style',serif!important;
+ letter-spacing:.004em;
+}
+#portal-screen[data-place="letters"] .postroom-reader .letter-verse p{
+ margin:0 0 22px!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-postscript{
+ color:#9d6b57;font:italic 16px/1.65 Georgia,serif;
+}
+#portal-screen[data-place="letters"] .postroom-reader-signoff{
+ text-align:center;margin:34px 0 0;color:#b2a080;
+ font:700 9px/1.5 system-ui,sans-serif;letter-spacing:.2em;
+}
+#portal-screen[data-place="letters"] .postroom-reader-signoff span{
+ display:block;font:22px/1 Georgia,serif;margin-bottom:7px;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-bottom{
+ display:flex;flex:0 0 auto!important;min-height:72px!important;
+ align-items:center;gap:11px;padding:10px clamp(10px,3vw,25px)!important;
+ background:#19392f!important;border-top:1px solid #cfddc138!important;
+ color:#f2f0df;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-pagination{
+ display:flex;flex:1;align-items:center;gap:9px;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-pagination button{
+ min-height:44px;min-width:82px;padding:9px 12px!important;
+ background:#f7f1e8!important;border:1px solid #d5c6af!important;border-radius:8px!important;
+ color:#3b5b47!important;font:750 12px system-ui,sans-serif!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-pagination button:disabled{opacity:.35}
+#portal-screen[data-place="letters"] .postroom-reader .reader-page-index{
+ color:#e4e3ca;font:650 12px system-ui,sans-serif;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-heart{
+ display:flex;align-items:center;justify-content:center;gap:6px;
+ min-width:143px;min-height:44px;padding:9px 12px!important;
+ border:1px solid #e0c9ad!important;border-radius:8px!important;
+ background:#ead0aa!important;color:#3a593e!important;
+ font:730 12px system-ui,sans-serif!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-heart.is-kept{
+ background:#d9e5d5!important;border-color:#99b1a3!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .postroom-bookmark-icon svg{
+ width:16px;height:16px;vertical-align:middle;
+}
+#portal-screen[data-place="letters"] .postroom-reader .handwritten-controls,
+#portal-screen[data-place="letters"] .postroom-reader .handwriting-zoom{
+ gap:7px;
+}
+#portal-screen[data-place="letters"] .postroom-reader .handwriting-viewport{max-height:48dvh}
+#portal-screen[data-place="letters"] .postroom-reader .reader-paper.page-turn-forward{
+ animation:postroom-page-forward .24s ease both;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-paper.page-turn-back{
+ animation:postroom-page-back .24s ease both;
+}
+@keyframes postroom-page-forward{to{opacity:.55;transform:translateX(-14px) rotateY(-4deg)}}
+@keyframes postroom-page-back{to{opacity:.55;transform:translateX(14px) rotateY(4deg)}}
+@keyframes postroom-pickup{50%{transform:translateY(-6px) scale(1.014)}to{transform:translateY(-2px) scale(1.01)}}
+@keyframes postroom-slow-sway{from{transform:rotate(-6deg) translateY(4px)}to{transform:rotate(8deg) translateY(-5px)}}
+@media(min-width:760px) and (max-width:1050px){
+ #portal-screen[data-place="letters"] .letterbox-app.postroom{
+  grid-template-columns:minmax(210px,.62fr) minmax(0,1.38fr)!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .postroom-letter-grid,
+ #portal-screen[data-place="letters"] .postroom .when-bundle{
+  grid-template-columns:minmax(0,1fr)!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-side-title{font-size:30px}
+}
+@media(max-width:759px){
+ #portal-screen[data-place="letters"] .portal-content{
+  width:100%!important;left:0!important;right:0!important;transform:none!important;
+  top:calc(56px + env(safe-area-inset-top,0px))!important;
+  bottom:0!important;padding:0!important;
+ }
+ #portal-screen[data-place="letters"] .letterbox-app.postroom,
+ #portal-screen[data-place="letters"] .letter-reader.postroom-reader{
+  width:100%!important;max-width:none!important;height:100%!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+ }
+ #portal-screen[data-place="letters"] .letterbox-app.postroom{
+  display:block!important;background:#f8f3e9!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-side{display:none!important}
+ #portal-screen[data-place="letters"] .postroom-library{height:100%!important;width:100%!important}
+ #portal-screen[data-place="letters"] .postroom .mail-heading{
+  padding:14px 17px 14px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-postmark{
+  font-size:8px!important;gap:6px!important;letter-spacing:.13em!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-edition{display:none}
+ #portal-screen[data-place="letters"] .postroom .mail-header-row{margin-top:9px}
+ #portal-screen[data-place="letters"] .postroom .mail-header-row h1{
+  font-size:clamp(34px,8.6vw,43px)!important;line-height:1.02!important;margin-bottom:6px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-heading p{
+  font-size:13px!important;line-height:1.35!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-mini-stamp{
+  width:48px!important;height:53px!important;flex-basis:48px!important;
+  outline-offset:2px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-mini-stamp svg{width:20px;height:22px;flex-basis:22px}
+ #portal-screen[data-place="letters"] .postroom .mail-mini-stamp span,
+ #portal-screen[data-place="letters"] .postroom .mail-mini-stamp small{font-size:6px!important}
+ #portal-screen[data-place="letters"] .postroom .mail-tabs{
+  padding:0 9px!important;gap:1px!important;min-height:57px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-tabs button{
+  gap:5px!important;min-height:56px!important;padding:7px 4px!important;
+  font-size:clamp(10px,3vw,12px)!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-nav-icon{
+  width:16px!important;height:16px!important;flex-basis:16px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-tab-count{
+  min-width:17px!important;height:17px!important;font-size:9px!important;padding:0 3px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-scroll{
+  padding:16px 15px calc(28px + env(safe-area-inset-bottom,0px))!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-section-caption{
+  margin:0 0 17px!important;align-items:flex-start;gap:8px;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-section-caption h2{
+  font-size:clamp(25px,7vw,33px)!important;letter-spacing:-.05em;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-section-caption p{font-size:11px!important}
+ #portal-screen[data-place="letters"] .postroom-section-count{font-size:9px!important;padding:6px 9px;white-space:nowrap}
+ #portal-screen[data-place="letters"] .postroom .postroom-letter-grid,
+ #portal-screen[data-place="letters"] .postroom .when-bundle{
+  grid-template-columns:minmax(0,1fr)!important;gap:10px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-row.postroom-letter{
+  min-height:131px!important;padding:20px 12px 13px!important;gap:13px!important;
+  border-radius:10px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-envelope{
+  flex-basis:74px!important;width:74px!important;height:58px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-envelope .mail-flap{height:33px}
+ #portal-screen[data-place="letters"] .postroom .mail-envelope .mail-wax{left:28px;top:28px}
+ #portal-screen[data-place="letters"] .postroom .mail-row-words{gap:5px}
+ #portal-screen[data-place="letters"] .postroom .mail-sender{
+  font-size:8px!important;letter-spacing:.09em!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-subject{
+  font-size:15px!important;line-height:1.21!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-preview{
+  font-size:11px!important;line-height:1.38!important;-webkit-line-clamp:2;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-status{font-size:10px!important}
+ #portal-screen[data-place="letters"] .postroom .future-note{
+  margin:18px 0 10px;padding:20px 17px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-navigation{
+  flex-basis:54px!important;min-height:54px;padding:6px 12px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-navigation button{
+  min-height:41px!important;font-size:11px!important;padding:9px 11px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-privacy{
+  font-size:8px!important;letter-spacing:.07em!important;text-align:right;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader-stage{
+  padding:10px 10px 8px!important;min-height:0!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-paper{
+  padding:29px 23px 25px!important;
+  border-radius:5px;max-width:100%!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-intro h1{
+  font-size:clamp(29px,8vw,38px)!important;margin:11px 0 22px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .letter-verse{
+  font-size:clamp(16px,4.25vw,19px)!important;line-height:1.7!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-bottom{
+  min-height:67px!important;padding:8px 9px calc(8px + env(safe-area-inset-bottom,0px))!important;
+  gap:6px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-pagination{
+  gap:4px!important;min-width:0;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-pagination button{
+  min-width:0!important;min-height:41px!important;padding:9px 7px!important;font-size:10px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-page-index{
+  font-size:10px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom-reader .reader-heart{
+  min-width:104px!important;min-height:41px!important;padding:8px 7px!important;
+  font-size:10px!important;white-space:nowrap!important;
+ }
+}
+@media(max-width:360px){
+ #portal-screen[data-place="letters"] .postroom .mail-tabs button{gap:3px!important;font-size:10px!important}
+ #portal-screen[data-place="letters"] .postroom-tab-count{min-width:15px!important}
+ #portal-screen[data-place="letters"] .postroom .mail-envelope{
+  flex-basis:61px!important;width:61px!important;height:49px!important;
+ }
+ #portal-screen[data-place="letters"] .postroom .mail-envelope .mail-flap{height:29px}
+ #portal-screen[data-place="letters"] .postroom .mail-envelope .mail-wax{left:23px;top:25px}
+ #portal-screen[data-place="letters"] .postroom .mail-row.postroom-letter{gap:10px!important}
+}
+@media(max-height:690px) and (max-width:759px){
+ #portal-screen[data-place="letters"] .postroom .mail-heading{padding:10px 15px!important}
+ #portal-screen[data-place="letters"] .postroom .mail-header-row h1{font-size:31px!important}
+ #portal-screen[data-place="letters"] .postroom .mail-tabs{min-height:51px!important}
+ #portal-screen[data-place="letters"] .postroom .mail-tabs button{min-height:50px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen[data-place="letters"] .postroom *,
+ #portal-screen[data-place="letters"] .postroom *:before,
+ #portal-screen[data-place="letters"] .postroom *:after,
+ #portal-screen[data-place="letters"] .postroom-reader *,
+ #portal-screen[data-place="letters"] .postroom-reader *:before,
+ #portal-screen[data-place="letters"] .postroom-reader *:after{
+  animation:none!important;transition:none!important;
+ }
+}
+
+/* FULL-HEIGHT LETTER WORLD: the old generic rule
+   #portal-screen .portal-content{position:relative} had accidentally replaced
+   the absolute portal frame. As a result the reader was only as tall as its
+   text, leaving 250–300px of bare background beneath the controls.
+   Give THIS portal a bounded stage without changing any other destination. */
+#portal-screen[data-place="letters"] .portal-place > .portal-content{
+ position:absolute!important;
+ box-sizing:border-box!important;
+ top:calc(61px + env(safe-area-inset-top,0px))!important;
+ bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;
+ left:50%!important;right:auto!important;
+ width:min(calc(100% - 42px),1430px)!important;max-width:none!important;
+ height:auto!important;max-height:none!important;min-height:0!important;
+ padding:0 14px!important;
+ transform:translateX(-50%)!important;
+}
+@media(max-width:759px){
+ #portal-screen[data-place="letters"] .portal-place > .portal-content{
+  top:calc(57px + env(safe-area-inset-top,0px))!important;
+  bottom:0!important;left:0!important;right:0!important;
+  width:100%!important;height:auto!important;max-height:none!important;
+  padding:0!important;transform:none!important;
+ }
+}
+
+/* Botanical stationery, not an empty white scroll panel.
+   A single softly printed original ink sprig, with the sign-off at the foot of
+   short pages. Longer handwritten and typed pages still scroll normally. */
+#portal-screen[data-place="letters"] .postroom-reader .reader-paper{
+ display:flex!important;
+ flex-direction:column!important;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-paper::after{
+ content:"";position:absolute;z-index:0;
+ width:clamp(115px,17vw,190px);height:clamp(150px,22vw,245px);
+ right:clamp(12px,3vw,40px);bottom:clamp(34px,5vh,65px);
+ background:url('../assets/letters/ink-sprig.svg') center / contain no-repeat;
+ opacity:.18;pointer-events:none;
+}
+#portal-screen[data-place="letters"] .postroom-reader .reader-intro,
+#portal-screen[data-place="letters"] .postroom-reader .reader-page,
+#portal-screen[data-place="letters"] .postroom-reader .reader-postscript,
+#portal-screen[data-place="letters"] .postroom-reader .reader-malayalam{
+ position:relative;z-index:1;flex:0 0 auto;
+}
+#portal-screen[data-place="letters"] .postroom-reader .postroom-reader-signoff{
+ position:relative;z-index:1;
+ flex:0 0 auto;margin-top:auto!important;
+ padding:35px 0 0!important;
+}
+@media(max-width:759px){
+ #portal-screen[data-place="letters"] .postroom-reader .reader-paper::after{
+  width:123px;height:170px;right:11px;bottom:49px;opacity:.14;
+ }
+}

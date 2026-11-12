@@ -1,0 +1,235 @@
+/* MAHA · The florist, the moving room and the little courier.
+   One final scoped layer, without changing storage keys or portal interactions. */
+
+/* A real handheld camera: drag directly, ease only after release. */
+@media(max-width:759px){
+ .cinematic-room .inhabited-room{touch-action:pan-y!important;overscroll-behavior-x:contain}
+ #app .cinematic-room[data-room-photo-scene="original"] .living-photo-plane{
+   transform:translate3d(calc(-50% + var(--photo-pan-px,0px)),-50%,0)!important;
+   transition:transform 680ms cubic-bezier(.16,.8,.16,1)!important;
+   backface-visibility:hidden;will-change:transform;
+ }
+ #app .cinematic-room[data-room-photo-scene="original"] .living-photo-plane.room-is-dragging{
+   transition:none!important;
+ }
+ .cinematic-room .living-photo-plane .living-photo-image{-webkit-user-drag:none;user-select:none}
+}
+
+/* The same chosen seven blooms belong to ALL three photographed homes.
+   Their photographed ceramic is part of each room's native artwork. */
+#app .cinematic-room[data-room-photo-scene="original"] .photographed-vase-flowers{
+ display:block!important;visibility:visible!important;
+ opacity:.96!important;z-index:9!important;pointer-events:none!important;
+ width:9.928%!important;height:13.284%!important;
+ filter:saturate(.74) contrast(.98) brightness(.95) drop-shadow(0 2px 2px #241d164b)!important;
+ mix-blend-mode:normal;transform-origin:50% 90%;
+}
+#app .cinematic-room[data-theme="story"] .photographed-vase-flowers{
+ left:51.555%!important;top:50.903%!important;
+}
+#app .cinematic-room[data-theme="kerala"] .photographed-vase-flowers{
+ left:49.5%!important;top:53.4%!important;
+}
+#app .cinematic-room[data-theme="bengaluru"] .photographed-vase-flowers{
+ left:51.6%!important;top:50.2%!important;
+}
+#app .cinematic-room[data-theme="kerala"] .photo-flower-heads,
+#app .cinematic-room[data-theme="bengaluru"] .photo-flower-heads{
+ filter:drop-shadow(0 2px 3px #2a241b70);
+}
+#app .cinematic-room[data-theme="kerala"] .photographed-vase-flowers{filter:saturate(.8) brightness(.85) drop-shadow(0 2px 2px #121e134f)!important}
+#app .cinematic-room[data-theme="bengaluru"] .photographed-vase-flowers{filter:saturate(.83) brightness(.94) drop-shadow(0 2px 2px #351e224f)!important}
+
+/* An illustrated blue humpback courier, never an indistinct blue blob.
+   Butterflies are real art objects and drift slowly around the delivery. */
+.new-hug .hug-postbird{
+ width:clamp(230px,32vw,340px)!important;height:clamp(105px,13vh,155px)!important;
+ margin:0 0 -18px!important;isolation:isolate;position:relative!important;
+}
+.new-hug .hug-whale{
+ width:100%!important;height:100%!important;object-fit:contain;
+ transform-origin:50% 65%;animation:whale-delivery-drift 8s ease-in-out infinite alternate!important;
+ filter:drop-shadow(0 13px 13px #13283d60) drop-shadow(0 0 14px #b9e4f432)!important;
+}
+.new-hug .hug-butterflies{position:absolute;inset:-25% -20%;pointer-events:none}
+.new-hug .hug-butterflies .flutter{
+ display:block;position:absolute;width:27px;height:26px;object-fit:contain;
+ opacity:.88;filter:drop-shadow(0 2px 5px #f5dca37b);
+ animation:butterfly-courier var(--flutter-time,8s) ease-in-out infinite alternate;
+}
+.new-hug .hug-butterflies .flutter-1{left:3%;top:42%;--flutter-time:7.8s;--dx:18px;--dy:-25px;animation-delay:-2.1s}
+.new-hug .hug-butterflies .flutter-2{left:18%;top:-5%;width:19px;--flutter-time:9s;--dx:31px;--dy:9px;animation-delay:-5s}
+.new-hug .hug-butterflies .flutter-3{right:5%;top:12%;width:23px;--flutter-time:6.9s;--dx:-21px;--dy:31px;animation-delay:-3.8s}
+.new-hug .hug-butterflies .flutter-4{right:15%;bottom:5%;width:17px;--flutter-time:8.6s;--dx:-26px;--dy:-22px;animation-delay:-1s}
+@keyframes whale-delivery-drift{from{transform:translate3d(-7px,3px,0) rotate(-1.2deg)}to{transform:translate3d(9px,-7px,0) rotate(.7deg)}}
+@keyframes butterfly-courier{0%{transform:translate3d(0,0,0) rotate(-13deg) scaleX(.7)}48%{transform:translate3d(calc(var(--dx)*.55),calc(var(--dy)*.5),0) rotate(19deg) scaleX(1)}100%{transform:translate3d(var(--dx),var(--dy),0) rotate(-8deg) scaleX(.6)}}
+.new-hug .hug-envelope{box-shadow:0 22px 65px #10152695,0 3px 8px #10152658!important}
+.new-hug .hug-stage:before{background:radial-gradient(ellipse,#111b32ab 0%,#1018275c 56%,transparent 79%)!important}
+
+/* The botanical atelier: a tactile collection board, not generic app cards. */
+#app .flowers-scene{
+ background:
+ radial-gradient(ellipse at 14% 6%,#f7ead3a8,transparent 34%),
+ linear-gradient(130deg,#e8dfcd 0%,#f2ebdb 40%,#d9d9c3 100%)!important;
+ color:#473f36;overflow:hidden!important;
+}
+#app .flowers-scene:before{
+ background:
+ linear-gradient(95deg,transparent 0 46%,#967d5732 46.12%,transparent 46.28%),
+ radial-gradient(ellipse at 20% 66%,#a4a77e1c,transparent 49%)!important;
+ opacity:1;mix-blend-mode:multiply;
+}
+#app .flowers-scene .flowers-top{z-index:7!important}
+#app .flowers-scene .flower-intro>.eyebrow{font:750 10px/1.3 system-ui,sans-serif;color:#906643;letter-spacing:.21em}
+#app .flowers-scene .flower-intro h1{
+ font:400 clamp(31px,3.7vw,59px)/.96 Georgia,serif!important;
+ letter-spacing:-.048em;color:#292f2a;margin:8px 0!important;
+}
+#app .flowers-scene .flower-intro h1 em{color:#a76a5e}
+#app .flowers-scene .flower-intro p{max-width:345px!important;font:italic 13px/1.45 Georgia,serif!important;color:#71604e}
+#app .flowers-scene .flower-counter{
+ background:#f9f3e6d9;border:1px solid #a88f7088;border-radius:4px!important;
+ box-shadow:0 5px 15px #664c3821;min-width:110px;
+}
+#app .flowers-scene .flower-counter strong{font:400 38px/1 Georgia,serif}
+#app .flowers-scene .flower-status-note{color:#695b49}
+#app .flowers-scene .flower-steps{
+ display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;
+ width:min(100%,370px);margin-top:2px;
+}
+#app .flowers-scene .flower-step{
+ min-width:0;height:30px;display:grid;place-items:center;
+ border-bottom:2px solid #ae9b7d;background:#f8f0de79;
+ color:#958b76;transition:background .25s,border-color .25s,color .25s;
+}
+#app .flowers-scene .flower-step i{font:700 9px/1 system-ui,sans-serif;font-style:normal}
+#app .flowers-scene .flower-step.is-picked{background:#647962d9;border-color:#344d40;color:#fff2d4}
+#app .flowers-scene .flower-step.is-picked i{font:19px/1 Georgia,serif}
+#app .flowers-scene .bouquet-display{z-index:2}
+#app .flowers-scene .bouquet-display:before{background:#736e5b39;filter:blur(12px)}
+#app .flowers-scene .bouquet-hint{max-width:210px;color:#8a7761;font:italic 17px/1.45 Georgia,serif}
+#app .flowers-scene .flower-bottom{
+ border:1px solid #a59c8159;border-radius:6px 6px 0 0;
+ background:linear-gradient(170deg,#f9f3e6f7,#ebdfc9fb)!important;
+ box-shadow:0 -14px 55px #554d3a1f;overflow:hidden;
+ padding:14px 13px max(9px,env(safe-area-inset-bottom));
+}
+#app .flowers-scene .shelf-heading{
+ margin:0 4px 10px!important;border-bottom:1px solid #c1b399;padding-bottom:9px;
+ font:750 10px/1.3 system-ui,sans-serif;letter-spacing:.08em;color:#65543e;
+}
+#app .flowers-scene .shelf-hint{font-size:9px;letter-spacing:.07em}
+#app .flowers-scene .flower-browser-v2{flex:1;min-height:0;overflow:hidden}
+#app .flowers-scene .flower-rail{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));
+ align-content:start;gap:10px!important;
+ overflow-y:auto!important;overflow-x:hidden!important;
+ padding:4px 5px 10px!important;scroll-snap-type:none!important;touch-action:pan-y!important;
+ overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+}
+#app .flowers-scene .flower-option{
+ min-width:0!important;width:100%!important;height:128px!important;
+ border-radius:3px!important;background:#fffaf0fa!important;
+ box-shadow:0 4px 0 #d3c6ae,0 6px 14px #796f5221!important;
+ border:1px solid #bca98a!important;color:#514d3e;
+ padding:10px 4px 9px!important;justify-content:flex-end!important;
+ transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+#app .flowers-scene .flower-option:hover,#app .flowers-scene .flower-option:focus-visible{
+ border-color:#6c806e!important;box-shadow:0 4px 0 #718b71,0 9px 18px #354c3930!important;
+ transform:translateY(-2px);
+}
+#app .flowers-scene .flower-option[aria-pressed="true"]{
+ background:#ecf0e5!important;border:2px solid #6b876f!important;
+ box-shadow:0 3px 0 #6b876f,0 5px 12px #354c3930!important;
+}
+#app .flowers-scene .flower-option .option-art{top:0!important;height:85px!important}
+#app .flowers-scene .flower-option .option-art svg{max-height:93px;max-width:98%}
+#app .flowers-scene .option-label{
+ font:700 11px/1.1 system-ui,sans-serif;letter-spacing:.01em;margin:0 0 4px;
+}
+#app .flowers-scene .flower-add{
+ font:750 9px/1 system-ui,sans-serif!important;text-transform:uppercase;letter-spacing:.12em;
+ color:#617866!important;margin:1px auto 0!important;opacity:1!important;
+}
+#app .flowers-scene .picked-check:not(:empty){
+ background:#506d58!important;color:#fff8e4;right:4px;top:4px;
+ padding:5px 7px;min-width:25px;border-radius:3px;
+}
+#app .flowers-scene .meaning-line{
+ flex:none;display:flex;align-items:center;justify-content:center;
+ min-height:48px!important;height:auto!important;margin:9px 4px 7px!important;
+ padding:7px 12px!important;background:#e7e9d9;border-left:3px solid #73846d;
+ color:#544d40;font:italic 13px/1.34 Georgia,serif!important;text-align:left;
+}
+#app .flowers-scene .flower-controls{margin:0 4px!important;padding:0 1px}
+#app .flowers-scene .flower-controls button{min-height:38px;padding:7px 10px}
+#app .flowers-scene .flower-controls button:focus-visible{outline:3px solid #526f56}
+#app .flowers-scene .bouquet-final{
+ background:#f9f1e5f5!important;border:1px solid #b9a286;border-radius:5px!important;
+ box-shadow:0 13px 45px #55463339;padding:17px 16px!important;
+}
+@media(min-width:900px){
+ #app .flowers-scene .flowers-top{left:5%!important;right:56%!important;top:7%!important;gap:17px}
+ #app .flowers-scene .bouquet-display{left:3%!important;right:54%!important;top:27%!important;height:61%!important}
+ #app .flowers-scene .flower-bottom{
+  left:53%!important;right:3%!important;top:5%!important;bottom:4%!important;
+  height:auto!important;min-height:0!important;padding:19px 17px 14px;
+  border-radius:6px!important;
+ }
+ #app .flowers-scene .flower-option{height:155px!important}
+ #app .flowers-scene .flower-option .option-art{height:111px!important}
+ #app .flowers-scene .flower-option .option-art svg{max-height:118px}
+ #app .flowers-scene .flower-steps{width:min(100%,470px)}
+ #app .flowers-scene .bouquet-final{left:14%!important;right:53%!important;bottom:7%!important}
+}
+@media(min-width:760px) and (max-width:899px){
+ #app .flowers-scene .flowers-top{left:4%!important;right:52%!important;top:6%!important}
+ #app .flowers-scene .bouquet-display{left:0!important;right:51%!important;top:29%!important;height:54%!important}
+ #app .flowers-scene .flower-bottom{left:49%!important;right:2%!important;top:4%!important;bottom:3%!important;height:auto!important}
+ #app .flowers-scene .flower-option{height:130px!important}
+}
+@media(max-width:759px){
+ #app .flowers-scene .flowers-top{top:11px!important;left:17px!important;right:17px!important;gap:7px!important}
+ #app .flowers-scene .flower-intro h1{font-size:clamp(29px,8vw,37px)!important;margin:2px 0 4px!important}
+ #app .flowers-scene .flower-intro p{font-size:11px!important;line-height:1.27!important;max-width:315px!important}
+ #app .flowers-scene .flower-status-row{grid-template-columns:105px 1fr;gap:12px;align-items:center}
+ #app .flowers-scene .flower-counter{padding:6px 9px!important}
+ #app .flowers-scene .flower-counter strong{font-size:29px!important}
+ #app .flowers-scene .flower-status-note span{font-size:11px}
+ #app .flowers-scene .flower-status-note small{font-size:9px}
+ #app .flowers-scene .flower-steps{height:22px}
+ #app .flowers-scene .flower-step{height:23px}
+ #app .flowers-scene .bouquet-display{top:26%!important;left:1%!important;right:1%!important;height:30%!important}
+ #app .flowers-scene .bouquet-growing{inset:-2% 5%}
+ #app .flowers-scene .flower-bottom{
+  top:56%!important;bottom:0!important;height:auto!important;min-height:0!important;
+  padding:11px 10px calc(10px + env(safe-area-inset-bottom,0px))!important;
+ }
+ #app .flowers-scene .flower-option{height:114px!important;padding:5px 3px 7px!important}
+ #app .flowers-scene .flower-option .option-art{height:71px!important}
+ #app .flowers-scene .flower-option .option-art svg{max-height:80px!important}
+ #app .flowers-scene .flower-rail{gap:7px!important}
+ #app .flowers-scene .meaning-line{min-height:41px!important;font-size:12px!important;margin:6px 2px!important;padding:5px 9px!important}
+ #app .flowers-scene .shelf-heading{padding-bottom:6px;margin-bottom:7px!important}
+ #app .flowers-scene .bouquet-final{left:4%!important;right:4%!important;bottom:calc(13px + env(safe-area-inset-bottom,0px))!important}
+}
+@media(max-width:759px) and (max-height:700px){
+ #app .flowers-scene .flower-intro p{display:none}
+ #app .flowers-scene .bouquet-display{top:24%!important;height:29%!important}
+ #app .flowers-scene .flower-bottom{top:53%!important}
+ #app .flowers-scene .flower-option{height:105px!important}
+ #app .flowers-scene .flower-option .option-art{height:64px!important}
+ #app .flowers-scene .flower-steps{height:20px}
+}
+@media(max-width:759px) and (max-height:570px){
+ #app .flowers-scene .flower-status-note{display:none}
+ #app .flowers-scene .flowers-top{gap:4px!important}
+ #app .flowers-scene .bouquet-display{top:29%!important;height:19%!important}
+ #app .flowers-scene .flower-bottom{top:48%!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #app .cinematic-room .living-photo-plane,
+ .new-hug .hug-whale,.new-hug .hug-butterflies .flutter,
+ #app .flowers-scene .flower-step{animation:none!important;transition:none!important}
+}

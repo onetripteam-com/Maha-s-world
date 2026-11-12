@@ -1,0 +1,15 @@
+[
+ {"id":"rose","name":"Rose","meaning":"For the drama you pretend you don't enjoy.","color":"#c55c54"},
+ {"id":"daisy","name":"Daisy","meaning":"For the days that deserve no big explanation.","color":"#f4e9d1"},
+ {"id":"sunflower","name":"Sunflower","meaning":"A tiny piece of sunshine with absolutely no advice.","color":"#eda93e"},
+ {"id":"tulip","name":"Tulip","meaning":"For taking the scenic route, even to the fridge.","color":"#db7967"},
+ {"id":"peony","name":"Peony","meaning":"A little extra? Yes. Like a proper holiday itinerary.","color":"#da9998"},
+ {"id":"lily","name":"Lily","meaning":"For the quiet, lovely things you never announce.","color":"#f6e0b1"},
+ {"id":"orchid","name":"Orchid","meaning":"A bit fancy. I will not be taking questions.","color":"#be8eae"},
+ {"id":"lavender","name":"Lavender","meaning":"For the days your brain needs to close its tabs.","color":"#9788bc"},
+ {"id":"jasmine","name":"Jasmine · മുല്ല","meaning":"Mulla, because some little things feel like home.","color":"#fff0d7"},
+ {"id":"marigold","name":"Marigold","meaning":"For ordinary Tuesdays acting like festivals.","color":"#dca337"},
+ {"id":"hibiscus","name":"Hibiscus · ചെമ്പരത്തി","meaning":"Chembarathi, for that unmistakable Kerala energy.","color":"#d85d58"},
+ {"id":"iris","name":"Iris","meaning":"For curiosity, detours and interesting wrong turns.","color":"#827ea9"},
+ {"id":"lotus","name":"Lotus","meaning":"Proof that a little calm can look quite impressive.","color":"#d49da0"}
+]

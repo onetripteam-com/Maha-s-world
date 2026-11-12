@@ -12,6 +12,8 @@ The expected URL will be:
 
 https://onetripteam-com.github.io/Maha-s-world/
 
+Image source attribution: [CREDITS.md](CREDITS.md).
+
 ## Development
 
 The project is a static website. Keep only one branch, **main**, for day-to-day development.

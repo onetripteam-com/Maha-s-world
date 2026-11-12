@@ -1,0 +1,28 @@
+{
+  "opening": [
+    "Hey, Maha.",
+    "There's a ridiculous amount of distance between us.",
+    "I had an idea that made absolutely no practical sense. Naturally, I built it."
+  ],
+  "yes": "One virtual hug delivered. Please excuse the terrible shipping arrangements.",
+  "no": [
+    "Fair. Consent department approves.",
+    "I shall file this under 'a perfectly reasonable refusal'.",
+    "Understood, Doctor. No hugging. There are still flowers, though."
+  ],
+  "closing": "No hug. Entirely respected. The flowers, however, are still waiting.",
+  "next": "Anyway, I found you a flower shop. Sort of.",
+  "yesButton": "Okay, hug",
+  "noButton": "Not today",
+  "flowerButton": "The flowers, please",
+  "hugPrompt": "No pressure. It was a questionable proposal.",
+  "eyebrow": "A POSTCARD FROM SOMEWHERE ELSE",
+  "heroFirst": "Some distances",
+  "heroSecond": "are just ",
+  "heroEmphasis": "rude.",
+  "illustrationCaption": "a small delivery across the miles",
+  "actionQuestion": "Can I send you a virtual hug?",
+  "footnote": "No arms were shipped internationally.",
+  "finalQuestion": "A perfectly good answer.",
+  "lastNoButton": "Still no"
+}

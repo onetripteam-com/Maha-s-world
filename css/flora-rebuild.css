@@ -1,0 +1,615 @@
+/* MAHA · Flora Studio v2 · self-contained interactive bouquet maker.
+   The old flower-scene/flower-bottom/bouquet-display CSS has no matching
+   markup in this experience. No inherited grid positions, offsets, or scales. */
+#app .f2-scene{
+ --f2-photo:url('../assets/rooms/maha-kuwait.webp');
+ --f2-accent:#d3ec95;
+ --f2-dark:#12352f;
+ position:relative;inset:auto;display:block!important;
+ box-sizing:border-box;width:100%!important;height:100%!important;
+ min-width:0;min-height:0;margin:0!important;padding:0!important;
+ isolation:isolate;overflow:hidden!important;color:#f6f9ed;
+ background:#19382e;
+}
+#app .f2-scene[data-source-scene="kerala"]{
+ --f2-photo:url('../assets/rooms/maha-kerala.webp');--f2-accent:#d7edaf;
+}
+#app .f2-scene[data-source-scene="bengaluru"]{
+ --f2-photo:url('../assets/rooms/maha-bengaluru.webp');--f2-accent:#f1d19e;
+}
+#app .f2-backdrop{
+ position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(122deg,#092a2acc,#152f29ad 57%,#adab9073),var(--f2-photo) center / cover no-repeat;
+ /* Never enlarge a positioned child beyond the scene box: even with
+    overflow:hidden, iOS includes it in scrollWidth and rubber-bands. */
+ filter:blur(12px) saturate(.91);
+ transform:none;
+ clip-path:inset(0);
+}
+#app .f2-layout{
+ position:absolute;inset:0;z-index:1;
+ box-sizing:border-box;display:grid!important;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)!important;
+ grid-template-rows:minmax(0,1fr)!important;align-items:stretch;
+ gap:clamp(12px,1.35vw,24px);padding:clamp(12px,1.55vw,25px);
+ width:100%;height:100%;max-width:none;margin:0;min-width:0;min-height:0;
+}
+#app .f2-preview{
+ position:relative;min-height:0;min-width:0;height:100%;box-sizing:border-box;
+ display:grid!important;grid-template-columns:minmax(0,1fr);
+ grid-template-rows:max-content minmax(0,1fr) max-content;
+ padding:clamp(18px,2.35vw,34px);overflow:hidden;
+ background:linear-gradient(155deg,#0b2a2aed,#19473ae3 66%,#133b36ef);
+ border:1px solid #d8ead439;border-radius:clamp(17px,1.6vw,28px);
+ box-shadow:inset 0 1px 0 #f2fff121,0 20px 75px #08171363;
+}
+#app .f2-preview::after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ border-radius:inherit;box-shadow:inset 0 0 0 1px #f4ffe90d;
+}
+#app .f2-header{
+ position:relative;z-index:3;grid-column:1;grid-row:1;display:flex;
+ flex-direction:column;gap:clamp(11px,1.2vw,17px);min-width:0;
+}
+#app .f2-intro{position:relative;min-width:0}
+#app .f2-intro .eyebrow{
+ display:flex;justify-content:space-between;gap:8px;align-items:center;
+ color:var(--f2-accent)!important;font:750 10px/1.4 system-ui,sans-serif;letter-spacing:.16em;
+}
+#app .f2-edition{color:#b5d5c7b3;font:600 9px/1.3 system-ui,sans-serif;letter-spacing:.08em}
+#app .f2-intro h1{
+ max-width:580px;margin:10px 0 9px!important;
+ color:#fffdf2;font:400 clamp(38px,4.25vw,66px)/1.04 Georgia,serif!important;
+ letter-spacing:-.05em;text-wrap:balance;
+}
+#app .f2-intro h1 em{color:var(--f2-accent)!important;font-weight:400}
+#app .f2-intro p{
+ color:#dbecdfd9;font:400 clamp(12px,1.15vw,15px)/1.48 system-ui,sans-serif;
+ margin:0;max-width:420px;
+}
+#app .f2-status{display:flex;gap:18px;align-items:center;min-width:0}
+#app .f2-counter{display:flex;flex-direction:column;gap:3px;white-space:nowrap}
+#app .f2-counter strong{color:#fffef5;font:400 clamp(37px,3.5vw,57px)/.95 Georgia,serif;font-variant-numeric:tabular-nums}
+#app .f2-counter strong span{font:400 clamp(17px,1.6vw,24px)/1 Georgia,serif;color:#b8d6c9}
+#app .f2-counter-caption{font:750 9px/1.3 system-ui,sans-serif;letter-spacing:.18em;color:#b2d8ba}
+#app .f2-status-note{min-width:0;display:flex;flex-direction:column;gap:5px;padding-left:15px;border-left:1px solid #c5e9ad58}
+#app .f2-status-note span{color:#e7f2e5;font:650 13px/1.35 system-ui,sans-serif}
+#app .f2-status-note small{color:#a6c7b9;font:400 11px/1.25 system-ui,sans-serif}
+#app .f2-steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;max-width:480px;width:100%}
+#app .f2-slot{
+ display:grid;place-items:center;height:clamp(29px,2.7vw,40px);min-width:0;
+ background:#d6f8df13;border:1px solid #d2ebbb45;border-radius:9px;
+ color:#abc8b8;transition:transform .2s,background-color .22s,border-color .22s;
+}
+#app .f2-slot i{font:750 10px/1 system-ui,sans-serif;font-style:normal}
+#app .f2-slot.is-picked{
+ background:var(--f2-accent);border-color:var(--f2-accent);
+ color:#153b33;cursor:pointer;animation:f2-slot-in .25s ease-out;
+}
+#app .f2-slot.is-picked i{font:22px/1 Georgia,serif}
+#app .f2-slot.is-picked:active{transform:scale(.88)}
+#app .f2-slot:focus-visible{outline:2px solid white;outline-offset:3px}
+#app .f2-stage{
+ position:relative;z-index:1;grid-column:1;grid-row:2;align-self:stretch;
+ display:grid;place-items:center;min-height:0;min-width:0;
+ overflow:hidden;isolation:isolate;
+}
+#app .f2-stage::before{
+ content:"";position:absolute;left:13%;right:13%;top:7%;bottom:-4%;
+ background:radial-gradient(ellipse at center,#dfedbe2c,transparent 69%);
+ pointer-events:none;animation:f2-glow 7s ease-in-out infinite alternate;
+}
+#app .f2-bouquet{
+ position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+}
+#app .f2-bouquet>.bouquet-svg,
+#app .f2-bouquet>.studio-vase{
+ position:absolute!important;left:50%!important;top:50%!important;
+ right:auto!important;bottom:auto!important;
+ width:100%!important;height:100%!important;max-width:480px!important;max-height:100%!important;
+ transform:translate(-50%,-50%)!important;transform-origin:50% 50%;
+ display:block;overflow:visible;pointer-events:none;
+}
+#app .f2-bouquet>.bouquet-svg{
+ z-index:1;filter:drop-shadow(0 13px 19px #051f1a44);
+}
+#app .f2-bouquet>.studio-vase{
+ z-index:2;filter:drop-shadow(0 9px 12px #041d1c6b);
+}
+#app .f2-empty{
+ position:relative;z-index:3;display:flex;flex-direction:column;
+ align-items:center;gap:9px;padding:8px 18px;max-width:255px;
+ color:#e6f6dcd0;font:italic 19px/1.35 Georgia,serif;
+ text-align:center;pointer-events:none;
+}
+#app .f2-empty span{font-size:20px;color:var(--f2-accent)}
+#app .f2-preview[data-placed="0"] .f2-empty{transform:translateY(-15%);}
+#app .f2-petals{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+#app .f2-petals i{
+ position:absolute;top:11%;left:28%;font:18px/1 Georgia,serif;font-style:normal;
+ color:var(--f2-accent);opacity:0;animation:f2-petal 6.5s ease-in-out infinite;
+}
+#app .f2-petals i:nth-child(2){left:77%;top:24%;animation-delay:1.6s;font-size:12px}
+#app .f2-petals i:nth-child(3){left:16%;top:51%;animation-delay:3.1s;font-size:15px}
+#app .f2-petals i:nth-child(4){left:81%;top:68%;animation-delay:4.6s;font-size:11px}
+#app .f2-petals i:nth-child(5){left:52%;top:6%;animation-delay:5.3s;font-size:12px}
+#app .f2-caption{
+ position:relative;z-index:3;grid-column:1;grid-row:3;
+ display:flex;gap:7px;align-items:center;margin-top:5px;
+ color:#c0d8cba8;font:700 9px/1.3 system-ui,sans-serif;letter-spacing:.13em;
+}
+#app .f2-caption i{font-style:normal;color:var(--f2-accent);font-size:14px}
+#app .f2-editor{
+ position:relative;min-height:0;min-width:0;height:100%;box-sizing:border-box;
+ grid-column:2;grid-row:1;align-self:stretch;
+ display:flex;flex-direction:column;gap:0;padding:clamp(15px,2vw,27px);
+ overflow:hidden;background:#f7f9f4f5;color:#203e35;
+ border-radius:clamp(17px,1.6vw,28px);
+ box-shadow:0 20px 75px #0b241e5d;
+}
+#app .f2-editor-head{
+ flex:0 0 auto;min-width:0;display:flex;align-items:flex-end;
+ justify-content:space-between;gap:8px;
+ margin:0 0 12px;padding:0 0 14px;
+ border-bottom:1px solid #2e61432b;
+ color:#173b2c;font:600 clamp(19px,2vw,28px)/1.15 system-ui,sans-serif;
+ letter-spacing:-.04em;
+}
+#app .f2-editor-head span:first-child{display:flex;flex-direction:column;gap:6px}
+#app .f2-editor-head small{font:760 9px/1.2 system-ui,sans-serif;letter-spacing:.19em;color:#438569}
+#app .f2-editor-hint{color:#739485;font:720 9px/1.4 system-ui,sans-serif;letter-spacing:.05em;white-space:nowrap}
+#app .f2-browser{
+ display:flex;flex:1 1 auto;min-height:0;min-width:0;overflow:hidden;
+}
+#app .f2-rail{
+ box-sizing:border-box;display:grid;flex:1 1 auto;min-height:0;min-width:0;
+ width:100%;grid-template-columns:repeat(3,minmax(0,1fr));
+ grid-auto-rows:max-content;align-content:start;gap:clamp(9px,1vw,13px);
+ padding:4px 5px 15px;overflow-y:auto;overflow-x:hidden;
+ overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+ touch-action:pan-y;scrollbar-width:thin;scrollbar-color:#a8baa9 transparent;
+}
+#app .f2-card{
+ display:flex;flex-direction:column;justify-content:flex-end;
+ position:relative;box-sizing:border-box;height:clamp(135px,17vh,165px);
+ min-height:0;min-width:0;width:100%;padding:8px;
+ border:1px solid #dbe7d9;border-radius:16px;
+ background:#fff;box-shadow:0 3px 12px #28483f10;
+ color:#173f32;overflow:hidden;
+ transition:transform .17s ease,box-shadow .17s ease,border-color .17s ease,background .17s ease;
+ -webkit-tap-highlight-color:transparent;
+}
+#app .f2-card:active{transform:scale(.955)}
+#app .f2-card:hover{border-color:#6aa584;transform:translateY(-2px);box-shadow:0 7px 18px #28483f20}
+#app .f2-card:focus-visible{outline:3px solid #408d62;outline-offset:2px}
+#app .f2-card[aria-pressed="true"]{
+ background:#ecf6e9;border:1.5px solid #55a676;
+ box-shadow:inset 0 0 0 1px #62b18b32;
+}
+#app .f2-card-index{
+ position:absolute;top:10px;left:11px;z-index:2;
+ color:#8a9e90;font:700 10px/1 system-ui,sans-serif;
+}
+#app .f2-card-art{
+ position:absolute;inset:5px 5px 42px;display:grid;place-items:center;
+ pointer-events:none;overflow:hidden;
+}
+#app .f2-card-art .botanical{
+ width:min(100%,110px);height:100%;max-height:118px;
+ transform:translateY(2px) scale(.92);
+ animation:f2-sway 5s ease-in-out infinite alternate;
+}
+#app .f2-card-meta{
+ position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;
+ gap:5px;width:100%;min-width:0;padding:7px 3px 1px;border-top:1px solid #dce9dc;
+}
+#app .f2-card-name{
+ font:680 clamp(11px,1vw,13px)/1.2 system-ui,sans-serif;
+ color:#254b39;text-align:left;min-width:0;overflow-wrap:anywhere;
+}
+#app .f2-add{flex:0 0 auto;white-space:nowrap;color:#317954;font:750 9px/1 system-ui,sans-serif;letter-spacing:.04em}
+#app .f2-picked{
+ position:absolute;right:7px;top:7px;z-index:3;
+ font:770 9px/1 system-ui,sans-serif;color:#fff;
+ border-radius:14px;
+}
+#app .f2-picked:not(:empty){padding:6px 8px;background:#347350}
+#app .f2-footer{flex:0 0 auto;min-width:0;padding-top:12px}
+#app .f2-note{
+ display:flex;align-items:center;min-height:44px;padding:10px 12px;
+ background:#e7f1e5;border-radius:10px;color:#305943;
+ font:550 clamp(11px,1vw,13px)/1.4 system-ui,sans-serif;
+}
+#app .f2-actions{display:flex;gap:7px;align-items:center;justify-content:space-between;margin-top:10px}
+#app .f2-actions button{
+ min-height:40px;min-width:0;flex:0 1 auto;
+ padding:8px 12px;border-radius:10px;border:1px solid #b5d2bb;
+ color:#32644b;background:#fff;
+ font:650 11px/1.2 system-ui,sans-serif;white-space:nowrap;
+}
+#app .f2-actions button:disabled{opacity:.3}
+#app .f2-actions .f2-exit{margin-left:auto;background:transparent;border-color:transparent}
+#app .f2-final{
+ position:absolute;z-index:9;right:clamp(18px,3vw,48px);bottom:clamp(18px,5vh,45px);
+ width:min(430px,calc(100% - 36px));padding:22px 23px;
+ background:#f9fff1f5;border:1px solid #c7e4ba;border-radius:21px;
+ box-shadow:0 25px 70px #09282091;color:#264e38;
+ backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+#app .f2-final .eyebrow{font:760 9px/1.3 system-ui,sans-serif;letter-spacing:.13em;color:#468966}
+#app .f2-final h2{margin:7px 0;color:#1b4931;font:400 clamp(26px,3vw,40px)/1.05 Georgia,serif}
+#app .f2-final h2 span{color:#66946c}
+#app .f2-final p{margin:0 0 13px;color:#5d7764;font:400 13px/1.5 system-ui,sans-serif}
+#app .f2-final-actions{display:flex;gap:9px}
+#app .f2-final-actions button{flex:1;min-height:45px;padding:10px;border-radius:10px;font:680 11px/1.25 system-ui,sans-serif}
+#app .f2-final-actions .button-primary{background:#225d44;color:#fff;border:1px solid #225d44}
+#app .f2-final-actions .button-outline{color:#245b43;background:#fff;border:1px solid #b0ccad}
+#app .f2-export-hint{font-size:11px!important;min-height:15px;margin-top:6px!important}
+#app .f2-scene.is-complete .f2-layout{grid-template-columns:minmax(0,1fr)!important}
+#app .f2-scene.is-complete .f2-editor{display:none!important}
+#app .f2-scene.is-complete .f2-preview{grid-column:1;max-width:980px;width:100%;justify-self:center}
+#app .f2-scene.is-complete .f2-stage{min-height:0}
+#app .f2-scene .f2-intro-fade{opacity:.65}
+#app .f2-scene .f2-editor-exit{opacity:0;pointer-events:none}
+#app .f2-scene .f2-bouquet .bloom-new{animation:f2-bloom-in .55s cubic-bezier(.19,.85,.18,1.1) both}
+#app .f2-card-pop{animation:f2-card-tap .3s cubic-bezier(.16,.75,.22,1) both}
+#app .f2-counter-pop{animation:f2-count-pop .28s ease-out}
+#app .f2-scene .f2-wrapping .bouquet-svg{animation:f2-wrap .65s ease-out both}
+@keyframes f2-sway{from{transform:translateY(3px) scale(.91) rotate(-2deg)}to{transform:translateY(-3px) scale(.94) rotate(2deg)}}
+@keyframes f2-petal{0%,100%{opacity:0;transform:translate3d(0,2px,0) rotate(-25deg)}25%{opacity:.22}75%{opacity:.12;transform:translate3d(13px,-27px,0) rotate(25deg)}}
+@keyframes f2-glow{from{opacity:.58;transform:scale(.9)}to{opacity:1;transform:scale(1.09)}}
+@keyframes f2-slot-in{from{transform:scale(.4);opacity:.4}to{transform:scale(1);opacity:1}}
+@keyframes f2-bloom-in{from{opacity:.35;filter:brightness(1.6)}to{opacity:1;filter:brightness(1)}}
+@keyframes f2-card-tap{0%{transform:scale(1)}42%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes f2-count-pop{0%{transform:scale(.93)}60%{transform:scale(1.07)}100%{transform:scale(1)}}
+@keyframes f2-wrap{from{opacity:.6;filter:drop-shadow(0 0 15px #ffe4aa88)}to{opacity:1;filter:none}}
+/* The phone is the primary canvas, not a squeezed desktop grid.
+   Keep the bouquet visible and dedicate the lower pane to vertical browsing. */
+@media(max-width:899px){
+ #app .f2-scene{max-width:100%!important;overflow:hidden!important}
+ #app .f2-layout{
+  position:absolute!important;inset:0!important;
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:minmax(0,52%) minmax(0,48%)!important;
+  width:100%!important;height:100%!important;
+  max-width:100%;min-width:0;min-height:0;
+  gap:0!important;padding:0!important;overflow:hidden;
+ }
+ #app .f2-preview{
+  grid-column:1!important;grid-row:1!important;min-height:0!important;
+  height:100%!important;min-width:0!important;max-width:100%!important;
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:max-content minmax(0,1fr)!important;
+  padding:12px 15px 5px!important;border:0!important;
+  border-radius:0!important;box-shadow:none!important;overflow:hidden!important;
+ }
+ #app .f2-header{
+  grid-column:1;grid-row:1;min-height:0;display:flex;flex-direction:column;gap:6px;
+ }
+ #app .f2-intro .eyebrow{font-size:8px!important;letter-spacing:.105em!important;line-height:1.2}
+ #app .f2-edition{display:none!important}
+ #app .f2-intro h1{
+  margin:5px 0 3px!important;
+  color:#fffef5!important;
+  font:400 clamp(27px,7.5vw,34px)/1.04 Georgia,serif!important;
+  letter-spacing:-.045em!important;max-width:none!important;
+ }
+ #app .f2-intro p{
+  display:block;font:400 11px/1.28 system-ui,sans-serif!important;
+  color:#dcebdc!important;margin:0!important;
+ }
+ #app .f2-status{margin:1px 0 0;gap:8px!important}
+ #app .f2-counter{gap:1px!important;flex-direction:row;align-items:baseline;gap:10px!important}
+ #app .f2-counter strong{font:400 29px/1 Georgia,serif!important}
+ #app .f2-counter strong span{font:400 16px/1 Georgia,serif!important}
+ #app .f2-counter-caption{font:700 8px/1.3 system-ui,sans-serif!important;letter-spacing:.14em}
+ #app .f2-status-note{display:none!important}
+ #app .f2-steps{width:100%!important;max-width:100%!important;gap:5px!important}
+ #app .f2-slot{height:29px!important;border-radius:7px!important}
+ #app .f2-stage{
+  grid-column:1!important;grid-row:2!important;
+  min-height:0!important;width:100%;height:100%!important;
+  overflow:hidden!important;align-self:stretch!important;
+ }
+ #app .f2-bouquet{position:absolute!important;inset:0!important}
+ #app .f2-bouquet>.bouquet-svg,
+ #app .f2-bouquet>.studio-vase{
+  width:100%!important;height:100%!important;
+  max-width:100%!important;max-height:100%!important;
+ }
+ #app .f2-empty{font-size:15px!important;max-width:210px;padding:3px 10px}
+ #app .f2-empty span{font-size:15px!important}
+ #app .f2-petals{opacity:.75}
+ #app .f2-caption{display:none!important}
+ #app .f2-editor{
+  grid-column:1!important;grid-row:2!important;min-height:0!important;
+  height:100%!important;width:100%!important;max-width:100%!important;
+  display:flex!important;flex-direction:column!important;
+  padding:12px 13px max(12px,env(safe-area-inset-bottom,0px))!important;
+  border:0!important;border-radius:22px 22px 0 0!important;
+  box-shadow:0 -8px 32px #081c1d5e!important;
+  overflow:hidden!important;
+ }
+ #app .f2-editor-head{
+  flex:0 0 auto;align-items:flex-end;margin:0 0 8px!important;
+  padding:0 0 8px!important;font:650 20px/1.15 system-ui,sans-serif!important;
+ }
+ #app .f2-editor-head small{font-size:8px!important;letter-spacing:.13em}
+ #app .f2-editor-hint{font-size:8px!important;letter-spacing:.03em}
+ #app .f2-browser{
+  flex:1 1 auto!important;min-width:0!important;min-height:0!important;
+  width:100%;height:auto!important;overflow:hidden!important;
+ }
+ #app .f2-rail{
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-auto-rows:max-content!important;gap:9px!important;
+  padding:3px 3px 12px!important;min-height:0!important;
+  max-width:100%!important;overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior:contain!important;touch-action:pan-y!important;
+  -webkit-overflow-scrolling:touch;
+ }
+ #app .f2-card{
+  height:125px!important;min-width:0!important;max-width:100%!important;
+  padding:7px!important;border-radius:15px!important;
+  touch-action:manipulation;
+ }
+ #app .f2-card-art{inset:5px 5px 43px!important}
+ #app .f2-card-art .botanical{
+  max-height:100%!important;transform:translateY(1px) scale(.96);
+ }
+ #app .f2-card-meta{
+  min-width:0;min-height:35px;gap:4px;align-items:flex-end;
+  padding:5px 38px 1px 2px!important;position:relative;
+ }
+ #app .f2-card-name{
+  display:block;min-width:0;max-width:100%;
+  font:650 11px/1.17 system-ui,sans-serif!important;overflow-wrap:anywhere;
+ }
+ #app .f2-add{
+  position:absolute;right:1px;bottom:2px;
+  font:750 9px/1 system-ui,sans-serif!important;
+ }
+ #app .f2-footer{flex:0 0 auto;min-width:0;padding-top:7px!important}
+ #app .f2-note{
+  min-height:36px!important;padding:7px 10px!important;
+  font:550 11px/1.3 system-ui,sans-serif!important;max-height:44px;overflow:hidden;
+ }
+ #app .f2-actions{margin:7px 0 0!important;gap:5px!important}
+ #app .f2-actions button{
+  min-height:39px!important;padding:7px 9px!important;
+  font:650 10px/1.2 system-ui,sans-serif!important;
+  border-radius:10px!important;
+ }
+ #app .f2-final{
+  left:13px!important;right:13px!important;
+  width:auto!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;
+  padding:17px!important;
+ }
+ #app .f2-scene.is-complete .f2-layout{
+  grid-template-rows:minmax(0,1fr)!important;
+ }
+ #app .f2-scene.is-complete .f2-preview{grid-row:1!important}
+}
+@media(max-width:759px) and (min-height:800px){
+ #app .f2-layout{grid-template-rows:minmax(0,54%) minmax(0,46%)!important}
+}
+@media(max-width:759px) and (max-height:740px){
+ #app .f2-layout{grid-template-rows:minmax(0,51%) minmax(0,49%)!important}
+ #app .f2-intro p{display:none!important}
+ #app .f2-header{gap:5px!important}
+ #app .f2-card{height:112px!important}
+ #app .f2-card-art{bottom:38px!important}
+}
+@media(max-width:759px) and (max-height:620px){
+ #app .f2-layout{grid-template-rows:minmax(0,47%) minmax(0,53%)!important}
+ #app .f2-intro h1{font-size:26px!important}
+ #app .f2-slot{height:24px!important}
+ #app .f2-preview{padding-top:7px!important}
+ #app .f2-card{height:103px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #app .f2-card,#app .f2-slot,#app .f2-card-art .botanical,
+ #app .f2-petals i,#app .f2-stage::before,
+ #app .f2-bouquet .bloom-new{animation:none!important;transition:none!important}
+}
+
+/* A picked flower actually leaves the catalogue and lands in the vase.
+   The ghost lives in document.body so the scrollable catalogue cannot clip it. */
+.f2-flight{
+ position:fixed;z-index:100000;pointer-events:none;
+ display:grid;place-items:center;width:54px;height:78px;
+ opacity:1;filter:drop-shadow(0 4px 9px #203d2a50);
+ transform-origin:50% 50%;
+}
+.f2-flight .botanical{
+ width:100%;height:100%;max-width:none!important;
+ animation:none!important;transform:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .f2-flight{display:none!important}
+}
+
+/* MAHA — Mobile-first refinement, 2026-11-03.
+   No photo or fake buttons: the same thirteen interactive SVG flowers remain. */
+
+/* The beige translucent shared header made MAHA and its sound icon nearly
+   disappear over the Flora Studio. Give this scene a single opaque header. */
+#app.app-frame[data-scene="flowers"] .app-header{
+  background:#102e2c!important;color:#fff6e8!important;
+  border-bottom:1px solid #e4f2d22b!important;
+  box-shadow:0 2px 12px #09232026!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  opacity:1!important;filter:none!important;
+}
+#app.app-frame[data-scene="flowers"] .app-header .identity,
+#app.app-frame[data-scene="flowers"] .app-header .identity-type,
+#app.app-frame[data-scene="flowers"] .app-header .identity-type b{
+  color:#fff4e4!important;-webkit-text-fill-color:#fff4e4!important;opacity:1!important;
+  text-shadow:none!important;filter:none!important;
+}
+#app.app-frame[data-scene="flowers"] .app-header .identity-type small{
+  color:#d6e8c6!important;-webkit-text-fill-color:#d6e8c6!important;opacity:1!important;
+}
+#app.app-frame[data-scene="flowers"] .app-header .sound-toggle{
+  color:#fff4e4!important;-webkit-text-fill-color:#fff4e4!important;
+  background:#ffffff12!important;border:1px solid #f4ffea35!important;
+  opacity:1!important;filter:none!important;
+}
+#app.app-frame[data-scene="flowers"] .app-header .header-edition{
+  color:#dce6d7!important;opacity:.8;
+}
+
+/* Each flower card displays a centered blossom, not a full 216px stem
+   squashed into 77px and severed by the footer divider. */
+#app .f2-card-art{
+ inset:8px 8px 43px!important;overflow:hidden!important;
+ display:grid!important;place-items:center!important;
+}
+#app .f2-card-art .botanical.flower-head-svg{
+ display:block!important;width:100%!important;height:100%!important;
+ max-width:100%!important;max-height:100%!important;
+ object-fit:contain!important;transform:none!important;
+ animation:f2-bloom-breathe 5.8s ease-in-out infinite alternate!important;
+ transform-origin:50% 52%;
+}
+#app .f2-card .f2-card-meta{
+ border-top:1px solid #dce7db!important;
+}
+@keyframes f2-bloom-breathe{
+ from{transform:translateY(1px) rotate(-1.4deg) scale(.965)}
+ to{transform:translateY(-1px) rotate(1.2deg) scale(1)}
+}
+
+/* Wrapping is a small cinematic event: paper folds around the stems,
+   the ribbon ties itself, and only then is the keepsake ready. */
+#app .f2-stage.f2-wrapping .paper-fold{
+ transform-box:fill-box;transform-origin:50% 70%;
+ animation:f2-paper-fold .72s cubic-bezier(.2,.75,.2,1) both;
+}
+#app .f2-stage.f2-wrapping .ribbon-tie{
+ transform-box:fill-box;transform-origin:50% 50%;
+ animation:f2-ribbon-tie .62s cubic-bezier(.16,.75,.2,1) .33s both;
+}
+#app .f2-stage.f2-wrapping .tag-write{
+ animation:f2-tag-arrive .52s ease-out .58s both;
+}
+@keyframes f2-paper-fold{
+ from{opacity:0;transform:translateY(42px) scale(.85)}
+ to{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes f2-ribbon-tie{
+ from{opacity:0;transform:rotate(-12deg) scale(.45)}
+ to{opacity:1;transform:rotate(0) scale(1)}
+}
+@keyframes f2-tag-arrive{
+ from{opacity:0;transform:translateY(12px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:899px){
+ #app.app-frame[data-scene="flowers"] .app-header{
+  min-height:calc(56px + env(safe-area-inset-top,0px))!important;
+  height:calc(56px + env(safe-area-inset-top,0px))!important;
+  padding:calc(4px + env(safe-area-inset-top,0px)) 14px 5px!important;
+  justify-content:space-between!important;gap:12px!important;
+ }
+ #app.app-frame[data-scene="flowers"] .app-header .identity{gap:9px!important}
+ #app.app-frame[data-scene="flowers"] .app-header .identity-type b{
+  display:block!important;font-size:14px!important;letter-spacing:.16em!important;
+ }
+ #app.app-frame[data-scene="flowers"] .app-header .identity-type small{
+  display:block!important;font-size:9px!important;letter-spacing:.12em!important;
+ }
+ #app.app-frame[data-scene="flowers"] .app-header .header-edition{display:none!important}
+ #app.app-frame[data-scene="flowers"] .app-header .sound-toggle{
+  flex:0 0 40px!important;min-width:40px!important;
+  width:40px!important;height:40px!important;min-height:40px!important;
+  border-radius:12px!important;
+ }
+ #app .f2-card{height:142px!important}
+ #app .f2-card-art{inset:7px 9px 43px!important}
+ #app .f2-card-art .botanical.flower-head-svg{
+  width:100%!important;height:100%!important;
+ }
+ /* The wrapped bouquet gets its own reserved stage. The old 250px white
+    bottom overlay completely covered its petals and hid the ribbon. */
+ #app .f2-scene.is-complete .f2-layout{
+  position:absolute!important;top:0!important;left:0!important;right:0!important;
+  bottom:184px!important;height:calc(100% - 184px)!important;
+  min-height:0!important;grid-template-rows:minmax(0,1fr)!important;
+  transition:height .5s cubic-bezier(.2,.76,.2,1)!important;
+ }
+ #app .f2-scene.is-complete .f2-preview{
+  height:100%!important;max-width:100%!important;
+  padding:10px 15px 0!important;
+  grid-template-rows:max-content minmax(0,1fr)!important;
+ }
+ #app .f2-scene.is-complete .f2-header{gap:0!important}
+ #app .f2-scene.is-complete .f2-intro .eyebrow{font-size:8px!important}
+ #app .f2-scene.is-complete .f2-intro h1{
+  margin:3px 0!important;font-size:25px!important;line-height:1.04!important;
+ }
+ #app .f2-scene.is-complete .f2-intro #flower-subtitle{display:none!important}
+ #app .f2-scene.is-complete .f2-status,
+ #app .f2-scene.is-complete .f2-steps,
+ #app .f2-scene.is-complete .f2-caption{display:none!important}
+ #app .f2-scene.is-complete .f2-stage{
+  min-height:0!important;height:100%!important;overflow:visible!important;
+ }
+ #app .f2-scene.is-complete .f2-bouquet{
+  position:absolute!important;inset:0!important;
+  overflow:visible!important;
+ }
+ #app .f2-scene.is-complete .f2-final{
+  position:absolute!important;left:12px!important;right:12px!important;
+  top:auto!important;bottom:calc(11px + env(safe-area-inset-bottom,0px))!important;
+  box-sizing:border-box!important;width:auto!important;
+  min-height:0!important;max-height:172px!important;
+  overflow:hidden!important;
+  padding:14px 15px 11px!important;border-radius:18px!important;
+  background:#f8fff1!important;box-shadow:0 9px 29px #071d1b4c!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+ }
+ #app .f2-scene.is-complete .f2-final .eyebrow{
+  display:block;font-size:8px!important;letter-spacing:.11em!important;
+  line-height:1.2!important;
+ }
+ #app .f2-scene.is-complete .f2-final h2{
+  margin:5px 0 10px!important;
+  font-size:clamp(23px,6vw,29px)!important;line-height:1.06!important;
+ }
+ #app .f2-scene.is-complete .f2-final>p:not(.f2-export-hint){display:none!important}
+ #app .f2-scene.is-complete .f2-final-actions{
+  display:flex!important;gap:9px!important;
+  flex-wrap:nowrap!important;
+ }
+ #app .f2-scene.is-complete .f2-final-actions button{
+  min-width:0!important;min-height:44px!important;
+  padding:9px 7px!important;font-size:11px!important;
+  white-space:normal!important;
+ }
+ #app .f2-scene.is-complete .f2-export-hint{
+  margin:5px 0 0!important;font-size:10px!important;
+  min-height:0!important;
+ }
+}
+@media(max-width:899px) and (max-height:690px){
+ #app .f2-card{height:125px!important}
+ #app .f2-scene.is-complete .f2-layout{
+  bottom:166px!important;height:calc(100% - 166px)!important;
+ }
+ #app .f2-scene.is-complete .f2-final{
+  max-height:155px!important;padding:10px 12px!important;
+ }
+ #app .f2-scene.is-complete .f2-final h2{
+  font-size:21px!important;margin:4px 0 7px!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ #app .f2-card-art .botanical.flower-head-svg,
+ #app .f2-stage.f2-wrapping .paper-fold,
+ #app .f2-stage.f2-wrapping .ribbon-tie,
+ #app .f2-stage.f2-wrapping .tag-write{
+  animation:none!important;transform:none!important;
+ }
+ #app .f2-scene.is-complete .f2-layout{transition:none!important}
+}

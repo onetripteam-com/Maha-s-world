@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "caption": "Original paper atlas uses public-domain Natural Earth country outlines. Map pins use approximate geographical coordinates; not for navigation.",
+  "places": [
+    {
+      "id": "kerala",
+      "name": "Kerala",
+      "x": 62.16,
+      "y": 74.61,
+      "gate": "wood",
+      "intro": "The air smells like rain and something frying. Probably a good sign.",
+      "phrase": "നമുക്ക് പോകാം",
+      "translation": "Let's go.",
+      "prompt": "Film 10 seconds of leaves moving after rain.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#476e5a",
+        "#ddc999"
+      ],
+      "geo": {
+        "longitude": 76.2711,
+        "latitude": 9.9312
+      }
+    },
+    {
+      "id": "kuwait",
+      "name": "Kuwait",
+      "x": 20.56,
+      "y": 33.24,
+      "gate": "stone",
+      "intro": "For an ordinary Kuwait evening that deserves to be remembered.",
+      "phrase": "സുഖമാണോ?",
+      "translation": "How are you?",
+      "prompt": "Film 10 seconds of the evening sky from your window.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#b68572",
+        "#efd3a4"
+      ],
+      "geo": {
+        "longitude": 47.9783,
+        "latitude": 29.3759
+      }
+    },
+    {
+      "id": "bangalore",
+      "name": "Bengaluru",
+      "x": 64.11,
+      "y": 68.15,
+      "gate": "wood",
+      "intro": "The familiar chaos, with a very good snack somewhere nearby.",
+      "phrase": "പതുക്കെ പോകാം",
+      "translation": "Let's take it slowly.",
+      "prompt": "Film 10 seconds of a street corner with its own rhythm.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#667886",
+        "#e6bba3"
+      ],
+      "geo": {
+        "longitude": 77.5946,
+        "latitude": 12.9716
+      }
+    },
+    {
+      "id": "munnar",
+      "name": "Munnar",
+      "x": 63.32,
+      "y": 74.28,
+      "gate": "wood",
+      "intro": "Clouds that behave like they own the tea estates.",
+      "phrase": "എന്തൊരു ഭംഗി!",
+      "translation": "How beautiful!",
+      "prompt": "Film 10 seconds of cloud drifting across the hills.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#54836e",
+        "#d0dfa9"
+      ],
+      "geo": {
+        "longitude": 77.0597,
+        "latitude": 10.0889
+      }
+    },
+    {
+      "id": "manali",
+      "name": "Manali",
+      "x": 63.51,
+      "y": 27.14,
+      "gate": "stone",
+      "intro": "A winding road. An excuse for another playlist.",
+      "phrase": "നല്ല തണുപ്പ്",
+      "translation": "Lovely and cold.",
+      "prompt": "Film 10 seconds of a mountain road or rolling mist.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#6b8290",
+        "#d6dde4"
+      ],
+      "geo": {
+        "longitude": 77.1892,
+        "latitude": 32.2432
+      }
+    },
+    {
+      "id": "ladakh",
+      "name": "Ladakh",
+      "x": 64.08,
+      "y": 23.08,
+      "gate": "stone",
+      "intro": "An enormous sky. A very small list of worries.",
+      "phrase": "പോകാം",
+      "translation": "Let's go.",
+      "prompt": "Film 10 seconds of a wide sky and changing light.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#7b8290",
+        "#e3c6a6"
+      ],
+      "geo": {
+        "longitude": 77.5771,
+        "latitude": 34.1526
+      }
+    },
+    {
+      "id": "nepal",
+      "name": "Nepal",
+      "x": 75.48,
+      "y": 36.77,
+      "gate": "stone",
+      "intro": "A road bends around the mountain and makes you look up again. One day, perhaps, with a camera in your hand.",
+      "phrase": "നമുക്ക് മലകളിലേക്ക് പോകാം",
+      "translation": "Let's go to the mountains.",
+      "prompt": "Film 10 seconds of clouds drifting across a mountain view.",
+      "clip": null,
+      "still": null,
+      "colors": [
+        "#617b86",
+        "#e5d7b4"
+      ],
+      "geo": {
+        "longitude": 85.32396,
+        "latitude": 27.7172
+      }
+    }
+  ],
+  "futureSlots": [
+    {
+      "id": "add-1",
+      "name": "[PLACE TO ADD]",
+      "draft": true
+    },
+    {
+      "id": "add-2",
+      "name": "[PLACE TO ADD]",
+      "draft": true
+    },
+    {
+      "id": "add-3",
+      "name": "[PLACE TO ADD]",
+      "draft": true
+    },
+    {
+      "id": "add-4",
+      "name": "[PLACE TO ADD]",
+      "draft": true
+    },
+    {
+      "id": "add-5",
+      "name": "[PLACE TO ADD]",
+      "draft": true
+    },
+    {
+      "id": "add-6",
+      "name": "[PLACE TO ADD]",
+      "draft": true
+    }
+  ]
+}

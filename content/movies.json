@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "films": [
+    {
+      "id": "kerala",
+      "title": "Kerala, Slowly",
+      "eyebrow": "A LOVE LETTER TO SMALL THINGS",
+      "duration": 36,
+      "tag": "The little things deserve screen time",
+      "poster": [
+        "#4d766c",
+        "#d5bf8f"
+      ],
+      "video": null,
+      "vtt": {
+        "en": "./assets/video/kerala.en.vtt",
+        "ml": "./assets/video/kerala.ml.vtt"
+      },
+      "shots": [
+        {
+          "at": 0,
+          "duration": 7,
+          "title": "A different kind of morning",
+          "caption": "The first light on a sleepy street.",
+          "motif": "palms",
+          "colors": [
+            "#3e786c",
+            "#d4b388"
+          ],
+          "still": null
+        },
+        {
+          "at": 7,
+          "duration": 7,
+          "title": "A cup and a long pause",
+          "caption": "Not everything needs a plan.",
+          "motif": "chai",
+          "colors": [
+            "#8e6e52",
+            "#ebd2a5"
+          ],
+          "still": null
+        },
+        {
+          "at": 14,
+          "duration": 8,
+          "title": "The road home",
+          "caption": "A familiar turn. An unfamiliar feeling.",
+          "motif": "road",
+          "colors": [
+            "#355c51",
+            "#cbd29b"
+          ],
+          "still": null
+        },
+        {
+          "at": 22,
+          "duration": 7,
+          "title": "Monsoon has opinions",
+          "caption": "Some rain refuses to be background noise.",
+          "motif": "rain",
+          "colors": [
+            "#4d6973",
+            "#b5c1c3"
+          ],
+          "still": null
+        },
+        {
+          "at": 29,
+          "duration": 7,
+          "title": "Kerala, slowly",
+          "caption": "The credits can wait.",
+          "motif": "palms",
+          "colors": [
+            "#617b63",
+            "#e1b989"
+          ],
+          "still": null
+        }
+      ]
+    },
+    {
+      "id": "kuwait",
+      "title": "A Day in Kuwait",
+      "eyebrow": "AN ORDINARY DAY, ON PURPOSE",
+      "duration": 35,
+      "tag": "A tiny diary in warm light",
+      "poster": [
+        "#836f72",
+        "#edc29c"
+      ],
+      "video": null,
+      "vtt": {
+        "en": "./assets/video/kuwait.en.vtt",
+        "ml": "./assets/video/kuwait.ml.vtt"
+      },
+      "shots": [
+        {
+          "at": 0,
+          "duration": 7,
+          "title": "First light",
+          "caption": "The city wakes up without checking our plans.",
+          "motif": "sun",
+          "colors": [
+            "#b98473",
+            "#f8d5a5"
+          ],
+          "still": null
+        },
+        {
+          "at": 7,
+          "duration": 7,
+          "title": "On the way",
+          "caption": "Another street. Another little story.",
+          "motif": "road",
+          "colors": [
+            "#5a7183",
+            "#efd3b6"
+          ],
+          "still": null
+        },
+        {
+          "at": 14,
+          "duration": 7,
+          "title": "A very important snack",
+          "caption": "Documenting the essentials, naturally.",
+          "motif": "chai",
+          "colors": [
+            "#aa7d5b",
+            "#f3cb90"
+          ],
+          "still": null
+        },
+        {
+          "at": 21,
+          "duration": 7,
+          "title": "Golden-hour detour",
+          "caption": "It would be rude not to look.",
+          "motif": "sun",
+          "colors": [
+            "#bd7e72",
+            "#f4c28f"
+          ],
+          "still": null
+        },
+        {
+          "at": 28,
+          "duration": 7,
+          "title": "Goodnight, Kuwait",
+          "caption": "Same sky. Another day worth keeping.",
+          "motif": "moon",
+          "colors": [
+            "#414d6b",
+            "#bfa8bd"
+          ],
+          "still": null
+        }
+      ]
+    },
+    {
+      "id": "places",
+      "title": "Places You'll Go",
+      "eyebrow": "A MAP WITH ROOM FOR MORE",
+      "duration": 42,
+      "tag": "No itinerary is final",
+      "poster": [
+        "#516879",
+        "#d8ab89"
+      ],
+      "video": null,
+      "vtt": {
+        "en": "./assets/video/places.en.vtt",
+        "ml": "./assets/video/places.ml.vtt"
+      },
+      "shots": [
+        {
+          "at": 0,
+          "duration": 7,
+          "title": "Bengaluru",
+          "caption": "Some adventures begin with a traffic signal.",
+          "motif": "city",
+          "colors": [
+            "#5b6573",
+            "#e5b093"
+          ],
+          "still": null
+        },
+        {
+          "at": 7,
+          "duration": 7,
+          "title": "Munnar",
+          "caption": "Clouds doing their absolute most.",
+          "motif": "hills",
+          "colors": [
+            "#487d66",
+            "#c9ddb4"
+          ],
+          "still": null
+        },
+        {
+          "at": 14,
+          "duration": 7,
+          "title": "Manali",
+          "caption": "A road that deserves a whole playlist.",
+          "motif": "hills",
+          "colors": [
+            "#6c7f90",
+            "#d3d7dc"
+          ],
+          "still": null
+        },
+        {
+          "at": 21,
+          "duration": 7,
+          "title": "Ladakh",
+          "caption": "The landscape wins every argument.",
+          "motif": "mountains",
+          "colors": [
+            "#6f7c80",
+            "#dbbb98"
+          ],
+          "still": null
+        },
+        {
+          "at": 28,
+          "duration": 7,
+          "title": "Kuwait",
+          "caption": "And somewhere else to call home.",
+          "motif": "sun",
+          "colors": [
+            "#ab806f",
+            "#f3cf96"
+          ],
+          "still": null
+        },
+        {
+          "at": 35,
+          "duration": 7,
+          "title": "A page still blank",
+          "caption": "Save room for wherever comes next.",
+          "motif": "stars",
+          "colors": [
+            "#4a5a67",
+            "#c0b6a5"
+          ],
+          "still": null
+        }
+      ]
+    },
+    {
+      "id": "trailer",
+      "title": "Trailer: Maha's Travel Channel",
+      "eyebrow": "A PREMIERE FOR SOMETHING NOT YET FILMED",
+      "duration": 33,
+      "tag": "Coming soon. No deadlines.",
+      "poster": [
+        "#413e5d",
+        "#d8a4a7"
+      ],
+      "video": null,
+      "vtt": {
+        "en": "./assets/video/trailer.en.vtt",
+        "ml": "./assets/video/trailer.ml.vtt"
+      },
+      "shots": [
+        {
+          "at": 0,
+          "duration": 5,
+          "title": "FROM THE PEOPLE WHO BROUGHT YOU…",
+          "caption": "Several unfinished plans.",
+          "motif": "stars",
+          "colors": [
+            "#36364e",
+            "#9c82a0"
+          ],
+          "still": null
+        },
+        {
+          "at": 5,
+          "duration": 6,
+          "title": "ONE CAMERA.",
+          "caption": "Probably a phone, actually.",
+          "motif": "camera",
+          "colors": [
+            "#645e75",
+            "#d9a690"
+          ],
+          "still": null
+        },
+        {
+          "at": 11,
+          "duration": 6,
+          "title": "A MILLION DETOURS.",
+          "caption": "And snacks. Do not forget snacks.",
+          "motif": "road",
+          "colors": [
+            "#677c70",
+            "#dccb99"
+          ],
+          "still": null
+        },
+        {
+          "at": 17,
+          "duration": 6,
+          "title": "STARRING: DR. MAHA",
+          "caption": "Traveller. Occasional director. Professional overpacker?",
+          "motif": "stars",
+          "colors": [
+            "#735d6c",
+            "#daa9a2"
+          ],
+          "still": null
+        },
+        {
+          "at": 23,
+          "duration": 5,
+          "title": "COMING WHENEVER SHE FEELS LIKE IT",
+          "caption": "No algorithms were consulted.",
+          "motif": "camera",
+          "colors": [
+            "#4a526b",
+            "#deb7a5"
+          ],
+          "still": null
+        },
+        {
+          "at": 28,
+          "duration": 5,
+          "title": "EPISODE ONE IS WAITING",
+          "caption": "The world can wait until she is ready.",
+          "motif": "stars",
+          "colors": [
+            "#343d56",
+            "#e0b78c"
+          ],
+          "still": null
+        }
+      ]
+    }
+  ]
+}

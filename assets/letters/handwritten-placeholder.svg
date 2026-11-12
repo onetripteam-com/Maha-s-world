@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="980" viewBox="0 0 720 980">
+<defs><linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fdf6e8"/><stop offset="1" stop-color="#eee1cb"/></linearGradient></defs>
+<rect x="10" y="10" width="700" height="960" rx="8" fill="url(#paper)" stroke="#c2a787" stroke-width="4"/>
+<g stroke="#9fbed0" opacity=".33" stroke-width="2">
+<path d="M70 195H650M70 246H650M70 297H650M70 348H650M70 399H650M70 450H650M70 501H650M70 552H650M70 603H650M70 654H650M70 705H650M70 756H650M70 807H650"/>
+</g>
+<path d="M112 124q20-18 42 4q25-34 46-2" fill="none" stroke="#bf7b6a" stroke-width="5"/>
+<text x="105" y="257" font-size="34" font-family="Georgia,serif" fill="#806856">Your handwriting</text>
+<text x="105" y="305" font-size="34" font-family="Georgia,serif" fill="#806856">will go here.</text>
+<text x="105" y="397" font-size="21" font-family="Arial,sans-serif" fill="#9b8271">Replace this sample file with</text>
+<text x="105" y="435" font-size="21" font-family="Arial,sans-serif" fill="#9b8271">your real scanned letter.</text>
+<text x="105" y="550" font-size="30" font-family="Georgia,serif" font-style="italic" fill="#b17062">For Maha ♡</text>
+<text x="105" y="853" font-size="16" font-family="Arial,sans-serif" letter-spacing="2" fill="#ae957e">PLACEHOLDER — NO REAL WRITING YET</text>
+</svg>

@@ -1,0 +1,713 @@
+/* MAHA / THE PASSPORT DESK v4
+ * Authentic dark-wood, antique-paper and gilt visual language from the original concept.
+ * The entire portal has ONE scroller: .portal-content. The book, map and tickets must
+ * never create a second vertical scroll area on Safari.
+ */
+#portal-screen[data-place="travel"] .portal-place{
+ --travel-paper:#f1ddbc;--travel-ink:#483326;--travel-gold:#e3bd82;--travel-walnut:#30201d;
+ overflow:hidden!important;background:#21191a!important;
+}
+#portal-screen[data-place="travel"] .portal-place:before{
+ background:radial-gradient(ellipse at 83% 8%,#c9906240,transparent 65%),linear-gradient(145deg,#2c201e,#160f14)!important;
+}
+#portal-screen[data-place="travel"] .portal-place>.portal-content{
+ position:absolute!important;box-sizing:border-box!important;
+ top:calc(70px + env(safe-area-inset-top,0px))!important;
+ left:0!important;right:0!important;bottom:0!important;
+ width:100%!important;height:auto!important;min-height:0!important;
+ max-width:none!important;margin:0!important;padding:0!important;
+ transform:none!important;overflow-x:hidden!important;overflow-y:auto!important;
+ overscroll-behavior-x:none!important;overscroll-behavior-y:contain!important;
+ -webkit-overflow-scrolling:touch;touch-action:pan-y!important;
+ scrollbar-width:thin;scrollbar-color:#bc9569 #382821;
+}
+#portal-screen[data-place="travel"] .portal-place .portal-content>*{min-width:0!important}
+#portal-screen[data-place="travel"] .atlas-app.travel-desk-v4{
+ position:relative!important;box-sizing:border-box!important;
+ display:block!important;width:100%!important;height:auto!important;min-height:100%!important;
+ max-width:none!important;margin:0!important;padding:0!important;
+ overflow-x:clip!important;overflow-y:visible!important;
+ overscroll-behavior:auto!important;
+ -webkit-overflow-scrolling:auto!important;touch-action:auto!important;
+ color:#e9d4b3!important;
+ background:
+   radial-gradient(ellipse at 88% 4%,#ca936352,transparent 35%),
+   radial-gradient(ellipse at 5% 32%,#93503822,transparent 33%),
+   linear-gradient(160deg,#201819a0,#32221a00 28%,#17131675 96%),
+   url("../assets/travel/desk-walnut.svg") center top / 1250px auto repeat!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-stage{
+ position:relative!important;box-sizing:border-box!important;
+ width:min(calc(100% - clamp(30px,5vw,100px)),1510px)!important;
+ max-width:none!important;margin:0 auto!important;
+ padding:32px 0 85px!important;
+ display:grid!important;
+ grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr)!important;
+ align-items:start!important;gap:clamp(30px,3.6vw,58px) clamp(23px,3vw,49px)!important;
+ height:auto!important;min-height:0!important;overflow:visible!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-stage>section{
+ min-width:0;scroll-margin-top:83px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero,
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-keepsakes,
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams{
+ grid-column:1/-1;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 :is(h1,h2,h3,p){letter-spacing:normal}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-section-kicker{
+ color:#c59d71!important;letter-spacing:.16em;font:800 10px/1.3 system-ui,sans-serif!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading{
+ position:relative;display:flex;gap:14px;align-items:center;justify-content:space-between;
+ margin:0 0 21px!important;padding:0!important;color:#f1dfc3!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading h2{
+ color:#f6e4c8!important;font:400 clamp(30px,2.85vw,44px)/1.08 Georgia,serif!important;
+ letter-spacing:-.046em!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading h2 em{
+ color:#e9b891!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading p{
+ font:italic 13px/1.5 Georgia,serif!important;color:#c4b19d!important;margin:5px 0 0!important;
+}
+#portal-screen[data-place="travel"] .travel-mini-seal{
+ color:#d8b27c!important;border-color:#d8b27c8f!important;
+}
+#portal-screen[data-place="travel"] .travel-compass{
+ background:url("../assets/travel/compass-seal.svg") center / contain no-repeat;
+ width:83px;height:83px;flex:0 0 83px;font-size:0!important;
+ filter:drop-shadow(0 5px 7px #0d090750);
+}
+
+/* Pinned navigation is inside, not above, the single native scrollport. */
+#portal-screen[data-place="travel"] .atlas-tabs.travel-index{
+ position:sticky!important;z-index:15!important;top:0!important;
+ display:flex!important;align-items:center;justify-content:center;
+ background:#261c1af5!important;border:0!important;
+ border-top:1px solid #d9ab7050!important;border-bottom:1px solid #c69c6755!important;
+ border-radius:0!important;box-shadow:0 8px 24px #0e0b0b66!important;
+ padding:8px clamp(12px,3vw,46px)!important;min-height:59px;
+ backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+}
+#portal-screen[data-place="travel"] .atlas-tabs.travel-index button{
+ color:#eddbc0!important;min-height:42px!important;max-width:185px;
+ font:700 12px/1.2 system-ui,sans-serif!important;
+ letter-spacing:.02em;border-radius:999px!important;
+ background:transparent!important;border:1px solid transparent!important;
+}
+#portal-screen[data-place="travel"] .atlas-tabs.travel-index button span{color:#d6af80!important}
+#portal-screen[data-place="travel"] .atlas-tabs.travel-index button:is([aria-current="true"],:hover,:focus-visible){
+ color:#fff6e4!important;background:#715038!important;border-color:#b18b60!important;
+}
+
+/* HERO: the book cover and open folio are separate physical props, side by side. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero{
+ position:relative;isolation:isolate;
+ display:grid!important;
+ grid-template-columns:minmax(235px,.82fr) minmax(170px,.66fr) minmax(385px,1.55fr)!important;
+ grid-template-rows:auto;align-items:center;gap:clamp(14px,2vw,34px);
+ min-height:465px;padding:26px 20px 38px!important;
+ background:none!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero::before{
+ content:"";position:absolute;z-index:-1;inset:-35px 0;
+ background:
+   radial-gradient(ellipse at 75% 12%,#e4a96b22,transparent 55%),
+   radial-gradient(ellipse at 17% 94%,#52382c66,transparent 57%);
+ pointer-events:none;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero::after{
+ content:"✳";position:absolute;left:0;bottom:7px;color:#bfa2795e;
+ font:30px Georgia,serif;pointer-events:none;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero-postmark{
+ position:absolute;right:16px;bottom:3px;text-align:center;
+ width:99px;height:99px;border:2px double #d5a46b70;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ font:750 10px/1.28 system-ui,sans-serif;letter-spacing:.12em;color:#c4a07870;
+ transform:rotate(-14deg);pointer-events:none;
+}
+#portal-screen[data-place="travel"] .travel-hero-copy{
+ position:relative;z-index:1;max-width:none!important;align-self:center;
+ text-align:left;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-head{
+ padding:0!important;background:none!important;border:0!important;text-align:left!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-head::before,
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-head::after{display:none}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-eyebrow{
+ color:#d9ad78!important;letter-spacing:.2em;font:850 10px/1.5 system-ui,sans-serif!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-head h1{
+ color:#fff0d8!important;
+ font:400 clamp(40px,4vw,68px)/1.005 Georgia,serif!important;
+ letter-spacing:-.062em!important;
+ text-wrap:balance!important;margin:18px 0 10px!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-head h1 em{
+ color:#ebbf98!important;font-style:italic!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-head p{
+ color:#ebdac6!important;font:italic 16px/1.45 Georgia,serif!important;
+ margin:8px 0!important;max-width:330px;
+}
+#portal-screen[data-place="travel"] .travel-head-ornament{
+ margin:13px 0 0!important;letter-spacing:.44em;color:#d3a974;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero-story{
+ max-width:325px;margin:20px 0 0!important;
+ font:13px/1.65 system-ui,sans-serif!important;color:#ddc9b7!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-handwritten{
+ display:block;margin:19px 0 0!important;
+ color:#f0c99d!important;font:italic 17px/1.43 Georgia,serif!important;max-width:345px;
+}
+#portal-screen[data-place="travel"] .travel-desk-signature{
+ display:inline-block;margin-top:21px;padding:7px 10px;
+ border:1px solid #d9ad786e;color:#e9c391;
+ font:800 9px system-ui,sans-serif;letter-spacing:.17em;
+}
+#portal-screen[data-place="travel"] .travel-cover-gallery{
+ position:relative;min-width:0;display:grid;place-items:center;
+ padding:11px 0 21px;align-self:center;
+ filter:drop-shadow(8px 20px 9px #0e0c0bdc);
+}
+#portal-screen[data-place="travel"] .travel-passport-cover-shadow{
+ position:absolute;bottom:34px;left:3%;right:2%;height:35px;
+ border-radius:50%;background:#0d0c0c9a;filter:blur(15px);z-index:-1;
+}
+#portal-screen[data-place="travel"] .travel-cover-gallery .travel-passport-cover{
+ width:min(100%,250px)!important;max-width:250px;min-height:0!important;
+ border-radius:14px!important;margin:0!important;
+ transform:rotate(-7deg)!important;box-shadow:0 14px 28px #0e0c0dc4,5px 0 0 #ddc79e85!important;
+ transition:transform .24s ease,filter .24s ease!important;
+}
+#portal-screen[data-place="travel"] .travel-cover-gallery .travel-passport-cover:hover{
+ transform:rotate(-4deg) translateY(-6px)!important;filter:brightness(1.07);
+}
+#portal-screen[data-place="travel"] .travel-cover-gallery .travel-passport-cover>span{
+ position:absolute;left:50%;bottom:13px;transform:translateX(-50%);
+ font:800 9px system-ui,sans-serif!important;letter-spacing:.04em;
+ border-radius:999px!important;background:#fff3df!important;
+ color:#2f473d!important;padding:7px 13px!important;
+ box-shadow:0 5px 12px #0005;
+}
+#portal-screen[data-place="travel"] .travel-cover-caption{
+ margin-top:12px;color:#dcc2a5;text-align:center;
+ font:italic 12px/1.4 Georgia,serif;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-experience{
+ align-self:center;display:flex;flex-direction:column;align-items:stretch;
+ gap:10px!important;overflow:visible!important;padding:0!important;
+ color:#eadbc7!important;width:100%!important;height:auto!important;
+}
+#portal-screen[data-place="travel"] .passport-overline{
+ width:100%;max-width:none!important;display:flex;justify-content:space-between;
+ font:800 9px/1.25 system-ui,sans-serif;letter-spacing:.12em;
+ color:#e0c6a4!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-case{
+ box-sizing:border-box!important;width:100%!important;max-width:none!important;
+ min-width:0;min-height:0!important;max-height:none!important;height:auto!important;
+ border-radius:15px 10px 12px 15px!important;
+ background:linear-gradient(105deg,#533529,#754d38 5%,#2d2425 11%,#412f2c 93%,#1d171a)!important;
+ border:2px solid #9b7852!important;
+ padding:11px 9px!important;box-shadow:0 17px 30px #050305b0,0 4px 0 #2a201b,inset 0 0 0 5px #bba0746b!important;
+ display:block!important;
+}
+#portal-screen[data-place="travel"] .travel-passport-interior{
+ width:100%;height:auto;min-width:0;animation:travel-folio-open .4s ease both;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-spread{
+ width:100%!important;min-height:330px!important;height:auto!important;
+ display:grid!important;grid-template-columns:minmax(0,1fr) 10px minmax(0,1fr)!important;
+ background:#eee0bf!important;border-radius:4px!important;
+ box-shadow:0 10px 15px #100e0d91!important;
+ overflow:hidden!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-paper{
+ padding:clamp(12px,1.2vw,21px)!important;min-width:0;min-height:325px;
+ background:
+   repeating-linear-gradient(0deg,#806d4b11 0 1px,transparent 1px 23px),
+   radial-gradient(ellipse at 40% 18%,#fff9e7,#e2cfae 90%)!important;
+ color:#493b30!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-spine{
+ width:10px;background:linear-gradient(90deg,#6f5849,#e5d3b4 50%,#786454);
+ box-shadow:inset 1px 0 3px #38271895,0 0 7px #59443299;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-identity{
+ gap:9px!important;padding:13px 1px;min-height:240px!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-identity strong{
+ color:#3e4c44!important;font-size:clamp(28px,2.7vw,46px)!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-identity dl>div{
+ grid-template-columns:64px minmax(0,1fr);gap:7px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-identity dd{
+ font-size:11px!important;line-height:1.28!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-page-header,
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-page-foot{
+ font:800 7px/1.4 system-ui,sans-serif!important;
+ letter-spacing:.08em;color:#8b765b!important;
+}
+#portal-screen[data-place="travel"] .passport-greeting{
+ display:flex;flex-direction:column;justify-content:center;align-items:center;
+ gap:15px;padding:22px 8px;text-align:center;flex:1;min-height:200px;
+ background:radial-gradient(ellipse at 50% 50%,#ffffff8a,transparent 70%);
+}
+#portal-screen[data-place="travel"] .passport-greeting>span{
+ font:800 9px system-ui,sans-serif;letter-spacing:.16em;color:#a48465;
+}
+#portal-screen[data-place="travel"] .passport-greeting blockquote{
+ padding:0;margin:0!important;font:italic clamp(14px,1.3vw,20px)/1.55 Georgia,serif;color:#695443;
+}
+#portal-screen[data-place="travel"] .passport-greeting svg{
+ width:100%;height:70px;fill:none;stroke:#998571;stroke-width:1.5;opacity:.65;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-blank-stamp{
+ min-height:185px!important;color:#ae9d86!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-after{
+ color:#d6bea2!important;justify-content:center;
+ font:700 10px/1.5 system-ui,sans-serif!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-after strong{color:#f6d9a8}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-bottom button{
+ min-width:91px;min-height:41px!important;color:#f5dbb8!important;
+ background:#4c342b!important;border-color:#be986b!important;border-radius:999px!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .passport-bottom span{
+ color:#e8caa1!important;
+}
+#portal-screen[data-place="travel"] .travel-closed-note{
+ display:grid;justify-items:center;align-content:center;gap:5px;min-height:335px;color:#efd0a8;
+}
+#portal-screen[data-place="travel"] .travel-closed-note span{font:70px Georgia,serif}
+#portal-screen[data-place="travel"] .travel-closed-note p{
+ color:#f3d8ba!important;font:italic 18px Georgia,serif!important;
+}
+
+/* Real stamp-edges, warm paper, ink, hairline borders: no generic white cards. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-places{
+ align-self:start;padding:0!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-places .travel-heading{
+ min-height:113px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-cards{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px!important;
+ padding:10px 8px 16px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card{
+ display:flex;flex-direction:column;gap:3px;min-width:0;min-height:0;
+ transform:rotate(-2deg)!important;
+ border:7px solid #f2daba!important;outline:2px dashed #c49c76!important;outline-offset:-2px!important;
+ border-radius:0!important;
+ background:linear-gradient(150deg,#fff0d2,#e9cfaa)!important;
+ box-shadow:0 9px 11px #100c0b94,0 0 0 1px #694a3580!important;
+ padding:8px 8px 17px!important;color:#473428!important;
+ transition:transform .25s ease,filter .25s ease;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card:nth-child(2){
+ transform:translateY(9px) rotate(2deg)!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card:nth-child(3){
+ transform:translateY(-4px) rotate(-1deg)!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card:hover{
+ transform:translateY(-8px) rotate(0)!important;filter:brightness(1.08);
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-frame{
+ aspect-ratio:.87!important;border:2px solid #fef6e8;padding:0!important;
+ box-shadow:inset 0 0 0 2px #6f5c4861;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-card-picture{
+ display:block;width:100%;height:100%;background:#9e9d84;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-card-picture :is(svg,img){
+ object-fit:cover;aspect-ratio:1!important;width:100%;height:100%;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-postmark{
+ width:42px;height:42px;right:4px;bottom:5px;border-color:#fff0c4bf;
+ background:#446b56bb;color:#f8e7b4;font-size:25px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-card-type{
+ margin:10px 0 0!important;font:800 9px system-ui,sans-serif!important;
+ letter-spacing:.13em;color:#8f5d47!important;text-align:center;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card strong{
+ margin:5px 0 6px!important;font:400 clamp(16px,1.55vw,25px)/1.1 Georgia,serif!important;
+ text-align:center;color:#423527!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card>span:not(.travel-postcard-frame):not(.travel-card-type){
+ font:italic clamp(10px,.9vw,13px)/1.35 Georgia,serif!important;
+ color:#675341;text-align:center;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card small{
+ text-align:center;margin-top:auto;padding-top:9px;
+ font:750 9px system-ui,sans-serif!important;color:#8e593f!important;
+}
+
+/* Folded parchment map, compass and readable legend. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map{
+ align-self:start;position:relative;
+ background:
+  radial-gradient(ellipse at 95% 5%,#fff9e4c9,transparent 30%),
+  linear-gradient(115deg,#e6d7b7,#f2e3c2 50%,#ceb99a)!important;
+ border:0!important;border-radius:3px!important;
+ padding:clamp(16px,2.2vw,31px)!important;
+ box-shadow:2px 7px 18px #100c0bad,0 0 0 1px #ad956ddc!important;
+ transform:rotate(.6deg);
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map::before{
+ content:"";position:absolute;left:26%;top:0;bottom:0;pointer-events:none;width:1px;
+ background:#93765227;box-shadow:2px 0 12px #73553629;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map::after{
+ content:"";position:absolute;right:12px;bottom:58px;pointer-events:none;
+ width:80px;height:80px;
+ background:url("../assets/travel/compass-seal.svg") center / contain no-repeat;
+ filter:drop-shadow(0 6px 5px #382f2966);
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map .travel-heading h2{
+ color:#4e3f2e!important;font-size:clamp(28px,2.8vw,42px)!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map .travel-heading p{
+ color:#76644e!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map .travel-section-kicker{color:#97714f!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map .travel-compass{display:none}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-wall{
+ position:relative!important;padding:6px!important;
+ border:1px solid #b89b72!important;border-radius:0!important;
+ background:#d2bd92!important;
+ box-shadow:0 3px 15px #4b362f3e!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board{
+ min-height:190px!important;aspect-ratio:420/252!important;
+ border:0!important;background:#d0c09b!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-watercolor{
+ filter:sepia(.17) saturate(.85) contrast(1.02);
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin-head{
+ box-shadow:0 1px 4px #0008;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin.chapter .atlas-pin-head{background:#a7664c!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin.possible .atlas-pin-head{background:#5b7a79!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin.dream .atlas-pin-head{background:#987198!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-controls{
+ padding:10px 4px 0;color:#8e7459;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-controls button{
+ border-radius:99px!important;color:#76523d!important;background:#fff0d2!important;
+ border:1px solid #b99c7a!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-legend{
+ display:flex;flex-wrap:wrap;justify-content:space-between;gap:7px;
+ margin:12px 1px 0;border-top:1px solid #a68c6e6c;padding:12px 0 0;
+ font:750 10px/1.25 system-ui,sans-serif;color:#69523e;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-legend span{display:inline-flex;align-items:center;gap:5px}
+#portal-screen[data-place="travel"] .travel-map-legend i{
+ display:grid;place-items:center;font:14px Georgia,serif;color:#fff;width:20px;height:20px;
+ border-radius:50%;background:#ac725b;
+}
+#portal-screen[data-place="travel"] .travel-map-legend i.possible{background:#668989}
+#portal-screen[data-place="travel"] .travel-map-legend i.dream{background:#a080a1}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-place-tape{
+ margin-top:9px;padding:6px 90px 4px 2px!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .atlas-place-tape button{
+ min-height:35px!important;font:700 10px system-ui,sans-serif!important;
+ background:#f8ebd3!important;border-color:#b18b6c!important;
+ color:#79503b!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-note{
+ font:italic 11px/1.4 Georgia,serif!important;color:#7d6551!important;
+ margin:12px 75px 0 0!important;
+}
+
+/* Row of mail, travel photos and boarding-pass sleeve. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-keepsakes{
+ position:relative;display:block;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-ephemera{
+ display:grid!important;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr)!important;
+ gap:clamp(18px,3.3vw,48px)!important;align-items:stretch;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-stack{
+ min-height:290px!important;
+ background:
+  radial-gradient(ellipse at 8% 4%,#fff1d636,transparent 44%),
+  repeating-linear-gradient(94deg,#301c151d 0 2px,transparent 2px 16px),
+  linear-gradient(110deg,#9e7059,#664033 67%,#452f2a)!important;
+ border:4px solid #a47552!important;border-radius:0!important;
+ box-shadow:0 9px 25px #0b0808be,inset 0 0 0 5px #dbb2842f!important;
+ padding:23px 25px 41px!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-small{
+ padding:7px 7px 11px!important;background:#f9e8cc!important;
+ box-shadow:4px 9px 13px #0d0a096d!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-small small{
+ font:italic 10px/1.4 Georgia,serif!important;color:#634832!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-stack-note{
+ font:italic 13px Georgia,serif;color:#f2d4b1!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-ticket-pocket{
+ min-height:315px;background:
+  repeating-linear-gradient(98deg,#4a2b221c 0 2px,transparent 2px 13px),
+  linear-gradient(125deg,#4d2e27,#6c3e30 40%,#301f1e)!important;
+ border:7px solid #6f4a31!important;border-radius:11px!important;
+ box-shadow:0 15px 35px #0908079f,inset 0 0 0 3px #c18e5f90!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-ticket{
+ border-radius:0!important;border-left:4px solid #dcaa7a!important;
+ box-shadow:0 3px 6px #1b0f0e61!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-pocket-front{
+ background:linear-gradient(140deg,#996441,#5e362b)!important;
+}
+
+/* Last desk drawer: a piece of torn parchment, not a task dashboard. */
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams{
+ color:#4b382d!important;padding:clamp(18px,3vw,38px)!important;
+ border:0!important;border-radius:3px!important;
+ background:
+  radial-gradient(ellipse at 10% 20%,#fff9e8aa,transparent 40%),
+  repeating-linear-gradient(90deg,#ab865911 0 1px,transparent 1px 27px),
+  linear-gradient(125deg,#efddbc,#d9bf98 65%,#ebd4ad)!important;
+ box-shadow:0 13px 30px #100b0c9c!important;transform:rotate(-.3deg);
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams .travel-heading h2{
+ color:#503a2f!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams .travel-heading h2 em{color:#aa775b!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams .travel-section-kicker{color:#9e7658!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams .travel-heading p{color:#75614c!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-board{
+ grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)!important;gap:26px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-intro{
+ background:#fff6e59e!important;border:1px dashed #b4926b!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-list{
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-slip{
+ border:6px solid #f6e5c9!important;outline:1px dashed #b69a78!important;
+ background:#f5e2bd!important;min-height:155px;
+}
+#portal-screen[data-place="travel"] .travel-desk-v4 .travel-last-line{
+ color:#74553e!important;
+}
+
+/* Modal dialog is a native top-layer object, never a hidden page scroller. */
+#portal-screen[data-place="travel"] .travel-modal{user-select:text!important;-webkit-user-select:text!important}
+#portal-screen[data-place="travel"] .travel-modal input,
+#portal-screen[data-place="travel"] .travel-modal textarea{touch-action:auto!important}
+#portal-screen[data-place="travel"] .travel-desk-v4 [data-tab]{
+ touch-action:manipulation;
+}
+/* Tablet: the passport becomes a book-spread under the introduction + cover. */
+@media(max-width:1199px) and (min-width:760px){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero{
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important;gap:21px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-experience{grid-column:1/-1;width:min(100%,740px)!important;margin-inline:auto}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-places .travel-heading{min-height:0}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-cards{gap:8px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card{padding:5px!important;border-width:4px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card strong{font-size:16px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-legend{font-size:9px}
+}
+/* Mobile: one native scroll, never horizontally squeezed, never two columns of tiny passport text. */
+@media(max-width:759px){
+ #portal-screen[data-place="travel"] .portal-place>.portal-content{
+  top:calc(64px + env(safe-area-inset-top,0px))!important;
+  bottom:0!important;overflow-y:auto!important;
+  touch-action:pan-y!important;-webkit-overflow-scrolling:touch;
+ }
+ #portal-screen[data-place="travel"] .atlas-tabs.travel-index{
+  min-height:56px!important;padding:5px 4px!important;
+ }
+ #portal-screen[data-place="travel"] .atlas-tabs.travel-index button{
+  flex:1 1 25%;min-width:0;min-height:46px!important;
+  border-radius:5px!important;padding:5px 1px!important;
+  font-size:9px!important;white-space:normal;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-stage{
+  display:flex!important;flex-direction:column!important;
+  width:calc(100% - 23px)!important;gap:34px!important;
+  padding:16px 0 56px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-stage>section{
+  width:100%;scroll-margin-top:73px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero{
+  display:flex!important;flex-direction:column;align-items:center;gap:19px;
+  padding:22px 6px 21px!important;min-height:0!important;
+ }
+ #portal-screen[data-place="travel"] .travel-hero-copy{
+  text-align:center!important;max-width:390px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-head{text-align:center!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-head h1{
+  font:400 clamp(38px,10.6vw,54px)/1.02 Georgia,serif!important;
+  margin:10px auto!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-head p{max-width:315px;margin:0 auto!important;font-size:14px!important}
+ #portal-screen[data-place="travel"] .travel-eyebrow{font-size:9px!important;letter-spacing:.13em!important}
+ #portal-screen[data-place="travel"] .travel-head-ornament{margin:9px auto!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero-story{display:none}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-handwritten{
+  margin:10px auto!important;max-width:310px;font-size:14px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-signature{display:none}
+ #portal-screen[data-place="travel"] .travel-cover-gallery{
+  width:100%;padding:5px 0 2px;
+ }
+ #portal-screen[data-place="travel"] .travel-cover-gallery .travel-passport-cover{
+  width:min(62%,230px)!important;
+ }
+ #portal-screen[data-place="travel"] .travel-cover-gallery.is-open{
+  display:none!important;
+ }
+ #portal-screen[data-place="travel"] .travel-cover-caption{font-size:11px}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-experience{
+  width:100%!important;gap:8px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-case{
+  min-height:0!important;padding:8px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-spread{
+  grid-template-columns:minmax(0,1fr)!important;
+  overflow:visible!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-spine{
+  width:100%;height:7px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-paper{
+  min-height:220px!important;padding:17px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-greeting blockquote{font-size:18px}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-identity{min-height:205px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-closed-note{min-height:85px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .passport-after{font-size:9px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-hero-postmark{display:none}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading{
+  margin:0 0 15px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading h2{
+  font-size:clamp(30px,8.4vw,40px)!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-heading p{
+  font-size:12px!important;line-height:1.45!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-cards{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+  padding:6px 6px 12px;gap:14px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card{
+  display:grid!important;grid-template-columns:119px minmax(0,1fr)!important;
+  grid-template-rows:auto auto 1fr auto!important;
+  min-height:155px!important;gap:3px 13px;
+  transform:none!important;padding:7px!important;border-width:6px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card:nth-child(n){transform:none!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-frame{
+  grid-column:1!important;grid-row:1/5!important;
+  width:100%;height:100%;min-height:130px;aspect-ratio:.92!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-card-type{
+  grid-column:2!important;grid-row:1!important;text-align:left;margin:4px 0 0!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card strong{
+  grid-column:2!important;grid-row:2!important;
+  font-size:clamp(20px,5vw,26px)!important;text-align:left;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card>span:not(.travel-postcard-frame):not(.travel-card-type){
+  grid-column:2!important;grid-row:3!important;text-align:left;
+  font-size:11px!important;line-height:1.4!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card small{
+  grid-column:2!important;grid-row:4!important;text-align:left;
+  font-size:9px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-map{
+  padding:14px 10px!important;transform:none!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-map::after{
+  width:58px;height:58px;bottom:60px;right:7px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-board{
+  min-height:190px!important;aspect-ratio:1.62!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin{
+  min-width:36px!important;width:36px!important;height:39px!important;min-height:39px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin .atlas-pin-name{display:none!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-pin:focus-visible .atlas-pin-name{display:block!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-legend{gap:9px;font-size:9px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-legend i{width:17px;height:17px;font-size:12px}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-map-controls span{font-size:8px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .atlas-place-tape{padding-right:53px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-map-note{margin-right:52px!important;font-size:10px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-ephemera{
+  display:flex!important;flex-direction:column;gap:18px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-stack{
+  min-height:210px!important;padding:19px 12px 31px!important;border-width:4px!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-small{min-width:0;padding:5px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-small small{font-size:8px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dreams{padding:20px 12px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-board{
+  grid-template-columns:minmax(0,1fr)!important;gap:15px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-list{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-dream-slip{padding:12px!important;min-height:125px}
+}
+@media(max-width:355px){
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card{
+  grid-template-columns:100px minmax(0,1fr)!important;gap:3px 9px;
+ }
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-place-card strong{font-size:19px!important}
+ #portal-screen[data-place="travel"] .travel-desk-v4 .travel-postcard-small small{font-size:7px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen[data-place="travel"] .travel-desk-v4 *,
+ #portal-screen[data-place="travel"] .travel-desk-v4 *::before,
+ #portal-screen[data-place="travel"] .travel-desk-v4 *::after{
+  transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important;
+ }
+}
+/* Travel portal chrome: integrate the Room control into the walnut desk,
+   not an unrelated white strip. Keep the separate safe-area navigation band. */
+#portal-screen[data-place="travel"] .portal-surface::before{
+ background:
+  linear-gradient(180deg,#30221fed,#261a1af7),
+  url("../assets/travel/desk-walnut.svg") center top / 1250px auto repeat!important;
+ border-bottom:1px solid #c59a6b91!important;
+ box-shadow:0 6px 15px #0d090a48!important;
+}
+#portal-screen[data-place="travel"] .portal-back{
+ background:linear-gradient(140deg,#f8e6c8,#ddbd92)!important;
+ color:#382b23!important;
+ border:1px solid #b88f62!important;
+ box-shadow:0 5px 14px #0d08076a,inset 0 1px 0 #fff8e7!important;
+}
+#portal-screen[data-place="travel"] .portal-back:hover{
+ background:#fdf0d8!important;color:#34291f!important;
+}

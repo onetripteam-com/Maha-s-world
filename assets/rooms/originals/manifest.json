@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "generated_by": "GPT Image API when explicitly enabled",
+  "scenes": {
+    "story": {
+      "wide": false,
+      "portrait": false
+    },
+    "monsoon": {
+      "wide": false,
+      "portrait": false
+    },
+    "sunroom": {
+      "wide": false,
+      "portrait": false
+    },
+    "terracotta": {
+      "wide": false,
+      "portrait": false
+    },
+    "midnight": {
+      "wide": false,
+      "portrait": false
+    },
+    "cosmos": {
+      "wide": false,
+      "portrait": false
+    }
+  }
+}

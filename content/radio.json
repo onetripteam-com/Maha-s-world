@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "notice": "Original local atmospheric synthesis; no third-party streaming or recorded voices are bundled.",
+  "stations": [
+    {
+      "id": "rain",
+      "name": "Rain Day",
+      "frequency": "88.3",
+      "tagline": "Let the afternoon take its time.",
+      "introCaption": "Rain on the window. Nothing urgent on the agenda.",
+      "introAudio": null,
+      "ambientAudio": null,
+      "spotify": null,
+      "youtube": null,
+      "colors": [
+        "#60817b",
+        "#d5d8c2"
+      ]
+    },
+    {
+      "id": "road",
+      "name": "Road Trip",
+      "frequency": "91.7",
+      "tagline": "The long route wins again.",
+      "introCaption": "The road looks longer from here. That might be the point.",
+      "introAudio": null,
+      "ambientAudio": null,
+      "spotify": null,
+      "youtube": null,
+      "colors": [
+        "#ac7967",
+        "#efd19d"
+      ]
+    },
+    {
+      "id": "malayalam",
+      "name": "Malayalam Comfort",
+      "frequency": "94.5",
+      "tagline": "A little closer to home.",
+      "introCaption": "Chaaya and an evening that somehow feels familiar.",
+      "introAudio": null,
+      "ambientAudio": null,
+      "spotify": null,
+      "youtube": null,
+      "colors": [
+        "#64836a",
+        "#e9cba2"
+      ]
+    },
+    {
+      "id": "chai",
+      "name": "Morning Chai",
+      "frequency": "97.2",
+      "tagline": "Tea before any major decisions.",
+      "introCaption": "Good morning, Doctor. First we find the kettle.",
+      "introAudio": null,
+      "ambientAudio": null,
+      "spotify": null,
+      "youtube": null,
+      "colors": [
+        "#9b7963",
+        "#f0d4a8"
+      ]
+    },
+    {
+      "id": "night",
+      "name": "Late Night",
+      "frequency": "103.1",
+      "tagline": "For the hour between days.",
+      "introCaption": "Nothing left to prove tonight. The streetlights have the shift.",
+      "introAudio": null,
+      "ambientAudio": null,
+      "spotify": null,
+      "youtube": null,
+      "colors": [
+        "#58607e",
+        "#d1b7c8"
+      ]
+    }
+  ]
+}

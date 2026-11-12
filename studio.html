@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="robots" content="noindex,nofollow">
+ <meta name="color-scheme" content="light">
+ <title>MAHA · Local Content Studio</title>
+ <link rel="stylesheet" href="./css/content-studio.css">
+</head>
+<body>
+ <div class="studio-shell">
+  <aside class="studio-side">
+   <a class="studio-brand" href="./index.html" aria-label="Return to MAHA home"><span class="studio-mark">✿</span><span><strong>MAHA</strong><small>CONTENT ATELIER</small></span></a>
+   <p class="studio-side-label">THE COLLECTIONS</p>
+   <nav aria-label="Content collections" id="studio-nav">
+    <button type="button" data-category="today" aria-current="page">☼ <span>Daily notes</span></button>
+    <button type="button" data-category="letters">✉ <span>Letters</span></button>
+    <button type="button" data-category="flowers">✿ <span>Flowers</span></button>
+    <button type="button" data-category="places">⌖ <span>Travel places</span></button>
+    <button type="button" data-category="radio">♫ <span>Radio</span></button>
+    <button type="button" data-category="movies">▣ <span>Cinema</span></button>
+    <button type="button" data-category="comfort">☾ <span>Rest & comforts</span></button>
+    <button type="button" data-category="hug">♡ <span>Opening copy</span></button>
+    <button type="button" data-category="config">⚙ <span>Site configuration</span></button>
+   </nav>
+   <div class="studio-side-bottom">Local workspace only.<br>Nothing is published or uploaded from this editor.</div>
+  </aside>
+  <main class="studio-main">
+   <header class="studio-top">
+    <div><span class="studio-kicker">A LITTLE PLACE FOR MAKING THINGS</span><h1>Content <em>Atelier.</em></h1><p>Edit gently. Keep every lovely detail.</p></div>
+    <a class="studio-home" href="./index.html">↗ View MAHA</a>
+   </header>
+   <div class="studio-security" role="note"><span>✦</span><p><strong>Your changes stay in this browser.</strong> This studio produces validated JSON files for manual review and deployment. It does not modify the repository, publish your changes, or grant anyone access. Drafts and exported files are your responsibility; keep personal memories in a private, access-controlled location.</p></div>
+   <details class="studio-howto" open>
+    <summary><span aria-hidden="true">✧</span> How do I use Content Studio?</summary>
+    <ol>
+     <li><strong>Choose a section</strong> in the left menu, then edit the text.</li>
+     <li><strong>Export JSON</strong> when it looks right. Your local draft alone does not change MAHA.</li>
+     <li><strong>Replace <code id="studio-target-path">content/today.json</code></strong> in your private clone with the exported file, run <code>npm test</code>, and review before merging.</li>
+    </ol>
+    <p>For a safe local preview, clone your private repository and run <code>npm run dev</code>. Nothing from this editor is uploaded automatically.</p>
+   </details>
+   <div class="studio-toolbar">
+    <div><span class="studio-section-label">CURRENT COLLECTION</span><h2 id="studio-title">Daily notes</h2><p id="studio-description">Forty little reasons to return.</p></div>
+    <div class="studio-actions"><button id="studio-undo" type="button" disabled>↶ Undo session edits</button><button id="studio-reset" type="button">↺ Revert local edits</button><button id="studio-export" type="button" class="primary">↓ Export JSON</button></div>
+   </div>
+   <div class="studio-status" role="status" id="studio-status">Opening the collection…</div>
+   <section class="studio-editor">
+     <div class="studio-editor-head"><label for="studio-search">Find an entry</label><input id="studio-search" type="search" placeholder="Search titles and content"><span id="studio-count"></span><span class="studio-change-count" id="studio-changed">0 text fields changed</span></div>
+     <div id="studio-entries" class="studio-entries"></div>
+     <button type="button" id="studio-show-more" class="studio-show-more" hidden>Show more entries</button>
+     <section class="studio-copy-preview" id="studio-preview" aria-labelledby="studio-preview-heading" hidden>
+      <div class="studio-preview-head">
+       <div><span class="studio-section-label">READ BEFORE EXPORTING</span><h3 id="studio-preview-heading">Copy preview</h3><p id="studio-preview-title"></p></div>
+       <span class="studio-preview-status" id="studio-preview-note">Unchanged from the original.</span>
+      </div>
+      <div class="studio-preview-columns">
+       <div><h4>Original</h4><p id="studio-preview-before"></p></div>
+       <div><h4>Your local draft</h4><p id="studio-preview-after"></p></div>
+      </div>
+      <p class="studio-preview-disclaimer">Text preview only. The live MAHA design and content files remain unchanged until you manually replace the exported JSON in your private clone.</p>
+     </section>
+     <details class="studio-advanced"><summary>Advanced JSON editor (validate before export)</summary><p>Edit the entire file if you need to change complex structures, unlock rules, or metadata.</p><label for="studio-json">JSON content</label><textarea id="studio-json" spellcheck="false" rows="18"></textarea><div class="studio-actions"><button type="button" id="studio-apply">Validate & apply JSON</button><button type="button" id="studio-import">Import JSON file</button><input id="studio-file" type="file" accept=".json,application/json" hidden></div></details>
+   </section>
+   <footer class="studio-footer">✿ Original project structure preserved · One collection exported at a time · Preview and review before publishing.</footer>
+  </main>
+ </div>
+ <script type="module" src="./js/content-studio.js"></script>
+</body></html>

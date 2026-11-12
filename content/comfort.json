@@ -1,0 +1,26 @@
+{
+  "shows": [
+    "An episode you already know by heart, so there is nothing to keep up with.",
+    "A comedy you can pause halfway through without losing the plot.",
+    "An old favourite when you do not feel like picking something new."
+  ],
+  "snacks": [
+    "Something warm, eaten slowly.",
+    "A bit of Kerala comfort, if you feel like it.",
+    "A snack requiring absolutely no preparation except opening the packet."
+  ],
+  "songs": [
+    "A familiar song from years ago.",
+    "Something soft enough to leave on in the background.",
+    "A road-trip song, even if the road trip is imaginary today."
+  ],
+  "voice": {
+    "src": "",
+    "caption": "No recorded message here yet. The quiet is yours until there is a real one.",
+    "licence": "Only include recordings after permission and private hosting."
+  },
+  "rain": {
+    "src": "",
+    "licence": "Original local Web Audio synthesis."
+  }
+}

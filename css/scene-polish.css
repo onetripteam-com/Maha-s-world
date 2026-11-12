@@ -1,0 +1,80 @@
+/* Scene finishing: keep each approved room photograph and its mapped hit areas.
+   All three photographs follow the same Kuwait-local time or manual light choice.
+   This stylesheet loads after older theme overrides. */
+.cinematic-room[data-room-photo-scene="original"]{
+ --scene-exposure:1.06;--scene-saturation:1.06;--scene-ambient:transparent;
+}
+.cinematic-room[data-light="daylight"]{--scene-exposure:1.09;--scene-saturation:1.06;--scene-ambient:#fff0c214}
+.cinematic-room[data-light="golden"]{--scene-exposure:1.0;--scene-saturation:1.03;--scene-ambient:#e7b6671b}
+.cinematic-room[data-light="evening"]{--scene-exposure:.79;--scene-saturation:.91;--scene-ambient:#35475e24}
+.cinematic-room[data-light="night"]{--scene-exposure:.55;--scene-saturation:.78;--scene-ambient:#172a443b}
+.cinematic-room[data-light="lamplight"]{--scene-exposure:.66;--scene-saturation:.90;--scene-ambient:#9b64211d}
+#app .cinematic-room[data-room-photo-scene="original"] .living-photo-image{
+ transition:filter .8s ease!important;
+ filter:brightness(var(--scene-exposure)) saturate(var(--scene-saturation)) contrast(1.045)!important;
+}
+/* Kuwait: neutral limestone, honey sunlight, slightly clearer contrast;
+   Kerala remains leaf-green, and Bengaluru keeps its dusk-city warmth. */
+#app .cinematic-room[data-room-photo-scene="original"][data-theme="story"] .living-photo-image{
+ filter:brightness(var(--scene-exposure)) saturate(var(--scene-saturation)) contrast(1.055) sepia(.10)!important;
+}
+#app .cinematic-room[data-room-photo-scene="original"][data-theme="kerala"] .living-photo-image{
+ filter:brightness(var(--scene-exposure)) saturate(var(--scene-saturation)) contrast(1.03) hue-rotate(-4deg)!important;
+}
+#app .cinematic-room[data-room-photo-scene="original"][data-theme="bengaluru"] .living-photo-image{
+ filter:brightness(var(--scene-exposure)) saturate(var(--scene-saturation)) contrast(1.04) sepia(.035)!important;
+}
+#app .cinematic-room[data-room-photo-scene="original"] .scene-atmosphere{
+ background:linear-gradient(115deg,var(--scene-ambient),transparent 60%);
+ pointer-events:none;
+}
+#app .cinematic-room[data-theme="story"][data-light="golden"] .cinematic-lens{
+ background:radial-gradient(ellipse at 72% 30%,#ffc77b35,transparent 55%),linear-gradient(110deg,#3e221649,transparent 63%)!important;
+}
+#app .cinematic-room[data-theme="story"][data-light="daylight"] .cinematic-lens{
+ background:linear-gradient(110deg,#6a48262d,transparent 63%)!important;
+}
+#app .cinematic-room[data-theme="story"][data-light="night"] .cinematic-lens{
+ background:radial-gradient(ellipse at 78% 76%,#f6b45d23,transparent 48%),linear-gradient(110deg,#0a182b7a,#08142427 59%,transparent)!important;
+}
+#app .cinematic-room[data-theme="kerala"][data-light="night"] .cinematic-lens{
+ background:linear-gradient(110deg,#071b1b91,#102e3055 49%,transparent 79%)!important;
+}
+#app .cinematic-room[data-theme="bengaluru"][data-light="night"] .cinematic-lens{
+ background:linear-gradient(110deg,#18172c85,#4d303b40 49%,transparent 79%)!important;
+}
+.cinematic-room .room-invitation,.cinematic-room .cinematic-issue{transition:opacity .3s ease,color .3s ease}
+/* Mid-size screens: a proper vertical experience instead of two squeezed columns. */
+@media(min-width:760px) and (max-width:960px){
+ .app-frame .portal-screen:is([data-place="games"],[data-place="music"],[data-place="rest"],[data-place="garden"],[data-place="letters"]) .portal-place .portal-content{
+  width:calc(100% - 38px)!important;padding:12px 10px!important;
+ }
+ #portal-screen[data-place="games"] .arcade-app.arcade-lobby,
+ #portal-screen[data-place="music"] .fm-app,
+ #portal-screen[data-place="rest"] .restroom{
+  display:grid;grid-template-columns:minmax(0,1fr)!important;
+  grid-template-rows:none!important;grid-auto-rows:auto;
+  height:auto!important;min-height:0;overflow:visible;align-content:start;gap:14px;
+ }
+ #portal-screen[data-place="games"] .arcade-app.arcade-lobby>*,
+ #portal-screen[data-place="music"] .fm-app>*,
+ #portal-screen[data-place="rest"] .restroom>*{
+  grid-column:1!important;grid-row:auto!important;
+ }
+ #portal-screen[data-place="games"] .cabinet-switcher{min-height:300px;height:340px;max-height:380px}
+ #portal-screen[data-place="games"] .arcade-info{min-height:0}
+ #portal-screen[data-place="games"] .arcade-play{max-width:none}
+ #portal-screen[data-place="music"] .fm-radio{height:300px;min-height:0}
+ #portal-screen[data-place="music"] .fm-app h1{text-align:center;margin:10px 0}
+ #portal-screen[data-place="rest"] .rr-window{height:320px;min-height:280px}
+ #portal-screen[data-place="rest"] .rr-lower{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+ #portal-screen[data-place="garden"] .wg-bottom{grid-template-columns:1fr}
+ #portal-screen[data-place="garden"] .wg-palette,
+ #portal-screen[data-place="garden"] .wg-actions{grid-column:1}
+}
+@media(min-width:760px) and (max-width:840px){
+ #portal-screen[data-place="letters"] .mail-inbox-list{grid-template-columns:minmax(0,1fr)!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #app .cinematic-room[data-room-photo-scene="original"] .living-photo-image{transition:none!important}
+}

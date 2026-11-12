@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" role="img" aria-label="A small blue humpback whale carrying a letter">
+<defs>
+ <linearGradient id="body" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#a5d4e8"/><stop offset=".3" stop-color="#6caecb"/><stop offset=".77" stop-color="#416e9a"/><stop offset="1" stop-color="#274d77"/></linearGradient>
+ <linearGradient id="belly" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e9f6eb"/><stop offset=".53" stop-color="#bddbdf"/><stop offset="1" stop-color="#81b3c8"/></linearGradient>
+ <radialGradient id="blush"><stop stop-color="#eaaeb2" stop-opacity=".65"/><stop offset="1" stop-color="#eaaeb2" stop-opacity="0"/></radialGradient>
+ <linearGradient id="fin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#76bbd8"/><stop offset="1" stop-color="#285b83"/></linearGradient>
+ <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4d7"/><stop offset="1" stop-color="#d9ba90"/></linearGradient>
+ <filter id="shadow" x="-15%" y="-30%" width="130%" height="160%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<ellipse cx="296" cy="260" rx="166" ry="11" fill="#4c87a6" opacity=".13" filter="url(#shadow)"/>
+<!-- fluke, unmistakably forked -->
+<path d="M463 151C485 129 507 100 542 93Q532 128 517 142Q547 133 572 148Q557 159 531 161Q558 177 569 206Q527 202 497 178L462 166Z" fill="url(#fin)" stroke="#c2e4e9" stroke-width="3" stroke-linejoin="round"/>
+<path d="M496 159Q525 156 553 151M495 168Q529 189 552 195" fill="none" stroke="#c1e3e9" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+<!-- humpback's small, curved dorsal fin -->
+<path d="M341 100Q364 76 375 67Q388 88 380 111Z" fill="#508aae" stroke="#c2e6ee" stroke-width="2"/>
+<!-- big round head, narrower tail -->
+<path d="M78 158C78 113 126 87 190 84C240 80 301 99 347 111C390 124 432 136 471 146Q493 157 472 173C438 195 391 204 347 209C277 231 185 229 129 205C98 193 77 178 78 158Z" fill="url(#body)" stroke="#b5dce9" stroke-width="4"/>
+<!-- underjaw light and chin grooves -->
+<path d="M84 177Q130 201 193 203Q274 216 358 205Q414 196 456 174Q408 231 289 239Q169 242 110 207Z" fill="url(#belly)" opacity=".92"/>
+<path d="M92 184Q178 225 322 217M111 197Q195 231 302 226M146 207Q195 232 262 233" stroke="#70a6b9" opacity=".52" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+<!-- long humpback pectoral flipper with tubercles -->
+<path d="M287 184Q306 206 327 219Q354 241 350 263Q345 279 326 273Q301 252 285 222Q272 195 287 184Z" fill="url(#fin)" stroke="#bfe0e9" stroke-width="3"/>
+<path d="M304 211Q319 243 336 259" fill="none" stroke="#d7f5f4" opacity=".6" stroke-width="3" stroke-linecap="round"/>
+<circle cx="349" cy="262" r="3" fill="#d5eced"/><circle cx="346" cy="270" r="3.1" fill="#d5eced"/>
+<!-- whale expression -->
+<ellipse cx="156" cy="159" rx="12" ry="13" fill="#233c5e"/><circle cx="152" cy="155" r="4.5" fill="#f1faf7"/>
+<ellipse cx="159" cy="182" rx="25" ry="19" fill="url(#blush)"/>
+<path d="M90 184Q130 203 167 192" fill="none" stroke="#365c7d" stroke-width="3.6" stroke-linecap="round"/>
+<!-- textured reflected light -->
+<path d="M129 117Q219 85 337 128" fill="none" stroke="#d9f5f5" stroke-opacity=".56" stroke-width="7" stroke-linecap="round"/>
+<path d="M384 155Q416 166 447 157" fill="none" stroke="#cfedf0" stroke-opacity=".22" stroke-width="6" stroke-linecap="round"/>
+<!-- spray: air and water, not a horn -->
+<path d="M193 88Q192 71 182 61M203 85Q208 59 222 50M213 89Q234 70 246 73" stroke="#d9f7f4" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="179" cy="53" r="4" fill="#def9f3"/><circle cx="224" cy="46" r="5" fill="#e6fbf5"/><circle cx="250" cy="69" r="3" fill="#e6fbf5"/>
+<!-- tiny courier note clipped to the fin -->
+<g transform="translate(361 222) rotate(-13)">
+ <path d="M-5 -8L35 -8L35 23L-5 23Z" fill="url(#paper)" stroke="#b79a79" stroke-width="2" rx="3"/>
+ <path d="M-4 -7L15 8L35 -7" stroke="#c39f86" stroke-width="2" fill="none"/>
+ <circle cx="15" cy="11" r="6" fill="#b96f6f"/><text x="15" y="14.5" text-anchor="middle" fill="#fff5de" font-family="Georgia,serif" font-size="9">M</text>
+</g>
+</svg>

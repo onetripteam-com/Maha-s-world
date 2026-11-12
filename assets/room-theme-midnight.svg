@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="780" viewBox="0 0 400 780" preserveAspectRatio="none" style="--w1:#171a39;--w2:#38233e;--f1:#25233d;--f2:#0c1128;--object:#b365aa;--trim:#6a4072;--screen:#514367;--knob:#d483af;--paper:#eedbf7;--sheet:#cf9ab9;--pot:#f77bb5;--shine:#9df2ef;--g1:#8691b7;--g2:#557baa;--seal:#eb6c9b;--leaf:#7fa5bd;--plant:#4d6298;--seal2:#9c6690;"><defs>
+ <linearGradient id="wall" x2=".95" y2="1"><stop stop-color="var(--w1)"/><stop offset="1" stop-color="var(--w2)"/></linearGradient>
+ <linearGradient id="floor" x2=".4" y2="1"><stop stop-color="var(--f1)"/><stop offset="1" stop-color="var(--f2)"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="var(--g1)" stop-opacity=".74"/><stop offset="1" stop-color="var(--g2)" stop-opacity=".18"/></linearGradient>
+ <pattern id="grain" width="19" height="23" patternUnits="userSpaceOnUse"><path d="M3 8l2-1M15 19l-1 2" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
+ <filter id="shade"><feGaussianBlur stdDeviation="8"/></filter>
+ </defs><path fill="url(#wall)" fill-rule="evenodd" d="M0 0H400V780H0Z M202 95Q202 50 286 50Q370 50 370 95V335H202Z"/><path d="M0 476H400V780H0Z" fill="url(#floor)"/><path d="M0 0H400V780H0Z" fill="url(#grain)"/>
+<path d="M0 0H400V475H0Z" fill="#111730" opacity=".38"/>
+<path d="M0 86H400M0 205H400M0 328H400" stroke="#f597b1" opacity=".12" stroke-width="3"/>
+<path d="M199 338V78Q211 37 281 36Q362 37 375 91V338Z" stroke="#a856a9" stroke-width="13" fill="none"/>
+<path d="M206 338H382" stroke="#ec87ce" stroke-width="5"/>
+<path d="M192 90Q254 44 372 92" stroke="#efaade" fill="none" stroke-width="2"/>
+<path d="M0 485L400 455M0 610L400 553M0 738L400 660" stroke="#9a6199" opacity=".4" stroke-width="4"/>
+<path d="M8 113H169" stroke="#ee76ab" stroke-width="10" stroke-linecap="round"/><path d="M17 100h142" stroke="#ffd5f7" opacity=".44" stroke-width="2"/>
+<text x="24" y="167" fill="#ffe0f0" font-family="monospace" font-size="24" letter-spacing="4">AFTER</text><text x="24" y="200" fill="#fd84c5" font-family="monospace" font-size="24" letter-spacing="4">HOURS</text>
+<circle cx="170" cy="116" r="11" fill="#faacdf" opacity=".7"/><path d="M165 116h10" stroke="#6b478b" stroke-width="3"/>
+<path d="M0 476H400" stroke="#c776a9" stroke-width="5"/>
+<g fill="#ffb6da" opacity=".56"><circle cx="275" cy="110" r="3"/><circle cx="319" cy="165" r="2"/><circle cx="231" cy="267" r="3"/></g><path d="M0 460Q200 467 400 452" fill="none" stroke="var(--trim)" stroke-width="8" opacity=".65"/><g class="interactives">
+<!-- shortwave/music at left center -->
+<g transform="translate(45 319)"><rect x="0" y="0" width="74" height="72" rx="9" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><rect x="9" y="11" width="56" height="26" rx="4" fill="var(--screen)" opacity=".83"/><path d="M17 25h40" stroke="var(--shine)" stroke-width="2"/><circle cx="22" cy="54" r="10" fill="var(--knob)" stroke="var(--trim)" stroke-width="2"/><circle cx="53" cy="54" r="7" fill="var(--knob)"/><path d="M58 2l12-22" stroke="var(--trim)" stroke-width="3"/></g>
+<!-- letters at left below radio -->
+<g transform="translate(35 447) rotate(-4)"><rect width="120" height="70" rx="3" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><path d="M5 4l55 38 55-38" fill="none" stroke="var(--trim)" stroke-width="2"/><path d="M5 66L49 36M115 66L72 36" fill="none" stroke="var(--trim)" stroke-width="2"/><circle cx="60" cy="40" r="10" fill="var(--seal)"/></g>
+<!-- projector at center -->
+<g transform="translate(172 528)"><path d="M-13 52L7 8h57l27 44" fill="var(--object)" stroke="var(--trim)" stroke-width="4"/><rect x="0" y="0" width="73" height="48" rx="8" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><circle cx="20" cy="20" r="17" fill="var(--knob)" stroke="var(--trim)" stroke-width="3"/><circle cx="49" cy="19" r="17" fill="var(--knob)" stroke="var(--trim)" stroke-width="3"/><circle cx="20" cy="20" r="5" fill="var(--shine)"/><circle cx="49" cy="19" r="5" fill="var(--shine)"/><rect x="24" y="43" width="28" height="6" rx="2" fill="var(--trim)"/></g>
+<!-- suitcase bottom right -->
+<g transform="translate(284 615) rotate(3)"><path d="M28 8V0q0-5 5-5h19q5 0 5 5v8" stroke="var(--trim)" fill="none" stroke-width="6"/><rect x="0" y="8" width="100" height="109" rx="14" fill="var(--object)" stroke="var(--trim)" stroke-width="4"/><path d="M20 10v105M76 10v105" stroke="var(--trim)" opacity=".65" stroke-width="4"/><circle cx="50" cy="48" r="19" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><text x="50" y="54" fill="var(--seal)" font-size="15" text-anchor="middle">✦</text><path d="M10 115v10M90 115v10" stroke="var(--trim)" stroke-width="5"/></g>
+<!-- games console left low -->
+<g transform="translate(101 657) rotate(-9)"><rect width="104" height="65" rx="19" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><path d="M24 23v26M11 36h26" stroke="var(--knob)" stroke-linecap="round" stroke-width="8"/><circle cx="75" cy="27" r="7" fill="var(--seal)"/><circle cx="85" cy="43" r="7" fill="var(--knob)"/><path d="M49 37h11" stroke="var(--trim)" stroke-width="4"/></g>
+<!-- lamp right -->
+<g transform="translate(305 408)"><path d="M19 2L-13 60h75L33 2Z" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><path d="M24 60v100m-27 0h53" stroke="var(--trim)" stroke-width="6" fill="none"/><ellipse cx="24" cy="160" rx="35" ry="7" fill="var(--object)" stroke="var(--trim)" stroke-width="2"/><circle cx="24" cy="59" r="9" fill="var(--shine)" opacity=".45"/></g>
+<!-- resting place -->
+<g transform="translate(20 594)"><rect width="144" height="92" rx="18" fill="var(--sheet)" stroke="var(--trim)" stroke-width="3"/><path d="M0 55Q62 45 144 60" fill="none" stroke="var(--paper)" stroke-width="6"/><rect x="8" y="6" width="60" height="33" rx="14" fill="var(--paper)"/><path d="M8 83h128" stroke="var(--trim)" stroke-width="4" opacity=".27"/></g>
+<!-- garden bottom right -->
+<g transform="translate(352 680)"><path d="M0 0V-75M0-41Q-39-69-30-86Q-3-79 0-52M0-56Q40-86 43-68Q35-46 0-38" fill="var(--leaf)" stroke="var(--plant)" stroke-width="4"/><path d="M-29 0H29L21 54H-18Z" fill="var(--pot)" stroke="var(--trim)" stroke-width="3"/><ellipse cx="0" cy="1" rx="29" ry="8" fill="var(--pot)" stroke="var(--trim)" stroke-width="3"/></g>
+</g><rect x="0" y="0" width="400" height="780" fill="url(#glass)" opacity=".08" pointer-events="none"/></svg>

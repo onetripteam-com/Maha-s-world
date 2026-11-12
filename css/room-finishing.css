@@ -1,0 +1,232 @@
+/* MAHA — room finishing pass: the photograph, not the widgets, leads.
+ * Last in the cascade. Narrowly scoped so the other five scenery themes,
+ * seven portal apps and saved progress remain untouched.
+ */
+
+/* Real header — Scenes and Lighting share one tidy row with Sound. */
+.app-frame[data-scene="room"] .app-header{
+ display:flex!important;align-items:center!important;gap:9px!important;
+ justify-content:space-between!important;
+ overflow:visible!important;isolation:isolate;
+}
+.app-frame[data-scene="room"] .header-edition{display:none!important}
+.app-frame[data-scene="room"] .identity{flex:0 1 auto;min-width:0;margin-right:0}
+.app-frame[data-scene="room"] .room-top-controls{
+ position:static!important;top:auto!important;right:auto!important;left:auto!important;
+ display:flex!important;align-items:center!important;justify-content:flex-end!important;
+ gap:6px!important;z-index:2!important;margin:0 0 0 auto!important;padding:0!important;
+ flex:0 1 auto;min-width:0;
+}
+.app-frame[data-scene="room"] .room-top-controls button{
+ display:inline-flex!important;min-height:40px!important;align-items:center!important;
+ padding:10px 13px!important;gap:6px!important;margin:0!important;
+ font:650 11px/1.1 system-ui,sans-serif!important;letter-spacing:.01em!important;
+ border-radius:999px!important;background:#1b2822ba!important;
+ border:1px solid #f2dec390!important;
+ box-shadow:none!important;backdrop-filter:blur(12px);
+}
+.app-frame[data-scene="room"] .room-top-controls button span{font:16px/1 Georgia,serif!important}
+.app-frame[data-scene="room"] #sound-toggle{
+ flex:0 0 42px!important;width:42px!important;height:42px!important;
+ min-width:42px!important;min-height:42px!important;
+ margin:0!important;padding:0!important;z-index:3!important;
+}
+.app-frame[data-scene="room"] .room-top-controls button:is(:hover,:focus-visible){
+ background:#304a3bd9!important;border-color:#ffe4bd!important;
+}
+
+/* The entire image-plane remains aligned to its real furniture while panning. */
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane{
+ overflow:hidden!important;
+}
+@media(max-width:759px){
+ .app-frame[data-scene="room"] .app-header{padding:5px 9px!important;gap:5px!important}
+ .app-frame[data-scene="room"] .identity{gap:5px!important}
+ .app-frame[data-scene="room"] .identity-flower{width:29px!important;height:29px!important}
+ .app-frame[data-scene="room"] .identity-type b{font-size:10px!important;letter-spacing:.15em!important}
+ .app-frame[data-scene="room"] .identity-type small{font-size:7px!important;letter-spacing:.09em!important}
+ .app-frame[data-scene="room"] .room-top-controls{gap:4px!important}
+ .app-frame[data-scene="room"] .room-top-controls button{
+  font-size:10px!important;min-height:39px!important;padding:9px 8px!important;gap:4px!important;
+ }
+ .app-frame[data-scene="room"] .room-top-controls button span{font-size:13px!important}
+ .app-frame[data-scene="room"] #sound-toggle{
+  flex-basis:39px!important;min-width:39px!important;width:39px!important;height:39px!important;min-height:39px!important
+ }
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane{
+  transform:translate(calc(-50% + var(--photo-pan-px,0px)),-50%)!important;
+  transition:transform .57s cubic-bezier(.24,.74,.22,1)!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane.room-is-dragging{
+  transition:none!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .room-heading{
+  top:calc(83px + env(safe-area-inset-top,0px))!important;
+  z-index:21!important;
+ }
+}
+/* Hide previously floating notes. The real postcard wall is now the portal,
+ * and pinned postcard content stays in Travel where it makes sense. */
+.cinematic-room[data-room-photo-scene="original"] #room-traces,
+.cinematic-room[data-room-photo-scene="original"] .room-traces,
+.cinematic-room[data-room-photo-scene="original"] .trace-postcard,
+.cinematic-room[data-room-photo-scene="original"] .trace-letter,
+.cinematic-room[data-room-photo-scene="original"] .trace-star,
+.cinematic-room[data-room-photo-scene="original"] .trace-tag,
+.cinematic-room[data-room-photo-scene="original"] #room-window{
+ display:none!important;
+}
+/* Keep focus cues, but a rectangular glowing selection is not a feature. */
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area{
+ border:0!important;border-radius:12px!important;outline:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:is(:hover,:focus-visible){
+ background:transparent!important;box-shadow:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:focus-visible{
+ outline:2px solid #ffe1a5!important;outline-offset:-3px!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-label{
+ white-space:normal!important;min-width:150px!important;max-width:220px!important;
+ width:max-content!important;z-index:10!important;
+ padding:12px 15px!important;line-height:1.35!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-label strong{
+ display:block;font:700 11px/1.2 system-ui,sans-serif;
+ letter-spacing:.11em!important;text-transform:uppercase;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-label small{
+ display:block;margin:7px 0 0;color:#e7d4bd;
+ font:italic 14px/1.3 Georgia,serif;
+}
+
+/* The actual selected flowers live in the photographed ceramic.
+ * Their position uses the native 1672x941 scene, not viewport pixels.
+ * Native rim is centre x=945,y=586; blossoms gather *above* its opening.
+ */
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet .real-vase{
+ display:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .photographed-vase-flowers{
+ display:block!important;position:absolute!important;
+ left:51.555%!important;top:50.903%!important;
+ width:9.928%!important;height:13.284%!important;
+ z-index:6!important;pointer-events:none!important;overflow:visible!important;
+ filter:saturate(.76) brightness(.92) drop-shadow(0 2px 2px #25221a4f);
+ transform-origin:50% 90%;
+ animation:maha-stem-shift 7.6s ease-in-out infinite alternate;
+}
+.cinematic-room .photographed-vase-flowers .photo-blooms{
+ width:100%;height:100%;display:block;overflow:visible;
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet>span{
+ min-width:170px!important;max-width:220px!important;
+ font:italic 14px/1.3 Georgia,serif!important;
+ border-radius:5px!important;background:#1b2b22e8!important;
+ white-space:normal!important;padding:12px!important;
+ transform:translate(-50%,-5px)!important;
+ top:62%!important;
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet:is(:hover,:focus-visible)>span{
+ transform:translate(-50%,0)!important;opacity:1!important;
+}
+@keyframes maha-stem-shift{
+ from{transform:rotate(-.7deg) translateX(-1px)}
+ to{transform:rotate(.7deg) translateX(1px)}
+}
+
+/* Small motion only where there really are leaves: use the SAME photo with
+ * soft masks, never generic emoji leaves over the scene. */
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway{
+ position:absolute;inset:0;z-index:4;pointer-events:none;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway:before,
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway:after{
+ content:'';position:absolute;inset:0;pointer-events:none;
+ background:url('../assets/rooms/maha-living-room.webp') center / 100% 100% no-repeat;
+ opacity:.49;filter:saturate(.95);
+ will-change:transform;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway:before{
+ clip-path:polygon(16% 0%,55% 0%,55% 13%,48% 19%,35% 23%,25% 16%,16% 12%);
+ transform-origin:39% 0%;
+ animation:maha-vines-breeze 12s ease-in-out infinite alternate;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway:after{
+ clip-path:polygon(42% 23%,53% 27%,59% 43%,57% 61%,49% 57%,40% 52%,38% 35%);
+ transform-origin:46% 57%;
+ animation:maha-green-breeze 16s ease-in-out infinite alternate;
+ opacity:.34;
+}
+@keyframes maha-vines-breeze{
+ from{transform:translateX(-.6px) skewX(-.08deg)}
+ to{transform:translateX(1.5px) skewX(.14deg)}
+}
+@keyframes maha-green-breeze{
+ from{transform:translateX(-1px) skewY(-.07deg)}
+ to{transform:translateX(1.5px) skewY(.1deg)}
+}
+
+/* Phone navigation: calm arrows + free-drag, not a rotating 3-stop button. */
+.cinematic-room .room-pan-controls{display:none}
+@media(max-width:759px){
+ .cinematic-room .room-pan-controls{
+  display:flex!important;position:absolute;z-index:30!important;
+  left:50%;transform:translateX(-50%);top:auto!important;
+  bottom:calc(78px + env(safe-area-inset-bottom,0px))!important;
+  align-items:center;justify-content:space-between;gap:5px;
+  min-width:188px;height:46px;
+  background:#15231ecf;border:1px solid #ffebcd9a;border-radius:999px;
+  backdrop-filter:blur(12px);box-shadow:0 6px 20px #0916106b;
+  padding:3px 4px;
+ }
+ .cinematic-room .room-pan-controls button{
+  appearance:none;width:40px;height:40px;min-width:40px;min-height:40px;
+  border:0;border-radius:50%;color:#fff0d3;background:transparent;
+  font:24px/1 Georgia,serif;display:grid;place-items:center;
+ }
+ .cinematic-room .room-pan-controls button:disabled{opacity:.27}
+ .cinematic-room .room-pan-controls button:focus-visible{outline:2px solid #ffdaa3}
+ .cinematic-room .room-pan-controls span{
+  font:750 8px/1.1 system-ui,sans-serif;letter-spacing:.13em;color:#efddc2;
+  white-space:nowrap;min-width:89px;text-align:center;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .inhabited-room{touch-action:pan-y}
+ .cinematic-room[data-room-photo-scene="original"] #room-bouquet>span{display:none!important}
+ .cinematic-room[data-room-photo-scene="original"] .photographed-vase-flowers{
+  animation:maha-stem-shift 7.6s ease-in-out infinite alternate;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-room .photographed-vase-flowers,
+ .cinematic-room .living-leaf-sway:before,
+ .cinematic-room .living-leaf-sway:after{
+  animation:none!important;will-change:auto!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane{
+  transition:none!important;
+ }
+}
+
+/* Screenshot review: maintain readable ivory controls over the dark header,
+ * and never duplicate a large polygon of the photo over the window. */
+.app-frame[data-scene="room"] .app-header .room-top-controls button{
+ color:#fff1de!important;
+ -webkit-text-fill-color:#fff1de!important;
+}
+.app-frame[data-scene="room"] .app-header .room-top-controls button span{
+ color:#f6dfb8!important;
+ -webkit-text-fill-color:#f6dfb8!important;
+}
+/* The former 'curtain sway' reprojected a whole angular piece of the photo.
+   Replace the fake seam with the much gentler leaf-only motion above. */
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane:before{
+ display:none!important;content:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway:before{
+ clip-path:polygon(16% 0%,47% 0%,48% 8%,42% 13%,34% 12%,23% 10%,16% 7%)!important;
+ opacity:.26!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-leaf-sway:after{
+ opacity:.23!important;
+}

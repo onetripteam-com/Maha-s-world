@@ -1,0 +1,21 @@
+.keepsake-collection{margin:1.6rem 0 1rem;padding:clamp(1rem,2vw,1.6rem);border:1px solid rgba(126,92,77,.19);border-radius:20px;background:linear-gradient(145deg,rgba(255,253,246,.72),rgba(237,222,203,.4));color:#554239}
+.keepsake-collection h3{font:normal clamp(1.5rem,3vw,2.1rem)/1.2 Georgia,serif;margin:.4rem 0 .6rem}
+.keepsake-collection>p{font-size:.94rem;line-height:1.5;margin:.4rem 0 1rem}
+.keepsake-collection-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:.65rem}
+.keepsake-tile{display:flex;align-items:flex-start;gap:.7rem;padding:.85rem;border:1px solid rgba(108,74,61,.13);border-radius:14px;background:rgba(255,255,255,.55)}
+.keepsake-tile-icon{font:normal 1.5rem Georgia,serif;color:#995e58;flex:0 0 2rem;text-align:center}
+.keepsake-tile strong{display:block;font:600 .98rem/1.35 Georgia,serif}
+.keepsake-tile p{margin:.3rem 0 0;font:normal .85rem/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
+.keepsake-empty{margin:0;padding:1rem;text-align:center;grid-column:1/-1}
+.keepsake-collection .keepsake-privacy{font-size:.78rem;margin:1rem 0 0;color:#765f56}
+@media(prefers-reduced-motion:reduce){.keepsake-collection *{animation:none!important;transition:none!important}}
+
+
+.travel-journal-box{margin:1.3rem 0;padding:1rem;border:1px solid rgba(123,84,66,.21);border-radius:16px;background:rgba(255,249,238,.75);color:#65463e}
+.travel-journal-box label{display:block;font:600 1.02rem/1.4 Georgia,serif;margin-bottom:.5rem}
+.travel-journal-box textarea{box-sizing:border-box;display:block;width:100%;min-height:104px;padding:.8rem;border:1px solid rgba(104,68,54,.34);border-radius:10px;background:#fffdf7;color:#49362f;font:normal .95rem/1.55 system-ui,sans-serif;resize:vertical}
+.travel-journal-box textarea:focus-visible{outline:3px solid #b78373;outline-offset:2px}
+.travel-journal-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem;margin-top:.7rem}
+.travel-journal-foot small{font-size:.77rem}
+.travel-journal-foot button{min-height:44px;padding:.6rem 1rem;border:1px solid #986c5c;background:#fff6e8;border-radius:10px;color:#594139;font-weight:600;cursor:pointer}
+.travel-journal-box [data-journal-status]{min-height:1em;font-size:.86rem}

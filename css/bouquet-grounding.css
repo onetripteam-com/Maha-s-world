@@ -1,0 +1,65 @@
+/* MAHA · Flowers need to visibly grow from a real object, not a category icon.
+   The photographed Story world has a ceramic vase on the coffee table.
+   Draw only her actual seven living blooms at that exact tabletop position;
+   let the photographed ceramic remain the vessel. */
+@media(min-width:760px){
+ /* The radio has its own material region; do not let it share the flowers' hitbox. */
+ .cinematic-room .object-music{left:74%!important;top:49%!important}
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet{
+   left:66.5%!important;top:75%!important;
+   width:clamp(78px,8.8vw,126px)!important;
+   height:clamp(103px,11vw,151px)!important;
+   overflow:visible!important;border:0!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet .real-vase{
+   display:block!important;position:absolute!important;inset:-8% 0 0!important;
+   width:100%!important;height:100%!important;
+   opacity:.90!important;
+   filter:sepia(.08) saturate(.7) brightness(.9) drop-shadow(0 4px 6px #1d1a1390)!important;
+   mix-blend-mode:multiply;
+   transform:none!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet .vase-glass{
+   display:none!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet .live-flowers{
+   display:block!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet:before{
+   display:none!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet:after{
+   opacity:0!important;transition:opacity .25s!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet:is(:hover,:focus-visible):after{
+   opacity:.55!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet>span{
+   left:calc(100% + 8px)!important;opacity:0!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet:is(:hover,:focus-visible)>span{opacity:1!important}
+}
+/* For separate original GPT room images, the artist leaves the ceramic empty:
+   exactly the same live botanicals appear there without a duplicate container. */
+@media(min-width:760px){
+ .cinematic-room[data-original-art="true"] .table-bouquet .real-vase{
+   display:block!important;opacity:.87!important;
+ }
+ .cinematic-room[data-original-art="true"] .table-bouquet .vase-glass{display:none!important}
+ .cinematic-room[data-original-art="true"] .table-bouquet:before{display:none!important}
+}
+@media(max-width:759px){
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet{
+   top:50%!important;left:38%!important;
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet .real-vase{
+   display:block!important;width:78%!important;height:76%!important;
+   position:absolute!important;top:0!important;left:11%!important;opacity:.85!important;
+   filter:saturate(.71) brightness(.91) drop-shadow(0 3px 5px #09120a80);
+ }
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet .vase-glass{display:none!important}
+ .cinematic-room[data-theme="story"][data-original-art="false"] .table-bouquet:before{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-room .table-bouquet .real-vase{transition:none!important}
+}

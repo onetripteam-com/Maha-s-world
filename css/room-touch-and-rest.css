@@ -1,0 +1,111 @@
+/* The room behaves like a place, not a stack of icons. This layer is
+   mobile-first and intentionally supersedes legacy thematic overrides. */
+.app-frame[data-scene="room"] .app-header{
+  background:linear-gradient(180deg,#111816e8,#11181668)!important;
+  backdrop-filter:blur(15px);border-bottom:1px solid #ffedd329!important;
+}
+.app-frame .identity{gap:9px!important}
+.app-frame .identity-flower{width:34px;height:34px;filter:drop-shadow(0 2px 5px #0b1811aa)}
+.app-frame .identity-type b{font:650 13px/1 system-ui,sans-serif!important;letter-spacing:.23em}
+.app-frame .identity-type small{font:550 9px/1.2 system-ui,sans-serif!important;letter-spacing:.17em;color:#ead8bf}
+.app-frame .identity-type{gap:6px!important}
+.cinematic-room .room-eyebrow{font-size:9px!important;letter-spacing:.15em!important}
+.cinematic-room .room-heading p{max-width:360px!important}
+.cinematic-room .room-top-controls{z-index:48!important;right:clamp(15px,3vw,42px);top:7px;gap:7px}
+.cinematic-room .room-top-controls button{
+  padding:10px 13px!important;min-height:42px;
+  font:650 11px/1 system-ui,sans-serif!important;
+  border-radius:5px!important;
+}
+.cinematic-room .room-light-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cinematic-room[data-light="lamplight"]{--room-exposure:.62;--room-chroma:.9}
+.cinematic-room[data-light="lamplight"] .cinematic-lens{
+ background:radial-gradient(ellipse at 76% 74%,#f4bc7640,transparent 36%),linear-gradient(110deg,#080e124f,transparent 62%)!important;
+}
+.cinematic-room .room-light-options button[data-light-option="lamplight"] i{
+ background:radial-gradient(circle at 72% 75%,#f4c779 0 16%,#362d38 48%,#161e24 100%);
+}
+.cinematic-room .cinematic-photo{transition:filter .6s ease,background-position .7s ease!important}
+/* On desktop the image's sofa, wall pictures, table and radio ARE the buttons.
+   No overlaid sticker/illustration. */
+@media(min-width:760px){
+ .cinematic-room[data-theme="story"] .room-object.living-object .object-drawing{display:none!important}
+ .cinematic-room[data-theme="story"] .object-rest{left:10%!important;top:61%!important;width:27%!important;height:31%!important}
+ .cinematic-room[data-theme="story"] .object-movies{left:82%!important;top:24%!important;width:13%!important;height:24%!important}
+ .cinematic-room[data-theme="story"] .object-letters{left:84%!important;top:58%!important;width:12%!important;height:15%!important}
+ .cinematic-room[data-theme="story"] .object-travel{left:84%!important;top:76%!important;width:15%!important;height:20%!important}
+ .cinematic-room[data-theme="story"] .object-garden{left:36%!important;top:47%!important;width:8%!important;height:21%!important}
+ .cinematic-room[data-theme="story"] .object-games{left:50%!important;top:84%!important;width:10%!important;height:14%!important}
+ .cinematic-room[data-theme="story"] .object-music{left:71%!important;top:86%!important;width:10%!important;height:12%!important}
+ .cinematic-room .room-heading{top:clamp(135px,18vh,190px)!important}
+ .cinematic-room .cinematic-note{
+   bottom:clamp(70px,10vh,115px)!important;max-width:250px!important;
+   font:italic 16px/1.4 Georgia,serif!important;
+ }
+ .cinematic-room .room-object:is(:hover,:focus-visible){box-shadow:inset 0 0 28px #e5bf6a17!important}
+}
+@media(max-width:759px){
+ .app-frame[data-scene="room"] .app-header{padding-left:11px!important}
+ .app-frame .identity-flower{width:29px;height:29px}
+ .app-frame .identity-type b{font-size:11px!important}
+ .app-frame .identity-type small{font-size:7.5px!important}
+ .cinematic-room .room-top-controls{top:calc(62px + env(safe-area-inset-top,0px))!important;right:10px!important;gap:5px;z-index:51!important}
+ .cinematic-room .room-top-controls button{padding:8px!important;font-size:9px!important;min-height:38px!important;gap:4px!important}
+ .cinematic-room .room-top-controls button span{font-size:13px!important}
+ .cinematic-room .room-heading{top:calc(120px + env(safe-area-inset-top,0px))!important}
+ .cinematic-room .room-heading h1{font-size:clamp(31px,8.2vw,42px)!important}
+ .cinematic-room .room-heading p{font-size:11px!important;line-height:1.45!important}
+ .cinematic-room .room-object.living-object .object-drawing{display:none!important}
+ .cinematic-room .room-object.living-object .object-label{border-radius:6px!important}
+ .cinematic-room .room-light-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:759px) and (max-height:750px){
+ .cinematic-room .room-heading{top:calc(111px + env(safe-area-inset-top,0px))!important}
+}
+/* Quiet Corner: a place to enter, not a breathing app on a coloured page. */
+#portal-screen[data-place="rest"] .portal-place{
+ background:radial-gradient(ellipse at 65% 10%,#586c5c,transparent 58%),linear-gradient(140deg,#1a2928,#273e3a 62%,#152623)!important;
+}
+#portal-screen[data-place="rest"] .restroom{color:#f5e9d7;gap:17px;max-width:1150px;margin:auto}
+#portal-screen[data-place="rest"] .restroom-top{text-align:left!important}
+#portal-screen[data-place="rest"] .rr-kicker{color:#d5b995;letter-spacing:.2em}
+#portal-screen[data-place="rest"] .restroom-top h1{color:#f7ecdc;font:400 clamp(32px,4vw,62px)/1.02 Georgia,serif!important}
+#portal-screen[data-place="rest"] .restroom-top h1 em{color:#d8be98}
+#portal-screen[data-place="rest"] .rr-intro{color:#b9c8b9;font:italic clamp(13px,1.3vw,17px)/1.5 Georgia,serif;margin:7px 0 0}
+#portal-screen[data-place="rest"] .rr-window{
+ border:10px solid #5f4c3c!important;border-radius:40% 40% 4px 4px / 8% 8% 4px 4px!important;
+ box-shadow:0 0 0 2px #bb956f,0 30px 55px #071513a3,inset 0 0 0 4px #ceb48c!important;
+}
+#portal-screen[data-place="rest"] .rr-window:after{
+ content:'';inset:0;position:absolute;pointer-events:none;
+ background:linear-gradient(180deg,#10191d38,transparent 50%,#0b111a59);
+}
+#portal-screen[data-place="rest"] .rr-glass-note{
+ font:italic 15px/1.2 Georgia,serif!important;color:#fae3b8!important;
+ text-shadow:0 2px 8px #101b17;
+}
+#portal-screen[data-place="rest"] .rr-dials{
+ background:#e8dfc8!important;color:#3e5147!important;border:1px solid #d5bb91!important;
+ border-radius:3px!important;box-shadow:0 8px 16px #06110f6b;
+}
+#portal-screen[data-place="rest"] .rr-dials label{color:#475f52!important;font-weight:650}
+#portal-screen[data-place="rest"] .rr-dials output{color:#425f53!important}
+#portal-screen[data-place="rest"] .rr-rain-toggle{background:#d7bf99!important;color:#283d34!important;border-radius:3px!important}
+#portal-screen[data-place="rest"] .rr-breath-card,
+#portal-screen[data-place="rest"] .rr-comfort{
+ background:linear-gradient(155deg,#f1e6d1,#d7c7ad)!important;color:#3e433a!important;
+ border-radius:3px!important;border:1px solid #e8d0ae!important;
+ box-shadow:0 17px 30px #101f1b8a!important;
+}
+#portal-screen[data-place="rest"] .rr-breath-card p,#portal-screen[data-place="rest"] .rr-comfort li{color:#677369}
+#portal-screen[data-place="rest"] .rr-comfort-tabs button{border-radius:3px!important}
+#portal-screen[data-place="rest"] .rr-copyright{color:#d9c7a6}
+@media(max-width:759px){
+ #portal-screen[data-place="rest"] .restroom{padding:8px 4px 20px;gap:10px}
+ #portal-screen[data-place="rest"] .restroom-top h1{font-size:34px!important}
+ #portal-screen[data-place="rest"] .rr-window{height:clamp(190px,32vh,285px);border-width:7px!important}
+ #portal-screen[data-place="rest"] .rr-lower{grid-template-columns:1fr;gap:11px}
+ #portal-screen[data-place="rest"] .rr-breath-card,#portal-screen[data-place="rest"] .rr-comfort{padding:15px!important}
+ #portal-screen[data-place="rest"] .rr-glass-note{font-size:12px!important}
+}
+@media(prefers-reduced-motion:reduce){.cinematic-room .cinematic-photo{transition:none!important}}

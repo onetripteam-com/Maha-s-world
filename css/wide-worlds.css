@@ -1,0 +1,218 @@
+/* MAHA · Wide worlds, not phone cards on a computer.
+   Deliberate desktop composition for Arcade, Postbox, FM, Word Garden and Rest.
+   Only layout/style changes; every original control and progress key remains.
+*/
+@media (min-width:760px){
+ .app-frame .portal-screen:is([data-place="letters"],[data-place="games"],[data-place="music"],[data-place="garden"],[data-place="rest"]) .portal-place .portal-content{
+   box-sizing:border-box!important;
+   width:min(calc(100% - 90px),1360px)!important;
+   max-width:none!important;
+   left:50%!important;right:auto!important;
+   transform:translateX(-50%)!important;
+   padding:clamp(10px,2vh,24px) clamp(16px,2vw,32px)!important;
+ }
+ #portal-screen[data-place="letters"] .letterbox-app,#portal-screen[data-place="letters"] .letter-reader{
+   max-width:1140px;margin-inline:auto;
+   box-shadow:0 30px 70px #5e4d3b36,0 3px 2px #59463724;
+   border:1px solid #b39372a3;
+   border-radius:3px;
+ }
+ #portal-screen[data-place="letters"] .mail-heading{
+   padding:clamp(19px,3vh,32px) clamp(22px,3vw,48px) 10px;
+ }
+ #portal-screen[data-place="letters"] .mail-header-row h1{
+   font:400 clamp(38px,4vw,58px)/1.03 Georgia,serif;
+   letter-spacing:-.06em;
+ }
+ #portal-screen[data-place="letters"] .mail-heading p{font-size:14px}
+ #portal-screen[data-place="letters"] .mail-postmark{font-size:10px;letter-spacing:.19em}
+ #portal-screen[data-place="letters"] .mail-tabs{
+   margin:0 clamp(16px,3vw,48px);min-height:54px;
+ }
+ #portal-screen[data-place="letters"] .mail-scroll{padding:20px clamp(16px,3vw,48px) 34px}
+ #portal-screen[data-place="letters"] .mail-inbox-list{
+   display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px;row-gap:4px;align-content:start;
+ }
+ #portal-screen[data-place="letters"] .mail-section-caption{grid-column:1/-1}
+ #portal-screen[data-place="letters"] .mail-row{
+   min-height:115px;margin-bottom:9px;padding:13px 15px;
+   border-radius:3px;box-shadow:0 7px 17px #7c594127;
+ }
+ #portal-screen[data-place="letters"] .mail-subject{font-size:clamp(15px,1.25vw,19px);font-weight:650}
+ #portal-screen[data-place="letters"] .mail-preview{font-size:12px;line-height:1.5}
+ #portal-screen[data-place="letters"] .letter-reader{width:min(100%,960px)}
+ #portal-screen[data-place="letters"] .reader-paper{width:100%;padding:clamp(20px,4vh,50px) clamp(20px,5vw,75px)}
+ #portal-screen[data-place="letters"] .reader-page{font-size:clamp(16px,1.3vw,19px);line-height:1.7}
+ #portal-screen[data-place="garden"] .wordgarden{
+   max-width:1240px;box-sizing:border-box;margin:auto;padding:8px 18px 22px;gap:14px;
+ }
+ #portal-screen[data-place="garden"] .wg-heading h1{font:400 clamp(38px,4.1vw,64px)/1.04 Georgia,serif;letter-spacing:-.06em;margin:8px 0 0}
+ #portal-screen[data-place="garden"] .wg-kicker{letter-spacing:.2em;font-size:10px}
+ #portal-screen[data-place="garden"] .wg-prompts{gap:12px;max-width:650px;width:100%;margin-inline:auto}
+ #portal-screen[data-place="garden"] .wg-prompts button{min-height:48px;font-size:13px}
+ #portal-screen[data-place="garden"] .wg-hint{font:italic 15px/1.4 Georgia,serif;margin:0;text-align:center}
+ #portal-screen[data-place="garden"] .wg-canvas-wrap{
+   min-height:340px;flex:1 1 auto;border:12px solid #e8ddc5;border-radius:2px!important;
+   box-shadow:0 0 0 1px #9eb19b,0 14px 50px #455b4542,inset 0 0 38px #dfddaa29;
+ }
+ #portal-screen[data-place="garden"] .wg-focus{bottom:22px;font-size:13px;min-height:49px;padding:11px 22px}
+ #portal-screen[data-place="garden"] .wg-bottom{
+   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:6px 18px;
+ }
+ #portal-screen[data-place="garden"] .wg-palette{grid-column:1}
+ #portal-screen[data-place="garden"] .wg-actions{grid-column:2}
+ #portal-screen[data-place="garden"] .wg-status{grid-column:1/-1;text-align:center}
+ #portal-screen[data-place="garden"] .wg-word{font-size:18px}
+ #portal-screen[data-place="garden"] .wg-palette button{font-size:12px}
+ #portal-screen[data-place="garden"] .wg-palette button span{width:27px;height:27px}
+ #portal-screen[data-place="music"] .fm-app{
+   box-sizing:border-box;max-width:1240px;width:100%;margin-inline:auto;
+   display:grid;grid-template-columns:minmax(0,1.14fr) minmax(340px,.86fr);
+   grid-template-rows:auto auto auto auto auto auto;
+   gap:14px clamp(25px,4vw,65px);align-content:center;overflow-y:auto;
+   padding:clamp(8px,2vh,25px) clamp(9px,2vw,34px);
+ }
+ #portal-screen[data-place="music"] .fm-head{grid-column:1/-1;grid-row:1;letter-spacing:.22em}
+ #portal-screen[data-place="music"] .fm-app h1{
+   grid-column:2;grid-row:2;
+   align-self:end;text-align:left;font:400 clamp(45px,4.5vw,75px)/.97 Georgia,serif;letter-spacing:-.062em;margin:0 0 12px;
+ }
+ #portal-screen[data-place="music"] .fm-radio{
+   grid-column:1;grid-row:2 / 6;
+   height:clamp(275px,43vh,432px);max-height:none;
+   border-radius:26px;padding:clamp(20px,2.2vw,37px);
+   box-shadow:0 28px 40px #071a168c,0 10px 0 #0b26218c,inset 0 0 0 5px #e9be87!important;
+ }
+ #portal-screen[data-place="music"] .fm-frequency strong{font-size:clamp(35px,3.5vw,54px)}
+ #portal-screen[data-place="music"] .fm-dial{width:clamp(76px,8vw,111px);height:clamp(76px,8vw,111px)}
+ #portal-screen[data-place="music"] .fm-knob{width:clamp(42px,5vw,70px);height:clamp(42px,5vw,70px)}
+ #portal-screen[data-place="music"] .fm-station{
+   grid-column:2;grid-row:3;border-radius:3px;
+   padding:20px 24px;align-self:stretch;
+   box-shadow:0 14px 28px #101e1857;
+ }
+ #portal-screen[data-place="music"] .fm-station h2{font-size:clamp(22px,2.35vw,36px);line-height:1.12}
+ #portal-screen[data-place="music"] .fm-intro{font-size:15px;line-height:1.5}
+ #portal-screen[data-place="music"] .fm-audio{grid-column:2;grid-row:4}
+ #portal-screen[data-place="music"] .fm-audio button{min-height:48px;border-radius:4px}
+ #portal-screen[data-place="music"] .fm-links{grid-column:2;grid-row:5}
+ #portal-screen[data-place="music"] .fm-links a{min-height:45px;border-radius:4px}
+ #portal-screen[data-place="music"] .fm-tune{
+   grid-column:1;grid-row:6;padding:15px 10px;
+   background:#172d28a8;border:1px solid #f1d4a956;border-radius:4px;
+ }
+ #portal-screen[data-place="music"] .fm-credit{grid-column:2;grid-row:6;align-self:center;text-align:left;font:italic 14px/1.5 Georgia,serif}
+ #portal-screen[data-place="rest"] .restroom{
+   box-sizing:border-box;max-width:1250px;width:100%;height:100%;
+   display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);
+   grid-template-rows:auto minmax(250px,1fr) auto auto auto;
+   gap:13px clamp(22px,3vw,46px);align-content:stretch;overflow-y:auto;
+   padding:clamp(10px,2vh,22px);
+ }
+ #portal-screen[data-place="rest"] .restroom-top{grid-row:1;grid-column:1/-1;text-align:left;border-bottom:1px solid #8ba48c7a;padding:0 4px 11px}
+ #portal-screen[data-place="rest"] .restroom-top h1{font:400 clamp(39px,4vw,63px)/1.05 Georgia,serif;letter-spacing:-.06em}
+ #portal-screen[data-place="rest"] .rr-window{
+   grid-column:1;grid-row:2;height:100%;min-height:clamp(290px,52vh,492px);
+   border-radius:47% 47% 8px 8px / 9% 9% 8px 8px;
+   border-width:11px;box-shadow:0 22px 45px #182e2459,inset 0 0 0 5px #f7e2bb;
+ }
+ #portal-screen[data-place="rest"] .rr-dials{
+   grid-column:1;grid-row:3;display:grid;grid-template-columns:1fr 1fr;gap:15px;
+   border:1px solid #a4b5a3;background:#e8e8d5dd;padding:10px;border-radius:4px
+ }
+ #portal-screen[data-place="rest"] .rr-rain-toggle{grid-column:1;grid-row:4;border-radius:4px}
+ #portal-screen[data-place="rest"] .rr-lower{
+   grid-column:2;grid-row:2 / 5;
+   display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1.1fr;gap:15px;
+   min-height:0;
+ }
+ #portal-screen[data-place="rest"] .rr-breath-card,#portal-screen[data-place="rest"] .rr-comfort{
+   border-radius:5px;padding:clamp(12px,1.5vw,22px);
+   box-shadow:0 14px 30px #142b2340;
+ }
+ #portal-screen[data-place="rest"] .rr-breath-card p{font-size:14px;line-height:1.4}
+ #portal-screen[data-place="rest"] .rr-breath-display{min-height:105px;gap:22px}
+ #portal-screen[data-place="rest"] .rr-breath-orb{width:75px;height:75px}
+ #portal-screen[data-place="rest"] .rr-foot{grid-column:1/-1;grid-row:5}
+ #portal-screen[data-place="rest"] .rr-voice-caption,#portal-screen[data-place="rest"] .rr-copyright{grid-column:1/-1}
+ #portal-screen[data-place="games"] .arcade-app.arcade-lobby{
+   box-sizing:border-box;
+   max-width:1250px;height:100%;margin-inline:auto;
+   display:grid;grid-template-columns:minmax(390px,1.15fr) minmax(275px,.85fr);
+   grid-template-rows:auto minmax(0,1fr) auto auto auto auto;
+   align-items:center;gap:8px clamp(18px,4vw,75px);
+   padding:10px clamp(15px,3vw,44px) 20px;overflow-y:auto;
+ }
+ #portal-screen[data-place="games"] .arcade-sign{
+   grid-column:1/-1;grid-row:1;text-align:left;
+   font:800 12px/1.4 system-ui,sans-serif;letter-spacing:.18em;
+   padding-bottom:10px;border-bottom:1px solid #7d585376;
+ }
+ #portal-screen[data-place="games"] .arcade-sign small{font-size:9px;letter-spacing:.15em}
+ #portal-screen[data-place="games"] .cabinet-switcher{
+   grid-column:1;grid-row:2 / span 5;
+   min-height:400px;max-height:none;height:min(100%,640px);align-self:center;flex:none;
+   padding:12px 0;
+ }
+ #portal-screen[data-place="games"] .cabinet-stage{
+   max-width:440px;width:min(82%,440px);
+ }
+ #portal-screen[data-place="games"] .arcade-cabinet{
+   height:min(100%,510px);min-height:320px;
+ }
+ #portal-screen[data-place="games"] .cabinet-arrow{
+   width:48px;height:72px;border-radius:20px;
+ }
+ #portal-screen[data-place="games"] .arcade-info{
+   grid-column:2;grid-row:2;
+   align-self:end;display:flex;flex-direction:column;
+   border-left:1px solid #f7ddbc8c;padding:10px 20px 13px;
+   color:#4b393a;min-height:160px;
+ }
+ #portal-screen[data-place="games"] .arcade-info-kicker{
+   font:750 10px/1.5 system-ui,sans-serif;letter-spacing:.18em;color:#804d4d;
+ }
+ #portal-screen[data-place="games"] .arcade-info h2{
+   font:400 clamp(29px,3.3vw,52px)/1.03 Georgia,serif;
+   letter-spacing:-.055em;margin:14px 0 10px;
+ }
+ #portal-screen[data-place="games"] .arcade-info>p{font:italic clamp(15px,1.3vw,20px)/1.5 Georgia,serif;margin:0 0 15px;color:#654c45}
+ #portal-screen[data-place="games"] .arcade-info-rule{height:1px;width:80%;background:#98745b75;margin:6px 0 15px}
+ #portal-screen[data-place="games"] .arcade-info-stats{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;font:700 11px/1.3 system-ui,sans-serif}
+ #portal-screen[data-place="games"] .arcade-info-stats strong{color:#643c39}
+ #portal-screen[data-place="games"] .arcade-info>small{font:italic 12px/1.4 Georgia,serif;margin-top:23px;opacity:.72}
+ #portal-screen[data-place="games"] .arcade-pips{grid-column:2;grid-row:3;justify-content:flex-start}
+ #portal-screen[data-place="games"] .arcade-play{
+   grid-column:2;grid-row:4;width:100%;max-width:430px;min-height:64px;font-size:14px;margin:3px 0;
+ }
+ #portal-screen[data-place="games"] .arcade-footnote{
+   grid-column:2;grid-row:5;text-align:left;max-width:100%;font-size:13px;
+ }
+ #portal-screen[data-place="games"] .arcade-stamps{
+   grid-column:2;grid-row:6;justify-content:flex-start;align-self:start;
+ }
+ #portal-screen[data-place="games"] .arcade-app.arcade-active{
+   width:100%;max-width:1240px;margin:auto;overflow:auto;
+ }
+ #portal-screen[data-place="games"] .arcade-game-board{min-height:380px}
+}
+@media (min-width:760px) and (max-width:1060px){
+ #portal-screen[data-place="games"] .arcade-app.arcade-lobby{grid-template-columns:minmax(285px,1fr) minmax(245px,.8fr);gap:8px 22px}
+ #portal-screen[data-place="games"] .arcade-cabinet{min-height:250px}
+ #portal-screen[data-place="games"] .cabinet-switcher{min-height:320px}
+ #portal-screen[data-place="music"] .fm-app{grid-template-columns:minmax(0,1fr) minmax(260px,1fr);gap:9px 20px}
+ #portal-screen[data-place="music"] .fm-radio{height:clamp(225px,35vh,330px)}
+ #portal-screen[data-place="rest"] .restroom{grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:8px 15px}
+ #portal-screen[data-place="rest"] .rr-window{min-height:260px}
+ #portal-screen[data-place="letters"] .mail-inbox-list{gap:8px}
+}
+@media(max-width:759px){
+ #portal-screen[data-place="games"] .arcade-info{display:none!important}
+}
+@media(max-height:700px) and (min-width:760px){
+ #portal-screen[data-place="letters"] .mail-heading{padding-top:12px}
+ #portal-screen[data-place="music"] .fm-app{align-content:start}
+ #portal-screen[data-place="rest"] .rr-window{min-height:260px}
+ #portal-screen[data-place="games"] .arcade-app.arcade-lobby{align-content:start}
+ #portal-screen[data-place="games"] .cabinet-switcher{min-height:290px}
+}

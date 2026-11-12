@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {DOCTOR_ROUNDS,doctorScore,doctorWin,WORLD_SCENES,worldScore,worldWin,VLOG_ORDER,vlogScore,vlogWin,swapShots} from '../js/games/phase2-rules.js';
+test('Doctor has five safe entirely fictional cases with one correct answer each',()=>{assert.equal(DOCTOR_ROUNDS.length,5);for(const c of DOCTOR_ROUNDS){assert.equal(c.answers.length,3);assert.ok(c.right>=0&&c.right<=2);assert.ok(c.hint.length>15);assert.equal(typeof c.scribble,'string');}});
+test('Doctor rewards three correct and penalizes hints',()=>{assert.equal(doctorWin(2),false);assert.equal(doctorWin(3),true);assert.ok(doctorScore(3,15,0)>doctorScore(3,15,1));});
+test('World contains six unique destinations and three choices including correct one',()=>{assert.equal(WORLD_SCENES.length,6);assert.equal(new Set(WORLD_SCENES.map(s=>s.id)).size,6);for(const s of WORLD_SCENES){assert.equal(s.choices.length,3);assert.ok(s.choices.includes(s.name));}});
+test('World reward threshold and hint penalty',()=>{assert.ok(worldWin(3));assert.ok(!worldWin(2));assert.ok(worldScore(4,0,0)>worldScore(4,1,0));});
+test('Vlog best story earns passport win',()=>{assert.equal(vlogScore(VLOG_ORDER),500);assert.equal(vlogWin(VLOG_ORDER),true);});
+test('Vlog invalid and reversed order never win',()=>{assert.equal(vlogScore(['wide','wide','close','food','sunset']),0);assert.equal(vlogWin([...VLOG_ORDER].reverse()),false);});
+test('Touch swap preserves all five unique scenes',()=>{const swapped=swapShots(VLOG_ORDER,1,3);assert.deepEqual(swapped,['wide','food','close','walking','sunset']);assert.deepEqual(swapShots(swapped,1,3),VLOG_ORDER);assert.deepEqual(swapShots(VLOG_ORDER,-1,4),VLOG_ORDER);});

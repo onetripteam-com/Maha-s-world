@@ -1,0 +1,237 @@
+/* MAHA — THE DIRECTOR'S CUT  ·  A living illustrated place.
+   Intentional progressive enhancement: original scenes remain functional without JS. */
+:root{
+ --dc-ink:#35473f;--dc-clay:#a95d4b;--dc-parchment:#f5ead8;
+ --dc-paper:#fff8eb;--dc-gold:#d7a96d;--dc-muted:#827a69;
+ --dc-ease:cubic-bezier(.22,.82,.2,1);
+}
+body{background:#cabca9}
+.desktop-backdrop{background:radial-gradient(ellipse at 17% 16%,#f4e9d7 0,transparent 40%),radial-gradient(ellipse at 79% 72%,#bbd0bd 0,transparent 48%),linear-gradient(125deg,#d4c7b3,#efe4d3 55%,#c0bdae)}
+.bg-flower{opacity:.095;filter:blur(1px)}
+.bg-caption{color:#7a675a;letter-spacing:.015em}
+.app-frame{box-shadow:0 24px 95px #44392e45;background:#f7e9d9}
+.app-header{background:linear-gradient(180deg,#fff8ec38,transparent)}
+.identity{letter-spacing:.16em;font-size:9px}
+.identity-emblem{filter:drop-shadow(0 3px 3px #a4685657)}
+.grain{opacity:.08}
+/* The opening: generous scale, a single deliberate decision. */
+.hug-scene{background:radial-gradient(ellipse at 72% 21%,#5a7867 0,transparent 48%),radial-gradient(ellipse at 15% 88%,#455d50,transparent 60%),#253e34}
+.hug-scene:before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(100deg,transparent 0 37px,#fff8df04 38px 39px);opacity:.45}
+.hug-doodle svg{filter:drop-shadow(0 17px 13px #14281f55)}
+.hug-content h1{font-size:clamp(32px,9.15vw,45px);line-height:1.01;letter-spacing:-.052em}
+.hug-content>.eyebrow{letter-spacing:.19em;color:#ecc4ad}
+.hug-lines{color:#eadfcd}
+.hug-actions .button,.hug-complete .button{box-shadow:0 5px 20px #162d2233}
+.hug-skip{display:block;margin:8px auto 0;padding:8px 17px;min-height:35px;background:transparent;color:#f0dbc7;border:0;text-decoration:underline;text-underline-offset:4px;font-size:11px;opacity:.82}
+.hug-skip:focus-visible{outline:2px solid #f1c5a7}
+/* THE FLORIST: reduce UI, let the composition hold the scene. */
+.flowers-scene{background:radial-gradient(ellipse at 44% 46%,#fff6e8 0,transparent 54%),linear-gradient(150deg,#f5e6d4 0%,#e4d2bc 100%)}
+.flowers-top{top:2.6%}
+.flower-intro h1{letter-spacing:-.057em;font-size:clamp(33px,9.2vw,45px)}
+.flower-intro p{color:#766c5c}
+.flower-counter{background:#fffaeeeb;box-shadow:0 8px 27px #78574413;border-color:#d0b89b;border-radius:4px 17px 4px 15px;transform:rotate(-2deg)}
+.bouquet-display:before{filter:blur(15px);height:22px;background:#73554333}
+.bouquet-growing .bouquet-svg{filter:drop-shadow(0 8px 12px #634f3a1c)}
+.flower-rail{scroll-padding-left:10px;scroll-snap-type:x proximity}
+.flower-option{scroll-snap-align:center;transition:transform .35s var(--dc-ease),filter .3s}
+.flower-option:active{transform:translateY(3px) rotate(1deg)}
+.flower-option[aria-pressed="true"]{filter:drop-shadow(0 7px 8px #866b5244)}
+.flower-status-note{color:var(--dc-ink)}
+.bouquet-final{filter:drop-shadow(0 13px 15px #b8957440)}
+/* THE ROOM: illustrated backplate with the real Kuwait sky shining behind. */
+.room-scene{background:#d9bb9b;--room-grade:rgba(0,0,0,0)}
+.room-paint{background:#d9bb9b}
+.room-scene.director-room .room-background,.room-scene.director-room .room-front{visibility:hidden}
+.room-scene.director-room .window-sky{z-index:1;top:6.4%;left:50.5%;width:43.8%;height:37%;border-radius:42% 42% 1% 1%/13% 13% 1% 1%;}
+.director-illustration{position:absolute;z-index:3;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;filter:saturate(1.08) contrast(1.015);transition:filter 1.2s ease,transform 1.6s var(--dc-ease)}
+.room-scene.director-room .room-theme-accents{z-index:4;mix-blend-mode:soft-light;opacity:.7}
+.room-scene.director-room[data-theme="story"] .director-illustration{filter:saturate(1.05) sepia(.03)}
+.room-scene.director-room[data-theme="monsoon"] .director-illustration{filter:saturate(.77) hue-rotate(26deg) brightness(.89)}
+.room-scene.director-room[data-theme="sunroom"] .director-illustration{filter:sepia(.12) brightness(1.1) saturate(.91)}
+.room-scene.director-room[data-theme="terracotta"] .director-illustration{filter:sepia(.23) hue-rotate(-13deg) saturate(1.11) brightness(.96)}
+.room-scene.director-room.light-night .director-illustration{filter:brightness(.78) saturate(.83)}
+.room-scene.director-room.light-dusk .director-illustration{filter:sepia(.10) saturate(.98) brightness(.92)}
+.director-vignette{position:absolute;z-index:4;inset:0;pointer-events:none;background:radial-gradient(ellipse at 62% 47%,transparent 20%,#5946391c 94%);mix-blend-mode:multiply}
+.director-lightwash{position:absolute;z-index:4;inset:0;pointer-events:none;background:linear-gradient(130deg,transparent 48%,#ffebba18 68%,transparent 92%);opacity:.3;transition:opacity 1.2s ease}
+.light-afternoon .director-lightwash,.light-morning .director-lightwash{opacity:.8}
+.light-night .director-lightwash{opacity:0}
+.director-lightwash:after{content:'';position:absolute;top:19%;right:3%;width:58%;height:48%;transform:rotate(21deg);background:linear-gradient(100deg,transparent 20%,#fff8d922 34%,transparent 49%,#fff2c811 66%,transparent 79%);filter:blur(12px)}
+.room-scene.director-room .room-greeting{left:5.5%;top:4.2%;width:43%;background:#fff6e9f2;box-shadow:4px 7px 1px #6c4c3745,0 15px 28px #63473522;border-color:#bf9980;border-radius:2px 5px 3px 5px;padding:13px 10px;transform:rotate(-3deg)}
+.room-scene.director-room .room-greeting h1{font-size:clamp(15px,4.3vw,21px);line-height:1.14}
+.room-scene.director-room .room-greeting:after{content:'✳';position:absolute;right:5px;top:2px;color:#b97861;opacity:.5;font-size:12px}
+.room-scene.director-room .place-clock{letter-spacing:.03em}
+.room-scene.director-room .room-bouquet{filter:drop-shadow(1px 7px 7px #4e493f33)}
+.room-scene.director-room .today-card{background:#fffae9ed;box-shadow:3px 5px 0 #7c574145,0 15px 25px #58432e18;border-radius:1px 5px 2px 4px;transform:rotate(3.5deg);transition:transform .28s var(--dc-ease),box-shadow .28s}
+.room-scene.director-room .today-card:active{transform:rotate(1deg) scale(.98)}
+.room-scene.director-room .today-card:hover{box-shadow:3px 5px 0 #7c574145,0 18px 31px #58432e30}
+.room-object{position:absolute;min-width:44px;min-height:44px}
+.room-scene.director-room .room-object.object-ready .object-hint{opacity:.28;border:1px solid #fff3cd74;box-shadow:0 0 24px #ffefd82d;animation:director-spot-breathe 5s ease-in-out infinite}
+.room-scene.director-room .room-object:hover,.room-scene.director-room .room-object:focus-visible{background:#fff7dc1c}
+.room-scene.director-room .room-object:hover .object-hint,.room-scene.director-room .room-object:focus-visible .object-hint{opacity:.9;border:1px solid #fff8db;box-shadow:0 0 24px #fff2cd7d}
+.director-spot-label{position:absolute;left:50%;bottom:87%;transform:translate(-50%,5px);padding:5px 9px;border-radius:16px;background:#fff8e7f2;white-space:nowrap;color:#4a5346;opacity:0;font-size:9px;letter-spacing:.03em;font-weight:800;box-shadow:0 4px 17px #281e1534;pointer-events:none;transition:transform .22s,opacity .22s}
+.room-object:focus-visible .director-spot-label,.room-object:hover .director-spot-label{opacity:1;transform:translate(-50%,0)}
+.room-scene.director-room .room-bottom-label{font-size:10px;bottom:calc(63px + env(safe-area-inset-bottom,0px));right:6%;background:#fdf0d8e8;border-radius:2px 7px 3px 4px;color:#594a3a;transform:rotate(-4deg)}
+.room-scene.director-room .theme-trigger,.room-scene.director-room .replay-opening{background:#fff5e3ed;border:1px solid #c5a687;box-shadow:0 2px 8px #553d2c23;letter-spacing:.01em;transition:background .2s,transform .2s}
+.room-scene.director-room .theme-trigger:active,.room-scene.director-room .replay-opening:active{transform:translateY(2px)}
+.director-souvenirs{position:absolute;inset:0;z-index:8;pointer-events:none}
+.director-souvenir{position:absolute;display:flex;align-items:center;justify-content:center;box-shadow:2px 5px 9px #3e312549;transform:rotate(var(--angle,-5deg));animation:director-memory-pop .48s var(--dc-ease) both;}
+.director-souvenir.note{left:7%;top:38%;height:27px;width:31px;background:#fff6d9;border:1px solid #c6a477;color:#ad7958;font-size:18px;--angle:-8deg}
+.director-souvenir.postcard{left:6%;top:33%;height:32px;width:45px;background:linear-gradient(#eed6a8 55%,#87a392 56%);border:3px solid #fff5da;color:#465d53;font:8px Georgia,serif;--angle:8deg}
+.director-souvenir.garden{left:86%;top:82%;height:23px;width:25px;border-radius:12px 12px 3px 3px;background:#f6eacb;color:#55745c;font-size:16px;--angle:7deg}
+.director-souvenir.stamp{left:49%;top:84%;height:25px;width:25px;border:2px dashed #ad7354;border-radius:50%;background:#fbe5bc;color:#976446;font-size:12px;--angle:12deg}
+.director-souvenir.dream{left:77%;top:75%;height:18px;width:27px;background:#faf0cb;color:#855e45;font-size:10px;--angle:-10deg}
+.director-hello{position:absolute;z-index:20;bottom:calc(104px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:max-content;max-width:83%;padding:10px 15px;background:#334d40ef;color:#fff4de;box-shadow:0 14px 32px #132b2140;border:1px solid #9aad8799;border-radius:26px;font:12px Georgia,serif;text-align:center;pointer-events:none;animation:director-hello 7s ease forwards}
+@keyframes director-hello{0%{opacity:0;transform:translate(-50%,13px)}12%,77%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-11px)}}
+@keyframes director-memory-pop{0%{opacity:0;transform:scale(.65) rotate(-13deg)}100%{opacity:1;transform:scale(1) rotate(var(--angle))}}
+@keyframes director-spot-breathe{0%,100%{transform:scale(.94);opacity:.21}50%{transform:scale(1.06);opacity:.39}}
+/* Destinations: one shared quality bar, different visual voices. */
+.portal-screen{--dc-enter:translateY(11px)}
+.portal-place{background:var(--place-bg)}
+.portal-back{transition:transform .25s var(--dc-ease),background .25s}
+.portal-back:active{transform:translateX(-3px)}
+.portal-screen .portal-content{animation:director-place-arrive .54s var(--dc-ease) both}
+@keyframes director-place-arrive{from{opacity:.55;transform:translateY(13px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* letters: ink, grain, real stationery rather than a list of cards */
+.letterbox-app{background:radial-gradient(ellipse at 18% 12%,#fff6e4,transparent 60%),#e5d3b6}
+.mail-heading h1{letter-spacing:-.048em}
+.mail-row{transition:transform .26s var(--dc-ease),box-shadow .24s,background .24s}
+.mail-row:active{transform:translateY(2px) rotate(-.3deg)}
+.mail-sender{font-weight:600}
+.letter-reader{background:#e8d8bd}
+.reader-paper{background:linear-gradient(150deg,#fff9eb,#faeed8 78%,#edd6b7)}
+/* Arcade: tactile controls and focus hierarchy */
+.arcade-host .cabinet-monitor{box-shadow:inset 0 0 0 5px #0b151545,inset 0 5px 20px #0009,0 0 0 1px #e9cb9768}
+.arcade-cabinet{filter:drop-shadow(0 21px 18px #4b302c2f)}
+.arcade-host .arcade-play{box-shadow:0 6px 0 #7956445e,0 14px 21px #5c3b2930;transition:transform .2s}
+.arcade-host .arcade-play:active{transform:translateY(4px);box-shadow:0 2px 0 #7956445e}
+/* Cinema: illuminated frame; graphic illustrations are motion-designed, not fake footage. */
+.cinema-screen-wrap{isolation:isolate;box-shadow:0 18px 32px #070a0a4d,0 0 0 4px #c1a07855}
+.cinema-painted{overflow:hidden;isolation:isolate}
+.cinema-painted>.cinema-shot-art{opacity:0}
+.director-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;overflow:hidden;isolation:isolate;animation:director-frame-enter .85s ease-out both}
+.director-frame svg{display:block;width:100%;height:100%}
+.director-frame .sky-orb{transform-origin:center;animation:director-orb 14s ease-in-out infinite alternate}
+.director-frame .drifting{transform-origin:center;animation:director-drift 12s ease-in-out infinite alternate}
+.director-frame .near-ground{transform-origin:center;animation:director-foreground 8.4s ease-in-out infinite alternate}
+.cinema-painted .director-frame{z-index:0}
+.cinema-painted .cinema-title-card{position:absolute;z-index:3;text-shadow:0 3px 8px #1728228c}
+.cinema-painted:after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(180deg,transparent 15%,#192f2a6d 98%)}
+.cinema-poster-art{position:relative;isolation:isolate;overflow:hidden}
+.cinema-poster-art>.film-motif{opacity:0}
+.cinema-poster-art .director-frame{opacity:.95}
+.atlas-card-front .postcard-art{position:relative;overflow:hidden;isolation:isolate}
+.atlas-card-front .postcard-art>svg:not(.director-illustrated-postcard){opacity:0}
+.atlas-card-front .postcard-art .director-frame{border-radius:3px;z-index:0}
+.atlas-card-front .postcard-art .director-frame svg{filter:saturate(.9) sepia(.09)}
+@keyframes director-frame-enter{from{filter:blur(8px);transform:scale(1.035);opacity:.3}to{filter:blur(0);transform:scale(1);opacity:1}}
+@keyframes director-drift{from{transform:translate(-10px,3px)}to{transform:translate(13px,-6px)}}
+@keyframes director-orb{from{transform:translateY(6px)}to{transform:translateY(-7px)}}
+@keyframes director-foreground{from{transform:translateX(-6px) scale(1.01)}to{transform:translateX(6px) scale(1.05)}}
+/* FM: remove unavailable chrome; let the radio feel like an actual physical object. */
+.fm-radio{filter:drop-shadow(0 19px 17px #182d234f)}
+.fm-dial{filter:drop-shadow(0 3px 4px #223b2c55)}
+.fm-audio [data-ambience]{background:#39574a;color:#fff0d4;box-shadow:0 4px 0 #223b2c7a}
+.fm-audio [data-ambience][aria-pressed="true"]{background:#c77d59}
+.fm-links:has(a[aria-disabled="true"]):has(a:nth-child(2)[aria-disabled="true"]){display:none}
+.fm-station .radio-audio-state{color:#567b67;font-style:italic}
+/* Garden: exhibition typography. */
+.wordgarden{background:radial-gradient(ellipse at 50% 46%,#fff8ea55,transparent 73%)}
+.wg-prompts button{transition:transform .2s,background .2s}
+.wg-prompts button[aria-pressed="true"]{box-shadow:0 4px 12px #51745e2b}
+/* Rest: an atmosphere rather than a control panel. */
+.restroom{background:linear-gradient(170deg,#e3e8d5,#cadacc 50%,#b5c9b3)}
+.rr-window{box-shadow:inset 0 0 0 5px #f3eadbb3,0 13px 30px #2c50412a}
+.rr-breath-card,.rr-comfort{box-shadow:0 10px 23px #3e5f4d11}
+/* Experience polish, motion responsibility */
+@media (max-height:740px){
+ .room-scene.director-room .room-greeting{top:3%;padding:8px 9px}
+ .room-scene.director-room .room-greeting h1{font-size:clamp(13px,4vw,18px)}
+ .director-hello{bottom:calc(99px + env(safe-area-inset-bottom,0px));font-size:11px}
+}
+@media (min-width:600px){
+ .app-frame{outline:1px solid #785f4f;border-color:#f4e7d5}
+}
+@media (prefers-reduced-motion:reduce){
+ .director-hello{animation:none;opacity:1;transform:translateX(-50%)}
+ .director-frame,.director-frame *, .director-souvenir,.portal-screen .portal-content,.room-scene.director-room .room-object .object-hint{animation:none!important;transition:none!important}
+}
+/* SIX WORLDS / V3: distinct spatial language, not merely tint adjustments. */
+.room-scene{--world-ink:#344f48;--world-paper:#fff9eb}
+.room-scene.director-room .room-paint{isolation:isolate}
+.room-scene.director-room .director-illustration{transition:filter .9s ease,opacity .8s ease,transform 1.1s ease}
+.room-scene.director-room .room-greeting,.room-scene.director-room .today-card{transition:background .5s,color .5s,transform .65s,border-radius .65s}
+.room-scene.director-room[data-theme=story] .room-paint{background:radial-gradient(ellipse at 80% 7%,#ffeacb,#bfb49f 75%)}
+.room-scene.director-room[data-theme=monsoon] .room-paint{background:linear-gradient(165deg,#102f32,#436b66 48%,#a8b8a4)}
+.room-scene.director-room[data-theme=monsoon] .director-illustration{filter:brightness(.68) saturate(.66) hue-rotate(42deg);transform:scale(1.055)}
+.room-scene.director-room[data-theme=monsoon] .director-vignette{background:repeating-linear-gradient(107deg,transparent 0 21px,#c9f3f224 22px 23px,transparent 25px 45px),linear-gradient(#13384437,#113c446b)}
+.room-scene.director-room[data-theme=monsoon] .room-greeting{background:#e5f0e1eb;border-radius:2px 19px 2px 19px}
+.room-scene.director-room[data-theme=sunroom] .room-paint{background:radial-gradient(circle at 90% 14%,#fffce7 0,#ffe0a5 34%,#e2bcb0 88%)}
+.room-scene.director-room[data-theme=sunroom] .director-illustration{filter:brightness(1.20) sepia(.19) saturate(.72);transform:scale(1.07) translate(-1%,1%)}
+.room-scene.director-room[data-theme=sunroom] .director-lightwash{background:linear-gradient(133deg,#fff7d885 8%,transparent 61%)}
+.room-scene.director-room[data-theme=sunroom] .room-greeting{background:#fffbe8ef;border:2px solid #d4ac64;border-radius:25px 5px 25px 5px;transform:rotate(1.6deg)}
+.room-scene.director-room[data-theme=terracotta] .room-paint{background:radial-gradient(circle at 70% 30%,#dabc90,#975b43 80%)}
+.room-scene.director-room[data-theme=terracotta] .director-illustration{filter:sepia(.45) saturate(1.3) hue-rotate(-18deg) contrast(1.08);transform:scale(1.035)}
+.room-scene.director-room[data-theme=terracotta] .room-greeting{background:#ffeed8f2;border:2px dashed #ac694b;border-radius:0;transform:rotate(-5deg)}
+.room-scene.director-room[data-theme=terracotta] .today-card{background:#fce1b9f1;border-radius:0;transform:rotate(5deg)}
+.room-scene.director-room[data-theme=midnight] .room-paint{background:radial-gradient(ellipse at 69% 18%,#654178 0%,#201c36 64%,#11162c)}
+.room-scene.director-room[data-theme=midnight] .director-illustration{filter:brightness(.40) contrast(1.23) sepia(.22) hue-rotate(190deg);transform:scale(1.09)}
+.room-scene.director-room[data-theme=midnight] .director-vignette{background:linear-gradient(160deg,#150d3888,#291c5388),radial-gradient(circle at 86% 12%,#df81d64d,transparent 49%)}
+.room-scene.director-room[data-theme=midnight] .room-greeting{background:#24213de8;border:1px solid #e995d4;color:#ffdaf6;box-shadow:6px 7px 0 #ed8acb50;border-radius:12px;transform:rotate(0)}
+.room-scene.director-room[data-theme=midnight] .room-greeting *{color:inherit}
+.room-scene.director-room[data-theme=midnight] .today-card{background:#322848e8;border:1px solid #d99ccc;color:#ffe6fb;border-radius:15px;transform:rotate(-2deg)}
+.room-scene.director-room[data-theme=midnight] .today-card *{color:inherit}
+.room-scene.director-room[data-theme=cosmos] .room-paint{background:radial-gradient(ellipse at 50% 27%,#305c8b,#151f43 65%,#0c1429)}
+.room-scene.director-room[data-theme=cosmos] .director-illustration{filter:brightness(.52) saturate(.48) hue-rotate(150deg);opacity:.79;transform:scale(1.05)}
+.room-scene.director-room[data-theme=cosmos] .director-vignette{background-image:radial-gradient(1px 1px at 12% 17%,#fff 95%,transparent),radial-gradient(2px 2px at 80% 22%,#fff 95%,transparent),radial-gradient(2px 2px at 63% 61%,#fff 95%,transparent),radial-gradient(1px 1px at 32% 75%,#fff 95%,transparent),radial-gradient(1px 1px at 95% 83%,#fff 95%,transparent),radial-gradient(circle at 48% 21%,transparent,#141b4188);background-size:100% 100%;filter:drop-shadow(0 0 4px #a4d8ff)}
+.room-scene.director-room[data-theme=cosmos] .room-greeting{background:#162b4bdf;border:1px solid #a5d9ee;color:#e1f5ff;border-radius:20px 20px 8px 8px;transform:rotate(0)}
+.room-scene.director-room[data-theme=cosmos] .room-greeting *{color:inherit}
+.room-scene.director-room[data-theme=cosmos] .today-card{background:#1e3556e8;color:#ecf6ff;border-radius:25px;transform:rotate(-2deg)}
+.room-scene.director-room[data-theme=cosmos] .today-card *{color:inherit}
+.swatch-midnight{background:linear-gradient(130deg,#171b35,#a64f8e 65%,#feadd9)}
+.swatch-cosmos{background:radial-gradient(circle at 70% 18%,#9ce5ff 0 3%,transparent 5%),radial-gradient(circle at 21% 63%,#fff 0 1%,transparent 3%),linear-gradient(140deg,#0c132c,#31538a)}
+.theme-options{max-height:min(53vh,410px);overflow-y:auto;overscroll-behavior:contain;padding:5px;scrollbar-width:thin}
+.theme-option{min-height:76px}
+.flower-rail{scroll-snap-type:x proximity!important;touch-action:pan-x;overscroll-behavior-x:auto;padding-bottom:15px}
+.flower-option{scroll-snap-align:start!important;flex-shrink:0;touch-action:pan-x}
+.flower-option[aria-pressed=true] .picked-check{display:flex;align-items:center;justify-content:center;min-width:23px;padding:1px 5px;border-radius:14px;font-weight:800;background:#405e4c;color:white}
+.flower-option[aria-pressed=true]{opacity:1!important}
+@media(prefers-reduced-motion:reduce){.room-scene.director-room .director-illustration,.room-scene.director-room .room-greeting,.room-scene.director-room .today-card{transition:none!important}}
+
+.joy-game,.smile-game{padding:22px 16px;text-align:center;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff3e8;background:radial-gradient(circle at 50% 15%,#8c667b,#3c384f 78%);border-radius:18px}
+.joy-game h2,.smile-game h2{font:700 clamp(24px,6vw,32px) Georgia,serif;margin:0}
+.joy-game p,.smile-game p{margin:0;line-height:1.5;max-width:290px}
+.joy-stars{font-size:27px;letter-spacing:.09em;color:#ffe5a4}
+.joy-tap,.smile-choices button{border:1px solid #ffefceb9;background:#fff5e9;color:#604257;border-radius:16px;padding:14px 18px;font:600 14px system-ui;min-height:48px;box-shadow:0 5px 0 #26172a55}
+.joy-tap:active,.smile-choices button:active{transform:translateY(3px)}
+.smile-choices{display:grid;gap:9px;width:100%;max-width:290px}
+.smile-reveal,.joy-reveal{font:italic 15px Georgia,serif;color:#ffdcbd}
+
+/* Florist v3.1: obvious, reachable controls; no forced snap and no surprise jump. */
+.flower-browser{display:flex;align-items:center;gap:2px;min-width:0;position:relative}
+.flower-browser .flower-rail{flex:1;min-width:0;padding-left:8px;padding-right:8px;scroll-snap-type:none!important;scroll-behavior:smooth}
+.flower-nav{appearance:none;flex:0 0 29px;width:29px;height:60px;border:1px solid #bba98e;background:#f8efdfdf;color:#5b6452;border-radius:18px;font:700 28px Georgia,serif;box-shadow:0 2px 5px #6d5a4430;z-index:2}
+.flower-nav:focus-visible{outline:2px solid #466c59;outline-offset:2px}
+.flower-option{transition:transform .24s cubic-bezier(.15,.84,.3,1),box-shadow .3s,background .3s}
+.flower-option.flower-just-picked{animation:flower-celebrate .56s cubic-bezier(.2,.8,.2,1) both}
+.bouquet-bloom.bloom-new{animation:bloom-join .78s cubic-bezier(.14,.78,.21,1.15) both;transform-origin:center}
+@keyframes flower-celebrate{0%{transform:scale(1)}38%{transform:translateY(-9px) scale(1.07)}100%{transform:scale(1)}}
+@keyframes bloom-join{from{opacity:.2;filter:blur(5px)}to{opacity:1;filter:blur(0)}}
+@media(max-width:390px){.flower-nav{flex-basis:25px;width:25px}.flower-browser .flower-rail{padding-left:4px;padding-right:4px}}
+@media(prefers-reduced-motion:reduce){.flower-browser .flower-rail{scroll-behavior:auto}.flower-option.flower-just-picked,.bouquet-bloom.bloom-new{animation:none}}
+
+/* Theme-specific illustrated worlds: each theme gets its own drawn environment. */
+.room-scene.director-room[data-theme="monsoon"] .director-illustration,
+.room-scene.director-room[data-theme="sunroom"] .director-illustration,
+.room-scene.director-room[data-theme="terracotta"] .director-illustration,
+.room-scene.director-room[data-theme="midnight"] .director-illustration,
+.room-scene.director-room[data-theme="cosmos"] .director-illustration{filter:none!important;transform:none!important;opacity:1!important}
+.room-scene.director-room[data-theme="monsoon"] .director-vignette,
+.room-scene.director-room[data-theme="sunroom"] .director-vignette,
+.room-scene.director-room[data-theme="terracotta"] .director-vignette,
+.room-scene.director-room[data-theme="midnight"] .director-vignette,
+.room-scene.director-room[data-theme="cosmos"] .director-vignette{mix-blend-mode:normal}
+.room-scene.director-room[data-theme="monsoon"] .director-vignette{opacity:.28}
+.room-scene.director-room[data-theme="sunroom"] .director-vignette{opacity:.15}
+.room-scene.director-room[data-theme="terracotta"] .director-vignette{opacity:.20}
+.room-scene.director-room[data-theme="midnight"] .director-vignette{opacity:.32}
+.room-scene.director-room[data-theme="cosmos"] .director-vignette{opacity:.22}

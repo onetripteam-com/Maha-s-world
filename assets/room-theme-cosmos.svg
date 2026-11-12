@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="780" viewBox="0 0 400 780" preserveAspectRatio="none" style="--w1:#0c244c;--w2:#162954;--f1:#193b6d;--f2:#07162e;--object:#53aec3;--trim:#2a678c;--screen:#21567f;--knob:#8db5e5;--paper:#d5f3ff;--sheet:#9fc7ef;--pot:#6cb4ce;--shine:#fff0ac;--g1:#6788b8;--g2:#335e91;--seal:#83a5e0;--leaf:#6c93b7;--plant:#244577;--seal2:#5789bd;"><defs>
+ <linearGradient id="wall" x2=".95" y2="1"><stop stop-color="var(--w1)"/><stop offset="1" stop-color="var(--w2)"/></linearGradient>
+ <linearGradient id="floor" x2=".4" y2="1"><stop stop-color="var(--f1)"/><stop offset="1" stop-color="var(--f2)"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="var(--g1)" stop-opacity=".74"/><stop offset="1" stop-color="var(--g2)" stop-opacity=".18"/></linearGradient>
+ <pattern id="grain" width="19" height="23" patternUnits="userSpaceOnUse"><path d="M3 8l2-1M15 19l-1 2" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
+ <filter id="shade"><feGaussianBlur stdDeviation="8"/></filter>
+ </defs><path fill="url(#wall)" fill-rule="evenodd" d="M0 0H400V780H0Z M202 95Q202 50 286 50Q370 50 370 95V335H202Z"/><path d="M0 476H400V780H0Z" fill="url(#floor)"/><path d="M0 0H400V780H0Z" fill="url(#grain)"/>
+<path d="M0 0h400v474H0Z" fill="#10294e" opacity=".28"/>
+<circle cx="280" cy="183" r="161" stroke="#4e91ad" stroke-width="19" fill="none"/>
+<circle cx="280" cy="183" r="151" stroke="#b8e5ee" stroke-width="3" stroke-dasharray="9 17" fill="none" opacity=".72"/>
+<circle cx="280" cy="183" r="128" fill="#1c3867" opacity=".18"/>
+<path d="M0 476H400" stroke="#7cbcd5" stroke-width="9"/>
+<path d="M0 511h400M0 614h400M0 720h400M63 480l-38 300M186 480v300M319 480l56 300" stroke="#70a7ce" opacity=".28" stroke-width="3"/>
+<g fill="#ddf5ff"><circle cx="33" cy="72" r="2"/><circle cx="104" cy="218" r="2"/><circle cx="155" cy="126" r="2"/><circle cx="379" cy="400" r="2"/><circle cx="230" cy="385" r="2"/></g>
+<g fill="none" stroke="#8bdbea" stroke-width="1.7" opacity=".56"><path d="M28 75L103 217 154 127 230 385"/><path d="M33 271L98 289 148 260"/></g>
+<path d="M12 125Q80 87 161 124" stroke="#92c4e8" stroke-width="6" fill="none" opacity=".6"/>
+<text x="18" y="159" fill="#c9f5ff" font-family="monospace" font-size="14" letter-spacing="3">STARGAZER</text>
+<text x="18" y="183" fill="#b0e6ee" font-family="monospace" font-size="12" letter-spacing="2">STATION 07</text>
+<circle cx="86" cy="397" r="36" stroke="#70b3ce" stroke-width="5" fill="#27588b" opacity=".4"/><path d="M58 397h56m-28-28v57" stroke="#85c4e8" stroke-width="2" opacity=".6"/><path d="M0 460Q200 467 400 452" fill="none" stroke="var(--trim)" stroke-width="8" opacity=".65"/><g class="interactives">
+<!-- shortwave/music at left center -->
+<g transform="translate(45 319)"><rect x="0" y="0" width="74" height="72" rx="9" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><rect x="9" y="11" width="56" height="26" rx="4" fill="var(--screen)" opacity=".83"/><path d="M17 25h40" stroke="var(--shine)" stroke-width="2"/><circle cx="22" cy="54" r="10" fill="var(--knob)" stroke="var(--trim)" stroke-width="2"/><circle cx="53" cy="54" r="7" fill="var(--knob)"/><path d="M58 2l12-22" stroke="var(--trim)" stroke-width="3"/></g>
+<!-- letters at left below radio -->
+<g transform="translate(35 447) rotate(-4)"><rect width="120" height="70" rx="3" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><path d="M5 4l55 38 55-38" fill="none" stroke="var(--trim)" stroke-width="2"/><path d="M5 66L49 36M115 66L72 36" fill="none" stroke="var(--trim)" stroke-width="2"/><circle cx="60" cy="40" r="10" fill="var(--seal)"/></g>
+<!-- projector at center -->
+<g transform="translate(172 528)"><path d="M-13 52L7 8h57l27 44" fill="var(--object)" stroke="var(--trim)" stroke-width="4"/><rect x="0" y="0" width="73" height="48" rx="8" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><circle cx="20" cy="20" r="17" fill="var(--knob)" stroke="var(--trim)" stroke-width="3"/><circle cx="49" cy="19" r="17" fill="var(--knob)" stroke="var(--trim)" stroke-width="3"/><circle cx="20" cy="20" r="5" fill="var(--shine)"/><circle cx="49" cy="19" r="5" fill="var(--shine)"/><rect x="24" y="43" width="28" height="6" rx="2" fill="var(--trim)"/></g>
+<!-- suitcase bottom right -->
+<g transform="translate(284 615) rotate(3)"><path d="M28 8V0q0-5 5-5h19q5 0 5 5v8" stroke="var(--trim)" fill="none" stroke-width="6"/><rect x="0" y="8" width="100" height="109" rx="14" fill="var(--object)" stroke="var(--trim)" stroke-width="4"/><path d="M20 10v105M76 10v105" stroke="var(--trim)" opacity=".65" stroke-width="4"/><circle cx="50" cy="48" r="19" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><text x="50" y="54" fill="var(--seal)" font-size="15" text-anchor="middle">✦</text><path d="M10 115v10M90 115v10" stroke="var(--trim)" stroke-width="5"/></g>
+<!-- games console left low -->
+<g transform="translate(101 657) rotate(-9)"><rect width="104" height="65" rx="19" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><path d="M24 23v26M11 36h26" stroke="var(--knob)" stroke-linecap="round" stroke-width="8"/><circle cx="75" cy="27" r="7" fill="var(--seal)"/><circle cx="85" cy="43" r="7" fill="var(--knob)"/><path d="M49 37h11" stroke="var(--trim)" stroke-width="4"/></g>
+<!-- lamp right -->
+<g transform="translate(305 408)"><path d="M19 2L-13 60h75L33 2Z" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><path d="M24 60v100m-27 0h53" stroke="var(--trim)" stroke-width="6" fill="none"/><ellipse cx="24" cy="160" rx="35" ry="7" fill="var(--object)" stroke="var(--trim)" stroke-width="2"/><circle cx="24" cy="59" r="9" fill="var(--shine)" opacity=".45"/></g>
+<!-- resting place -->
+<g transform="translate(20 594)"><rect width="144" height="92" rx="18" fill="var(--sheet)" stroke="var(--trim)" stroke-width="3"/><path d="M0 55Q62 45 144 60" fill="none" stroke="var(--paper)" stroke-width="6"/><rect x="8" y="6" width="60" height="33" rx="14" fill="var(--paper)"/><path d="M8 83h128" stroke="var(--trim)" stroke-width="4" opacity=".27"/></g>
+<!-- garden bottom right -->
+<g transform="translate(352 680)"><path d="M0 0V-75M0-41Q-39-69-30-86Q-3-79 0-52M0-56Q40-86 43-68Q35-46 0-38" fill="var(--leaf)" stroke="var(--plant)" stroke-width="4"/><path d="M-29 0H29L21 54H-18Z" fill="var(--pot)" stroke="var(--trim)" stroke-width="3"/><ellipse cx="0" cy="1" rx="29" ry="8" fill="var(--pot)" stroke="var(--trim)" stroke-width="3"/></g>
+</g><rect x="0" y="0" width="400" height="780" fill="url(#glass)" opacity=".08" pointer-events="none"/></svg>

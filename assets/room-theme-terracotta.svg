@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="780" viewBox="0 0 400 780" preserveAspectRatio="none" style="--w1:#e6ba92;--w2:#a46b55;--f1:#b58265;--f2:#724333;--object:#b88355;--trim:#785240;--screen:#995945;--knob:#d5b08b;--paper:#fbe0b3;--sheet:#d2a279;--pot:#945c40;--shine:#f9cd83;--g1:#879781;--g2:#425e4e;--seal:#bb6650;--leaf:#8d9771;--plant:#516951;--seal2:#be7c53;"><defs>
+ <linearGradient id="wall" x2=".95" y2="1"><stop stop-color="var(--w1)"/><stop offset="1" stop-color="var(--w2)"/></linearGradient>
+ <linearGradient id="floor" x2=".4" y2="1"><stop stop-color="var(--f1)"/><stop offset="1" stop-color="var(--f2)"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="var(--g1)" stop-opacity=".74"/><stop offset="1" stop-color="var(--g2)" stop-opacity=".18"/></linearGradient>
+ <pattern id="grain" width="19" height="23" patternUnits="userSpaceOnUse"><path d="M3 8l2-1M15 19l-1 2" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
+ <filter id="shade"><feGaussianBlur stdDeviation="8"/></filter>
+ </defs><path fill="url(#wall)" fill-rule="evenodd" d="M0 0H400V780H0Z M202 95Q202 50 286 50Q370 50 370 95V335H202Z"/><path d="M0 476H400V780H0Z" fill="url(#floor)"/><path d="M0 0H400V780H0Z" fill="url(#grain)"/>
+<path d="M0 0h400v475H0Z" fill="#c78361" opacity=".18"/>
+<g stroke="#f2d7b1" opacity=".16" stroke-width="3"><path d="M0 90h400M0 170h400M0 250h400M0 330h400"/><path d="M20 0v475m110-475v475m150-475v475"/></g>
+<path d="M192 338V99Q199 42 277 42Q363 42 381 102v245" stroke="#b06a4d" stroke-width="25" fill="none"/>
+<path d="M184 345H390" stroke="#ecc297" stroke-width="11"/>
+<path d="M0 477h400" stroke="#5d453e" stroke-width="18"/>
+<g fill="#d9a77d" stroke="#f4d2aa" stroke-width="3"><path d="M6 85Q65 29 124 85v106H6Z"/><path d="M14 104Q65 60 115 104v79H14Z" fill="#8c665c"/></g>
+<path d="M52 116v53M77 116v53" stroke="#f6d3b7" stroke-width="4"/>
+<circle cx="62" cy="144" r="13" fill="#d8ac7f"/><path d="M0 553H400M0 665H400" stroke="#764d3b" stroke-width="7"/>
+<g transform="translate(210 667)" stroke="#e8ae8b" fill="none" opacity=".68"><path d="M-9-80Q-73-52-9-25Q56-52-9-80Z" stroke-width="10"/><path d="M-9-67Q-44-47-9-39Q26-49-9-67Z" stroke-width="4"/></g>
+<text x="20" y="252" fill="#ffe3c2" opacity=".8" font-family="Georgia" font-size="22" font-style="italic">postcards & clay</text><path d="M0 460Q200 467 400 452" fill="none" stroke="var(--trim)" stroke-width="8" opacity=".65"/><g class="interactives">
+<!-- shortwave/music at left center -->
+<g transform="translate(45 319)"><rect x="0" y="0" width="74" height="72" rx="9" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><rect x="9" y="11" width="56" height="26" rx="4" fill="var(--screen)" opacity=".83"/><path d="M17 25h40" stroke="var(--shine)" stroke-width="2"/><circle cx="22" cy="54" r="10" fill="var(--knob)" stroke="var(--trim)" stroke-width="2"/><circle cx="53" cy="54" r="7" fill="var(--knob)"/><path d="M58 2l12-22" stroke="var(--trim)" stroke-width="3"/></g>
+<!-- letters at left below radio -->
+<g transform="translate(35 447) rotate(-4)"><rect width="120" height="70" rx="3" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><path d="M5 4l55 38 55-38" fill="none" stroke="var(--trim)" stroke-width="2"/><path d="M5 66L49 36M115 66L72 36" fill="none" stroke="var(--trim)" stroke-width="2"/><circle cx="60" cy="40" r="10" fill="var(--seal)"/></g>
+<!-- projector at center -->
+<g transform="translate(172 528)"><path d="M-13 52L7 8h57l27 44" fill="var(--object)" stroke="var(--trim)" stroke-width="4"/><rect x="0" y="0" width="73" height="48" rx="8" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><circle cx="20" cy="20" r="17" fill="var(--knob)" stroke="var(--trim)" stroke-width="3"/><circle cx="49" cy="19" r="17" fill="var(--knob)" stroke="var(--trim)" stroke-width="3"/><circle cx="20" cy="20" r="5" fill="var(--shine)"/><circle cx="49" cy="19" r="5" fill="var(--shine)"/><rect x="24" y="43" width="28" height="6" rx="2" fill="var(--trim)"/></g>
+<!-- suitcase bottom right -->
+<g transform="translate(284 615) rotate(3)"><path d="M28 8V0q0-5 5-5h19q5 0 5 5v8" stroke="var(--trim)" fill="none" stroke-width="6"/><rect x="0" y="8" width="100" height="109" rx="14" fill="var(--object)" stroke="var(--trim)" stroke-width="4"/><path d="M20 10v105M76 10v105" stroke="var(--trim)" opacity=".65" stroke-width="4"/><circle cx="50" cy="48" r="19" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><text x="50" y="54" fill="var(--seal)" font-size="15" text-anchor="middle">✦</text><path d="M10 115v10M90 115v10" stroke="var(--trim)" stroke-width="5"/></g>
+<!-- games console left low -->
+<g transform="translate(101 657) rotate(-9)"><rect width="104" height="65" rx="19" fill="var(--object)" stroke="var(--trim)" stroke-width="3"/><path d="M24 23v26M11 36h26" stroke="var(--knob)" stroke-linecap="round" stroke-width="8"/><circle cx="75" cy="27" r="7" fill="var(--seal)"/><circle cx="85" cy="43" r="7" fill="var(--knob)"/><path d="M49 37h11" stroke="var(--trim)" stroke-width="4"/></g>
+<!-- lamp right -->
+<g transform="translate(305 408)"><path d="M19 2L-13 60h75L33 2Z" fill="var(--paper)" stroke="var(--trim)" stroke-width="3"/><path d="M24 60v100m-27 0h53" stroke="var(--trim)" stroke-width="6" fill="none"/><ellipse cx="24" cy="160" rx="35" ry="7" fill="var(--object)" stroke="var(--trim)" stroke-width="2"/><circle cx="24" cy="59" r="9" fill="var(--shine)" opacity=".45"/></g>
+<!-- resting place -->
+<g transform="translate(20 594)"><rect width="144" height="92" rx="18" fill="var(--sheet)" stroke="var(--trim)" stroke-width="3"/><path d="M0 55Q62 45 144 60" fill="none" stroke="var(--paper)" stroke-width="6"/><rect x="8" y="6" width="60" height="33" rx="14" fill="var(--paper)"/><path d="M8 83h128" stroke="var(--trim)" stroke-width="4" opacity=".27"/></g>
+<!-- garden bottom right -->
+<g transform="translate(352 680)"><path d="M0 0V-75M0-41Q-39-69-30-86Q-3-79 0-52M0-56Q40-86 43-68Q35-46 0-38" fill="var(--leaf)" stroke="var(--plant)" stroke-width="4"/><path d="M-29 0H29L21 54H-18Z" fill="var(--pot)" stroke="var(--trim)" stroke-width="3"/><ellipse cx="0" cy="1" rx="29" ry="8" fill="var(--pot)" stroke="var(--trim)" stroke-width="3"/></g>
+</g><rect x="0" y="0" width="400" height="780" fill="url(#glass)" opacity=".08" pointer-events="none"/></svg>

@@ -1,0 +1,498 @@
+/* MAHA — the room has a point of view. November 2026.
+ * Final styling layer; no borrowed icon font, tracking or external CSS.
+ */
+.app-frame[data-scene="room"] .app-header{
+ height:clamp(56px,7.5vh,76px)!important;
+ min-height:clamp(56px,7.5vh,76px)!important;
+ background:linear-gradient(180deg,rgba(11,15,15,.83),rgba(11,15,15,.25))!important;
+ border-bottom:1px solid #e7d3b938!important;
+ padding:6px clamp(14px,2.5vw,42px)!important;
+}
+.app-frame .identity{display:flex;gap:11px!important;align-items:center!important;letter-spacing:0!important}
+.app-frame .identity-flower{
+ display:block;flex-shrink:0;width:37px;height:37px;
+ filter:drop-shadow(0 1px 1px #150e1199);transform:rotate(-8deg);
+ transition:transform .55s cubic-bezier(.21,.8,.2,1);
+}
+.app-frame .identity:hover .identity-flower{transform:rotate(16deg) scale(1.07)}
+.app-frame .identity-type{display:flex;flex-direction:column;gap:3px;color:#f8eedf;font:inherit!important}
+.app-frame .identity-type b{font:650 12px/1.1 system-ui,sans-serif;letter-spacing:.28em}
+.app-frame .identity-type small{font:600 8px/1.3 system-ui,sans-serif;letter-spacing:.19em;color:#d6bfa3;white-space:nowrap}
+.app-frame[data-scene="room"] .sound-toggle{border:1px solid #e5dac35a!important;border-radius:50%;background:#17211bc2!important;color:#e8d8c3!important}
+.app-frame[data-scene="room"] .sound-toggle:focus-visible{outline:2px solid #f5d4a5;outline-offset:3px}
+.cinematic-room .room-top-controls{
+ position:absolute;z-index:42;right:clamp(12px,5vw,78px);top:14px;
+ display:flex;align-items:center;gap:9px;
+}
+.cinematic-room .room-top-controls>button{
+ background:#141b18d6!important;color:#f9eedc!important;
+ border:1px solid #e1d3be81!important;
+ min-height:44px;padding:10px 16px;border-radius:999px!important;
+ box-shadow:0 6px 20px #0a130f4f;backdrop-filter:blur(13px);
+ font:600 11px/1.2 system-ui,sans-serif!important;
+ display:flex;align-items:center;gap:10px;white-space:nowrap;
+ transition:background .2s,border-color .2s,transform .2s;
+}
+.cinematic-room .room-top-controls>button span{font:19px Georgia,serif}
+.cinematic-room .room-top-controls>button:hover{background:#314237e8!important;border-color:#f6d8ab!important}
+.cinematic-room .room-top-controls>button:focus-visible{outline:2px solid #f8d6a7;outline-offset:4px}
+.cinematic-room .room-heading{z-index:11!important}
+.cinematic-room .room-heading .room-eyebrow{
+ letter-spacing:.16em!important;font-size:10px!important;line-height:1.4;
+}
+.cinematic-room .room-heading h1{max-width:550px!important;text-wrap:balance}
+.cinematic-room .room-heading p{max-width:330px!important;line-height:1.6!important}
+.cinematic-room .cinematic-note{
+ font:italic 17px/1.4 Georgia,serif!important;max-width:270px!important;
+ color:#f0d5b7!important;
+}
+.cinematic-room .cinematic-note b{
+ font:700 9px/1.4 system-ui,sans-serif!important;letter-spacing:.16em;
+ display:block;margin-bottom:10px;color:#e1c29b!important;
+}
+.cinematic-room .window-whisper{display:none!important}
+.cinematic-room{--room-exposure:.88;--room-chroma:.92}
+.cinematic-room[data-light="daylight"]{--room-exposure:1.10;--room-chroma:1.04}
+.cinematic-room[data-light="golden"]{--room-exposure:.99;--room-chroma:.98}
+.cinematic-room[data-light="evening"]{--room-exposure:.73;--room-chroma:.85}
+.cinematic-room[data-light="night"]{--room-exposure:.48;--room-chroma:.75}
+.cinematic-room .cinematic-photo{
+ filter:brightness(var(--room-exposure)) saturate(var(--room-chroma))!important;
+ transition:filter .72s ease,background-position .8s ease!important;
+}
+.cinematic-room[data-light="golden"] .cinematic-lens{
+ background:radial-gradient(ellipse at 70% 40%,#ffe7ad25,transparent 62%)!important;
+}
+.cinematic-room[data-light="night"] .cinematic-lens{
+ background:linear-gradient(180deg,#10132327,#07121c42)!important;
+}
+.cinematic-room .room-light-picker{max-width:530px}
+.cinematic-room .room-light-options{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;
+ margin:15px 0 18px;
+}
+.cinematic-room .room-light-options button{
+ display:grid;grid-template-columns:33px 1fr;grid-template-rows:auto auto;
+ text-align:left;align-items:center;gap:3px 10px;padding:11px;
+ min-height:66px;border:1px solid #a18f7e77;border-radius:9px;
+ background:#efe2cea8;color:#342e28;
+}
+.cinematic-room .room-light-options button[aria-pressed="true"]{border-color:#a76d55;background:#fff3dc}
+.cinematic-room .room-light-options button i{
+ display:block;grid-row:1/3;width:29px;height:29px;border-radius:50%;
+ border:2px solid #fff6e1;box-shadow:0 0 0 1px #8d7e6a;
+ background:linear-gradient(125deg,#b3c8cb,#d3c39f);
+}
+.cinematic-room .room-light-options button[data-light-option="daylight"] i{background:linear-gradient(125deg,#e5f5ff,#ffedba)}
+.cinematic-room .room-light-options button[data-light-option="golden"] i{background:linear-gradient(125deg,#f9c269,#b97264)}
+.cinematic-room .room-light-options button[data-light-option="evening"] i{background:linear-gradient(125deg,#8d7183,#283d50)}
+.cinematic-room .room-light-options button[data-light-option="night"] i{background:linear-gradient(125deg,#293b5e,#121827)}
+.cinematic-room .room-light-options strong{font:650 12px/1.15 system-ui,sans-serif}
+.cinematic-room .room-light-options small{font:11px/1.2 Georgia,serif;opacity:.68}
+.cinematic-room .room-light-picker>p{color:#85765d;font:italic 11px/1.5 Georgia,serif}
+/* Actual photograph is the hit target: transparent areas trace the sofa,
+   TV, writing desk and objects; no cartoon icons hover over the room.
+   The source photo is still temporary and only Story has exact coordinate work. */
+@media(min-width:760px){
+ .cinematic-room[data-theme="story"] .room-object.living-object{
+  background:transparent!important;border:0!important;overflow:visible!important;
+  width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;
+  max-width:none!important;position:absolute!important;transform:none!important;
+  border-radius:0!important;
+ }
+ .cinematic-room[data-theme="story"] .room-object.living-object:before,
+ .cinematic-room[data-theme="story"] .room-object.living-object:after{display:none!important}
+ .cinematic-room[data-theme="story"] .room-object.living-object .object-drawing{display:none!important}
+ .cinematic-room[data-theme="story"] .room-object.living-object .object-label{
+  position:absolute!important;left:50%!important;top:auto!important;bottom:calc(100% + 4px)!important;
+  right:auto!important;transform:translate(-50%,5px)!important;
+  opacity:0!important;pointer-events:none!important;
+  border:1px solid #e6d4b57d!important;border-radius:4px!important;
+  min-width:0;max-width:180px;background:#1a2420e8!important;
+  text-align:center!important;padding:8px 11px!important;white-space:nowrap;
+  box-shadow:0 8px 25px #111b17b0!important;
+ }
+ .cinematic-room[data-theme="story"] .room-object.living-object:is(:hover,:focus-visible) .object-label{
+  opacity:1!important;transform:translate(-50%,0)!important;
+ }
+ .cinematic-room[data-theme="story"] .room-object.living-object:focus-visible{
+  outline:2px solid #f9e1ba!important;outline-offset:3px!important;border-radius:10px!important;
+ }
+ .cinematic-room[data-theme="story"] .object-rest{left:10%!important;top:61%!important;width:27%!important;height:31%!important}
+ .cinematic-room[data-theme="story"] .object-garden{left:36%!important;top:47%!important;width:8%!important;height:21%!important}
+ .cinematic-room[data-theme="story"] .object-movies{left:82%!important;top:24%!important;width:13%!important;height:24%!important}
+ .cinematic-room[data-theme="story"] .object-letters{left:84%!important;top:58%!important;width:12%!important;height:15%!important}
+ .cinematic-room[data-theme="story"] .object-travel{left:84%!important;top:76%!important;width:15%!important;height:20%!important}
+ .cinematic-room[data-theme="story"] .object-games{left:50%!important;top:84%!important;width:10%!important;height:14%!important}
+ .cinematic-room[data-theme="story"] .object-music{left:71%!important;top:86%!important;width:10%!important;height:12%!important}
+ .cinematic-room[data-theme="story"] .room-object.living-object:is(:hover,:focus-visible){
+  background:radial-gradient(ellipse,#f9deb21b,transparent 70%)!important;
+ }
+ .cinematic-room[data-theme="story"] .object-rest:focus-visible{border-radius:40% 30% 12% 8%!important}
+ .cinematic-room[data-theme="story"] .object-movies:focus-visible{border-radius:6px!important}
+ .cinematic-room[data-theme="story"] .table-bouquet{left:66.5%!important;top:75%!important}
+}
+/* Phone: labels remain discoverable, touch zones generous, no 'dot farm'. */
+@media(max-width:759px){
+ .app-frame[data-scene="room"] .app-header{
+  height:calc(57px + env(safe-area-inset-top,0px))!important;
+  min-height:calc(57px + env(safe-area-inset-top,0px))!important;
+  padding:calc(env(safe-area-inset-top,0px) + 3px) 13px 3px!important;
+ }
+ .app-frame .identity-flower{width:31px;height:31px}
+ .app-frame .identity-type b{font-size:11px}
+ .app-frame .identity-type small{font-size:7px;letter-spacing:.1em}
+ .cinematic-room .room-top-controls{
+  top:7px;right:10px;left:auto;gap:6px;
+ }
+ .cinematic-room .room-top-controls button{font-size:10px!important;min-height:42px;padding:8px 10px!important}
+ .cinematic-room .room-top-controls button span{font-size:16px}
+ .cinematic-room .room-heading{top:calc(105px + env(safe-area-inset-top,0px))!important;max-width:310px!important}
+ .cinematic-room .room-heading h1{font-size:clamp(28px,7.7vw,39px)!important;line-height:1.05!important;margin:6px 0 8px!important}
+ .cinematic-room .room-heading p{font-size:11px!important;line-height:1.44!important;max-width:230px!important}
+ .cinematic-room .room-heading .room-eyebrow{font-size:8px!important;letter-spacing:.11em!important}
+ .cinematic-room .cinematic-note{display:none!important}
+ .cinematic-room .room-light-options{grid-template-columns:1fr 1fr}
+ .cinematic-room .room-object.living-object .object-drawing{display:none!important}
+ .cinematic-room .room-object.living-object:before{opacity:.55!important}
+ .cinematic-room .room-object.living-object:after{opacity:.25!important}
+ .cinematic-room .room-object.living-object .object-label{
+  font-size:10px!important;border-radius:6px!important;
+  background:#18251be0!important;
+ }
+}
+@media(max-width:759px) and (max-height:750px){
+ .cinematic-room .room-heading{top:calc(89px + env(safe-area-inset-top,0px))!important}
+ .cinematic-room .room-heading h1{font-size:30px!important}
+ .cinematic-room .room-heading p{font-size:10px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .app-frame .identity-flower,.cinematic-room .cinematic-photo{transition:none!important}
+}
+/* The travel book is a physical object, not a grid of generic stamps. */
+#portal-screen[data-place="travel"] .passport-experience{
+ width:100%;height:100%;overflow-y:auto;display:flex;flex-direction:column;
+ align-items:center;gap:12px;padding:10px min(3vw,35px) 26px;
+ color:#423e32;box-sizing:border-box;
+}
+#portal-screen[data-place="travel"] .passport-overline{
+ width:100%;max-width:1180px;display:flex;justify-content:space-between;
+ font:700 9px/1.3 system-ui,sans-serif;letter-spacing:.18em;color:#6f6754;
+}
+#portal-screen[data-place="travel"] .passport-intro{text-align:center;margin:2px 0 5px}
+#portal-screen[data-place="travel"] .passport-intro>span{font:700 10px/1.5 system-ui,sans-serif;letter-spacing:.24em;color:#826a51}
+#portal-screen[data-place="travel"] .passport-intro h1{font:400 clamp(32px,4vw,53px)/1.08 Georgia,serif;letter-spacing:-.06em;margin:5px 0}
+#portal-screen[data-place="travel"] .passport-intro p{font:italic 13px/1.4 Georgia,serif;opacity:.73}
+#portal-screen[data-place="travel"] .passport-case{
+ width:min(100%,1060px);flex:1;min-height:320px;max-height:565px;
+ padding:clamp(8px,1vw,17px);background:linear-gradient(115deg,#213a35,#3d6659 32%,#243a35 55%,#172b28);
+ border:2px solid #b48f60;border-radius:9px;
+ box-shadow:0 30px 50px #22352d59,0 8px 0 #273b35ad,inset 0 0 0 5px #c2a27080;
+ perspective:1300px;
+}
+#portal-screen[data-place="travel"] .passport-spread{
+ width:100%;height:100%;min-height:295px;display:grid;grid-template-columns:minmax(0,1fr) 11px minmax(0,1fr);
+ border-radius:3px;background:#e7dcc1;
+ box-shadow:inset 0 0 10px #756e5670;
+ transform-origin:50% 50%;
+}
+#portal-screen[data-place="travel"] .passport-paper{
+ position:relative;display:flex;flex-direction:column;overflow:hidden;padding:clamp(12px,1.5vw,30px);
+ background:
+ repeating-linear-gradient(0deg,#7865480a 0 1px,transparent 1px 27px),
+ radial-gradient(circle at 25% 12%,#fff9e9,#e4d5b6 87%);
+}
+#portal-screen[data-place="travel"] .passport-left{border-radius:3px 0 0 3px;box-shadow:inset -9px 0 15px #796e5560}
+#portal-screen[data-place="travel"] .passport-right{border-radius:0 3px 3px 0;box-shadow:inset 9px 0 15px #796e5550}
+#portal-screen[data-place="travel"] .passport-spine{background:linear-gradient(90deg,#9f8d6f,#f4e6c9 48%,#a39b85);box-shadow:0 0 8px #6b564489}
+#portal-screen[data-place="travel"] .passport-page-header,
+#portal-screen[data-place="travel"] .passport-page-foot{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ font:700 9px/1.4 system-ui,sans-serif;letter-spacing:.13em;
+ color:#726c57;border-bottom:1px solid #b09e7759;padding-bottom:9px;
+}
+#portal-screen[data-place="travel"] .passport-page-foot{
+ border-bottom:0;border-top:1px solid #b09e7759;padding:9px 0 0;margin-top:auto;font-size:8px;letter-spacing:.08em;
+}
+#portal-screen[data-place="travel"] .passport-identity{
+ display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:center;
+ flex:1;text-align:center;min-height:0;
+}
+#portal-screen[data-place="travel"] .passport-flower-mark{font:68px/1 Georgia,serif;color:#ba876b}
+#portal-screen[data-place="travel"] .passport-identity>span:not(.passport-flower-mark){font:650 9px/1.3 system-ui,sans-serif;letter-spacing:.18em}
+#portal-screen[data-place="travel"] .passport-identity strong{
+ font:400 clamp(34px,4vw,64px)/1 Georgia,serif;letter-spacing:.24em;
+}
+#portal-screen[data-place="travel"] .passport-identity p{font:italic 16px/1.5 Georgia,serif;max-width:270px}
+#portal-screen[data-place="travel"] .passport-identity small{font:700 8px/1.5 system-ui,sans-serif;letter-spacing:.1em}
+#portal-screen[data-place="travel"] .passport-stamp-grid{
+ flex:1;min-height:0;overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:clamp(9px,1.5vw,20px);align-content:center;padding:10px 0;
+}
+#portal-screen[data-place="travel"] .passport-ink-stamp{
+ align-self:center;justify-self:center;width:min(100%,170px);aspect-ratio:1.3;
+ display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:4px;
+ border:3px double #ad705e;background:radial-gradient(ellipse,#b3756225,transparent 67%);
+ border-radius:50%;color:#a26659;padding:8px 10px;
+ transform:rotate(var(--ink-angle,0deg));
+ box-shadow:inset 0 0 0 3px #b5776240;
+}
+#portal-screen[data-place="travel"] .passport-ink-stamp:nth-child(2n){color:#506f77;border-color:#597d88;background:#5c839d16}
+#portal-screen[data-place="travel"] .passport-ink-stamp>span{font:750 8px/1.2 system-ui,sans-serif;letter-spacing:.12em}
+#portal-screen[data-place="travel"] .passport-ink-stamp strong{font:700 clamp(11px,1.2vw,16px)/1.15 Georgia,serif;text-transform:uppercase}
+#portal-screen[data-place="travel"] .passport-ink-stamp small{font:650 7px/1.4 system-ui,sans-serif;letter-spacing:.04em}
+#portal-screen[data-place="travel"] .passport-blank-stamp{
+ grid-column:1/-1;display:grid;justify-items:center;color:#b3a283;
+}
+#portal-screen[data-place="travel"] .passport-blank-stamp>span{font:68px Georgia,serif;opacity:.33}
+#portal-screen[data-place="travel"] .passport-blank-stamp p{font:italic 15px/1.5 Georgia,serif;text-align:center}
+#portal-screen[data-place="travel"] .passport-bottom{width:min(100%,1060px);display:flex;align-items:center;justify-content:space-between;gap:10px}
+#portal-screen[data-place="travel"] .passport-bottom button,
+#portal-screen[data-place="travel"] .passport-after button{
+ background:#38594d;color:#fff7e4;border:1px solid #bba382;border-radius:4px;
+ min-height:44px;padding:9px 15px;font:650 11px/1.2 system-ui,sans-serif;
+}
+#portal-screen[data-place="travel"] .passport-bottom button:disabled{opacity:.37}
+#portal-screen[data-place="travel"] .passport-bottom>span{font:750 9px/1.2 system-ui,sans-serif;letter-spacing:.15em;color:#776b54;text-align:center}
+#portal-screen[data-place="travel"] .passport-after{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font:600 10px/1.4 system-ui,sans-serif}
+#portal-screen[data-place="travel"] .passport-after button{margin-left:auto}
+@keyframes passport-forward{0%{transform:perspective(1400px) rotateY(0);opacity:1}60%{transform:perspective(1400px) rotateY(-14deg);opacity:.76}100%{transform:perspective(1400px) rotateY(0);opacity:.6}}
+@keyframes passport-back{0%{transform:perspective(1400px) rotateY(0);opacity:1}60%{transform:perspective(1400px) rotateY(14deg);opacity:.76}100%{transform:perspective(1400px) rotateY(0);opacity:.6}}
+#portal-screen[data-place="travel"] .passport-turn-forward{animation:passport-forward .27s ease-in-out both}
+#portal-screen[data-place="travel"] .passport-turn-back{animation:passport-back .27s ease-in-out both}
+@media(max-width:759px){
+ #portal-screen[data-place="travel"] .passport-experience{gap:10px;padding:5px 2px 17px}
+ #portal-screen[data-place="travel"] .passport-overline{font-size:7px;letter-spacing:.07em}
+ #portal-screen[data-place="travel"] .passport-intro h1{font-size:33px}
+ #portal-screen[data-place="travel"] .passport-intro p{font-size:11px;max-width:310px}
+ #portal-screen[data-place="travel"] .passport-case{
+  width:100%;min-height:clamp(300px,53vh,450px);max-height:450px;
+  padding:5px;border-width:3px;
+ }
+ #portal-screen[data-place="travel"] .passport-spread{min-height:290px;grid-template-columns:minmax(0,1fr) 6px minmax(0,1fr)}
+ #portal-screen[data-place="travel"] .passport-paper{padding:9px 6px}
+ #portal-screen[data-place="travel"] .passport-page-header{font-size:6px;letter-spacing:0}
+ #portal-screen[data-place="travel"] .passport-page-foot{font-size:6px;letter-spacing:0}
+ #portal-screen[data-place="travel"] .passport-identity{gap:8px}
+ #portal-screen[data-place="travel"] .passport-flower-mark{font-size:43px}
+ #portal-screen[data-place="travel"] .passport-identity strong{font-size:29px}
+ #portal-screen[data-place="travel"] .passport-identity>span:not(.passport-flower-mark){font-size:7px}
+ #portal-screen[data-place="travel"] .passport-identity p{font-size:12px}
+ #portal-screen[data-place="travel"] .passport-identity small{font-size:6px}
+ #portal-screen[data-place="travel"] .passport-stamp-grid{grid-template-columns:1fr;gap:8px;padding:7px 0}
+ #portal-screen[data-place="travel"] .passport-ink-stamp{width:130px;max-width:100%;aspect-ratio:1.45;padding:5px;border-width:2px}
+ #portal-screen[data-place="travel"] .passport-ink-stamp strong{font-size:11px}
+ #portal-screen[data-place="travel"] .passport-ink-stamp>span{font-size:7px}
+ #portal-screen[data-place="travel"] .passport-ink-stamp small{font-size:6px}
+ #portal-screen[data-place="travel"] .passport-bottom button{padding:8px;max-width:105px;white-space:normal}
+ #portal-screen[data-place="travel"] .passport-bottom>span{font-size:8px;letter-spacing:.06em}
+ #portal-screen[data-place="travel"] .passport-after{font-size:9px;justify-content:space-between;gap:7px}
+}
+/* Rebuilt quiet room — a real room with breathing space, not control cards. */
+#portal-screen[data-place="rest"] .portal-place{
+ background:radial-gradient(ellipse at 23% 7%,#9aa79877,transparent 52%),linear-gradient(140deg,#c1c4b0,#748c7c 52%,#364d49)!important;
+}
+#portal-screen[data-place="rest"] .restroom{
+ color:#3f4d42!important;gap:clamp(12px,2vh,22px)!important;
+}
+#portal-screen[data-place="rest"] .restroom-top{
+ text-align:left!important;padding-bottom:16px!important;
+ border-bottom:1px solid #536d5c55;
+}
+#portal-screen[data-place="rest"] .rr-kicker{font:750 10px/1.4 system-ui,sans-serif;letter-spacing:.18em;color:#506953}
+#portal-screen[data-place="rest"] .restroom-top h1{
+ font:400 clamp(38px,4.9vw,73px)/1.04 Georgia,serif!important;letter-spacing:-.065em!important;color:#354c42;
+}
+#portal-screen[data-place="rest"] .restroom-top h1 em{color:#865c4e!important}
+#portal-screen[data-place="rest"] .rr-intro{font:italic clamp(12px,1.3vw,16px)/1.5 Georgia,serif;color:#5f7264;max-width:430px;margin:8px 0 0}
+#portal-screen[data-place="rest"] .rr-window{
+ position:relative;isolation:isolate;border:12px solid #7a5e48!important;
+ border-bottom-width:20px!important;
+ border-radius:49% 49% 4px 4px / 10% 10% 4px 4px!important;
+ box-shadow:0 22px 38px #253d3454,0 2px 0 #d8b78f,inset 0 0 0 6px #b8a289!important;
+ background:#637a79;
+}
+#portal-screen[data-place="rest"] .rr-window:before{
+ content:'';z-index:5;position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(90deg,#dac19b22,transparent 20%,transparent 83%,#c9a07920),
+  linear-gradient(180deg,#e8e3cd15,transparent 48%,#243e2c33);
+ box-shadow:inset 0 0 32px #1a2c2548;
+}
+#portal-screen[data-place="rest"] .rr-window:after{
+ content:'';position:absolute;z-index:7;left:0;bottom:0;width:100%;height:19px;
+ background:linear-gradient(180deg,#a68b6c,#6e5242);border-top:2px solid #dbc2a2;
+ pointer-events:none;
+}
+#portal-screen[data-place="rest"] .rr-glass-note{
+ position:absolute;z-index:8;bottom:25px;left:20px;
+ background:#192f2abe;color:#f5ebd6;
+ padding:7px 11px;font:italic 12px/1.2 Georgia,serif;backdrop-filter:blur(6px);
+ border:1px solid #e6cfac55;border-radius:2px;
+}
+#portal-screen[data-place="rest"] .rr-lamp{
+ z-index:8;right:8%;bottom:12px;
+ filter:drop-shadow(0 14px 8px #11271f82);
+}
+#portal-screen[data-place="rest"] .rr-lamp-shade{
+ background:linear-gradient(90deg,#ae825e,#f8d7a1 40%,#bf916b 95%);
+}
+#portal-screen[data-place="rest"] .rr-dials{
+ align-content:center;gap:15px;background:#e5e8d9e0!important;
+ border:1px solid #9da898!important;border-radius:4px!important;
+ box-shadow:0 7px 17px #31463621;
+}
+#portal-screen[data-place="rest"] .rr-dials label{
+ color:#3b6150;font:750 10px/1.5 system-ui,sans-serif;letter-spacing:.045em;
+}
+#portal-screen[data-place="rest"] .rr-rain-toggle{
+ background:#314f45!important;color:#f6e8cf!important;
+ border:1px solid #acc1a0!important;border-radius:4px!important;
+ box-shadow:0 8px 17px #19362d37;
+}
+#portal-screen[data-place="rest"] .rr-breath-card,
+#portal-screen[data-place="rest"] .rr-comfort{
+ border-radius:4px!important;background:#fbf5e6ed!important;border:1px solid #b7aa89!important;
+ box-shadow:0 14px 30px #26382c3d!important;
+}
+#portal-screen[data-place="rest"] .rr-breath-header span,
+#portal-screen[data-place="rest"] .rr-section-kicker{
+ font:750 9px/1.4 system-ui,sans-serif;letter-spacing:.14em;color:#866c55;
+}
+#portal-screen[data-place="rest"] .rr-breath-orb{
+ background:radial-gradient(circle at 32% 23%,#fff8e5,#9ebcaa 65%,#618d79);
+ box-shadow:0 0 0 8px #afcfb54b,0 0 20px #a4c2a77d;
+}
+#portal-screen[data-place="rest"] .rr-breath-header button{
+ border-radius:4px!important;background:#496a54!important;color:#fff3e6!important;
+ min-height:42px;padding:7px 14px;
+}
+#portal-screen[data-place="rest"] .rr-comfort-tabs button{
+ min-height:42px;border-radius:4px!important;
+}
+@media(max-width:759px){
+ #portal-screen[data-place="rest"] .restroom{padding:5px 4px 25px;gap:10px!important}
+ #portal-screen[data-place="rest"] .restroom-top{text-align:left!important;padding:8px 3px 11px!important}
+ #portal-screen[data-place="rest"] .restroom-top h1{font-size:clamp(32px,8.5vw,43px)!important}
+ #portal-screen[data-place="rest"] .rr-intro{font-size:12px;max-width:285px}
+ #portal-screen[data-place="rest"] .rr-window{
+  height:clamp(225px,38vh,320px)!important;border-width:8px!important;border-bottom-width:15px!important;
+ }
+ #portal-screen[data-place="rest"] .rr-lower{display:flex;flex-direction:column;gap:11px;min-height:0}
+ #portal-screen[data-place="rest"] .rr-breath-card,#portal-screen[data-place="rest"] .rr-comfort{padding:13px!important}
+ #portal-screen[data-place="rest"] .rr-dials{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:11px}
+ #portal-screen[data-place="rest"] .rr-dials label{font-size:9px}
+ #portal-screen[data-place="rest"] .rr-glass-note{font-size:10px;left:8px;bottom:13px;padding:4px 7px}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen[data-place="travel"] .passport-turn-forward,
+ #portal-screen[data-place="travel"] .passport-turn-back{animation:none!important}
+}
+
+/* Verified pointer layering: scene controls must start BELOW the global
+   sound control, not share its hit region on narrow phones. */
+.cinematic-room .room-top-controls{top:calc(79px + env(safe-area-inset-top,0px))!important}
+@media(max-width:759px){
+ .cinematic-room .room-top-controls{top:calc(67px + env(safe-area-inset-top,0px))!important;right:10px!important}
+ .cinematic-room .room-heading{top:calc(139px + env(safe-area-inset-top,0px))!important}
+}
+@media(max-width:759px) and (max-height:750px){
+ .cinematic-room .room-heading{top:calc(128px + env(safe-area-inset-top,0px))!important}
+}
+/* Shape the click regions explicitly: absolutely positioned labels alone
+   have no intrinsic width and must never collapse a furniture hotspot. */
+@media(min-width:760px){
+ .cinematic-room[data-theme="story"] .room-object.object-rest{width:27%!important;height:31%!important}
+ .cinematic-room[data-theme="story"] .room-object.object-garden{width:8%!important;height:21%!important}
+ .cinematic-room[data-theme="story"] .room-object.object-movies{width:13%!important;height:24%!important}
+ .cinematic-room[data-theme="story"] .room-object.object-letters{width:12%!important;height:15%!important}
+ .cinematic-room[data-theme="story"] .room-object.object-travel{width:15%!important;height:20%!important}
+ .cinematic-room[data-theme="story"] .room-object.object-games{width:10%!important;height:14%!important}
+ .cinematic-room[data-theme="story"] .room-object.object-music{width:10%!important;height:12%!important}
+}
+
+/* MAHA ARCADE — original tactile desk surfaces for real mechanics.
+ * Replaces the former tap-a-quote cabinet opening with something worth playing. */
+#portal-screen[data-place="games"] .arcade-app.arcade-active{
+ background:
+ radial-gradient(ellipse at 22% 3%,#f2d6a63d,transparent 41%),
+ linear-gradient(160deg,#e5d0ac,#bc9679 62%,#987a6f);
+ border:1px solid #af876e;border-radius:5px;
+ box-shadow:inset 0 0 35px #8e594228,0 16px 36px #65433625;
+ box-sizing:border-box;padding:clamp(9px,1.6vw,20px);
+}
+#portal-screen[data-place="games"] .arcade-game-bar{
+ background:#332e2c;color:#f1debd;border:1px solid #e6c8997c;
+ border-radius:4px;min-height:48px;padding:8px 12px;
+ font:750 10px system-ui,sans-serif;letter-spacing:.09em;
+}
+#portal-screen[data-place="games"] .arcade-game-bar button{
+ color:#f8e8cb!important;background:#68534b!important;
+ border:1px solid #bfa083a1!important;min-height:35px;padding:5px 10px;border-radius:3px;
+}
+#portal-screen[data-place="games"] .arcade-game-board{
+ min-height:0;background:#f6ebd4a8;border:1px solid #b49277;
+ border-radius:4px;box-shadow:inset 0 0 25px #996c542b;padding:clamp(7px,1vw,16px);
+}
+#portal-screen[data-place="games"] .mini-game{
+ max-width:850px;margin:auto;color:#57463c;gap:clamp(8px,1.5vh,16px);
+}
+#portal-screen[data-place="games"] .mini-game h2{
+ font:400 clamp(25px,2.7vw,41px)/1.09 Georgia,serif;letter-spacing:-.055em;
+}
+#portal-screen[data-place="games"] .game-kicker{
+ color:#8d654d;border-bottom:1px solid #bb9d7b87;
+ font:750 10px/1.4 system-ui,sans-serif;letter-spacing:.12em;
+}
+#portal-screen[data-place="games"] .chai-stage{
+ background:radial-gradient(ellipse at 52% 60%,#f9e7bc9d,transparent 63%);
+ filter:drop-shadow(0 15px 8px #6d4d3c78);
+}
+#portal-screen[data-place="games"] .chai-glass{
+ border-color:#9d7051;border-top-color:#f5dcc4;
+ box-shadow:inset 5px 0 #fff9ef90,inset -6px 0 #58372d30,0 11px 17px #5e483533;
+}
+#portal-screen[data-place="games"] .game-big-button{
+ background:#38574b;color:#f7e8c8;border-color:#dfbd87;
+ border-radius:5px;box-shadow:0 6px #28493a,0 11px 22px #35513d40;
+ font:750 14px/1.2 system-ui,sans-serif;min-height:53px;
+}
+#portal-screen[data-place="games"] .game-big-button:focus-visible,
+#portal-screen[data-place="games"] .sadya-slot:focus-visible,
+#portal-screen[data-place="games"] .baggage-game button:focus-visible{
+ outline:3px solid #f3b75f;outline-offset:3px;
+}
+#portal-screen[data-place="games"] .sadya-leaf{
+ max-height:380px;
+ filter:drop-shadow(0 15px 14px #3a603d66);
+}
+#portal-screen[data-place="games"] .sadya-dish{
+ border-radius:6px;border-color:#c7a988;background:#fff9e8;
+ box-shadow:0 3px 7px #7661422c;
+}
+#portal-screen[data-place="games"] .sadya-slot{
+ background:#faf7dc30;border:2px dashed #f9f3caad;
+}
+#portal-screen[data-place="games"] .sadya-slot.served{
+ background:#fbefccbf;box-shadow:0 3px 5px #375b402c;
+}
+#portal-screen[data-place="games"] .suitcase-scene{
+ background:
+ linear-gradient(135deg,#d4a47e,#926c5a 62%,#745449);
+ border-color:#5e483e;border-radius:20px;
+ box-shadow:inset 0 0 0 3px #e6ca9e,0 18px 23px #46352c65;
+}
+#portal-screen[data-place="games"] .bag-item{
+ background:#ffefd6;border:1px solid #ad977d;
+ border-radius:5px;
+}
+#portal-screen[data-place="games"] .arcade-control-row button{
+ border-radius:4px;background:#f3e2c6;border:1px solid #8c7565;
+}
+@media(max-width:759px){
+ #portal-screen[data-place="games"] .arcade-app.arcade-active{padding:6px}
+ #portal-screen[data-place="games"] .arcade-game-board{padding:5px}
+ #portal-screen[data-place="games"] .mini-game h2{font-size:clamp(20px,5.6vw,28px)}
+ #portal-screen[data-place="games"] .game-kicker{font-size:8px}
+ #portal-screen[data-place="games"] .sadya-leaf{min-height:125px}
+ #portal-screen[data-place="games"] .game-big-button{min-height:52px}
+}

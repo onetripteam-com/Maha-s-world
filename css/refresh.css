@@ -1,0 +1,77 @@
+/* MAHA / SIX WORLDS, ONE LITTLE HOME — 2026 visual direction */
+.room-scene{transition:background .65s ease,color .45s ease}
+.room-canvas{transition:filter .7s ease,border-color .7s ease,box-shadow .7s ease}
+.room-scene .room-paint{transition:filter .7s ease,transform .7s ease}
+.room-scene .theme-world-detail{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.theme-world-detail>*{position:absolute;display:block;pointer-events:none;transition:all .7s cubic-bezier(.2,.7,.2,1)}
+.room-scene .theme-world-sun{width:130px;height:130px;right:1%;top:12%;border-radius:50%;background:#fbe1a1;opacity:0}
+.room-scene .theme-world-horizon{inset:auto 0 0;height:30%;opacity:0}
+.room-scene .theme-world-ornament{width:130px;height:130px;top:21%;left:3%;opacity:0}
+.room-scene[data-theme=story] .room-canvas{box-shadow:0 15px 60px #6d4f3940,inset 0 0 0 7px #fff3de}
+.room-scene[data-theme=story] .theme-world-ornament{opacity:.35;border:1px dashed #8e6c4c;border-radius:50%;width:96px;height:96px;top:12%;left:-10%;transform:rotate(18deg)}
+/* GREENHOUSE — cool fog, fern silhouettes, tiled glass */
+.room-scene[data-theme=monsoon] .room-paint{filter:saturate(.72) hue-rotate(24deg) brightness(.93)}
+.room-scene[data-theme=monsoon] .room-canvas{border-radius:32px 32px 8px 8px;box-shadow:0 22px 80px #16392f75}
+.room-scene[data-theme=monsoon] .theme-world-horizon{opacity:.9;height:100%;background:repeating-linear-gradient(90deg,transparent 0 72px,#d8f0e418 74px 76px),repeating-linear-gradient(0deg,transparent 0 96px,#d8f0e412 98px 99px)}
+.room-scene[data-theme=monsoon] .theme-world-sun{opacity:.55;right:7%;top:10%;background:#dfefe2;box-shadow:0 0 80px 50px #c8ded288}
+.room-scene[data-theme=monsoon] .theme-world-ornament{opacity:.5;left:-6%;top:44%;width:120px;height:300px;border-left:17px double #456d54;border-radius:90% 0 0 20%;transform:rotate(-14deg)}
+/* SUNROOM — maximal light, bold geometric retro shapes */
+.room-scene[data-theme=sunroom] .room-paint{filter:saturate(1.3) sepia(.12) brightness(1.13)}
+.room-scene[data-theme=sunroom] .room-canvas{border:8px solid #f4c880;border-radius:5px;box-shadow:15px 18px 0 #dc8b5c55,0 25px 80px #c38b5b45}
+.room-scene[data-theme=sunroom] .theme-world-sun{opacity:.75;top:7%;right:-7%;width:200px;height:200px;background:#ffd05f;box-shadow:0 0 0 16px #fff6b45c,0 0 0 38px #fff3ad38}
+.room-scene[data-theme=sunroom] .theme-world-ornament{opacity:.7;top:52%;left:-12%;height:180px;width:180px;border-radius:50%;border:28px solid #ee956c80}
+.room-scene[data-theme=sunroom] .theme-world-horizon{opacity:.35;background:repeating-linear-gradient(-40deg,#f4b47a 0 6px,transparent 7px 28px);height:18%}
+/* TERRACOTTA — hand-built arches, warm plaster, museum-like frame */
+.room-scene[data-theme=terracotta] .room-paint{filter:sepia(.27) saturate(1.02) contrast(1.05)}
+.room-scene[data-theme=terracotta] .room-canvas{border:12px solid #8c503e;border-radius:195px 195px 13px 13px;box-shadow:0 0 0 5px #edb78d,0 25px 70px #703b3166}
+.room-scene[data-theme=terracotta] .theme-world-horizon{opacity:.65;height:29%;background:repeating-linear-gradient(0deg,#a7614225 0 2px,transparent 3px 38px),linear-gradient(transparent,#b9765526)}
+.room-scene[data-theme=terracotta] .theme-world-sun{opacity:.55;top:12%;right:1%;width:135px;height:135px;background:#ffa66c;box-shadow:0 0 70px 30px #ffc78890}
+.room-scene[data-theme=terracotta] .theme-world-ornament{opacity:.8;border:7px double #fff0c6;left:1%;top:17%;width:67px;height:140px;border-radius:100% 100% 0 0}
+/* MIDNIGHT — sharp cinematic frame, electric pink-blue noir */
+.room-scene[data-theme=midnight] .room-paint{filter:brightness(.54) saturate(1.3) hue-rotate(224deg)}
+.room-scene[data-theme=midnight] .room-canvas{border:3px solid #f39fe3;border-radius:3px;box-shadow:0 0 0 7px #181124,0 0 28px #fd75d67a,0 0 110px #7367ee70}
+.room-scene[data-theme=midnight] .theme-world-horizon{opacity:.8;height:36%;background:linear-gradient(transparent,#170e42ba),repeating-linear-gradient(90deg,transparent 0 29px,#f784d633 30px 32px)}
+.room-scene[data-theme=midnight] .theme-world-sun{opacity:.85;right:4%;top:10%;width:148px;height:148px;background:linear-gradient(#fb8bb0 0 55%,#de59ac 56% 62%,#f47eaf 63% 69%,#c95897 70%);box-shadow:0 0 65px #eb5f9e8c}
+.room-scene[data-theme=midnight] .theme-world-ornament{opacity:.8;width:80%;height:2px;left:10%;top:42%;background:#ffadd8;box-shadow:0 0 18px 5px #fa4cbf5d}
+/* COSMOS — deep cosmic observatory, orbital diagram, pinprick stars */
+.room-scene[data-theme=cosmos] .room-paint{filter:brightness(.56) saturate(1.2) hue-rotate(162deg)}
+.room-scene[data-theme=cosmos] .room-canvas{border:6px solid #8098d6;border-radius:48% 48% 10px 10px / 13% 13% 10px 10px;box-shadow:0 0 0 5px #1e3764,0 0 90px #769bdb70}
+.room-scene[data-theme=cosmos] .theme-world-horizon{opacity:.85;inset:0;background:radial-gradient(circle at 20% 17%,#fff 0 1px,transparent 2px),radial-gradient(circle at 66% 26%,#fff 0 1px,transparent 2px),radial-gradient(circle at 42% 9%,#fff 0 1.5px,transparent 3px),radial-gradient(circle at 78% 58%,#fff 0 1px,transparent 2px);background-size:130px 190px}
+.room-scene[data-theme=cosmos] .theme-world-sun{opacity:.82;width:138px;height:138px;right:4%;top:12%;background:radial-gradient(circle at 30% 28%,#d7d6fc,#7d96d0 64%,#53669b);box-shadow:0 0 30px #bddaff7a,0 0 0 30px #a7ccf40f}
+.room-scene[data-theme=cosmos] .theme-world-ornament{opacity:.8;width:240px;height:120px;left:19%;top:13%;border:1px solid #cae7ff8c;border-radius:50%;transform:rotate(-28deg)}
+.room-scene .theme-option{transition:transform .2s,box-shadow .2s}
+.room-scene .theme-option[aria-pressed=true]{transform:translateY(-2px);box-shadow:0 6px 22px #33242b26}
+.room-scene .room-greeting h1{letter-spacing:-.055em}
+.room-scene .room-bouquet{filter:drop-shadow(0 9px 15px #251c213a);transition:transform .3s,filter .3s}
+.room-scene .room-bouquet:active{transform:scale(.96)}
+/* Flower atelier: stationary responsive grid; scrolls vertically within the shelf, not against the page */
+.flowers-scene .flower-bottom{overflow:hidden}
+.flowers-scene .flower-browser-v2{position:relative;display:block;min-height:0;overflow:hidden}
+.flowers-scene .flower-rail{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px!important;overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain;touch-action:pan-y!important;scroll-snap-type:none!important;scrollbar-width:thin;-webkit-overflow-scrolling:touch;padding:7px 6px 14px!important;height:100%;max-height:100%;align-content:start}
+.flowers-scene .flower-option{width:100%!important;min-width:0!important;max-width:none!important;flex:none!important;position:relative;scroll-snap-align:none!important;border-radius:17px;touch-action:pan-y;transition:transform .25s,box-shadow .25s}
+.flowers-scene .flower-option:active{transform:scale(.94)}
+.flowers-scene .option-art{max-width:100%;display:grid;place-items:center}
+.flowers-scene .option-art svg{max-height:88px}
+.flowers-scene .flower-add{font-size:9px;font-weight:800;display:block;opacity:.65;margin:3px auto 0;letter-spacing:.03em}
+.flowers-scene .picked-check:not(:empty){position:absolute;right:3px;top:3px;border-radius:999px;background:#345e48;color:#fff;padding:3px 6px;font-size:11px;box-shadow:0 3px 9px #16352544}
+.flowers-scene .flower-counter.counter-pop{animation:counter-pop .36s both}
+@keyframes counter-pop{0%{transform:scale(.9)}60%{transform:scale(1.07)}100%{transform:scale(1)}}
+.flowers-scene .bouquet-bloom.bloom-new{animation:petal-arrive .8s cubic-bezier(.18,.86,.25,1) both;transform-origin:50% 85%}
+@keyframes petal-arrive{0%{opacity:0;scale:.4;translate:0 44px;rotate:-22deg}65%{opacity:1;scale:1.1;translate:0 -8px}100%{scale:1;translate:0 0;rotate:0deg}}
+.flowers-scene .bouquet-gathering .bouquet-bloom{animation:petal-arrive 1.15s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0) * 80ms)}
+@media(max-width:420px){.flowers-scene .flower-rail{gap:6px!important}.flowers-scene .option-art svg{max-height:73px}.flowers-scene .flower-option{padding:5px 3px!important}}
+@media(min-width:760px){.flowers-scene .flower-rail{grid-template-columns:repeat(4,minmax(0,1fr));}.flowers-scene .flower-browser-v2{max-height:45vh}}
+@media(prefers-reduced-motion:reduce){.theme-world-detail>*,.room-scene .room-paint,.room-canvas{transition:none!important}.flowers-scene .bouquet-bloom{animation:none!important}}
+
+/* Pocket Sunshine: simple tap-first three-step micro-experience */
+.pocket-game{padding:12px 14px 26px;text-align:center;color:#f8e9e9}.pocket-step,.pocket-small{font-size:10px;letter-spacing:.11em;opacity:.76}.pocket-sky{font-size:37px;margin:21px auto 14px}.pocket-game h2{font:400 clamp(25px,6vw,37px)/1.1 Georgia,serif;margin:0 auto 11px;max-width:310px}.pocket-game p{font-size:13px;line-height:1.5;opacity:.85}.pocket-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:22px auto;max-width:380px}.pocket-choices button{min-height:92px;background:#fff4e5;color:#4b4255;border:2px solid #eccfbb;border-radius:18px;padding:10px 6px;font-size:12px;font-weight:700;line-height:1.35}.pocket-choices button span{display:block;font-size:29px;margin-bottom:4px}.pocket-choices button:active{transform:scale(.96)}
+
+/* Explicit vertical shelf sizing: mobile Safari must have a real scrolling box. */
+.flowers-scene .flower-bottom{height:clamp(255px,41%,355px);min-height:0;display:flex;flex-direction:column}
+.flowers-scene .shelf-heading{flex:0 0 auto;margin-bottom:6px;gap:8px}
+.flowers-scene .shelf-hint{font-size:8px;text-align:right}
+.flowers-scene .flower-browser-v2{display:flex;flex:1 1 auto;min-height:0;overflow:hidden}
+.flowers-scene .flower-rail{height:100%!important;max-height:none!important;flex:1 1 auto;min-height:0}
+.flowers-scene .flower-option{height:115px!important}
+.flowers-scene .meaning-line,.flowers-scene .flower-controls{flex:0 0 auto}
+@media(max-height:730px){.flowers-scene .flower-bottom{height:43%}.flowers-scene .flower-option{height:100px!important}.flowers-scene .option-art{height:60px}}

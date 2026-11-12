@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 1,
+  "letters": [
+    {
+      "id": "hello-from-here",
+      "title": "An envelope with your name on it",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "I built a postbox instead of sending one very normal message.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Before you ask: yes, this is an elaborate way of saying hello. I haven't found a more sensible way to do things.",
+        "Okay, here's the situation. I could have sent a message. A normal person would have sent a message. Instead, there's a mailbox, a flower shop and a suspiciously enthusiastic suitcase.",
+        "There is no correct route through this place. It's not an exam; nobody is keeping score. The furniture can survive being ignored.",
+        "It's not because every day needs a grand gesture. Mostly, I wanted you to have somewhere to wander into when you feel like it. On a good day, a strange day, or a day when you have exactly zero interesting things to report.",
+        "Maybe you'll stumble on a joke or a flower I almost forgot I put here. Finding those things is half the fun.",
+        "You don't have to do anything here. Even opening this letter counts as excellent use of the facilities. — Your friend on the other side of the map.",
+        "P.S. If the suitcase takes itself too seriously, remind it that it's a suitcase. It has no authority over your travel plans."
+      ]
+    },
+    {
+      "id": "ordinary-tuesday",
+      "title": "In defence of ordinary Tuesdays",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "An argument in favour of days when absolutely nothing happens.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Here's a letter for a day nobody circles on the calendar. It probably arrived without balloons or any dramatic announcements.",
+        "Big days have photographers, cake, and people making speeches. Ordinary Tuesdays have traffic, unanswered messages and maybe one decent cup of tea. Unfair, really.",
+        "Some days are held together mostly by tea, snacks and a few small conversations. They deserve a little more credit.",
+        "But I like the ordinary stuff. A ridiculous thing you noticed. A random photo. A conversation that begins with 'you won't believe this' and turns out to be about absolutely nothing.",
+        "I'd happily listen to a story about a disappointing coffee or a spectacular cloud. Ordinary is allowed to be interesting.",
+        "If nothing extraordinary happened today, you can still tell me about it.",
+        "Here's to the unremarkable Tuesday. May the traffic be bearable and the tea at least slightly better than expected."
+      ]
+    },
+    {
+      "id": "five-visits",
+      "title": "The fifth time? Suspicious.",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "Five visits. The extremely small management team has questions.",
+      "unlock": {
+        "type": "visits",
+        "n": 5
+      },
+      "pages": [
+        "Attention, esteemed visitor: the building has been informed that you've returned. The front desk is trying to look professional.",
+        "Five visits? Right. This place has officially survived your quality inspection. I'm informing the highly unqualified management team immediately.",
+        "If you've found a favourite corner, lovely. If you're only checking whether I fixed something, the inspection committee welcomes you.",
+        "I wonder what you explored this time. The flowers? The travel corner? A digital cup of chai that would probably get us banned from a real kitchen? Whatever it was, I hope you found a good little moment in it.",
+        "There's no reason you need to come back; this place can simply sit here like a postcard on a shelf.",
+        "There isn't a trophy. There isn't even cake, which is poor event planning. But here's a small cheer for your curiosity, your next adventure, and all the stories still waiting to happen. Now, Madam Inspector, carry on.",
+        "Case closed. Five visits on this little browser. You're now free to do something important, like decide what to eat."
+      ]
+    },
+    {
+      "id": "handwritten-thirty",
+      "title": "A page worth keeping",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "A proper little note, with no special occasion required.",
+      "unlock": {
+        "type": "daysAfterFirstVisit",
+        "n": 30
+      },
+      "pages": [
+        "Hello again, Maha. Apparently this envelope thinks thirty days is the appropriate time to say something a little more quietly.",
+        "Dear Maha, thirty days have gone by since this little place first opened for you. Maybe they've been busy, quiet, funny, exhausting, or some completely unpredictable combination. I hope there were at least a few days that felt entirely yours.",
+        "A month can feel like both a lot and almost nothing. Plans change; somehow a few old habits remain.",
+        "Somewhere between Kuwait, memories of Bangalore, Kerala, and all the places still on your list, you've collected a life that keeps changing shape. You don't have to know what every next chapter looks like. It's enough to keep discovering what makes you curious and happy.",
+        "Give yourself credit for barely noticeable victories too: the awkward call made, the small idea tried, the morning you got moving.",
+        "This isn't a homework assignment or a grand speech. It's just a piece of paper to say: enjoy the little things, give yourself credit when you do something brave, and take the scenic route now and then. Preferably with decent snacks.",
+        "Keep this note or don't. Your life keeps adding pages, even when it feels like nothing particularly dramatic is happening."
+      ]
+    },
+    {
+      "id": "a-day-in-2027",
+      "title": "A letter for later-later",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "A dated note for July 2027. No predictions, just good wishes.",
+      "unlock": {
+        "type": "date",
+        "on": "2027-07-07"
+      },
+      "pages": [
+        "This message was sealed for a later calendar. Please excuse any outdated jokes; their warranty expired somewhere in 2026.",
+        "Oh, hello, July 2027! The calendar has been doing its usual disappearing trick. I don't know which city you're in today, what you're looking forward to, or which plans took a wonderfully unexpected turn.",
+        "I hope one plan surprised you. It needn't have been a big one. Sometimes the nice surprises escape the camera entirely.",
+        "Maybe you've filmed a trip, tried something new, made a decision you weren't sure about, or simply enjoyed a quiet week. All of those count as living. I hope you've had enough ordinary good days in between the bigger milestones.",
+        "There's no need to compare today with the person who first visited here. People grow slowly, sideways and in unexpected directions.",
+        "Wherever you are reading this, I hope there's something exciting ahead and something lovely close by. And I hope you still make room for the silly detours. The best stories rarely stick to the itinerary.",
+        "If this old letter made you smile, that's enough. Close it and enjoy whatever adventure July has lined up."
+      ]
+    },
+    {
+      "id": "not-everything-needs-a-photo",
+      "title": "Not everything needs a photograph",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "Some of the best moments never make it into a camera roll.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "A website with an entire travel corner is probably not qualified to lecture anyone about taking pictures. Fair objection.",
+        "A photograph can keep a view. A video can hold a little laughter. But there are also moments that don't need to become a story, a reel, or proof that something happened.",
+        "Film the beautiful parts if you like. You just don't owe every view a caption, soundtrack or perfectly edited ending.",
+        "A good cup of tea. A conversation that went completely off-topic. That one stretch of road where you looked out of the window and forgot to check your phone. Those count too.",
+        "Some memories are blurry because you were busy laughing. That's a respectable camera setting, even if Apple doesn't advertise it.",
+        "Keep making your travel memories, of course. Just remember that sometimes you're allowed to be the person enjoying the scene, not the person documenting it. That's a pretty good role as well.",
+        "If you forget to take a picture next time, I hope it's because real life was wonderfully distracting."
+      ]
+    },
+    {
+      "id": "for-the-next-what-if",
+      "title": "For your next 'what if?'",
+      "kind": "typed",
+      "section": "inbox",
+      "preview": "A note from the entirely unofficial department of curiosity.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "An urgent memo from the Office of Possible Adventures has arrived. It's written on the back of a receipt, so expectations are modest.",
+        "What if you go somewhere new? What if you try a different kind of video? What if you take a tiny idea seriously for once? Important questions from the Department of Curiosity, which operates without an office or funding.",
+        "Curiosity is useful even when it leads nowhere grand. Sometimes it just finds a new route home or a better Sunday lunch.",
+        "You don't need a perfect itinerary or a five-year plan to start something interesting. A small experiment is allowed to stay small. And changing your mind halfway through is not a criminal offence.",
+        "You're allowed to say 'not now' to an idea. The good ones have a habit of returning when the timing is right.",
+        "Here's to the next little idea that makes you grin. May it come with good company, a helpful map, and, ideally, a place to stop for snacks.",
+        "Whatever comes next, I hope it feels like your own choice. The imaginary committee votes in favour."
+      ]
+    },
+    {
+      "id": "when-tired",
+      "title": "When your battery is at 3%",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "No checklist. No lecture. Just a gentler minute.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "If today used up your battery, this letter isn't interested in asking for the remaining three percent. Welcome to low-power mode.",
+        "If you're tired, I'm not going to turn this into a five-step improvement plan. You probably have enough people explaining how to optimise a day.",
+        "Nothing here needs to become a lesson. Some days are simply long, and you're allowed to say so.",
+        "Find something comfortable. Ignore an unnecessary notification. Let something wait until tomorrow if it can.",
+        "Between proving a point and getting some rest, the stationery department votes for rest. It's a very sleepy department.",
+        "You can leave this letter half-read. I won't report you to the stationery authorities.",
+        "You don't even need to finish these pages. The envelope won't be offended; it has excellent boundaries for a piece of paper."
+      ]
+    },
+    {
+      "id": "when-miss-home",
+      "title": "When you miss home",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "For the things a map can't quite hold.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Missing home sometimes arrives through tiny details: a word, a smell, a song, a voice you weren't expecting to hear.",
+        "There are some things a map can't fit: the sound of a particular house, a smell from a kitchen, the way Kerala rain changes everything for an hour.",
+        "It's strange how one small thing can carry an entire afternoon. Distance doesn't make those memories any less real.",
+        "Being away doesn't make those things smaller. And missing one place doesn't mean you can't build a good life somewhere else.",
+        "I hope you keep finding pieces of comfort in the places you visit, without having to replace what home means to you.",
+        "If you feel like talking about home, even the completely ordinary parts, I'm listening.",
+        "If today is one of those days, you don't need to explain it perfectly. The stories can wait here for a minute."
+      ]
+    },
+    {
+      "id": "when-great-news",
+      "title": "When you have great news",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "First of all, why haven't you told me everything?",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "First we establish the facts: something good happened, and you're reading a digital envelope. I have questions about the order of operations.",
+        "Excuse me. You have GOOD NEWS and you're reading a letter instead of telling me? An investigation will be launched.",
+        "Was it expected? Did you double-check? Did you immediately think of someone to tell? Excellent material for the investigation.",
+        "I want the whole story. The unnecessary introduction, the moment you found out, the reaction that made absolutely no sense and whatever came next.",
+        "Not every achievement needs a public announcement. A private victory and a snack on the sofa count too.",
+        "Seriously, I'm glad something good found you.",
+        "Investigation suspended. I am genuinely happy for you. Go enjoy the moment without filling out a report."
+      ]
+    },
+    {
+      "id": "when-nervous",
+      "title": "When something big is tomorrow",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "The evening before something important deserves company.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Tomorrow has arrived with imaginary scenarios, an unnecessarily loud clock, and absolutely no answers about how it's going to behave.",
+        "The night before something important is a ridiculous time. Suddenly the clock gets loud, every decision feels permanent, and your brain asks questions at 1:43 a.m.",
+        "Maybe you've done all the preparing you can. Your brain doesn't need to run the entire simulation tonight.",
+        "I can't tell you how tomorrow will go. I can tell you that you don't have to solve every possibility tonight.",
+        "The real version of you is allowed to pause, ask for help, and figure things out as they happen.",
+        "Keep what you need nearby. Ask questions if you have them. I'll be rooting for you without making a big speech about it.",
+        "For tonight: water, a little calm and one thing at a time. I'm quietly cheering from the cheap seats."
+      ]
+    },
+    {
+      "id": "when-cant-sleep",
+      "title": "When sleep is avoiding you",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "Apparently your brain scheduled a meeting at midnight.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Welcome to the midnight committee. Attendance is optional, but your brain seems to have misunderstood the invitation.",
+        "So your brain has opened a conference when everybody else has gone home. Very inconsiderate management.",
+        "Have you noticed how one tiny thought turns into a feature-length documentary after midnight? The budget must be enormous.",
+        "I won't tell you to 'just sleep', because that is spectacularly useless advice. Maybe lower the brightness, listen to some rain, or read something wonderfully boring.",
+        "You don't have to finish that documentary. You can let the credits roll and be off duty for a while.",
+        "There is no need to reply. I'm only leaving the light on in this corner of the internet.",
+        "This is your official permission slip to stop reading. The envelope will still be here tomorrow."
+      ]
+    },
+    {
+      "id": "when-overthinking",
+      "title": "When your brain opens 47 tabs",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "For when every thought brings five more friends.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "A notice from the Department of Too Many Tabs: there appear to be an unusual number of windows open in your head.",
+        "I've been informed there's a committee meeting in your head, and the agenda has forty-seven items.",
+        "One thought invites six possibilities, then starts arguing with a conversation that hasn't even happened. Very poor moderation.",
+        "Not all of them need a decision today. Especially the imaginary conversations where you predict everyone's exact reaction. Those are frankly exhausting even as a spectator.",
+        "You don't have to produce a perfect answer immediately. Some questions look smaller after lunch or an ordinary walk.",
+        "If you want to explain the chaos out loud sometime, I'll bring tea and appropriately unhelpful jokes.",
+        "If you ever want to untangle a thought aloud, I'm around. If not, that's fine too. Meeting adjourned."
+      ]
+    },
+    {
+      "id": "when-laugh",
+      "title": "When you need a laugh",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "A fictional airport. One exhausted pigeon. That's all.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Our story begins at a fictional airport, where every employee is underqualified and the departure board has become emotionally unstable.",
+        "Congratulations. You've been appointed head of a completely fictional airport. Every flight is delayed because a passenger has packed three extra opinions and a suitcase full of snacks.",
+        "Suresh the pigeon insists he's the senior operations manager. Nobody remembers hiring him, but he has a tiny lanyard.",
+        "The only employee is a tired pigeon named Suresh. He has submitted his resignation twice but cannot work the printer.",
+        "The baggage carousel now transports only snacks. Oddly, complaints have gone down. The airport has won an imaginary award.",
+        "I know this story makes no sense. That's exactly why the pigeon has a pension.",
+        "Thank you for flying with Absolutely Nowhere Airlines. Please collect your imagination and enjoy your day."
+      ]
+    },
+    {
+      "id": "when-stuck",
+      "title": "When you feel stuck",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "For days when the next step isn't obvious.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Some days feel like a map that forgot to show the little blue dot. Inconvenient, especially if you needed directions.",
+        "People say 'take the next step' as if steps come with helpful glowing arrows painted on them.",
+        "Taking a moment to stand still isn't the same as being permanently lost. Even the best travel plans get rerouted.",
+        "Sometimes you don't know what the next step is. Sometimes you know and don't feel like taking it. Both situations are embarrassingly human.",
+        "If today offers one useful next step, wonderful. If it's only tea and some thinking time, that's a day too.",
+        "You don't have to turn every quiet patch into a breakthrough. I can keep you company in the middle bit.",
+        "There's no invisible countdown running here. Find your footing at your own pace; it doesn't need to look cinematic."
+      ]
+    },
+    {
+      "id": "when-finished-big",
+      "title": "When you finish something big",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "You did the thing. There will be an unofficial award.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Emergency announcement: someone has completed the thing. Management is desperately searching for confetti and a certificate without typos.",
+        "Hold on. You finished it? Whatever the thing was, I hope you gave yourself a moment before immediately looking for the next task.",
+        "I hope you paused long enough to feel the finish line. The next task can wait its turn in the queue.",
+        "I'm picturing a very serious award being presented by a very small and unqualified committee. The certificate is written on the back of a grocery receipt.",
+        "Even if it wasn't perfect, that doesn't erase the work: the drafts, awkward attempts and the bits nobody saw.",
+        "For real, I'm happy for you. Tell me how it went.",
+        "Please accept this completely unofficial standing ovation. The tiny committee has been practising all afternoon."
+      ]
+    },
+    {
+      "id": "when-raining",
+      "title": "When it is raining",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "For rain, windows and the art of doing very little.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Dear Rain, your ability to make streets look cinematic is impressive. Your effect on carefully planned hair is less popular.",
+        "Rain in Kerala has a very different personality from rain elsewhere. Sometimes it feels like the whole neighbourhood has stopped to listen.",
+        "People hurry for shelter, roads shine, and the whole neighbourhood starts to sound different. Rain changes the pace of things.",
+        "There is a rainy window in the Quiet Corner if you want one. No dramatic soundtrack required.",
+        "Wherever you are, I hope an occasional rainy afternoon gives you a decent excuse to slow down.",
+        "If you're standing near an actual window, though, the original is usually better.",
+        "Enjoy the view if the sky cooperates. Otherwise, find somewhere dry and let the weather be dramatic by itself."
+      ]
+    },
+    {
+      "id": "when-change-scene",
+      "title": "When you need a change of scenery",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "Sometimes a different view is enough.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "A small announcement from the Travel Department: you're allowed to want a different view even when nothing is technically wrong with the current one.",
+        "It needn't mean a flight, suitcase or complicated itinerary. Sometimes the adventure is a cafe fifteen minutes away.",
+        "Other times, of course, it absolutely is a flight and an irresponsibly ambitious list of places to eat. Both approaches have merit.",
+        "If you've been looking at the same four walls for too long, go somewhere with a bit of light and life.",
+        "Walk. Browse a bookshop. Try a different route. Or open a map and collect ideas without buying one ticket.",
+        "You don't need to turn the outing into content. The point is to come back feeling like the day had a different shape.",
+        "Here's to the next detour, good weather, decent snacks and something you didn't know you wanted to see."
+      ]
+    },
+    {
+      "id": "when-first-vlog",
+      "title": "When you post your first vlog",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "An entirely unofficial premiere for your very first video.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "A screening has been scheduled in our imaginary cinema. Tickets are free; the popcorn machine is entirely fictional.",
+        "You posted your first travel vlog? Wait. This is an event. Where is the premiere? Who approved the poster? Is there a badly designed fan club I can join?",
+        "The first version of anything is special simply because it exists. You can perfect camera angles and edits another day.",
+        "I hope you kept the parts that felt like you: the awkward cut, the unexpected detour, the beautiful thing you almost forgot to film.",
+        "Keep the bits that sound like you. A perfect voice-over matters less than genuinely enjoying what's happening around you.",
+        "You did the hard part. You actually started. Now please send me the link so I can become insufferable about it.",
+        "When the credits roll, remember the important part: you made something and put it into the world."
+      ]
+    },
+    {
+      "id": "when-forgot-yourself",
+      "title": "When you forget who you are",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "You don't have to be a perfect version of anyone.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Some days everyone else seems to have a polished explanation of who they are. Spoiler: most people are improvising.",
+        "I could list a hundred grand things I think about you, but I suspect you'd roll your eyes before number four.",
+        "You're allowed to like one thing this year and another thing next year. No change-of-plans form is required.",
+        "So here's something smaller. You're allowed to change, get things wrong, want something different, and still be the same person I like hearing from.",
+        "I hope you have people around who let you be curious, quiet, funny or unsure without pinning you to one label.",
+        "You don't owe the world a perfect explanation of who you're becoming.",
+        "If you don't recognise yourself for a moment, give it time. You don't need to become a finished person."
+      ]
+    },
+    {
+      "id": "when-missing-me",
+      "title": "When you miss me",
+      "kind": "openWhen",
+      "section": "openWhen",
+      "preview": "I'll need that statement witnessed, please.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "Well, well. A declaration has arrived at the Department of Friendship. I hope you've brought supporting documents.",
+        "Oh? You miss me? I will need this remarkable statement signed and witnessed. A screenshot is acceptable.",
+        "There are messages that don't need a reason: a strange signboard, a disastrous recipe, a completely unnecessary piece of gossip.",
+        "I'm joking. Mostly. Distance is strange that way: sometimes everything feels normal, and sometimes one silly thing happens and you wish the other person were there to laugh at it.",
+        "No pressure to send anything right now. It's just nice that small funny things can still travel across the map.",
+        "You can send me the silly thing. I'll probably have an even sillier response.",
+        "P.S. The department accepts voice notes, screenshots and terrible jokes as equally valid evidence."
+      ]
+    },
+    {
+      "id": "for-a-big-day",
+      "title": "For a big day",
+      "kind": "typed",
+      "section": "quiet",
+      "preview": "A small note for a day that matters.",
+      "unlock": {
+        "type": "always"
+      },
+      "pages": [
+        "This is for a day when you could use a little steadiness, not a motivational poster with seven exclamation marks.",
+        "Just a note for a day that matters. Keep the practical things close: what you need, whom to ask, and the questions you want answered.",
+        "It's okay to ask someone to repeat instructions, write questions down or take a quiet moment before deciding.",
+        "You don't have to be brave for anyone watching. You can be nervous, quiet, annoyed, or all three in the same hour.",
+        "I hope anyone helping you is patient, clear and kind. Practical kindness can make a big difference.",
+        "Wishing you an easier day and good people around you. I'll be thinking of you.",
+        "There's no performance expected here. Just wishing you support, a little ease and a calmer end to the day."
+      ]
+    },
+    {
+      "id": "christmas-for-maha",
+      "title": "A little Christmas wish",
+      "kind": "typed",
+      "section": "occasion",
+      "occasion": "christmas",
+      "preview": "For a cosy, happy Christmas, wherever the day finds you.",
+      "unlock": {
+        "type": "festival",
+        "name": "christmas"
+      },
+      "pages": [
+        "One small envelope has been keeping its Christmas hat ready. It would like to wish you a lovely day.",
+        "Merry Christmas, Maha! I hope today brings you the things that make it feel like your kind of day: familiar voices, good food, a little laughter, and enough time to enjoy all of it.",
+        "Whatever the plans, I hope there's a pause in the middle when you can simply enjoy being there.",
+        "If the day involves twelve photos, three conversations about what to eat, and somebody asking you to come downstairs, I hope at least one of those comes with dessert.",
+        "And if there's a dessert argument, I support the sensible diplomatic solution: sample more than one.",
+        "Wishing you lovely moments, people who make you feel at home, and a few happy surprises. Enjoy your day properly. The rest of the world can wait.",
+        "That's all from this corner of the internet. Merry Christmas, and enjoy the people, food and laughter around you."
+      ]
+    },
+    {
+      "id": "easter-for-maha",
+      "title": "For your Easter morning",
+      "kind": "typed",
+      "section": "occasion",
+      "occasion": "easter",
+      "preview": "A small Easter greeting and a wish for good things ahead.",
+      "unlock": {
+        "type": "festival",
+        "name": "easter"
+      },
+      "pages": [
+        "Good morning, Maha. Today gets its own envelope, a little stationery and a wish for the weeks ahead.",
+        "Happy Easter, Maha! I hope this Sunday feels peaceful and full of the good familiar things: a lovely meal, easy conversations, and some time that belongs entirely to you.",
+        "I like the idea of hope and fresh starts without any pressure to perform a dramatic transformation.",
+        "There are places you haven't seen yet, stories you haven't told, and probably a few travel plans waiting to escape the group chat. I hope the coming months bring you some wonderful ones.",
+        "If you're with family or friends today, I hope conversations are warm and the day doesn't rush past.",
+        "Here's to hope, fresh beginnings, and all the little reasons to smile. No grand speech. Just a warm Easter wish for you.",
+        "Happy Easter. May there be good things ahead and plenty of ordinary happy moments in between."
+      ]
+    },
+    {
+      "id": "when-birthday",
+      "title": "A little birthday wish",
+      "kind": "openWhen",
+      "section": "occasion",
+      "preview": "An envelope for July 7, and only July 7.",
+      "unlock": {
+        "type": "annual",
+        "month": 7,
+        "day": 7
+      },
+      "pages": [
+        "This envelope has one job: arrive on the right day and wish you well without staging a whole ceremony.",
+        "Happy birthday, Maha. I considered writing something elegant and mature, but I know neither of us would trust that version.",
+        "You can choose your kind of birthday. Quiet breakfast? Excellent. Noisy gathering? Also excellent. Plans changing halfway through? Classic.",
+        "I hope there is good food, at least one absurd conversation, and a photo you will later insist is terrible even though everyone else likes it.",
+        "I hope there's at least one unhurried moment with people and things you like, rather than a checklist of expectations.",
+        "Most of all, I hope the day is yours, not some performance for everybody else.",
+        "No countdown, no grand life lesson. Just happy birthday, Maha, and a wish for a genuinely good year."
+      ],
+      "occasion": "birthday"
+    },
+    {
+      "id": "onam-for-maha",
+      "title": "An Onam wish, wherever you are",
+      "kind": "typed",
+      "section": "occasion",
+      "occasion": "onam",
+      "preview": "A little Kerala warmth for the day, delivered by very unofficial post.",
+      "unlock": {
+        "type": "festival",
+        "name": "onam"
+      },
+      "pages": [
+        "Onashamsakal, Maha! An envelope has arrived with an ambitious plan to smell like flowers and a proper Onam sadya. Sadly, the internet has not invented that feature yet.",
+        "Some festivals bring entire places into your mind before you've even made plans. A flower pattern at the doorstep. Familiar voices. People gathering around a meal. The particular chaos of deciding who gets the last good piece.",
+        "I hope today brings you something of that feeling, wherever you happen to be. It doesn't need to look exactly like the Onam celebrations you remember to be a good one.",
+        "May there be something tasty on the plate, something nice to wear if you feel like it, and some small excuse for everyone to laugh.",
+        "If someone makes a spectacular pookalam, it deserves admiration. If someone makes a spectacular mess while trying, that deserves a photograph too.",
+        "The best part, I think, is the way certain days can make home feel a little closer without asking you to be anywhere else.",
+        "Happy Onam, Maha. Wishing you a day that feels full of good people, good food, and familiar warmth. Onashamsakal!"
+      ]
+    },
+    {
+      "id": "new-year-for-maha",
+      "title": "Hello, another chapter",
+      "kind": "typed",
+      "section": "occasion",
+      "occasion": "newyear",
+      "preview": "A little New Year's note, with absolutely no resolutions required.",
+      "unlock": {
+        "type": "annual",
+        "month": 1,
+        "day": 1
+      },
+      "pages": [
+        "Happy New Year, Maha! The calendar has done its annual costume change. I hope it has better plans than the weather app.",
+        "I'm not putting a list of resolutions in this envelope. You have enough things to do without a digital piece of paper assigning extra tasks.",
+        "I hope there are good conversations, unexpected opportunities, little trips, and plenty of ordinary days that turn out nicer than expected.",
+        "May you try things just because you're curious. May you change your mind when it makes sense. May you keep collecting stories worth telling and some that are just yours.",
+        "And if any of your plans involve waking up absurdly early for a flight, may the coffee be strong and the baggage queue be merciful.",
+        "Whatever the year brings, there's no need to turn every month into a dramatic before-and-after story. A year can be lovely in quiet ways too.",
+        "Here is to a new calendar and all the pages you haven't written yet. Happy New Year. May there be good days, good snacks, and good places ahead."
+      ]
+    }
+  ]
+}

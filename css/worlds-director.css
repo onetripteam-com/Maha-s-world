@@ -1,0 +1,148 @@
+/* MAHA — World continuity edition
+   A coherent art direction across all seven existing destinations.
+   Purpose: premium typography, tactile physical surfaces and restrained transitions.
+   Never replaces existing feature DOM or saved progress.
+ */
+#portal-screen .portal-place{
+ --world-paper:#e9dec9;
+ --world-glow:rgba(255,219,168,.25);
+ isolation:isolate;
+ overflow:hidden;
+}
+#portal-screen .portal-place:before{
+ content:'';position:absolute;z-index:0;inset:0;
+ pointer-events:none;
+ background:
+  radial-gradient(circle at 70% 9%,var(--world-glow),transparent 32%),
+  radial-gradient(ellipse at 9% 95%,rgba(31,28,20,.16),transparent 44%);
+ mix-blend-mode:soft-light;opacity:.75;
+}
+#portal-screen .portal-place:after{
+ content:'';position:absolute;z-index:1;inset:0;pointer-events:none;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.69' numOctaves='2' stitchTiles='stitch' seed='12'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+ background-size:180px;opacity:.14;mix-blend-mode:multiply;
+}
+#portal-screen .portal-content{position:relative;z-index:2}
+#portal-screen .portal-back{
+ border:1px solid color-mix(in srgb,var(--place-ink,#3e3a34) 23%,transparent)!important;
+ background:color-mix(in srgb,var(--place-bg,#f0e3d2) 83%,transparent)!important;
+ color:var(--place-ink,#3e3a34)!important;
+ border-radius:999px!important;
+ min-height:44px;
+ font:600 11px/1.2 system-ui,sans-serif!important;
+ letter-spacing:.04em;
+ backdrop-filter:blur(10px);
+ box-shadow:0 6px 18px rgba(12,12,11,.07);
+ transition:transform .22s ease,box-shadow .22s ease;
+}
+#portal-screen .portal-back:hover{transform:translateX(-3px);box-shadow:0 8px 24px #19181833}
+#portal-screen .place-layout h1{
+ font-family:Georgia,'Iowan Old Style','Baskerville',serif;
+ font-weight:400;
+ letter-spacing:-.048em;
+ text-wrap:balance;
+}
+#portal-screen .place-layout h1 em{font-family:Georgia,serif;font-weight:400}
+#portal-screen .place-action{
+ min-height:46px;border-radius:999px;
+ box-shadow:0 8px 20px rgba(31,32,26,.13);
+ transition:transform .22s ease,box-shadow .22s ease;
+}
+#portal-screen .place-action:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(31,32,26,.22)}
+/* THE POST OFFICE: uncoated paper, ink and the sheen of an old wax seal */
+#portal-screen[data-place="letters"] .portal-place{
+ --world-glow:#e4ae745c;
+ background:
+ linear-gradient(135deg,rgba(255,248,225,.48),transparent 60%),
+ repeating-linear-gradient(0deg,#a78c7333 0 1px,transparent 1px 5px),
+ #f1e6d0;
+}
+#portal-screen[data-place="letters"] .mail-heading{font-family:Georgia,serif;letter-spacing:-.04em}
+#portal-screen[data-place="letters"] .mail-row,
+#portal-screen[data-place="letters"] .mail-envelope{
+ box-shadow:0 13px 25px rgba(93,65,45,.1),0 2px 2px rgba(93,65,45,.12);
+}
+#portal-screen[data-place="letters"] .mail-row:is(:hover,:focus-within){
+ box-shadow:0 18px 30px rgba(93,65,45,.19),0 2px 3px rgba(93,65,45,.1);
+}
+#portal-screen[data-place="letters"] .mail-tabs{backdrop-filter:blur(10px)}
+/* HABIBII FM: actual walnut radio cabinet, luminous dial and analog softness. */
+#portal-screen[data-place="music"] .portal-place{
+ --world-glow:#e0a65b4b;
+ background:radial-gradient(ellipse at 75% 21%,#957c5366,transparent 47%),linear-gradient(138deg,#2b3b35,#516457 54%,#213a34);
+}
+#portal-screen[data-place="music"] .fm-radio{
+ box-shadow:0 35px 65px #0b16138c,0 7px 10px #0c17145e,inset 0 2px 3px #fff6d257;
+}
+#portal-screen[data-place="music"] .fm-dial{box-shadow:0 0 24px #d2a66d54,inset 0 0 15px #181d20aa}
+#portal-screen[data-place="music"] .fm-station{border-bottom-color:#ffffff39}
+#portal-screen[data-place="music"] .fm-head{letter-spacing:.19em}
+/* THE LITTLE CINEMA: graphite felt walls, film-screen bloom, careful restraint. */
+#portal-screen[data-place="movies"] .portal-place{
+ --world-glow:#e1ad7833;
+ background:radial-gradient(ellipse at 55% 12%,#d5a6801e,transparent 55%),linear-gradient(145deg,#191e20,#2e342c 61%,#171e1c);
+}
+#portal-screen[data-place="movies"] .cinema-screen-wrap,
+#portal-screen[data-place="movies"] .cinema-stage{
+ box-shadow:0 24px 70px #0d1010b8,0 5px 13px #0d10106e;
+}
+#portal-screen[data-place="movies"] .cinema-poster{
+ box-shadow:0 15px 24px #080b0c66;
+ transition:transform .28s ease,box-shadow .28s ease;
+}
+#portal-screen[data-place="movies"] .cinema-poster:hover{
+ transform:translateY(-5px) rotate(-.5deg);
+ box-shadow:0 20px 32px #080b0c8c;
+}
+#portal-screen[data-place="movies"] .cinema-neon{text-shadow:0 0 20px #dbb47755}
+/* TRAVEL: a paper atlas and lived-in suitcase, not a booking site. */
+#portal-screen[data-place="travel"] .portal-place{
+ --world-glow:#e9ba8b50;
+ background:radial-gradient(ellipse at 76% 12%,#f7e6c1b8,transparent 35%),linear-gradient(125deg,#cfdbc7,#e3dece 58%,#d2c3ab);
+}
+#portal-screen[data-place="travel"] .atlas-passport,
+#portal-screen[data-place="travel"] .atlas-board,
+#portal-screen[data-place="travel"] .atlas-postcard{
+ box-shadow:0 18px 30px #303c3022,0 4px 8px #303c3018;
+}
+#portal-screen[data-place="travel"] .atlas-pin:focus-visible{outline-offset:5px}
+/* ARCADE: designed as actual small cabinet, with physical edge and subtle light. */
+#portal-screen[data-place="games"] .portal-place{
+ --world-glow:#ffc37b61;
+ background:radial-gradient(circle at 80% 9%,#ffe0aa80,transparent 38%),linear-gradient(150deg,#dcbb8f,#b87a64 68%,#82635f);
+}
+#portal-screen[data-place="games"] .arcade-cabinet{
+ filter:drop-shadow(0 26px 20px #3a242854);
+ transition:transform .36s ease,filter .36s ease;
+}
+#portal-screen[data-place="games"] .arcade-cabinet:hover{
+ transform:translateY(-4px);
+ filter:drop-shadow(0 30px 22px #3a242879);
+}
+/* WORD GARDEN: natural toned botanical studio and quiet letter growth. */
+#portal-screen[data-place="garden"] .portal-place{
+ --world-glow:#c2ddad63;
+ background:radial-gradient(ellipse at 70% 4%,#eff7d5c7,transparent 42%),linear-gradient(143deg,#dbe6c8,#bed1b8 60%,#b6cba9);
+}
+#portal-screen[data-place="garden"] .wg-canvas-wrap{
+ box-shadow:0 17px 32px rgba(32,70,44,.12),inset 0 0 16px rgba(255,255,244,.22);
+}
+/* THE QUIET CORNER: soft textiles, controlled night window and low lamp glow. */
+#portal-screen[data-place="rest"] .portal-place{
+ --world-glow:#f8cd955c;
+ background:radial-gradient(ellipse at 50% 12%,#b4ab8a6b,transparent 50%),linear-gradient(135deg,#51665a,#354a44 68%,#283e3a);
+}
+#portal-screen[data-place="rest"] .rr-lamp-light{filter:blur(.6px) drop-shadow(0 0 16px #ffe9aa73)}
+#portal-screen[data-place="rest"] .rr-breath-card{
+ box-shadow:0 18px 37px rgba(8,29,23,.25);
+}
+@media(max-width:759px){
+ #portal-screen .portal-place{overflow:auto}
+ #portal-screen .place-layout h1{font-size:clamp(31px,10vw,53px);line-height:1.07}
+ #portal-screen .portal-back{min-width:78px;min-height:44px}
+ #portal-screen .cinema-poster:hover,#portal-screen .arcade-cabinet:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen .place-action,#portal-screen .portal-back,#portal-screen .cinema-poster,
+ #portal-screen .arcade-cabinet{transition:none!important;transform:none!important}
+}

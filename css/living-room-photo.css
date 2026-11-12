@@ -1,0 +1,204 @@
+/* MAHA — An actual photograph you can touch.
+   All spatial controls and the image belong to the SAME 1672:941 plane.
+   This replaces pasted foreground illustrations for the main Story room.
+   Retains theme switching and the separate portrait handling elsewhere.
+*/
+.cinematic-room .living-photo-plane{
+ position:absolute;z-index:6;
+ left:50%;top:50%;
+ height:100%;width:max(100%,177.68svh);
+ transform:translate(-50%,-50%);
+ overflow:visible;isolation:isolate;
+ pointer-events:none;
+ transition:transform .78s cubic-bezier(.2,.76,.2,1);
+}
+.cinematic-room .living-photo-plane[hidden]{display:none!important}
+.cinematic-room .living-photo-image{
+ position:absolute;inset:0;display:block;
+ width:100%;height:100%;object-fit:fill;
+ filter:brightness(var(--room-exposure,1)) saturate(var(--room-chroma,1));
+ pointer-events:none;
+ transition:filter .6s ease;
+}
+.cinematic-room[data-room-photo-scene="original"] .cinematic-grain{z-index:7;pointer-events:none}
+.cinematic-room[data-room-photo-scene="original"] .cinematic-lens{z-index:7;pointer-events:none}
+.cinematic-room[data-room-photo-scene="original"] .room-top-controls{z-index:25!important}
+.cinematic-room[data-room-photo-scene="original"] .room-heading{z-index:20!important;pointer-events:none}
+.cinematic-room[data-room-photo-scene="original"] .room-heading *{pointer-events:none}
+.cinematic-room[data-room-photo-scene="original"] .room-dock{z-index:24!important}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area{
+ position:absolute!important;
+ left:var(--object-x)!important;top:var(--object-y)!important;
+ width:var(--object-w)!important;height:var(--object-h)!important;
+ min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;
+ z-index:8!important;
+ transform:none!important;transition:background .3s ease,box-shadow .3s ease!important;
+ border:0!important;border-radius:9px!important;
+ background:transparent!important;
+ box-shadow:none!important;
+ pointer-events:auto!important;
+ cursor:pointer;display:block!important;opacity:1!important;
+ padding:0!important;isolation:isolate;
+ -webkit-tap-highlight-color:transparent;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area::before,
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area::after{
+ display:none!important;content:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-drawing{display:none!important}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-label{
+ display:block!important;position:absolute!important;
+ left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;
+ min-width:max-content!important;max-width:195px!important;
+ transform:translate(-50%,calc(-50% + 7px))!important;
+ opacity:0!important;pointer-events:none!important;
+ border-radius:5px!important;
+ color:#fff1d9!important;background:#13201bdb!important;
+ border:1px solid #ffe0b883!important;
+ padding:12px 17px!important;
+ text-align:center!important;
+ box-shadow:0 8px 25px #07110bc1!important;
+ backdrop-filter:blur(12px);
+ font:650 clamp(11px,.8vw,14px)/1.15 system-ui,sans-serif!important;
+ letter-spacing:.01em!important;
+ white-space:nowrap;
+ transition:opacity .25s ease,transform .25s ease!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-label:before{display:none!important}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:is(:hover,:focus-visible){
+ background:radial-gradient(ellipse at center,#f7d39a12,transparent 67%)!important;
+ box-shadow:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:is(:hover,:focus-visible) .object-label{
+ transform:translate(-50%,-50%)!important;opacity:1!important;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:focus-visible{
+ outline:3px solid #ffedc9!important;outline-offset:2px!important;
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet .real-vase{
+ position:absolute!important;
+ left:8%;top:-38%;width:84%;height:76%;
+ display:block!important;visibility:visible!important;opacity:.95!important;
+ transform:none!important;filter:drop-shadow(0 3px 4px #12140b4d)!important;
+ pointer-events:none!important;
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet .vase-glass{display:none!important}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet>span{
+ display:block!important;position:absolute!important;
+ top:65%!important;left:50%!important;bottom:auto!important;
+ color:#fff1d9!important;background:#18251de6!important;
+ border:1px solid #ffebca70!important;border-radius:5px!important;
+ opacity:0!important;padding:9px 12px!important;
+ font:600 11px system-ui,sans-serif!important;
+ transform:translate(-50%,0)!important;white-space:nowrap;pointer-events:none;
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet:is(:hover,:focus-visible)>span{opacity:1!important}
+.cinematic-room[data-room-photo-scene="original"] .window-whisper{
+ left:39%!important;top:36%!important;z-index:12!important;opacity:.72!important;
+ width:45px!important;height:45px!important;min-width:45px!important;min-height:45px!important;
+}
+/* A live room, with natural, almost unnoticeable light changes. */
+.cinematic-room[data-room-photo-scene="original"] .cinematic-lens{
+ background:radial-gradient(ellipse at 72% 78%,#edbd7628,transparent 47%),
+ linear-gradient(110deg,#120f0d7c 0%,#18140b20 31%,transparent 54%)!important;
+ animation:maha-light-breathe 14s ease-in-out infinite alternate;
+}
+.cinematic-room[data-room-photo-scene="original"] .cinematic-grain{mix-blend-mode:soft-light;opacity:.09}
+@keyframes maha-light-breathe{0%{opacity:.5}100%{opacity:.95}}
+.cinematic-room[data-light="morning"] .living-photo-image{filter:brightness(1.1) saturate(1.03)}
+.cinematic-room[data-light="afternoon"] .living-photo-image{filter:brightness(1.05) saturate(1.05)}
+.cinematic-room[data-light="dusk"] .living-photo-image{filter:brightness(.93) saturate(1.04)}
+.cinematic-room[data-light="night"] .living-photo-image{filter:brightness(.54) saturate(.81)}
+.cinematic-room[data-light="lamplight"] .living-photo-image{filter:brightness(.66) saturate(.95)}
+.cinematic-room[data-light="rain"] .living-photo-image{filter:brightness(.76) saturate(.76)}
+/* The photo is the hero: don't cover its objects with the old guidance card. */
+.cinematic-room[data-room-photo-scene="original"] .cinematic-note{display:none!important}
+.cinematic-room[data-room-photo-scene="original"] .cinematic-discovery{top:130px!important;color:#f4dec0cf}
+@media(max-width:759px){
+ .cinematic-room .living-photo-plane{
+  width:max(100%,177.68svh);
+  height:100%;
+  left:50%;top:50%;
+  transform:translate(calc(-50% + var(--room-pan-shift,0px)),-50%)!important;
+  transition:transform .85s cubic-bezier(.2,.76,.2,1)!important;
+ }
+ .cinematic-room[data-peek="0"]{--room-pan-shift:calc((max(100vw,177.68svh) - 100vw)/2)}
+ .cinematic-room[data-peek="1"]{--room-pan-shift:0px}
+ .cinematic-room[data-peek="2"]{--room-pan-shift:calc((100vw - max(100vw,177.68svh))/2)}
+ .cinematic-room .living-photo-image{filter:brightness(.82) saturate(.98)}
+ .cinematic-room[data-room-photo-scene="original"] .room-heading{
+   top:calc(111px + env(safe-area-inset-top,0px))!important;
+   left:18px!important;max-width:320px!important;right:18px!important;
+   text-shadow:0 2px 9px #100d09c4!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .room-heading h1{font-size:clamp(31px,9vw,42px)!important}
+ .cinematic-room[data-room-photo-scene="original"] .room-heading p{font-size:11px!important;max-width:235px!important}
+ .cinematic-room[data-room-photo-scene="original"] .cinematic-discovery{display:none!important}
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area .object-label{
+   opacity:0!important;font-size:11px!important;max-width:150px!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:active .object-label,
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane .living-hit-area:focus-visible .object-label{opacity:1!important}
+ .cinematic-room[data-room-photo-scene="original"] #room-bouquet .real-vase{opacity:.92!important}
+ .cinematic-room[data-room-photo-scene="original"] #room-peek{
+   top:auto!important;bottom:calc(80px + env(safe-area-inset-bottom,0px))!important;
+   background:#15221dcd!important;color:#fff2d8!important;z-index:25!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .room-dock{
+   bottom:calc(14px + env(safe-area-inset-bottom,0px))!important;
+   left:14px!important;right:14px!important;z-index:26!important;
+ }
+ .cinematic-room[data-room-photo-scene="original"] .window-whisper{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-room .living-photo-plane,
+ .cinematic-room .living-photo-image,
+ .cinematic-room .cinematic-lens{transition:none!important;animation:none!important}
+}
+
+/* Two photo-accurate atmospheric layers, no video download or external asset.
+   Curtain motion and candle warmth are painted from the actual image. */
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane:before{
+ content:'';position:absolute;z-index:2;inset:0;pointer-events:none;
+ background:url('../assets/rooms/maha-living-room.webp') center / 100% 100% no-repeat;
+ clip-path:polygon(25% 2%,32% 2%,33% 24%,35% 49%,32% 59%,29% 54%,28% 25%,25% 13%);
+ opacity:.95;
+ animation:maha-curtain-sway 11s ease-in-out infinite alternate;
+ transform-origin:27% 6%;
+}
+.cinematic-room[data-room-photo-scene="original"] .living-photo-plane:after{
+ content:'';position:absolute;inset:0;z-index:3;pointer-events:none;
+ background:radial-gradient(ellipse 10% 12% at 69% 76%,#fbc16e45,transparent 85%),
+ radial-gradient(ellipse 13% 10% at 77% 42%,#ffd6a019,transparent 90%);
+ mix-blend-mode:screen;animation:maha-candle-breathe 7s ease-in-out infinite alternate;
+}
+@keyframes maha-curtain-sway{
+ 0%{transform:translateX(-1px) skewX(-.14deg);opacity:.77}
+ 100%{transform:translateX(2px) skewX(.21deg);opacity:.91}
+}
+@keyframes maha-candle-breathe{0%{opacity:.36}50%{opacity:.7}100%{opacity:.48}}
+.cinematic-room[data-room-photo-scene="original"] .theme-preview-art[data-theme="story"]{
+ background-image:url('../assets/rooms/maha-living-room.webp')!important;
+ background-size:cover!important;background-position:center!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane:before,
+ .cinematic-room[data-room-photo-scene="original"] .living-photo-plane:after{animation:none!important}
+}
+
+/* Keep real flowers soft and photographic instead of introducing a luminous
+   sticker over the vase. Each actual chosen species still updates. */
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet .real-vase .live-flowers{
+ opacity:.74!important;
+ mix-blend-mode:multiply;
+ filter:saturate(.54) contrast(.89) brightness(.92) drop-shadow(0 2px 1px #342d2080);
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet .real-vase{
+ transform-origin:50% 84%!important;
+}
+.cinematic-room[data-room-photo-scene="original"] #room-bouquet:hover .real-vase{
+ transform:rotate(1.5deg) translateY(-2px)!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-room[data-room-photo-scene="original"] #room-bouquet:hover .real-vase{transform:none!important}
+}

@@ -1,0 +1,358 @@
+/*
+ * MAHA / STUDIO EDITION
+ * Mobile: a full-bleed tactile illustrated room and a low-friction door drawer.
+ * Desktop: a genuinely wide editorial experience with a protected 400:780 artboard.
+ * The exact artboard proportions matter: hit areas, clock, flowers and window
+ * are registered to the artwork. Never stretch the bedroom to a desktop aspect.
+ */
+:root{--studio-ease:cubic-bezier(.2,.8,.22,1)}
+.header-edition{display:none}
+.room-scene{
+ --studio-bg:#f0e3d0;--studio-ink:#394e45;--studio-muted:#746b5a;
+ --studio-line:#cbb89b;--studio-panel:#fff8eb;--studio-accent:#ab6958;
+ --studio-door:#fffaf0;--studio-art-edge:#fff4df;
+}
+.room-scene[data-theme=monsoon]{
+ --studio-bg:#d7dfd0;--studio-ink:#284a41;--studio-muted:#55766a;
+ --studio-line:#a2b5a7;--studio-panel:#e7f0e6;--studio-accent:#537b66;--studio-door:#f0f5ed;--studio-art-edge:#b1cbb9
+}
+.room-scene[data-theme=sunroom]{
+ --studio-bg:#f9e8c6;--studio-ink:#715746;--studio-muted:#936c5c;
+ --studio-line:#e3c29a;--studio-panel:#fff9e4;--studio-accent:#d58d64;--studio-door:#fff9e9;--studio-art-edge:#ffe4ae
+}
+.room-scene[data-theme=terracotta]{
+ --studio-bg:#dfb99e;--studio-ink:#5d3e35;--studio-muted:#866453;
+ --studio-line:#bb8e71;--studio-panel:#f9e0c2;--studio-accent:#9c5744;--studio-door:#f9e4ca;--studio-art-edge:#e7b58e
+}
+.room-scene[data-theme=midnight]{
+ --studio-bg:#242339;--studio-ink:#f5e5f1;--studio-muted:#cfb6d0;
+ --studio-line:#665373;--studio-panel:#34304d;--studio-accent:#f3a0d0;--studio-door:#423552;--studio-art-edge:#725283
+}
+.room-scene[data-theme=cosmos]{
+ --studio-bg:#1b2d50;--studio-ink:#e0efff;--studio-muted:#a6c5e6;
+ --studio-line:#536c91;--studio-panel:#263c60;--studio-accent:#93d6e6;--studio-door:#30486d;--studio-art-edge:#7594b4
+}
+/* The canvas is a coordinate-accurate substage. The theme backdrop stays
+   outside it, so the chooser can cover the entire device. */
+.room-canvas{position:absolute;inset:0;min-width:0;overflow:hidden;isolation:isolate}
+.room-canvas>.room-paint,.room-canvas>.room-overlay{inset:0}
+.room-editorial{display:none}
+.room-guide{color:var(--studio-ink);font-family:var(--sans)}
+.guide-toggle{
+ display:flex;align-items:center;justify-content:flex-start;gap:12px;width:100%;
+ min-height:52px;border-radius:17px;padding:9px 13px;
+ background:var(--studio-panel);color:var(--studio-ink);
+ border:1px solid var(--studio-line);box-shadow:0 8px 24px #382c2440;
+ font-size:13px;font-weight:800;letter-spacing:-.01em;
+}
+.guide-toggle-icon{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:var(--studio-ink);color:var(--studio-panel);font-size:18px}
+.guide-toggle-count{margin-left:auto;font-weight:600;font-size:10px;color:var(--studio-muted);white-space:nowrap}
+.guide-toggle-chevron{font-size:22px;transition:transform .2s}
+.room-guide.is-open .guide-toggle-chevron{transform:rotate(180deg)}
+.guide-inner{background:var(--studio-panel);border:1px solid var(--studio-line);color:var(--studio-ink)}
+.guide-eyebrow,.editorial-kicker{font-size:10px;font-weight:800;letter-spacing:.17em}
+.guide-heading{padding:21px 21px 15px}
+.guide-heading h2{font:400 clamp(30px,2.8vw,42px)/1.06 var(--serif);letter-spacing:-.055em;margin:6px 0 7px}
+.guide-heading h2 span{color:var(--studio-accent)}
+.guide-heading p{font:12px/1.5 var(--sans);margin:0;color:var(--studio-muted)}
+.studio-door-list{display:grid;gap:4px;padding:3px 10px}
+.studio-door{
+ --door-mark:var(--studio-accent);display:grid;grid-template-columns:23px 40px minmax(0,1fr) 18px;
+ align-items:center;gap:9px;min-height:58px;width:100%;text-align:left;
+ color:var(--studio-ink);background:transparent;border:1px solid transparent;
+ border-radius:14px;padding:6px 9px;transition:background .2s,transform .25s var(--studio-ease),box-shadow .25s;
+}
+.studio-door[data-tone=post]{--door-mark:#bb775d}
+.studio-door[data-tone=radio]{--door-mark:#7b957a}
+.studio-door[data-tone=film]{--door-mark:#9c828c}
+.studio-door[data-tone=travel]{--door-mark:#9ba584}
+.studio-door[data-tone=arcade]{--door-mark:#d68e75}
+.studio-door[data-tone=garden]{--door-mark:#729b83}
+.studio-door[data-tone=quiet]{--door-mark:#88a0b0}
+.studio-door-number{font-size:9px;color:var(--studio-muted);font-variant-numeric:tabular-nums}
+.studio-door-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--door-mark) 17%,var(--studio-panel));border:1px solid color-mix(in srgb,var(--door-mark) 32%,transparent);color:var(--studio-ink);font-size:20px}
+.studio-door-text{display:block;min-width:0}
+.studio-door-text strong{display:block;font:400 18px/1.08 var(--serif);letter-spacing:-.035em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.studio-door-text small{display:block;font:10px/1.4 var(--sans);color:var(--studio-muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.studio-door-arrow{font:18px var(--serif);opacity:.55;transition:transform .22s}
+.studio-door:focus-visible{outline:3px solid var(--studio-accent);outline-offset:1px;background:var(--studio-door)}
+@media(hover:hover) and (pointer:fine){
+ .studio-door:hover{background:var(--studio-door);border-color:var(--studio-line);transform:translateX(4px);box-shadow:0 5px 15px #251c2012}
+ .studio-door:hover .studio-door-arrow{transform:translate(2px,-2px);opacity:1}
+}
+.studio-door:active{transform:scale(.99)}
+.guide-actions{display:flex;flex-wrap:wrap;gap:7px;padding:14px 17px 17px;margin:10px 11px 0;border-top:1px solid var(--studio-line)}
+.guide-actions button{background:transparent;color:var(--studio-muted);font-weight:750;font-size:10px;min-height:40px;padding:7px 9px;border:1px solid var(--studio-line);border-radius:999px}
+.guide-actions button:hover,.guide-actions button:focus-visible{background:var(--studio-door);color:var(--studio-ink)}
+/* Mobile: affordance is explicit, not a set of mystery hotspots. */
+@media(max-width:759px),(max-height:569px){
+ .room-guide{position:absolute;z-index:35;left:12px;right:12px;bottom:calc(8px + env(safe-area-inset-bottom,0px));pointer-events:auto}
+ .room-guide .guide-inner{
+   position:absolute;left:0;right:0;bottom:calc(100% + 10px);
+   max-height:min(72dvh,620px);overflow-y:auto;overscroll-behavior:contain;
+   border-radius:20px;box-shadow:0 18px 60px #221c1c85;
+   visibility:hidden;opacity:0;transform:translateY(10px);pointer-events:none;
+   transition:opacity .24s var(--studio-ease),transform .24s var(--studio-ease),visibility .24s;
+ }
+ .room-guide.is-open .guide-inner{visibility:visible;opacity:1;transform:translateY(0);pointer-events:auto}
+ .room-guide .guide-heading{padding:20px 18px 11px}
+ .room-guide .guide-heading h2{font-size:32px}
+ .room-guide .studio-door{min-height:57px}
+ .room-guide .guide-actions{margin-top:8px}
+ .room-canvas{position:absolute;inset:0}
+ .room-scene .room-bottom-label{display:none}
+ .room-scene .replay-opening{display:none}
+ .room-scene .room-greeting{z-index:8}
+ .room-scene .room-greeting h1{line-height:1.13}
+ .room-scene .theme-trigger{z-index:20;min-height:44px;top:2.4%;right:4%;bottom:auto}
+ .room-scene .today-card{max-height:none;min-height:77px}
+ .room-scene .room-object:focus-visible{outline:3px solid #fff1d6;outline-offset:2px}
+ .room-guide .guide-inner:focus-within{scrollbar-width:thin}
+}
+@media(max-width:374px){
+ .guide-toggle{gap:8px;padding:8px 10px}
+ .guide-toggle-count{font-size:9px}
+ .room-guide{left:8px;right:8px}
+ .guide-actions{padding:12px 9px}
+}
+/* A desktop theatre rather than a phone mock-up centered in empty space. */
+@media(min-width:760px) and (min-height:570px){
+ html,body{height:100%;overflow:hidden}
+ body{background:#d9cbb6}
+ .desktop-backdrop{
+  background:radial-gradient(ellipse at 12% 22%,#f6eedf 0,transparent 45%),
+   radial-gradient(ellipse at 85% 82%,#9cae9d 0,transparent 44%),
+   repeating-linear-gradient(90deg,transparent 0 83px,#fff7e91b 84px 85px),
+   linear-gradient(130deg,#d5c6ac,#bfbba7 55%,#c8a994)
+ }
+ .bg-flower{opacity:.08}
+ .bg-caption{font-size:14px;left:3%;bottom:1%}
+ .app-frame{
+  width:calc(100vw - 40px);max-width:1560px;height:calc(100dvh - 40px);
+  min-height:0;max-height:none;margin:20px auto;
+  border:1px solid #f5e9d6;outline:1px solid #a48d76;border-radius:25px;
+  box-shadow:0 10px 0 #8c79551c,0 30px 120px #372e3460;overflow:hidden;
+ }
+ .app-header{
+  min-height:62px;height:62px;padding:0 30px;background:#f8eddaee;
+  color:#4a4e43;border-bottom:1px solid #dbcbb3
+ }
+ .identity{font-size:11px;letter-spacing:.17em;gap:13px}
+ .identity-emblem{font-size:31px}
+ .header-edition{display:block;font:italic 17px var(--serif);letter-spacing:.01em;color:#937460}
+ .header-edition i{font-style:normal;color:#b5766c;margin-left:12px}
+ .sound-toggle{border:1px solid #d5c3ab;background:#fffbf0}
+ .scene-root{height:100%;min-height:0;overflow:hidden}
+ .room-scene{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(245px,440px) minmax(280px,1.07fr);
+  grid-template-rows:minmax(0,1fr);
+  align-items:stretch;gap:clamp(11px,1.5vw,30px);
+  padding:clamp(14px,2vw,30px);
+  color:var(--studio-ink);
+  background:radial-gradient(ellipse at 31% 12%,color-mix(in srgb,var(--studio-panel) 88%,transparent),transparent 65%),var(--studio-bg)!important;
+ }
+ .room-scene::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:repeating-linear-gradient(90deg,transparent 0 109px,color-mix(in srgb,var(--studio-line) 9%,transparent) 110px 111px);
+ }
+  .room-editorial{grid-column:1;grid-row:1;display:flex;flex-direction:column;justify-content:space-between;
+  align-self:stretch;min-width:0;position:relative;z-index:2;
+  padding:clamp(15px,2.1vw,34px) 0 clamp(7px,1.7vw,24px);
+ }
+ .editorial-kicker{display:flex;align-items:center;gap:8px;color:var(--studio-muted);line-height:1.6}
+ .editorial-dot{display:block;width:7px;height:7px;border-radius:50%;background:var(--studio-accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--studio-accent) 14%,transparent)}
+ .room-editorial h2{font:400 clamp(40px,4.9vw,79px)/.98 var(--serif);letter-spacing:-.065em;margin:clamp(26px,6vh,66px) 0 24px}
+ .room-editorial h2 em{font-style:italic;color:var(--studio-accent)}
+ .editorial-top>p{max-width:27ch;font:clamp(14px,1.2vw,18px)/1.6 var(--serif);color:var(--studio-muted);margin:0}
+ .editorial-stroke{margin-top:clamp(18px,3.6vh,54px);font-size:21px;letter-spacing:.4em;color:var(--studio-accent);opacity:.68}
+ .editorial-foot{border-top:1px solid var(--studio-line);padding-top:15px;max-width:280px}
+ .editorial-issue{font:800 9px var(--sans);letter-spacing:.13em;color:var(--studio-accent)}
+ .editorial-issue i{margin:0 5px;opacity:.6}
+ .editorial-foot p{font:italic 14px/1.55 var(--serif);color:var(--studio-muted);margin:12px 0 0}
+  .room-canvas{
+  grid-column:2;grid-row:1;position:relative;inset:auto;z-index:2;align-self:center;justify-self:center;
+  width:min(100%,calc(50dvh - 77px));height:auto;aspect-ratio:400 / 780;max-width:100%;max-height:100%;
+  border:5px solid var(--studio-art-edge);border-radius:18px;overflow:hidden;
+  box-shadow:0 0 0 1px var(--studio-line),0 26px 62px #30252c45,0 6px 0 #5d48302b;
+  background:var(--studio-bg)
+ }
+ .room-canvas .room-paint,.room-canvas .room-overlay{position:absolute;inset:0}
+ .room-guide{grid-column:3;grid-row:1;position:relative;z-index:3;min-height:0;align-self:stretch;display:flex;flex-direction:column}
+ .room-guide .guide-toggle{display:none}
+ .room-guide .guide-inner{height:100%;display:flex;flex-direction:column;min-height:0;overflow-y:auto;scrollbar-width:thin;
+  border-radius:20px;box-shadow:0 18px 38px #3730201b;background:var(--studio-panel)}
+ .room-guide .guide-heading{padding:clamp(15px,1.5vw,24px) 20px 9px}
+ .room-guide .guide-heading h2{font-size:clamp(26px,2.7vw,37px)}
+ .room-guide .studio-door-list{padding:0 11px;gap:1px}
+ .room-guide .studio-door{min-height:clamp(47px,7vh,63px)}
+ .room-guide .guide-actions{margin-top:auto}
+ .room-scene .replay-opening{display:none}
+ .room-scene .theme-trigger{z-index:22;top:auto;bottom:15px;right:14px;min-width:105px;font-size:10px;background:#fff4dff0;box-shadow:0 5px 15px #372b2366}
+ .room-scene .room-bottom-label{display:none}
+ .room-scene .room-greeting{top:4.6%;left:5.5%;width:44%}
+ .room-scene.director-room .room-greeting h1{font-size:clamp(14px,1.5vw,22px)}
+ .room-scene .room-greeting .eyebrow{font-size:7px}
+ .room-scene .today-card{font-size:clamp(10px,1vw,12px)}
+ /* Desktop theme picker is a visual gallery, not a narrow phone sheet. */
+ .room-scene .theme-backdrop{z-index:50;display:grid;place-items:center;align-content:center;padding:20px;background:#1a2025ab;backdrop-filter:blur(8px)}
+ .room-scene .theme-panel{width:min(760px,90%);max-height:calc(100% - 20px);border-radius:24px;padding:26px 27px 20px;box-shadow:0 30px 80px #11182777}
+ .room-scene .theme-panel h2{font-size:39px}
+ .room-scene .theme-options{grid-template-columns:repeat(3,minmax(0,1fr));max-height:min(59vh,520px);gap:12px}
+ .room-scene .theme-option{min-height:165px}
+ .room-scene .theme-swatch{height:106px}
+ .room-scene .theme-option strong{font-size:17px}
+ .room-scene .theme-option small{font-size:10px}
+ /* Every destination gets its own wide stage, centered without stretching the original games. */
+ .app-frame .portal-screen .portal-place .portal-content{
+  width:min(100% - 52px,780px);left:50%;right:auto;
+  transform:translateX(-50%);padding-left:16px;padding-right:16px;
+ }
+ .app-frame .portal-screen .portal-content{animation:studio-portal-arrive .5s var(--studio-ease) both}
+ @keyframes studio-portal-arrive{
+   from{opacity:.3;transform:translate(-50%,14px) scale(.985)}
+   to{opacity:1;transform:translate(-50%,0) scale(1)}
+ }
+ .app-frame .portal-back{left:clamp(17px,3vw,42px);top:14px;min-height:46px}
+ .app-frame .portal-place{background-size:cover}
+ /* Desktop invitation: illustration on one side, language/actions on the other. */
+ .app-frame .hug-scene{background:
+   radial-gradient(ellipse at 74% 40%,#607d696c,transparent 42%),
+   radial-gradient(ellipse at 15% 18%,#536c5b,transparent 45%),#273f35}
+ .app-frame .hug-doodle{left:53%;right:4%;top:11%;height:70%;display:grid;align-content:center}
+ .app-frame .hug-doodle svg{height:auto;max-width:min(100%,530px);max-height:80%;filter:drop-shadow(0 24px 40px #17271d6c)}
+ .app-frame .hug-doodle-caption{font-size:17px}
+ .app-frame .hug-content{left:9%;right:53%;top:14%;bottom:auto}
+ .app-frame .hug-content h1{font-size:clamp(42px,4.5vw,75px);margin-bottom:clamp(14px,3vh,25px)}
+ .app-frame .hug-lines{font-size:clamp(14px,1.35vw,19px);max-width:37ch}
+ .app-frame .no-reply{font-size:19px}
+ .app-frame .hug-actions,.app-frame .hug-complete{left:9%;right:56%;bottom:9%}
+ .app-frame .hug-complete{max-width:480px}
+ /* Florist: flower shop editorial and full-size bouquet, side by side. */
+ .app-frame .flowers-scene{
+  display:grid;grid-template-columns:minmax(310px,.86fr) minmax(350px,1.14fr);
+  grid-template-rows:minmax(170px,1fr) auto;column-gap:clamp(26px,5vw,84px);
+  padding:clamp(25px,4vw,62px) clamp(30px,5vw,84px) 22px;
+ }
+ .app-frame .flowers-top{position:relative;inset:auto;grid-column:1;grid-row:1;align-self:start;gap:30px}
+ .app-frame .flower-intro h1{font-size:clamp(45px,4.5vw,72px);line-height:.99}
+ .app-frame .flower-intro p{font-size:16px;max-width:33ch;margin-top:19px}
+ .app-frame .flower-status-row{max-width:390px}
+ .app-frame .bouquet-display{position:relative;inset:auto;top:auto;height:auto!important;min-height:0;grid-column:2;grid-row:1 / span 2;align-self:stretch}
+ .app-frame .bouquet-growing{inset:2% 2% 3%}
+ .app-frame .bouquet-growing .bouquet-svg{max-width:600px}
+ .app-frame .flower-bottom{position:relative;inset:auto;height:auto!important;min-height:0!important;grid-column:1;grid-row:2;align-self:end;padding:17px 0 0;border-top:1px solid #c4ad8d}
+ .app-frame .flower-browser .flower-rail{height:134px}
+ .app-frame .flower-option{height:125px;flex-basis:92px}
+ .app-frame .shelf-heading{margin:0 2% 12px}
+ .app-frame .meaning-line{font-size:14px;height:auto;min-height:32px}
+ .app-frame .bouquet-final{left:53%;right:5%;bottom:25px;background:#fff6e9ee;padding:15px;border:1px solid #dec8a9;border-radius:16px}
+}
+/* 760–1119 px: two intentional columns, with no squeezed editorial copy. */
+@media(min-width:760px) and (max-width:1179px) and (min-height:570px){
+ .room-scene{grid-template-columns:minmax(0,1fr) minmax(300px,.92fr);gap:clamp(14px,2.2vw,27px);padding:16px}
+ .room-editorial{display:none}
+  .room-canvas{grid-column:1;height:auto;max-width:100%}
+ .room-guide{grid-column:2}
+ .room-guide .guide-heading{padding-top:16px}
+ .room-guide .studio-door{min-height:clamp(46px,6.8vh,60px)}
+ .room-guide .studio-door-text strong{font-size:16px}
+ .room-guide .studio-door-text small{font-size:9px}
+ .app-frame .flowers-scene{padding:28px 22px 18px;gap:12px;grid-template-columns:minmax(260px,.9fr) minmax(300px,1.1fr)}
+ .app-frame .flower-intro h1{font-size:45px}
+ .app-frame .hug-content h1{font-size:clamp(36px,4.5vw,57px)}
+}
+/* Laptop heights: simplify nonessential ornament rather than shrink touch targets. */
+@media(min-width:760px) and (max-height:740px){
+ .room-guide .guide-heading{padding:13px 15px 8px}
+ .room-guide .guide-heading h2{font-size:27px;margin:4px 0}
+ .room-guide .guide-heading p{font-size:10px}
+ .room-guide .studio-door{min-height:43px;padding:3px 7px}
+ .room-guide .studio-door-icon{width:33px;height:33px}
+ .room-guide .studio-door{grid-template-columns:18px 33px minmax(0,1fr) 13px;gap:6px}
+ .room-guide .studio-door-text strong{font-size:15px}
+ .room-guide .studio-door-text small{font-size:9px}
+ .room-guide .guide-actions{padding:7px 9px;margin:5px 6px 0}
+ .room-guide .guide-actions button{min-height:33px;font-size:9px}
+ .room-editorial h2{margin-top:25px}
+}
+/* Theme gallery uses the actual room art instead of six near-identical colour chips. */
+.room-scene .theme-swatch{background-size:100% 100%!important;background-repeat:no-repeat!important;background-position:center!important;border:1px solid #e0cfb7}
+.room-scene .theme-swatch::before,.room-scene .theme-swatch::after,.room-scene .theme-swatch i{display:none}
+.room-scene .swatch-story{background-image:url('../assets/room-directors-cut.svg')!important}
+.room-scene .swatch-monsoon{background-image:url('../assets/room-theme-monsoon.svg')!important}
+.room-scene .swatch-sunroom{background-image:url('../assets/room-theme-sunroom.svg')!important}
+.room-scene .swatch-terracotta{background-image:url('../assets/room-theme-terracotta.svg')!important}
+.room-scene .swatch-midnight{background-image:url('../assets/room-theme-midnight.svg')!important}
+.room-scene .swatch-cosmos{background-image:url('../assets/room-theme-cosmos.svg')!important}
+.room-scene .theme-option{border-radius:17px;overflow:hidden;transition:border-color .2s,background .2s,transform .2s}
+.room-scene .theme-option[aria-pressed=true]{border-color:#537967;box-shadow:0 0 0 2px #53796747,inset 0 0 0 1px #fff}
+.room-scene .theme-option:focus-visible{outline:3px solid #bf7d61;outline-offset:2px}
+@media(max-width:759px){
+ .room-scene .theme-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:min(58dvh,500px)}
+ .room-scene .theme-panel{padding:14px 12px;max-height:93dvh}
+ .room-scene .theme-panel h2{font-size:27px}
+ .room-scene .theme-option{min-height:120px;padding:5px}
+ .room-scene .theme-swatch{height:60px}
+ .room-scene .theme-option strong{font-size:14px}
+ .room-scene .theme-option small{font-size:9px}
+}
+/* Florist adapts to height instead of squeezing the selected bouquet between two absolute panels. */
+@media(max-width:759px){
+ .flowers-scene{
+  display:grid;grid-template-columns:minmax(0,1fr);
+  grid-template-rows:minmax(150px,auto) minmax(110px,1fr) auto;
+  gap:6px;padding:8px 0 calc(6px + env(safe-area-inset-bottom,0px));
+ }
+ .flowers-top{position:relative!important;inset:auto!important;top:auto!important;left:auto!important;right:auto!important;
+  grid-row:1;z-index:5;margin:0 7%;gap:8px!important}
+ .flower-intro h1{font-size:clamp(30px,8.4vw,40px);margin:4px 0 6px}
+ .flower-intro p{max-width:36ch}
+ .flower-status-row{gap:10px}
+ .flower-counter{padding:7px 12px}
+ .flower-counter strong{font-size:30px}
+ .flower-status-note small{font-size:9px}
+ .bouquet-display{position:relative!important;inset:auto!important;top:auto!important;left:auto!important;right:auto!important;
+  height:auto!important;min-height:0;grid-row:2;align-self:stretch;z-index:2}
+ .bouquet-growing{inset:-1% 1% 0}
+ .bouquet-growing .bouquet-svg{max-width:330px}
+ .flower-bottom{position:relative!important;inset:auto!important;top:auto!important;bottom:auto!important;
+  min-height:0!important;height:auto!important;grid-row:3;padding:8px 0 0;z-index:6}
+ .flower-browser .flower-rail{height:116px}
+ .flower-option{height:108px}
+ .flower-bottom .shelf-heading{margin-bottom:7px}
+ .meaning-line{min-height:28px;height:auto;padding:5px 12px}
+ .flower-controls{margin:0 7%}
+ .bouquet-final{bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:10px;background:#fff8e8df;border:1px solid #deccb6;border-radius:16px}
+ .bouquet-final h2{font-size:28px}
+ .bouquet-final p{font-size:11px}
+}
+@media(max-width:759px) and (max-height:710px){
+ .flowers-scene{grid-template-rows:minmax(110px,auto) minmax(85px,1fr) auto;gap:3px;padding-top:3px}
+ .flower-intro h1{font-size:29px;margin:2px 0 4px}
+ .flower-intro p{font-size:11px}
+ .flower-status-row{grid-template-columns:105px 1fr}
+ .flower-status-note small{display:none}
+ .flower-counter strong{font-size:27px}
+ .flower-browser .flower-rail{height:93px}
+ .flower-option{height:88px}
+ .option-art{height:62px}
+ .option-art .botanical{height:88px}
+ .flower-option .option-label{font-size:9px}
+ .meaning-line{min-height:22px;font-size:11px}
+}
+/* Tablet portrait stays an elegant contained canvas, not a distorted desktop room. */
+@media(min-width:500px) and (max-width:759px){
+ .app-frame{width:min(100% - 36px,500px);max-width:500px;
+  height:calc(100dvh - 28px);min-height:0;margin:14px auto;border-radius:24px;border:5px solid #faf0e0;
+  box-shadow:0 20px 75px #3b342e66}
+}
+/* Safer interaction and readable text, without relying solely on animations. */
+.guide-toggle:focus-visible,.guide-actions button:focus-visible{outline:3px solid #b97b5d;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){
+ .studio-door,.studio-door-arrow,.guide-toggle-chevron,.guide-inner,.room-canvas,.theme-option{animation:none!important;transition:none!important}
+ .app-frame .portal-screen .portal-content{animation:none!important}
+}
+@media(prefers-contrast:more){
+ .room-guide .guide-inner,.room-guide .guide-toggle,.studio-door,.theme-option{border-width:2px}
+ .studio-door-text small,.guide-heading p,.editorial-top p{opacity:1}
+}

@@ -1,0 +1,372 @@
+/* MAHA / The Director's Cut: tactile, photographic interface
+   This stylesheet intentionally finishes the scene instead of drawing
+   cartoon illustrations on top of real rooms.
+   Temporary backgrounds get discoverable interactive regions; only the
+   original GPT-generated spaces contain precomposed physical objects.
+*/
+:root{--cut-cream:#f6eddf;--cut-copper:#caa77c;--cut-night:#14201f}
+@media (min-width:760px){
+  .cinematic-room .room-object.living-object{
+    width:clamp(63px,6.4vw,106px)!important;
+    height:clamp(63px,6.4vw,106px)!important;
+    min-width:63px!important;min-height:63px!important;
+    background:transparent!important;border:0!important;border-radius:50%!important;
+    overflow:visible!important;filter:none!important;
+    transform:translate(-50%,-50%)!important;
+  }
+  .cinematic-room .room-object.living-object:before{
+    content:''!important;display:block!important;position:absolute!important;
+    width:12px!important;height:12px!important;left:calc(50% - 6px)!important;top:calc(50% - 6px)!important;bottom:auto!important;
+    border-radius:50%!important;opacity:.8!important;
+    border:1px solid rgba(255,247,225,.75)!important;
+    background:rgba(245,224,190,.42)!important;
+    box-shadow:0 0 0 7px rgba(17,26,22,.19),0 0 15px rgba(255,243,221,.24)!important;
+    filter:none!important;transition:box-shadow .28s ease,transform .28s ease!important;
+  }
+  .cinematic-room .room-object.living-object:after{
+    display:block!important;content:'';position:absolute;inset:0;border:1px solid rgba(245,235,210,.18);
+    border-radius:50%;background:transparent;opacity:.0;
+    transform:scale(.9);transition:transform .3s,opacity .3s;
+  }
+  .cinematic-room .room-object.living-object:is(:hover,:focus-visible):before{
+    opacity:1!important;transform:scale(1.25)!important;
+    box-shadow:0 0 0 9px rgba(17,26,22,.48),0 0 18px rgba(255,242,219,.68)!important;
+  }
+  .cinematic-room .room-object.living-object:is(:hover,:focus-visible):after{opacity:.8;transform:scale(1)}
+  .cinematic-room .room-object.living-object .object-drawing{display:none!important}
+  .cinematic-room .room-object.living-object .object-label{
+    display:block!important;top:calc(50% - 24px)!important;
+    left:calc(100% + 5px)!important;right:auto!important;
+    min-width:112px;max-width:190px;
+    padding:12px 16px!important;
+    color:#f7eddb!important;background:rgba(17,24,21,.92)!important;
+    border:1px solid rgba(245,226,193,.37)!important;border-radius:4px!important;
+    text-align:left!important;
+    box-shadow:0 10px 40px rgba(0,0,0,.35)!important;
+    font-size:12px!important;font-weight:550!important;
+    transform:translate(-8px,0)!important;opacity:0!important;
+  }
+  .cinematic-room .room-object.living-object:is(:hover,:focus-visible) .object-label{
+    transform:translate(0,0)!important;opacity:1!important;
+  }
+  .cinematic-room .room-object.living-object .object-label:before{
+    content:'DISCOVER'!important;display:block;letter-spacing:.22em;color:var(--cinematic-accent,#dbbc92);
+    font:600 9px/1.4 system-ui,sans-serif;margin:0 0 6px;
+  }
+  .cinematic-room .object-movies .object-label,
+  .cinematic-room .object-travel .object-label{left:auto!important;right:calc(100% + 7px)!important;text-align:right!important}
+  /* Ground actual taps on photographed furniture, not a fake sticker. */
+  .cinematic-room .object-rest{left:19%!important;top:66%!important}
+  .cinematic-room .object-letters{left:84%!important;top:66%!important}
+  .cinematic-room .object-games{left:52%!important;top:51%!important}
+  .cinematic-room .object-garden{left:38.5%!important;top:55%!important}
+  .cinematic-room .object-movies{left:87%!important;top:31%!important}
+  .cinematic-room .object-music{left:66%!important;top:72%!important}
+  .cinematic-room .object-travel{left:92%!important;top:79%!important}
+  .cinematic-room .table-bouquet{
+    left:49.5%!important;top:76%!important;
+    width:clamp(70px,7vw,115px)!important;height:clamp(76px,7vw,120px)!important;
+    min-width:70px!important;min-height:76px!important;
+    transform:translate(-50%,-50%)!important;
+    border:1px solid rgba(250,236,210,.0)!important;border-radius:50%!important;
+    background:transparent!important;box-shadow:none!important;
+  }
+  .cinematic-room .table-bouquet .real-vase{display:none!important}
+  .cinematic-room .table-bouquet:after{
+    content:''!important;display:block!important;position:absolute;inset:7%;border:1px solid rgba(250,237,210,.14)!important;
+    border-radius:50%;background:transparent;opacity:.35;
+  }
+  .cinematic-room .table-bouquet:before{
+    content:'✳'!important;display:grid!important;position:absolute;z-index:2;
+    inset:auto!important;top:calc(50% - 12px)!important;left:calc(50% - 12px)!important;
+    width:24px!important;height:24px!important;border:1px solid rgba(255,239,208,.8)!important;border-radius:50%!important;
+    background:rgba(31,40,32,.4)!important;color:#f7e6c8!important;
+    font:16px/1 Georgia,serif!important;opacity:.8;place-items:center;
+    box-shadow:0 0 0 5px rgba(30,30,26,.1);
+  }
+  .cinematic-room .table-bouquet>span{
+    top:50%!important;left:calc(100% + 5px)!important;
+    opacity:0!important;transform:translate(-9px,-50%)!important;
+    transition:opacity .2s,transform .2s;
+  }
+  .cinematic-room .table-bouquet:is(:hover,:focus-visible)>span{opacity:1!important;transform:translate(0,-50%)!important}
+  .cinematic-room .room-traces .trace-postcard{top:17%!important;left:48%!important;font:italic 12px Georgia,serif!important}
+  .cinematic-room .room-traces .trace-letter{top:69%!important;left:85%!important}
+  .cinematic-room .room-traces .trace-tag{top:83%!important;left:69%!important}
+  .cinematic-room .room-traces .trace-star{top:52%!important;left:54%!important}
+}
+@media (min-width:760px) and (max-width:1100px){
+  .cinematic-room .object-rest{left:28%!important;top:68%!important}
+  .cinematic-room .object-letters{left:83%!important;top:63%!important}
+}
+@media(max-width:759px){
+  .cinematic-room .room-object.living-object{
+    width:24%!important;min-width:78px!important;max-width:106px!important;height:74px!important;min-height:74px!important;
+    background:transparent!important;box-shadow:none!important;display:grid!important;place-items:center!important;
+    border:0!important;overflow:visible!important;
+  }
+  .cinematic-room .room-object.living-object .object-drawing{display:none!important}
+  .cinematic-room .room-object.living-object:before{
+    content:''!important;display:block!important;position:absolute!important;top:8px!important;left:calc(50% - 7px)!important;
+    width:14px!important;height:14px!important;border:1px solid #fff0d5a8!important;border-radius:50%!important;
+    background:#fff5dfd1!important;opacity:1!important;box-shadow:0 0 0 6px #11231a5c,0 0 15px #ffead5a6!important;
+  }
+  .cinematic-room .room-object.living-object:after{
+    display:block!important;position:absolute!important;top:0!important;left:calc(50% - 15px)!important;
+    width:30px!important;height:30px!important;border-radius:50%!important;border:1px solid #ffe7ba75!important;opacity:.8;
+  }
+  .cinematic-room .room-object.living-object .object-label{
+    opacity:1!important;display:block!important;top:39px!important;bottom:auto!important;
+    left:50%!important;transform:translateX(-50%)!important;
+    background:#16211ed6!important;color:#f8edde!important;
+    border:1px solid #fbedd58a!important;border-radius:999px!important;
+    padding:7px 12px!important;font:550 10px/1.1 system-ui,sans-serif!important;
+    text-align:center!important;white-space:nowrap;
+  }
+  .cinematic-room .object-garden{top:32%!important;left:2.5%!important}
+  .cinematic-room .object-movies{top:32%!important;left:73%!important}
+  .cinematic-room .object-letters{top:47%!important;left:2.5%!important}
+  .cinematic-room .object-music{top:47%!important;left:73%!important}
+  .cinematic-room .object-travel{top:63%!important;left:2.5%!important}
+  .cinematic-room .object-rest{top:63%!important;left:73%!important}
+  .cinematic-room .object-games{top:75%!important;left:38%!important}
+  .cinematic-room .table-bouquet{
+    top:49%!important;left:38%!important;min-height:74px!important;height:74px!important;
+    background:transparent!important;box-shadow:none!important
+  }
+  .cinematic-room .table-bouquet .real-vase{display:none!important}
+  .cinematic-room .table-bouquet:before{
+    content:'✳'!important;display:grid!important;place-items:center;
+    left:calc(50% - 13px)!important;top:7px!important;width:26px!important;height:26px!important;
+    border:1px solid #f5e1bbab;background:#172d258c!important;color:#fff2d3!important;
+    border-radius:50%;font:15px/1 Georgia,serif
+  }
+  .cinematic-room .table-bouquet:after{display:none!important}
+  .cinematic-room .table-bouquet>span{top:39px!important;bottom:auto!important;font:550 9px system-ui,sans-serif!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-room .room-object.living-object:before,.cinematic-room .room-object.living-object:after{transition:none!important}
+}
+/* A real place to screen films, not a 4:1 gradient rectangle. */
+#portal-screen[data-place="movies"] .portal-place{background:radial-gradient(ellipse at 50% 10%,#665340 0,#2d302a 43%,#0d171a 100%)!important}
+#portal-screen[data-place="movies"] .cinema-app{
+ color:#f7eddd!important;max-width:1380px;width:100%;height:100%;margin:auto;box-sizing:border-box;
+}
+#portal-screen[data-place="movies"] .cinema-lobby{
+ max-width:1250px;padding:clamp(8px,1.2vh,19px) clamp(8px,3vw,42px) 20px!important;
+ margin:auto;overflow:auto;
+}
+#portal-screen[data-place="movies"] .cinema-lobby-head h1{font-size:clamp(36px,4vw,64px);letter-spacing:-.061em}
+#portal-screen[data-place="movies"] .cinema-lobby-head p{font-size:14px;color:#ddcbb7}
+#portal-screen[data-place="movies"] .cinema-lobby-sign{margin-top:clamp(12px,2vh,30px);padding-bottom:15px}
+#portal-screen[data-place="movies"] .cinema-shelf{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,25px);padding-top:clamp(10px,2vh,25px)}
+#portal-screen[data-place="movies"] .cinema-poster{
+ min-height:clamp(225px,38vh,370px);border:6px solid #5a4c40;border-bottom-width:12px;border-radius:3px;
+ box-shadow:0 28px 40px #070c0c85,0 0 0 1px #b59b79b8,inset 0 0 0 1px #f2d8ad7a;
+ text-align:left;align-items:flex-start;justify-content:end;padding:20px;
+}
+#portal-screen[data-place="movies"] .cinema-poster strong{font:400 clamp(22px,2.4vw,35px)/1.04 Georgia,serif;text-shadow:0 4px 13px #050a09aa}
+#portal-screen[data-place="movies"] .cinema-poster small{font:650 10px/1.4 system-ui,sans-serif;letter-spacing:.08em}
+#portal-screen[data-place="movies"] .cinema-poster .director-frame svg{filter:brightness(.82) saturate(.8)}
+#portal-screen[data-place="movies"] .cinema-floor{font-size:12px;color:#d8c2a2;margin-top:16px}
+#portal-screen[data-place="movies"] .cinema-viewer{
+ position:relative;display:grid;grid-template-columns:minmax(0,1fr) clamp(230px,25vw,330px);
+ grid-template-rows:auto auto minmax(0,1fr) auto auto;
+ grid-template-areas:"head head" "arch side" "screen side" "controls side" "episode side";
+ column-gap:clamp(18px,3vw,48px);row-gap:11px;
+ max-width:1360px;padding:12px clamp(12px,2vw,30px) 24px!important;
+ overflow-y:auto;overflow-x:hidden;align-content:start;box-sizing:border-box;
+}
+#portal-screen[data-place="movies"] .cinema-projector-head{grid-area:head;min-height:48px;display:flex;align-items:center;justify-content:space-between}
+#portal-screen[data-place="movies"] .cinema-projector-head button{border-radius:100px;background:#e9dac0;color:#29332f;border:1px solid #c8a77c;padding:11px 18px}
+#portal-screen[data-place="movies"] .cinema-screening-arch{
+ grid-area:arch;display:flex;align-items:center;justify-content:space-between;
+ padding:9px 13px 2px;color:#d6b58a;font:700 9px/1.3 system-ui,sans-serif;letter-spacing:.16em;
+ border-top:1px solid #bba37c5c;
+}
+#portal-screen[data-place="movies"] .cinema-screen-wrap{
+ grid-area:screen;aspect-ratio:16/9;width:100%;height:auto;max-height:62vh;min-height:0;
+ border:clamp(8px,1.1vw,16px) solid #211d19!important;border-radius:3px!important;
+ background:#161d1e;box-shadow:0 0 0 2px #b99565,0 0 0 9px #121c1b,0 16px 54px #000a,0 4px 7px #0a1010b8!important;
+ overflow:hidden;position:relative;
+}
+#portal-screen[data-place="movies"] .cinema-screen-wrap:after{
+ content:'';position:absolute;inset:0;z-index:5;pointer-events:none;
+ box-shadow:inset 0 0 68px #080c0e66,inset 0 0 6px #eee0c522;
+}
+#portal-screen[data-place="movies"] .cinema-painted{background:linear-gradient(130deg,#263c3d,var(--shot1,#4e6766),var(--shot2,#d2b38b));}
+#portal-screen[data-place="movies"] .cinema-painted .director-frame{opacity:1!important;filter:brightness(.94) saturate(.9)}
+#portal-screen[data-place="movies"] .cinema-painted .cinema-shot-art{opacity:.24}
+#portal-screen[data-place="movies"] .cinema-title-card{
+ padding:8% 8% 12%;background:linear-gradient(180deg,transparent 32%,#0b1012aa 100%);
+}
+#portal-screen[data-place="movies"] .cinema-title-card h2{font-size:clamp(28px,3.5vw,54px);line-height:1.03}
+#portal-screen[data-place="movies"] .cinema-player-controls{
+ grid-area:controls;display:grid;grid-template-columns:100px minmax(0,1fr) auto auto;
+ gap:12px;padding:11px 13px;
+ background:#121c1bf5;border:1px solid #b697725c;border-radius:7px;
+ box-shadow:0 12px 30px #070d0d66;
+}
+#portal-screen[data-place="movies"] .cinema-player-controls [data-toggle]{background:#e7d2b1;color:#25322e;border-radius:4px;font-weight:700}
+#portal-screen[data-place="movies"] .cinema-scrubber{font-size:9px;letter-spacing:.12em}
+#portal-screen[data-place="movies"] .cinema-player-controls [data-time]{font-variant-numeric:tabular-nums}
+#portal-screen[data-place="movies"] .cinema-button-row{display:flex}
+#portal-screen[data-place="movies"] .cinema-button-row button{min-width:48px!important;border-radius:4px!important}
+#portal-screen[data-place="movies"] .cinema-side-notes{
+ grid-area:side;padding:20px 4px 12px 25px;border-left:1px solid #d5b48b4f;
+ display:flex;flex-direction:column;min-width:0;overflow:auto;align-self:stretch;
+}
+#portal-screen[data-place="movies"] .cinema-note-kicker{font:700 10px/1.5 system-ui,sans-serif;letter-spacing:.15em;color:#cdad85}
+#portal-screen[data-place="movies"] .cinema-side-notes h2{font:400 clamp(28px,3vw,42px)/1.05 Georgia,serif;letter-spacing:-.055em;margin:12px 0 10px}
+#portal-screen[data-place="movies"] .cinema-side-notes>p{font:italic 15px/1.5 Georgia,serif;color:#d8bea2;margin:0 0 25px}
+#portal-screen[data-place="movies"] .cinema-chapters{display:flex;flex-direction:column;gap:4px}
+#portal-screen[data-place="movies"] .cinema-chapters button{
+ display:grid;grid-template-columns:27px minmax(0,1fr) 43px;align-items:center;
+ color:#f5e7cf;background:#f5e5cf0a;border:1px solid #ddc6a329;border-radius:5px;
+ gap:8px;padding:12px 10px;text-align:left;min-height:50px;
+ font:500 11px/1.25 system-ui,sans-serif;transition:background .22s,border-color .22s;
+}
+#portal-screen[data-place="movies"] .cinema-chapters button:hover,
+#portal-screen[data-place="movies"] .cinema-chapters button:focus-visible{background:#dbc9a325;border-color:#e6cda191}
+#portal-screen[data-place="movies"] .cinema-chapter-no{color:#d9b98d;font:italic 18px Georgia,serif}
+#portal-screen[data-place="movies"] .cinema-chapters small{font-size:10px;color:#b9a88e;text-align:right}
+#portal-screen[data-place="movies"] .cinema-reel-note{margin-top:auto;padding-top:24px;font:italic 13px/1.4 Georgia,serif;color:#a7a79a}
+#portal-screen[data-place="movies"] .cinema-episode{grid-area:episode;justify-self:start}
+#portal-screen[data-place="movies"] .cinema-checklist{z-index:20;max-height:95%;overflow:auto}
+#portal-screen[data-place="movies"] .cinema-now{display:none}
+/* The atlas has verifiable coastlines, framed like a personal explorer's
+   working map, not polygon blobs copied into a diagram. */
+#portal-screen[data-place="travel"] .atlas-app{max-width:1240px;margin:auto;padding:clamp(5px,1vw,16px) clamp(5px,2vw,32px) 24px}
+#portal-screen[data-place="travel"] .atlas-map-top h1{font:400 clamp(30px,3.5vw,54px)/1.07 Georgia,serif;letter-spacing:-.05em}
+#portal-screen[data-place="travel"] .atlas-map-top p{font-size:13px;opacity:.78;margin-bottom:17px}
+#portal-screen[data-place="travel"] .atlas-wall{background:#795c44;padding:10px;border:1px solid #d8bb8d;border-radius:2px;box-shadow:0 12px 30px #64534139,0 2px 2px #43302b69}
+#portal-screen[data-place="travel"] .atlas-board{aspect-ratio:960/560;min-height:250px;box-shadow:inset 0 0 30px #4c553f2c;border:1px solid #cab38d;background:#9fc3bc}
+#portal-screen[data-place="travel"] .atlas-watercolor{width:100%;height:100%;object-fit:cover}
+#portal-screen[data-place="travel"] .atlas-map-layer{
+ position:absolute;inset:0;width:100%;height:100%;transform-origin:67% 58%;
+ transition:transform .72s cubic-bezier(.22,.82,.17,1);will-change:transform;
+}
+#portal-screen[data-place="travel"] .atlas-board.is-zoomed .atlas-map-layer{transform:scale(1.85)}
+#portal-screen[data-place="travel"] .atlas-wall{isolation:isolate}
+#portal-screen[data-place="travel"] .atlas-zoom{
+ position:absolute;z-index:7;right:18px;bottom:18px;
+ color:#f3e8d3;background:#2d504bcf;border:1px solid #d6c39ca1;
+ font:650 11px/1.2 system-ui,sans-serif;letter-spacing:.02em;
+ border-radius:5px;padding:10px 13px;min-height:44px;
+ box-shadow:0 6px 16px #21352c70;backdrop-filter:blur(8px);
+}
+#portal-screen[data-place="travel"] .atlas-zoom:focus-visible{outline:2px solid #f8ecc9;outline-offset:3px}
+
+#portal-screen[data-place="travel"] .atlas-board:after{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;box-shadow:inset 0 0 62px #6f665044}
+#portal-screen[data-place="travel"] .atlas-routes{z-index:2}
+#portal-screen[data-place="travel"] .atlas-pin{
+ width:40px;height:40px;min-height:40px;border-radius:50%;
+ display:grid;place-items:center;color:#5a5648!important;background:transparent!important;
+ font:15px/1 Georgia,serif;filter:none!important;z-index:2;
+}
+#portal-screen[data-place="travel"] .atlas-pin-head{
+ display:grid;place-items:center;position:absolute;left:9px;top:9px;width:22px;height:22px;min-width:22px;
+ border-radius:50%;background:#fcf0d5!important;border:1.5px solid #b88462;color:#a7644a;
+ box-shadow:0 0 0 4px #fff8e682,0 2px 6px #445e507a;font:13px/1 Georgia,serif;padding:0!important;
+}
+#portal-screen[data-place="travel"] .atlas-pin-name{
+ position:absolute;top:100%;left:50%;transform:translate(-50%,-4px);
+ color:#463b30;background:#fff6dfed;border:1px solid #d4bd9a;
+ box-shadow:0 4px 8px #445b4338;
+ font:650 11px/1.2 system-ui,sans-serif;letter-spacing:0;padding:7px 8px;min-width:0;
+ width:max-content;max-width:110px;opacity:0;pointer-events:none;border-radius:3px;
+ transition:transform .22s ease,opacity .22s ease;
+}
+#portal-screen[data-place="travel"] .atlas-pin:is(:hover,:focus-visible) .atlas-pin-name{
+ opacity:1;transform:translate(-50%,0)
+}
+#portal-screen[data-place="travel"] .atlas-pin:is(:hover,:focus-visible){z-index:8}
+#portal-screen[data-place="travel"] .atlas-pin.dream .atlas-pin-head{border-color:#ac7388;color:#a46483}
+#portal-screen[data-place="travel"] .atlas-hint{font:600 9px/1.5 system-ui,sans-serif;letter-spacing:.16em;margin:14px 0 11px}
+#portal-screen[data-place="travel"] .atlas-place-tape{gap:9px;padding-bottom:14px}
+#portal-screen[data-place="travel"] .atlas-place-tape button{
+ font:650 12px system-ui,sans-serif;border:1px solid #c6b296;border-radius:3px!important;
+ color:#5c5345;background:#f8edcf;transform:none!important;
+ box-shadow:0 3px 0 #beae8f55;
+}
+#portal-screen[data-place="travel"] .atlas-place-tape button:is(:hover,:focus-visible){background:#fff8e8;border-color:#9d8265}
+#portal-screen[data-place="travel"] .atlas-dream-line{border-top:1px solid #a1927b75;padding:13px 0 6px}
+#portal-screen[data-place="travel"] .atlas-dream-line button{border-radius:3px;background:#506d62}
+/* Retain the different destinations, but let the materials follow one design director. */
+#portal-screen[data-place="letters"] .mail-row{border-color:#d4b89a;border-radius:3px;box-shadow:0 9px 19px #70503b21}
+#portal-screen[data-place="letters"] .mail-row:hover{transform:translateY(-2px)}
+#portal-screen[data-place="music"] .fm-radio{filter:drop-shadow(0 17px 23px #0b201d9c);border-radius:10px!important}
+#portal-screen[data-place="games"] .arcade-cabinet{filter:drop-shadow(0 23px 18px #231d1b92);transform-origin:50% 80%}
+#portal-screen[data-place="garden"] .wg-canvas-wrap{border-radius:7px;box-shadow:inset 0 0 20px #446b4623,0 15px 40px #2845312a}
+#portal-screen[data-place="rest"] .rr-window{box-shadow:0 14px 30px #192c284f,inset 0 0 20px #ffffff30}
+@media(max-width:980px){
+ #portal-screen[data-place="movies"] .cinema-shelf{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #portal-screen[data-place="movies"] .cinema-viewer{grid-template-columns:minmax(0,1fr) 215px;column-gap:14px;padding:7px 9px 15px!important}
+ #portal-screen[data-place="movies"] .cinema-side-notes{padding-left:12px}
+ #portal-screen[data-place="movies"] .cinema-player-controls{grid-template-columns:80px minmax(0,1fr);gap:7px}
+}
+@media(max-width:759px){
+ #portal-screen[data-place="movies"] .cinema-lobby{padding:7px 4px 20px!important}
+ #portal-screen[data-place="movies"] .cinema-lobby-head h1{font-size:clamp(30px,9vw,39px)}
+ #portal-screen[data-place="movies"] .cinema-lobby-head p{font-size:11px}
+ #portal-screen[data-place="movies"] .cinema-shelf{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ #portal-screen[data-place="movies"] .cinema-poster{min-height:clamp(175px,29vh,228px);padding:12px;border-width:4px;border-bottom-width:8px}
+ #portal-screen[data-place="movies"] .cinema-poster strong{font-size:21px}
+ #portal-screen[data-place="movies"] .cinema-viewer{
+  display:flex!important;flex-direction:column;align-items:stretch;gap:10px;
+  padding:0 4px 22px!important;overflow-x:hidden;overflow-y:auto;
+ }
+ #portal-screen[data-place="movies"] .cinema-projector-head{flex:none;min-height:40px}
+ #portal-screen[data-place="movies"] .cinema-projector-head button{min-height:43px}
+ #portal-screen[data-place="movies"] .cinema-screening-arch{font-size:8px;letter-spacing:.07em;padding:6px 2px 0;gap:5px}
+ #portal-screen[data-place="movies"] .cinema-screen-wrap{
+  aspect-ratio:16/9;max-height:none;min-height:unset;
+  width:100%;flex:none;border-width:7px!important;box-shadow:0 0 0 2px #b99565,0 6px 25px #000a!important;
+ }
+ #portal-screen[data-place="movies"] .cinema-title-card h2{font-size:23px}
+ #portal-screen[data-place="movies"] .cinema-title-card small{font-size:9px}
+ #portal-screen[data-place="movies"] .cinema-player-controls{display:grid;grid-template-columns:85px minmax(0,1fr);gap:5px;padding:8px 9px}
+ #portal-screen[data-place="movies"] .cinema-player-controls [data-time]{font-size:10px}
+ #portal-screen[data-place="movies"] .cinema-side-notes{border:0;border-top:1px solid #d5b48b4f;padding:13px 4px 20px;overflow:visible}
+ #portal-screen[data-place="movies"] .cinema-side-notes h2{font-size:28px;margin:6px 0}
+ #portal-screen[data-place="movies"] .cinema-side-notes>p{font-size:13px;margin:0 0 12px}
+ #portal-screen[data-place="movies"] .cinema-chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+ #portal-screen[data-place="movies"] .cinema-chapters button{grid-template-columns:24px minmax(0,1fr);padding:9px 7px;min-height:57px;font-size:10px}
+ #portal-screen[data-place="movies"] .cinema-chapters small{display:none}
+ #portal-screen[data-place="movies"] .cinema-reel-note{padding-top:13px}
+ #portal-screen[data-place="travel"] .atlas-app{padding:0 1px 15px}
+ #portal-screen[data-place="travel"] .atlas-map-top h1{font-size:clamp(24px,7vw,32px)}
+ #portal-screen[data-place="travel"] .atlas-map-top p{font-size:10px}
+ #portal-screen[data-place="travel"] .atlas-wall{padding:3px;border-width:5px}
+ #portal-screen[data-place="travel"] .atlas-board{aspect-ratio:960/560;min-height:0}
+ #portal-screen[data-place="travel"] .atlas-board.is-zoomed .atlas-map-layer{transform:scale(2.25)}
+ #portal-screen[data-place="travel"] .atlas-zoom{right:7px;bottom:7px;min-height:40px;padding:8px 10px;font-size:10px}
+ #portal-screen[data-place="travel"] .atlas-hint{font-size:8px}
+ #portal-screen[data-place="travel"] .atlas-pin-name{display:none}
+ #portal-screen[data-place="travel"] .atlas-pin-head{width:18px;height:18px;min-width:18px;left:11px;top:11px}
+ #portal-screen[data-place="travel"] .atlas-pin{width:40px;height:40px}
+ #portal-screen[data-place="travel"] .atlas-place-tape button{font-size:10px;min-height:40px}
+ #portal-screen[data-place="travel"] .atlas-dream-line small{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ #portal-screen[data-place="movies"] .cinema-chapters button{transition:none}
+ #portal-screen[data-place="travel"] .atlas-pin-name{transition:none}
+}
+
+@media(prefers-reduced-motion:reduce){#portal-screen[data-place="travel"] .atlas-map-layer{transition:none!important}}
+
+/* Studio.css deliberately boxed all earlier worlds into a 780px phone-style
+   stage. Cinema and Atlas now have genuinely panoramic desktop layouts. */
+@media(min-width:760px){
+ .app-frame .portal-screen:is([data-place="movies"],[data-place="travel"]) .portal-place .portal-content{
+  box-sizing:border-box!important;
+  width:min(calc(100% - 56px),1500px)!important;
+  max-width:none!important;
+  left:50%!important;right:auto!important;transform:translateX(-50%)!important;
+  padding:0 14px!important;
+ }
+}
+@media(min-width:760px) and (max-height:660px){
+ #portal-screen[data-place="movies"] .cinema-screen-wrap{max-height:49vh}
+ #portal-screen[data-place="movies"] .cinema-chapters button{min-height:40px;padding:7px 10px}
+}

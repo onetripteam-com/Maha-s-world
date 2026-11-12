@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" preserveAspectRatio="none">
+ <defs>
+   <linearGradient id="curtain" x2="1" y2="0"><stop stop-color="#718c75"/><stop offset=".5" stop-color="#a6b496"/><stop offset="1" stop-color="#849b81"/></linearGradient>
+   <linearGradient id="sill" x2="0" y2="1"><stop stop-color="#ebcfac"/><stop offset="1" stop-color="#ab775b"/></linearGradient>
+   <linearGradient id="lampshade" x2="0" y2="1"><stop stop-color="#f1cc8f"/><stop offset="1" stop-color="#cd9267"/></linearGradient>
+ </defs>
+ <!-- window frame: arched, two panes. Sky is a live CSS layer behind these. -->
+ <path d="M205 95Q205 59 286 57Q369 58 369 95V337H205Z" fill="none" stroke="#8e624d" stroke-width="12"/>
+ <path d="M211 94Q211 65 286 63Q363 64 363 94V332H211Z" fill="none" stroke="#eec69e" stroke-width="5"/>
+ <path d="M286 66V333M209 201H365" stroke="#997058" stroke-width="10"/><path d="M290 67v264M211 205h153" stroke="#e3bb8e" stroke-width="3"/>
+ <path d="M203 104q4-39 25-48q-16 83-11 274l-18 8q-14-144 4-234Z" fill="url(#curtain)" stroke="#627d6d" stroke-width="2"/>
+ <path d="M368 104q-4-39-25-48q16 83 11 274l18 8q14-144-4-234Z" fill="url(#curtain)" stroke="#627d6d" stroke-width="2"/>
+ <path d="M200 161q8 7 21-2M352 159q10 9 21 1" stroke="#e3b58a" stroke-width="7" stroke-linecap="round" fill="none"/>
+ <path d="M192 334H382L378 349H194Z" fill="url(#sill)" stroke="#9e745c" stroke-width="3"/><path d="M193 348h184v7H193Z" fill="#90664e"/>
+ <!-- hand-lettered travel pennant across corner -->
+ <path d="M8 74q88-29 168 9" fill="none" stroke="#977c69" stroke-width="2"/><path d="M24 72l21-3-6 29Z" fill="#cc7665"/><path d="M53 66l21 0-9 31Z" fill="#dcbb83"/><path d="M84 65l21 6-15 29Z" fill="#859d84"/><path d="M115 70l21 9-19 29Z" fill="#d8997a"/><path d="M147 78l19 6-16 27Z" fill="#e5c9a0"/>
+ <!-- little radio -->
+ <path d="M41 341q37-14 92 0v52H41Z" fill="#bc885d" stroke="#775843" stroke-width="5"/><path d="M50 334q37-12 74-1" fill="none" stroke="#6c6150" stroke-width="3"/><rect x="53" y="349" width="47" height="34" rx="5" fill="#e6c49b" stroke="#8f7358" stroke-width="2"/><path d="M58 357h37M58 364h37M58 371h37M58 378h37" stroke="#ad9476" stroke-width="2"/><circle cx="112" cy="365" r="10" fill="#e8d5b1" stroke="#896650" stroke-width="3"/><circle cx="112" cy="365" r="3" fill="#946551"/><path d="M43 340q34-30 81-6" fill="none" stroke="#a48260" stroke-width="2"/>
+ <!-- physical letters box -->
+ <path d="M26 453q0-14 16-16h93q15 3 15 16v55H26Z" fill="#a97b5e" stroke="#75543f" stroke-width="5"/><path d="M27 453q60-25 122 0" fill="#c69a71" stroke="#7e5e45" stroke-width="3"/><path d="M48 462h78v8H48Z" fill="#62483f"/><path d="M79 477h18v24H79Z" fill="#e4c9a1"/><path d="M83 482l5 5 5-5" fill="none" stroke="#b66d61" stroke-width="2"/>
+ <!-- bedside lamp -->
+ <path d="M329 466v91" stroke="#795b47" stroke-width="8"/><path d="M308 550h44v9h-44Z" fill="#886650"/><path d="M321 459 307 424h51l-13 35Z" fill="url(#lampshade)" stroke="#a77e5e" stroke-width="3"/><path d="M322 454h22" stroke="#fff5dd" stroke-width="3" opacity=".7"/>
+ <!-- projector on wooden side table -->
+ <path d="M178 567h97v12h-97Z" fill="#9a6c50"/><path d="M188 577v82m77-82v82" stroke="#895b47" stroke-width="9"/><rect x="188" y="528" width="78" height="39" rx="9" fill="#d4baa0" stroke="#806b58" stroke-width="4"/><circle cx="243" cy="547" r="14" fill="#887e6c" stroke="#6e6759" stroke-width="3"/><circle cx="243" cy="547" r="7" fill="#bdd4cd"/><rect x="196" y="537" width="26" height="5" rx="3" fill="#9a8978"/><circle cx="208" cy="554" r="3" fill="#ab735e"/>
+ <!-- game console on rug near foreground -->
+ <path d="M123 714q-18 0-23 15q-7 29 16 33l25-11h41l23 11q23-7 16-33q-4-16-25-15Z" fill="#738b79" stroke="#506d5c" stroke-width="5"/><path d="M126 731h24M138 719v24" stroke="#f3e2bd" stroke-width="5" stroke-linecap="round"/><circle cx="184" cy="730" r="5" fill="#d7aa87"/><circle cx="199" cy="739" r="5" fill="#dfcf9f"/><path d="M145 715v-13m38 13v-11" stroke="#687e70" stroke-width="4"/>
+ <!-- a tiny paper plane -->
+ <path d="m15 128 54-16-22 27-8-12-24 1Zm24-1 8 12 3-21" fill="#fff3df" stroke="#caac86" stroke-width="2"/>
+ <!-- fine illustration outlines -->
+ <path d="M5 511q100-17 197-7" fill="none" stroke="#fff4e5" opacity=".3" stroke-width="2"/>
+</svg>
