@@ -37,6 +37,21 @@ try{
    const kuwait=await page.locator('.atlas-pin[data-place="kuwait"]').evaluate(el=>({x:parseFloat(el.style.left),y:parseFloat(el.style.top)}));
    assert.ok(kuwait.x>62&&kuwait.x<65&&kuwait.y>40&&kuwait.y<43);
    assert.equal(await page.locator('.atlas-pin[data-place]').count(),10);
+   // Close destinations no longer stack eight tiny targets on top of each
+   // other. A geographic cluster exposes eight accessible postcard choices.
+   const regional=page.locator('[data-open-region="india"]');
+   assert.equal(await regional.getAttribute('aria-expanded'),'false');
+   await regional.click();
+   assert.equal(await regional.getAttribute('aria-expanded'),'true');
+   assert.equal(await page.locator('#travel-india-stops [data-place]').count(),8);
+   await page.locator('#travel-india-stops [data-place="alleppey"]').click();
+   await page.locator('dialog.travel-modal[open]').waitFor();
+   await page.locator('dialog [data-flip]').click();
+   assert.match(await page.locator('dialog .travel-flip-back').innerText(),/Chief Snack Inspector/i);
+   await page.locator('dialog [data-close-dialog]').click();
+   await page.locator('dialog.travel-modal[open]').waitFor({state:'hidden'});
+   await page.locator('#travel-india-stops [data-close-region]').click();
+   assert.equal(await regional.getAttribute('aria-expanded'),'false');
    assert.equal((await page.request.get(base+'assets/travel/landmark-mysore.svg')).status(),200);
    await page.locator('[data-tab="map"]').click();
    await page.locator('.atlas-place-tape [data-place="mysore"]').click();
