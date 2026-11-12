@@ -12,12 +12,12 @@ const COLORS={
  orchid:['#a276a4','#c9a1c9','#efccdf','#835786','#bd776d'],
  lavender:['#746a9e','#9f90bc','#c7b5d8','#605a8c','#decba8'],
  jasmine:['#d0c8a9','#f2eed9','#fffff2','#aaa17c','#edca70'],
- marigold:['#ca8230','#e6aa44','#ffd272','#a16b37','#bc7427'],
+ frangipani:['#e3c897','#fff0d4','#fffef4','#cfb189','#f3bd57'],
  hibiscus:['#bd424e','#e46e6f','#f7aea0','#8d374b','#f3d367'],
  iris:['#71689f','#9f98c6','#c5b3d5','#574e8b','#ebbf72'],
  lotus:['#c47f95','#dfa8b2','#f4d4ce','#a15c79','#e4be7b']
 };
-const flowerSize={rose:63,daisy:54,sunflower:64,tulip:52,peony:73,lily:67,orchid:62,lavender:50,jasmine:51,marigold:54,hibiscus:66,iris:62,lotus:69};
+const flowerSize={rose:63,daisy:54,sunflower:64,tulip:52,peony:73,lily:67,orchid:62,lavender:50,jasmine:51,frangipani:55,hibiscus:66,iris:62,lotus:69};
 let serial=0;
 const n=(v)=>Number(v).toFixed(2);
 const seedHash=s=>[...String(s)].reduce((a,c)=>(Math.imul(a,31)+c.charCodeAt(0))|0,987654321)>>>0;
@@ -58,8 +58,16 @@ function bloom(id,uid){
  let s='';
  switch(id){
  case 'rose':
-  s+=ring(8,16,44,18,uid,0,11)+ring(7,9,34,17,uid,1,26)+ring(5,3,25,14,uid,2,7);
-  s+=`<path d="M-13 8Q-20-16-2-17Q17-18 16-2Q17 13 1 13Q-12 10-7-2Q0-11 8-5" fill="none" stroke="${c[3]}" stroke-width="3.9" opacity=".77" stroke-linecap="round"/><path d="M-9 3Q-4-12 9-5" stroke="${c[2]}" stroke-width="2" fill="none" opacity=".64"/>`;
+  // Cupped, ruffled rose petals, folded tightly around a spiral heart.
+  for(let i=0;i<9;i++){
+   const angle=i*40+((i%3)-1)*5;
+   s+=`<g transform="rotate(${angle})"><path d="M-28-5Q-47-26-27-48Q-13-59 0-42Q15-56 27-45Q39-22 24-4Q15 12 0 16Q-16 11-28-5Z" fill="url(#wash-${uid})" stroke="${c[3]}" stroke-width="1.5" opacity=".94"/><path d="M-23-16Q-15-37-1-38Q11-43 19-24" fill="none" stroke="${c[2]}" stroke-width="2.6" opacity=".75"/></g>`;
+  }
+  for(let i=0;i<6;i++){
+   const angle=i*60+13;
+   s+=`<g transform="rotate(${angle}) scale(.75)"><path d="M-27-2Q-37-29-19-37Q-9-44 2-34Q20-45 28-26Q30-8 13 12Q-5 22-27-2Z" fill="url(#fold-${uid})" stroke="${c[3]}" stroke-width="2"/><path d="M-16-19Q-2-37 18-18" fill="none" stroke="${c[2]}" stroke-width="2" opacity=".55"/></g>`;
+  }
+  s+=`<circle r="15" fill="${c[0]}" stroke="${c[3]}" stroke-width="2.2"/><path d="M-11 3Q-17-11-3-14Q12-17 13-5Q18 9 5 12Q-5 16-9 6Q-12-2-2-7Q8-10 9 0Q11 6 3 6Q-2 6-1 1" fill="none" stroke="${c[3]}" stroke-width="3.7" stroke-linecap="round"/><path d="M-9-2Q-2-12 9-7" stroke="${c[2]}" stroke-width="1.8" fill="none"/>`;
   break;
  case 'peony':
   s+=ring(12,17,46,22,uid,0,3)+ring(10,11,36,19,uid,1,17)+ring(9,6,26,16,uid,2,7)+ring(6,2,17,11,uid,3,12)+center(uid,5,9);break;
@@ -85,8 +93,13 @@ function bloom(id,uid){
   for(let i=0;i<9;i++){const x=24+(i%3)*6,y=-25-Math.floor(i/3)*7;s+=`<circle cx="${x}" cy="${y}" r="3.3" fill="#f8cd63"/>`;}break;
  case 'lotus':
   s+=ring(8,14,54,19,uid,0,3)+ring(8,8,41,17,uid,1,16)+ring(6,3,30,13,uid,2,15)+center(uid,8,17);break;
- case 'marigold':
-  s+=ring(22,13,27,10,uid,0,4)+ring(18,8,21,10,uid,1,11)+ring(15,4,15,9,uid,2,19)+center(uid,6,14);break;
+ case 'frangipani':
+  // Five broad pinwheel petals with creamy tips and a golden throat.
+  for(let i=0;i<5;i++){
+   const angle=i*72;
+   s+=`<g transform="rotate(${angle})"><path d="M-3 8Q-28-12-26-31Q-25-51-8-55Q12-58 17-42Q20-19 4 13Z" fill="url(#wash-${uid})" stroke="${c[3]}" stroke-width="1.4"/><path d="M1 6Q-11-17-9-32Q-6-45 2-48" fill="none" stroke="#ffd37b" stroke-width="7.2" stroke-linecap="round" opacity=".68"/></g>`;
+  }
+  s+='<circle r="9" fill="#e5aa4d"/><circle r="4" fill="#fff6d7"/>';break;
  case 'jasmine':
   s+=ring(8,7,36,13,uid,0,4)+ring(7,4,28,12,uid,1,19)+ring(5,2,17,9,uid,2,37)+center(uid,4,12);s+=`<g fill="#fffde9" stroke="#aaa98a" stroke-width="1"><ellipse cx="34" cy="27" rx="6" ry="10" transform="rotate(30 34 27)"/><ellipse cx="-30" cy="22" rx="5" ry="9" transform="rotate(-25 -30 22)"/></g>`;break;
  case 'lavender':
