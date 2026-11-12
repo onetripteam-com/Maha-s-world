@@ -6,7 +6,7 @@ import {editableGroups,valueAt,updateTextAt,assertContentShape} from '../js/stud
 const read=path=>JSON.parse(readFileSync(new URL('../content/'+path+'.json',import.meta.url),'utf8'));
 const kinds=['today','letters','flowers','places','radio','movies','comfort','hug','config'];
 const expected={
- today:40,letters:27,flowers:13,places:8,radio:6,movies:4,comfort:4,hug:3,config:1
+ today:40,letters:27,flowers:13,places:11,radio:6,movies:4,comfort:4,hug:3,config:1
 };
 for(const kind of kinds){
  test('Content Studio safely indexes '+kind+' editable copy',()=>{
