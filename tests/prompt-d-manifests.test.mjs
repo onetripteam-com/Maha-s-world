@@ -19,7 +19,7 @@ test('radio has five uniquely tuned stations with no copyrighted hosted streams'
  assert.equal(radio.length,5);assert.equal(new Set(radio.map(x=>x.frequency)).size,5);
  for(const s of radio){assert.equal(s.introAudio,null);assert.equal(s.ambientAudio,null);assert.equal(s.spotify,null);assert.equal(s.youtube,null);assert.doesNotMatch(s.introCaption,/\[[^\]]+\]/)}
 });
-test('travel has seven initial postcards including Nepal and six editable destination slots',()=>{
- assert.equal(places.places.length,7);assert.ok(places.places.some(p=>p.id==='nepal'));assert.equal(places.futureSlots.length,6);
- for(const p of places.places){assert.ok(p.x>=0&&p.x<=100);assert.ok(p.y>=0&&p.y<=100);assert.ok(p.prompt.startsWith('Film 10 seconds'));assert.ok(p.phrase);assert.equal(p.clip,null);assert.equal(p.still,null)}
+test('travel preserves original seven stops, adds three landmarks, and keeps six dream slots',()=>{
+ assert.equal(places.places.length,10);for(const id of ['alleppey','mysore','jaipur'])assert.ok(places.places.some(p=>p.id===id));assert.ok(places.places.some(p=>p.id==='nepal'));assert.equal(places.futureSlots.length,6);
+ for(const p of places.places){assert.ok(p.x>=0&&p.x<=100);assert.ok(p.y>=0&&p.y<=100);assert.ok(typeof p.prompt==='string'&&p.prompt.length>12);assert.ok(p.postcardBack?.length>40);assert.ok(p.phrase);assert.equal(p.clip,null);assert.equal(p.still,null)}
 });
